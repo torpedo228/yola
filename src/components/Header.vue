@@ -3,14 +3,14 @@
     <a href="#">
       <img
         class="logo"
-        src="../assets/icons/logo/major-logo.svg"
+        src="https://torpedo228.github.io/resources/yola/icons/logo/major-logo.svg"
         alt="幼樂園Yo-La! Logo"
       />
     </a>
     <a href="#">
       <img
         class="nav-button"
-        src="../assets/icons/logo/flag.svg"
+        src="https://torpedo228.github.io/resources/yola/icons/logo/flag.svg"
         alt="選單按鈕"
       />
     </a>

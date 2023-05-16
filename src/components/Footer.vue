@@ -1,11 +1,23 @@
 <template>
   <div class="index-footer">
     <div class="footer-content-wrap">
-      <img
-        class="footer-decoration"
-        src="../assets/decorations/footer.svg"
-        alt="footer裝飾"
-      />
+      <div class="decoration-wrapper">
+        <img
+          class="footer-decoration"
+          src="https://torpedo228.github.io/resources/yola/decorations/footer.svg"
+          alt="footer裝飾"
+        />
+        <img
+          class="footer-decoration"
+          src="https://torpedo228.github.io/resources/yola/decorations/footer.svg"
+          alt="footer裝飾"
+        />
+        <img
+          class="footer-decoration"
+          src="https://torpedo228.github.io/resources/yola/decorations/footer.svg"
+          alt="footer裝飾"
+        />
+      </div>
       <ul class="footer_link">
         <li class="link_item"><a href="#">網站導覽 |</a></li>
         <li class="link_item"><a href="#">關於幼樂園 |</a></li>
@@ -46,12 +58,16 @@ div.index-footer {
     align-content: center;
     gap: $content/2;
 
-    img {
-      position: absolute;
-      width: 100%;
-      height: 20px;
-      left: 0%;
-      top: -20px;
+    .decoration-wrapper {
+      width: 3000px;
+      display: flex;
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: 20px;
+        top: -20px;
+      }
     }
 
     ul {
