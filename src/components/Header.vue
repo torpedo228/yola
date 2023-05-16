@@ -1,17 +1,19 @@
 <template>
   <div class="index-header">
-    <a href="#"
-      ><img
+    <a href="#">
+      <img
         class="logo"
         src="../assets/icons/logo/major-logo.svg"
         alt="幼樂園Yo-La! Logo"
-    /></a>
-    <a href="#"
-      ><img
+      />
+    </a>
+    <a href="#">
+      <img
         class="nav-button"
         src="../assets/icons/logo/flag.svg"
         alt="選單按鈕"
-    /></a>
+      />
+    </a>
     <div class="social-media">
       <a href="#">
         <div class="fb"><i class="fa-brands fa-square-facebook"></i></div>

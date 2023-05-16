@@ -1,0 +1,79 @@
+<template>
+  <div class="index-footer">
+    <div class="footer-content-wrap">
+      <img
+        class="footer-decoration"
+        src="../assets/decorations/footer.svg"
+        alt="footer裝飾"
+      />
+      <ul class="footer_link">
+        <li class="link_item"><a href="#">網站導覽 |</a></li>
+        <li class="link_item"><a href="#">關於幼樂園 |</a></li>
+        <li class="link_item"><a href="#">常見問題 |</a></li>
+        <li class="link_item"><a href="#">參考資源 |</a></li>
+        <li class="link_item"><a href="#">聯絡我們</a></li>
+      </ul>
+      <p>
+        本網站為緯育TibaMe前端工程師班第83期學員專題作品，本平台僅供學習、展示之用。參考資源:
+        新北市幼兒教育資訊網、全國教保資訊網
+      </p>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+@import "@/assets/scss/all.scss";
+
+div.index-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  div.footer-content-wrap {
+    height: 60px;
+    background-color: $primary-blue;
+    font-family: $light;
+    font-size: $content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: $content/2;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 20px;
+      left: 0%;
+      top: -20px;
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+
+      li {
+        color: $primary-white;
+        padding: 0 3px;
+
+        a:visited {
+          color: $primary-white;
+        }
+      }
+    }
+
+    p {
+      color: $primary-white;
+      text-align: center;
+      margin: 0;
+    }
+  }
+}
+</style>
