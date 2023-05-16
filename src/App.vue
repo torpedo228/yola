@@ -1,16 +1,20 @@
 <template>
   <div>
+    <div class="func-items">
+      <GoToTop />
+    </div>
     <Header />
     <Footer />
   </div>
 </template>
 
 <script>
+import GoToTop from "./components/GoToTop.vue";
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 
 export default {
-  components: { Header, Footer },
+  components: { GoToTop, Header, Footer },
 };
 </script>
 
