@@ -4,5 +4,5 @@ const {
 module.exports = defineConfig({
   transpileDependencies: true,
   outputDir: 'docs',
-  publicPath: './'
+  publicPath: './',
 });
