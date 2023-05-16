@@ -14,6 +14,23 @@ export default {
 };
 </script>
 
-<!-- <style lang="scss">
+<style lang="scss">
+@import "@/assets/scss/all.scss";
+body {
+  font-family: "FakePearl-Regular", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 3000px;
+  position: relative;
 
-</style> -->
+  a {
+    text-decoration: none;
+    bottom: 0;
+  }
+
+  ul {
+    list-style: none;
+  }
+}
+</style>
