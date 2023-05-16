@@ -26,8 +26,7 @@ header {
   position: absolute;
   width: 100%;
   height: 100px;
-  left: calc(50% - 640px);
-  top: 0px;
+  left: 0px;
   border-bottom: 1px solid #D6DADE;
 }
 header img.logo {

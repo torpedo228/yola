@@ -1,41 +1,4 @@
-$primary-red:#F44336;
-$primary-yellow:#FFC107;
-$primary-green:#4CAF50;
-$primary-blue:#1E88E5;
-$primary-white:#FFFFFF;
-$primary-black:#000000CC;
-$primary-grey:#ADB5BD;
-$secondary-red:#FAA19B;
-$secondary-yellow:#FFE083;
-$secondary-green:#A6D7A8;
-$secondary-blue:#8FC4F2;
-$secondary-grey:#D6DADE;
-
-$title-big:50px;
-$title-medium:40px;
-$title-small:30px;
-$main-info:25px;
-$secondary-info:20px;
-$content:16px;
-
-$regular:'FakePearl-Regular';
-$light:'FakePearl-Light';
-
-$border-radius-circle: 50%;
-
-
-
-@font-face {
-  font-family: 'FakePearl-Regular';
-  src: url(../assets/fonts/FakePearl-Regular.woff) format("woff");
-}
-
-@font-face {
-  font-family: 'FakePearl-Light';
-  src: url(../assets/fonts/FakePearl-Light.woff) format("woff");
-}
-
-
+@import "all";
 
 body {
   font-family: 'FakePearl-Regular', sans-serif;
@@ -60,8 +23,7 @@ header {
   position: absolute;
   width: 100%;
   height: 100px;
-  left: calc(50% - 1280px/2);
-  top: 0px;
+  left: 0px;
   border-bottom: 1px solid $secondary-grey;
 
   img.logo {
@@ -76,7 +38,7 @@ header {
     position: absolute;
     width: 50px;
     height: 45px;
-    right:50px;
+    right: 50px;
     top: calc(50% - 45px/2);
 
   }
@@ -139,8 +101,8 @@ div.back-to-top {
     width: 60px;
   }
 
-  &:hover{
-    transform: translate(0 ,-10px);
+  &:hover {
+    transform: translate(0, -10px);
   }
 }
 
