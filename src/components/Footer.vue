@@ -3,7 +3,7 @@
     <div class="footer-content-wrap">
       <img
         class="footer-decoration"
-        src="@/assets/decorations/footer.svg"
+        src="../assets/decorations/footer.svg"
         alt="footer裝飾"
       />
       <ul class="footer_link">
