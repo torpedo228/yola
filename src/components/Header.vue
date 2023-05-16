@@ -1,5 +1,5 @@
 <template>
-  <div class="index-header">
+  <div class="index-header" id="page-top">
     <a href="#">
       <img
         class="logo"
