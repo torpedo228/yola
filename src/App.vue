@@ -16,6 +16,7 @@ export default {
 
 <style lang="scss">
 @import "@/assets/scss/all.scss";
+
 body {
   font-family: "FakePearl-Regular", sans-serif;
   margin: 0;

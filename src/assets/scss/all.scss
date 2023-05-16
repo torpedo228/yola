@@ -26,10 +26,10 @@ $border-radius-circle: 50%;
 
 @font-face {
   font-family: 'FakePearl-Regular';
-  src: url("../assets/fonts/FakePearl-Regular.woff") format("woff");
+  src: url("@/assets/fonts/FakePearl-Regular.woff") format("woff");
 }
 
 @font-face {
   font-family: 'FakePearl-Light';
-  src: url("../assets/fonts/FakePearl-Light.woff") format("woff");
+  src: url("@/assets/fonts/FakePearl-Light.woff") format("woff");
 }
