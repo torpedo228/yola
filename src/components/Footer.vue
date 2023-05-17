@@ -49,9 +49,9 @@ div.index-footer {
 
   div.footer-content-wrap {
     height: 60px;
-    background-color: $primary-blue;
+    background-color: black;
     font-family: $light;
-    font-size: $content;
+    font-size: $content;  
     display: flex;
     flex-direction: column;
     justify-content: center;
