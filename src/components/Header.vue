@@ -1,13 +1,20 @@
 <template>
   <div class="index-header" id="page-top">
     <a href="#">
-      <img :class="(isStandardMode) ? 'logo' : 'left-logo'"
-        src="https://torpedo228.github.io/resources/yola/icons/logo/major-logo.svg" alt="幼樂園Yo-La! Logo" />
+      <img
+        :class="isStandardMode ? 'logo' : 'left-logo'"
+        src="../assets/icons/logo/yola.svg"
+        alt="幼樂園Yo-La! Logo"
+      />
     </a>
     <a href="#" @click="changeMode">
-      <img class="nav-button" src="https://torpedo228.github.io/resources/yola/icons/logo/flag.svg" alt="選單按鈕" />
+      <img class="nav-button" src="../assets/icons/flag.svg" alt="選單按鈕" />
     </a>
-    <div class="social-media" v-show="isStandardMode">
+    <div
+      class="social-media"
+      :class="isStandardMode ? 'fade-in' : 'fade-out'"
+      v-show="isStandardMode"
+    >
       <a href="#">
         <div class="fb"><i class="fa-brands fa-square-facebook"></i></div>
       </a>
@@ -31,14 +38,14 @@ export default {
       return this.$store.getters.isIndexPage;
     },
   },
-  mounted() { },
+  mounted() {},
   watch: {},
   methods: {
     changeMode() {
       if (this.isStandardMode) {
-        this.$store.commit('SET_TEST_PAGE');
+        this.$store.commit("SET_TEST_PAGE");
       } else {
-        this.$store.commit('SET_INDEX_PAGE');
+        this.$store.commit("SET_INDEX_PAGE");
       }
     },
   },
@@ -50,12 +57,11 @@ export default {
 @import "@/assets/scss/all.scss";
 
 div.index-header {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100px;
   left: 0px;
   border-bottom: 1px solid $secondary-grey;
-
 
   img.logo {
     $width: 170px;
@@ -65,7 +71,7 @@ div.index-header {
     height: $height;
     left: calc(50% - $width / 2);
     top: calc(50% - $height / 2);
-    transition-duration: 2s;
+    transition-duration: 0.5s;
   }
 
   img.left-logo {
@@ -74,9 +80,9 @@ div.index-header {
     position: absolute;
     width: $width;
     height: $height;
-    left:2%;
+    left: 2%;
     top: calc(50% - $height / 2);
-    transition-duration: 2s;
+    transition-duration: 0.5s;
   }
 
   img.nav-button {
@@ -87,6 +93,16 @@ div.index-header {
     top: calc(50% - 45px / 2);
   }
 
+  div.fade-in {
+    animation: fadeIn;
+    animation-duration: 0.5s;
+  }
+
+  div.fade-out {
+    animation: fadeOut;
+    animation-duration: 0.5s;
+  }
+
   div.social-media {
     position: absolute;
     left: 5%;
@@ -94,7 +110,7 @@ div.index-header {
     top: calc(50% - 50px / 2);
     display: flex;
     gap: 10px;
-   
+    transition-duration: 2s;
 
     div.fb,
     div.ig,
@@ -108,7 +124,6 @@ div.index-header {
       display: flex;
       align-items: center;
       justify-content: center;
-      transition-duration: 2s;
 
       i {
         font-size: 25px;
@@ -123,12 +138,14 @@ div.index-header {
       width: 25px;
       height: 25px;
       color: transparent;
-      background: radial-gradient(circle at 30% 107%,
-          #fdf497 0%,
-          #fdf497 5%,
-          #fd5949 45%,
-          #d6249f 60%,
-          #285aeb 90%);
+      background: radial-gradient(
+        circle at 30% 107%,
+        #fdf497 0%,
+        #fdf497 5%,
+        #fd5949 45%,
+        #d6249f 60%,
+        #285aeb 90%
+      );
       -webkit-background-clip: text;
       display: flex;
       align-items: center;

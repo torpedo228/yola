@@ -2,12 +2,21 @@
   <div class="index-footer">
     <div class="footer-content-wrap">
       <div class="decoration-wrapper">
-        <img class="footer-decoration" src="https://torpedo228.github.io/resources/yola/decorations/footer.svg"
-          alt="footer裝飾" />
-        <img class="footer-decoration" src="https://torpedo228.github.io/resources/yola/decorations/footer.svg"
-          alt="footer裝飾" />
-        <img class="footer-decoration" src="https://torpedo228.github.io/resources/yola/decorations/footer.svg"
-          alt="footer裝飾" />
+        <img
+          class="footer-decoration"
+          src="../assets/decorations/footer.svg"
+          alt="footer裝飾"
+        />
+        <img
+          class="footer-decoration"
+          src="https://torpedo228.github.io/resources/yola/decorations/footer.svg"
+          alt="footer裝飾"
+        />
+        <img
+          class="footer-decoration"
+          src="https://torpedo228.github.io/resources/yola/decorations/footer.svg"
+          alt="footer裝飾"
+        />
       </div>
       <ul class="footer_link">
         <li class="link_item"><a href="#">網站導覽</a></li>
