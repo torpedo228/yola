@@ -13,7 +13,7 @@ export default {
   data() {
     return {};
   },
-  mounted() {},
+  mounted() { },
 };
 </script>
 
@@ -22,9 +22,12 @@ export default {
 @import "@/assets/scss/all.scss";
 
 div {
-  position: absolute;
-  left: 50%;
-  top: 10%;
-  transform: translate(-50%, -50%);
+  button {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 20%;
+    right:10%;
+   
+  }
 }
 </style>

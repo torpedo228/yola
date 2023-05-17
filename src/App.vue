@@ -28,12 +28,17 @@ export default {
 @import "@/assets/scss/all.scss";
 
 body {
-  font-family: "FakePearl-Regular", sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: $light;
+  font-weight: $font-weight-light;
   box-sizing: border-box;
-  height: 3000px;
+  margin: 0;
+  padding: 0px;
   position: relative;
+
+  h2 {
+    color: $primary-black;
+    font-size: $main-title;
+  }
 
   a {
     text-decoration: none;

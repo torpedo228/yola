@@ -2,21 +2,7 @@
   <div class="index-footer">
     <div class="footer-content-wrap">
       <div class="decoration-wrapper">
-        <img
-          class="footer-decoration"
-          src="../assets/decorations/footer.svg"
-          alt="footer裝飾"
-        />
-        <img
-          class="footer-decoration"
-          src="https://torpedo228.github.io/resources/yola/decorations/footer.svg"
-          alt="footer裝飾"
-        />
-        <img
-          class="footer-decoration"
-          src="https://torpedo228.github.io/resources/yola/decorations/footer.svg"
-          alt="footer裝飾"
-        />
+        <img class="footer-decoration" src="../assets/decorations/footer.svg" alt="footer裝飾" />
       </div>
       <ul class="footer_link">
         <li class="link_item"><a href="#">網站導覽</a></li>
@@ -52,9 +38,9 @@ div.index-footer {
   left: 0;
 
   div.footer-content-wrap {
+    width: 100%;
     height: 60px;
     background-color: $primary-blue;
-    font-family: $light;
     font-size: $content;
     display: flex;
     flex-direction: column;
@@ -62,15 +48,20 @@ div.index-footer {
     align-content: center;
     gap: $content/3;
 
-    .decoration-wrapper {
-      width: 3000px;
-      display: flex;
+
+    div.decoration-wrapper {
+      position: absolute;
+      width: 100%;
+      height: 60px;
+      top: -65%;
+      overflow-X: hidden;
 
       img {
         position: absolute;
-        width: 100%;
-        height: 20px;
-        top: -20px;
+        left: -50%;
+        height: 60px;
+        width: 200%;
+
       }
     }
 

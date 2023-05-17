@@ -11,25 +11,29 @@ $secondary-green: #A6D7A8;
 $secondary-blue: #8FC4F2;
 $secondary-grey: #D6DADE;
 
-$title-big: 50px;
-$title-medium: 40px;
-$title-small: 30px;
+$main-title: 30px;
+$sub-title: 25px;
 $main-info: 25px;
-$secondary-info: 20px;
+$sub-info: 20px;
 $content: 16px;
+
 
 $regular: 'FakePearl-Regular';
 $light: 'FakePearl-Light';
 
-$border-radius-circle: 50%;
+$font-weight-light:100;
 
+$border-radius-circle: 50%;
+$top-spacing: 80px;
 
 @font-face {
   font-family: 'FakePearl-Regular';
-  src: url("https://torpedo228.github.io/resources/yola/fonts/FakePearl-Regular.woff") format("woff");
+  src: url("/src/assets/fonts/FakePearl-Regular.woff") format("woff");
 }
 
 @font-face {
   font-family: 'FakePearl-Light';
-  src: url("https://torpedo228.github.io/resources/yola/fonts/FakePearl-Light.woff") format("woff");
+  src: url("/src/assets/fonts/FakePearl-Light.woff") format("woff");
 }
+
+
