@@ -7,7 +7,7 @@
         alt="幼樂園Yo-La! Logo"
       />
     </a>
-    <a href="#">
+    <a href="#" @click="$store.commit('SET_TEST_PAGE')">
       <img
         class="nav-button"
         src="https://torpedo228.github.io/resources/yola/icons/logo/flag.svg"

@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div>Tanuki big fat seal raises tail.</div>
 </template>
 
 <script>
@@ -8,7 +8,9 @@ export default {
   data() {
     return {};
   },
-  mounted() {},
+  mounted() {
+    this.$store.commit('SET_LEARNING_CORNER_PAGE');
+  },
 };
 </script>
 

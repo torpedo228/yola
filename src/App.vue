@@ -3,18 +3,26 @@
     <div class="func-items">
       <GoToTop />
     </div>
-    <Header />
+    <MainHeader v-if="$store.getters.isIndexPage" />
+    <SubHeader v-else />
+    <MainContent />
     <Footer />
   </div>
 </template>
 
 <script>
-import GoToTop from "./components/GoToTop.vue";
-import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
+import GoToTop from "./components/GoToTop.vue";
+import MainHeader from "./components/MainHeader.vue";
+import SubHeader from "./components/SubHeader.vue";
+import MainContent from "./components/MainContent.vue";
 
 export default {
-  components: { GoToTop, Header, Footer },
+  components: { GoToTop, MainHeader, SubHeader, MainContent, Footer },
+  data() {
+    return {};
+  },
+  mounted() {},
 };
 </script>
 

@@ -2,27 +2,22 @@
   <div class="index-footer">
     <div class="footer-content-wrap">
       <div class="decoration-wrapper">
-        <img
-          class="footer-decoration"
-          src="https://torpedo228.github.io/resources/yola/decorations/footer.svg"
-          alt="footer裝飾"
-        />
-        <img
-          class="footer-decoration"
-          src="https://torpedo228.github.io/resources/yola/decorations/footer.svg"
-          alt="footer裝飾"
-        />
-        <img
-          class="footer-decoration"
-          src="https://torpedo228.github.io/resources/yola/decorations/footer.svg"
-          alt="footer裝飾"
-        />
+        <img class="footer-decoration" src="https://torpedo228.github.io/resources/yola/decorations/footer.svg"
+          alt="footer裝飾" />
+        <img class="footer-decoration" src="https://torpedo228.github.io/resources/yola/decorations/footer.svg"
+          alt="footer裝飾" />
+        <img class="footer-decoration" src="https://torpedo228.github.io/resources/yola/decorations/footer.svg"
+          alt="footer裝飾" />
       </div>
       <ul class="footer_link">
-        <li class="link_item"><a href="#">網站導覽 |</a></li>
-        <li class="link_item"><a href="#">關於幼樂園 |</a></li>
-        <li class="link_item"><a href="#">常見問題 |</a></li>
-        <li class="link_item"><a href="#">參考資源 |</a></li>
+        <li class="link_item"><a href="#">網站導覽</a></li>
+        <li>|</li>
+        <li class="link_item"><a href="#">關於幼樂園</a></li>
+        <li>|</li>
+        <li class="link_item"><a href="#">常見問題</a></li>
+        <li>|</li>
+        <li class="link_item"><a href="#">參考資源</a></li>
+        <li>|</li>
         <li class="link_item"><a href="#">聯絡我們</a></li>
       </ul>
       <p>
@@ -49,14 +44,14 @@ div.index-footer {
 
   div.footer-content-wrap {
     height: 60px;
-    background-color: black;
+    background-color: $primary-blue;
     font-family: $light;
-    font-size: $content;  
+    font-size: $content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    gap: $content/2;
+    gap: $content/3;
 
     .decoration-wrapper {
       width: 3000px;
@@ -79,8 +74,22 @@ div.index-footer {
         color: $primary-white;
         padding: 0 3px;
 
-        a:visited {
-          color: $primary-white;
+        a {
+          &:link {
+            color: $primary-white;
+          }
+
+          &:visited {
+            color: $primary-white;
+          }
+
+          &:hover {
+            color: $secondary-blue;
+          }
+
+          &:active {
+            color: $primary-red;
+          }
         }
       }
     }
