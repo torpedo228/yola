@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { publicPath } from '../vue.config'
 import MainView from "@/views/MainView.vue";
 import TestView from "@/views/TestView.vue";
 
