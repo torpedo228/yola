@@ -40,8 +40,14 @@ body {
   position: relative;
 
   h2 {
+    font-weight: $font-weight-light;
     color: $primary-black;
     font-size: $main-title;
+    margin: 0;
+  }
+  h3{
+    font-weight: $font-weight-light;
+    margin: 0;
   }
 
   a {

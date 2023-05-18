@@ -1,13 +1,18 @@
 <template>
   <div>
     <div class="hero-container">
-      <img class="decoration-1" src="../assets/decorations/hero-1.svg" alt="" />
+      <div class="main-content">
+        <img class="decoration-1" src="../assets/decorations/hero-1.svg" alt="" />
+        <h2>聚焦幼兒教育<br><br>資源共享互惠</h2>
+        <a class="go-to-introduction-btn" href="./learning-corner">
+          <h3>開始探索</h3>
+        </a>
+      </div>
+
       <img class="decoration-2" src="../assets/decorations/hero-2.svg" alt="" />
       <img class="decoration-3" src="../assets/decorations/hero-3.svg" alt="" />
-      <img class="hero-img" src="../assets/images/home/hero.jpg" alt="" />
-      <a class="go-to-introduction" href="./learning-corner">
-        <div>開始探索</div>
-      </a>
+      <img class="hero-img" src="../assets/images/home/hero.svg" alt="" />
+
     </div>
   </div>
 </template>
@@ -30,44 +35,98 @@ export default {
 @import "@/assets/scss/all.scss";
 
 div.hero-container {
-  a.go-to-introduction {
-    display: inline-block;
-    font-size: $sub-info;
-    color: $primary-black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
 
-    div {
-      width: 100px;
-      height: 50px;
-      background-color: $primary-white;
-      border: 5px solid $primary-blue;
-      border-radius: 30px;
+  div.main-content {
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    top: 15%;
+    left: 20%;
+
+    h2 {
       position: absolute;
-      transform: translate(-50%, -50%);
-      top: 20%;
-      right: 10%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      color: $primary-white;
+      font-size: $main-title;
+      transform: translate(80%, 170%);
+      line-height: $main-title;
+    }
 
-      &:link {
-        color: $primary-black;
-      }
+    img.decoration-1 {
+      width: 100%;
+    }
 
-      &:visited {
-        color: $primary-black;
-      }
+    a.go-to-introduction-btn {
+      display: inline-block;
+      font-size: $sub-info;
+      color: $primary-black;
 
-      &:hover {
-        color: $primary-white;
-        background-color: $primary-blue;
-      }
+      h3 {
+        display: inline-block;
+        width: 150px;
+        height: 60px;
+        background-color: $primary-white;
+        border: 5px solid $primary-blue;
+        border-radius: 40px;
+        position: absolute;
+        right: -10%;
+        bottom: 20%;
 
-      &:active {
-        color: $primary-white;
-        background-color: $primary-blue;
-        opacity: 0.5;
+
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:link {
+          color: $primary-black;
+        }
+
+        &:visited {
+          color: $primary-black;
+        }
+
+        &:hover {
+          color: $primary-white;
+          background-color: $primary-blue;
+        }
+
+        &:active {
+          color: $primary-white;
+          background-color: $primary-blue;
+          opacity: 0.5;
+        }
       }
     }
   }
+
+
+  img {
+    position: absolute;
+  }
+
+  img.hero-img {
+    width: 500px;
+    top: 15%;
+    right: 0;
+
+  }
+
+
+
+  img.decoration-2 {
+    top: 40px;
+    left: 0;
+  }
+
+  img.decoration-3 {
+    bottom: 25%;
+    left: 5%;
+  }
+
+
 }
 </style>
