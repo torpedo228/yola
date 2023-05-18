@@ -1,12 +1,12 @@
 <template>
   <div class="header-container" id="page-top">
-    <div class="index-header" >
+    <div class="index-header">
       <a href="#" @click="backToHome">
         <img :class="isStandardMode ? 'logo' : 'left-logo'" src="../../assets/icons/logo/yola.svg" alt="幼樂園Yo-La! Logo" />
       </a>
-      <a href="#" @click="$store.commit('SET_SIDEMENU_PAGE')">
-        <img class="nav-button" src="../../assets/icons/flag.svg" alt="選單按鈕" />
-      </a>
+      <div class="side-menu">
+        <SideMenu />
+      </div>
       <div class="social-media" :class="isStandardMode ? 'fade-in' : 'fade-out'" v-show="isStandardMode">
         <a href="#">
           <div class="fb"><i class="fa-brands fa-square-facebook"></i></div>
@@ -23,16 +23,20 @@
 </template>
 
 <script>
+import SideMenu from "@/components/func-items/SideMenu.vue";
+
 export default {
+  components: { SideMenu },
   data() {
     return {};
   },
   computed: {
+
     isStandardMode() {
       return this.$store.getters.isHomePage;
     },
   },
-  mounted() {},
+  mounted() { },
   watch: {},
   methods: {
     backToHome() {
@@ -79,7 +83,7 @@ div.header-container {
       transition-duration: 0.5s;
     }
 
-    img.nav-button {
+    div.side-menu {
       position: absolute;
       width: 40px;
       height: $height;

@@ -25,9 +25,6 @@ export default createStore({
     SET_HOME_PAGE(state) {
       state.currentPage = "home";
     },
-    SET_SIDEMENU_PAGE(state) {
-      state.currentPage = "side-menu";
-    },
     SET_LEARNING_CORNER_PAGE(state) {
       state.currentPage = "learning-corner";
     },
