@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { publicPath } from "../../vue.config";
+// import { publicPath } from "../../vue.config";
 import MainView from "@/views/Home.vue";
 import TestView from "@/views/TestView.vue";
 
@@ -42,7 +42,7 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  base: publicPath === "/yola/" ? "/yola" : "",
+  // base: publicPath === "/yola/" ? "/yola" : "",
   routes,
 });
 
