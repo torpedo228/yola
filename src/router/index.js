@@ -1,12 +1,10 @@
-import {
-  createRouter,
-  createWebHistory
-} from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 // import { publicPath } from "../../vue.config";
 import HomeView from "@/views/Home.vue";
 import TestView from "@/views/TestView.vue";
 
-const routes = [{
+const routes = [
+  {
     path: "/",
     name: "home",
     components: {
@@ -14,35 +12,43 @@ const routes = [{
     },
     meta: {
       transition: "slide-right",
-      title: '首頁'
+      title: "首頁",
     },
   },
   {
     path: "/learning-corner",
+    component: () => import("@/views/sections/LearningCorner.vue"),
     name: "learning-corner",
-    components: {
-      default: () => import("@/views/learning-corner/LearningCorner.vue"),
-    },
     meta: {
       transition: "slide-right",
-      title: '學習區'
+      title: "學習區",
     },
-  },
-  {
-    path: "/learning-corner/art",
-    name: "art",
-    component: () => import("@/views/learning-corner/class/Art.vue"),
-    meta: {
-      title: '美勞區'
-    },
-  },
-  {
-    path: "/learning-corner/contruction",
-    name: "contruction",
-    component: () => import("@/views/learning-corner/class/Construction.vue"),
-    meta: {
-      title: '組合建構區'
-    },
+    children: [
+      {
+        path: "",
+        component: () => import("@/views/sections/learning-corner/Portal.vue"),
+        name: "learning-corner-portal",
+        meta: {
+          transition: "slide-right",
+        },
+      },
+      {
+        path: "art",
+        name: "art",
+        component: () => import("@/views/sections/learning-corner/Art.vue"),
+        meta: {
+          title: "美勞區",
+        },
+      },
+      {
+        path: "construction",
+        name: "construction",
+        component: () => import("@/views/sections/learning-corner/Construction.vue"),
+        meta: {
+          title: "組合建構區",
+        },
+      },
+    ],
   },
   {
     path: "/test",

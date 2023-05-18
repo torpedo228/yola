@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="$router.push({ name: 'learning-corner' })">
+    <button @click="$router.push({ name: 'learning-corner-portal' })">
       前往學習區
     </button>
   </div>
