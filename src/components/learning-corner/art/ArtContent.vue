@@ -1,71 +1,8 @@
 <template>
   <div class="learning-corner">
     <div class="title">
-      <img src="../assets/icons/logo/learning-corner-logo-red.svg" alt="學習區logo" />
-      <h2>學習區 Learning Corner</h2>
-    </div>
-
-    <div class="card-container">
-      <div class="card-container-top">
-        <a href="">
-          <div class="card-wrap-bottom card-border-blue">
-            <h3 class="title-bottom">語文區</h3>
-            <div class="mask-bottom mask-blue"></div>
-            <img class="img-top" src="../assets/images/learning-corner/literacy.jpg" alt="語文區" />
-          </div>
-        </a>
-        <a href="">
-          <div class="card-wrap-top card-border-green">
-            <h3 class="title-top">扮演區</h3>
-            <div class="mask-top mask-green"></div>
-            <img class="img-bottom" src="../assets/images/learning-corner/role-playing.jpg" alt="扮演區" />
-          </div>
-        </a>
-        <a href="">
-          <div class="card-wrap-bottom card-border-red">
-            <h3 class="title-bottom">美勞區</h3>
-            <div class="mask-bottom mask-red"></div>
-            <img class="img-top" src="../assets/images/learning-corner/art.jpg" alt="美勞區" />
-          </div>
-        </a>
-        <a href="">
-          <div class="card-wrap-top card-border-yellow">
-            <h3 class="title-top">數學區</h3>
-            <div class="mask-top mask-yellow"></div>
-            <img class="img-bottom" src="../assets/images/learning-corner/math.png" alt="數學區" />
-          </div>
-        </a>
-      </div>
-      <div class="card-container-bottom">
-        <a href="">
-          <div class="card-wrap-bottom card-border-red">
-            <h3 class="title-bottom">積木區</h3>
-            <div class="mask-bottom mask-red"></div>
-            <img class="img-top" src="../assets/images/learning-corner/blocks.jpg" alt="積木區" />
-          </div>
-        </a>
-        <a href="">
-          <div class="card-wrap-top card-border-yellow">
-            <h3 class="title-top">烹飪區</h3>
-            <div class="mask-top mask-yellow"></div>
-            <img class="img-bottom" src="../assets/images/learning-corner/cooking.jpg" alt="烹飪區" />
-          </div>
-        </a>
-        <a href="">
-          <div class="card-wrap-bottom card-border-blue">
-            <h3 class="title-bottom">組合建構區</h3>
-            <div class="mask-bottom mask-blue"></div>
-            <img class="img-top" src="../assets/images/learning-corner/construction.png" alt="組合建構區" />
-          </div>
-        </a>
-        <a href="">
-          <div class="card-wrap-top card-border-green">
-            <h3 class="title-top">自然觀察區</h3>
-            <div class="mask-top mask-green"></div>
-            <img class="img-bottom" src="../assets/images/learning-corner/natural-observe.jpg" alt="自然觀察區" />
-          </div>
-        </a>
-      </div>
+      <img src="../../../assets/icons/logo/learning-corner-logo-red.svg" alt="美勞區logo" />
+      <h2>美勞區 Art</h2>
     </div>
   </div>
 </template>
@@ -77,7 +14,7 @@ export default {
     return {};
   },
   mounted() {
-    this.$store.commit("SET_LEARNING_CORNER_PAGE");
+    // this.$store.commit("SET_LEARNING_CORNER_PAGE");
   },
 };
 </script>

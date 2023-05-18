@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { publicPath } from "../../vue.config";
-import MainView from "@/views/MainView.vue";
+import MainView from "@/views/Home.vue";
 import TestView from "@/views/TestView.vue";
 
 const routes = [
@@ -24,6 +24,11 @@ const routes = [
     path: "/learning-corner/art",
     name: "art",
     component: () => import("@/views/learning-corner/Art.vue"),
+  },
+  {
+    path: "/learning-corner/contruction",
+    name: "contruction",
+    component: () => import("@/views/learning-corner/Construction.vue"),
   },
   {
     path: "/test",

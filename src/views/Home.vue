@@ -13,7 +13,7 @@ export default {
     return {};
   },
   mounted() {
-    this.$store.commit("SET_INDEX_PAGE");
+    this.$store.commit("SET_HOME_PAGE");
   },
 };
 </script>
