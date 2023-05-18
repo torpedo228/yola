@@ -4,23 +4,26 @@
       <GoToTop />
     </div>
     <Header />
-    <MainContent />
+    <router-view v-slot="{ Component, route }">
+      <transition :name="route.meta.transition || 'fade'">
+        <component :is="Component" />
+      </transition>
+    </router-view>
     <Footer />
   </div>
 </template>
 
 <script>
-import Footer from "./components/Footer.vue";
-import GoToTop from "./components/GoToTop.vue";
-import Header from "./components/Header.vue";
-import MainContent from "./components/MainContent.vue";
+import Footer from "@/components/Footer.vue";
+import GoToTop from "@/components/GoToTop.vue";
+import Header from "@/components/Header.vue";
 
 export default {
-  components: { GoToTop, Header, MainContent, Footer },
+  components: { GoToTop, Header, Footer },
   data() {
     return {};
   },
-  mounted() { },
+  mounted() {},
 };
 </script>
 

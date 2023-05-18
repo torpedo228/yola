@@ -1,10 +1,10 @@
 <template>
   <div class="header-container" id="page-top">
     <div class="index-header" >
-      <a href="#">
+      <a href="#" @click="backToHome">
         <img :class="isStandardMode ? 'logo' : 'left-logo'" src="../assets/icons/logo/yola.svg" alt="幼樂園Yo-La! Logo" />
       </a>
-      <a href="#" @click="changeMode">
+      <a href="#">
         <img class="nav-button" src="../assets/icons/flag.svg" alt="選單按鈕" />
       </a>
       <div class="social-media" :class="isStandardMode ? 'fade-in' : 'fade-out'" v-show="isStandardMode">
@@ -32,15 +32,11 @@ export default {
       return this.$store.getters.isIndexPage;
     },
   },
-  mounted() { },
+  mounted() {},
   watch: {},
   methods: {
-    changeMode() {
-      if (this.isStandardMode) {
-        this.$store.commit("SET_TEST_PAGE");
-      } else {
-        this.$store.commit("SET_INDEX_PAGE");
-      }
+    backToHome() {
+      this.$router.push({ name: "home" });
     },
   },
 };
