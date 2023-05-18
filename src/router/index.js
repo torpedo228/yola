@@ -37,7 +37,7 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  base: publicPath,
+  base: process.env.NODE_ENV === "production" ? "/yola" : "",
   routes,
 });
 
