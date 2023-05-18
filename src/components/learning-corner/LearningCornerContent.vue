@@ -32,7 +32,7 @@
             />
           </div>
         </a>
-        <a href="/learning-corner/art">
+        <a href="./learning-corner/art">
           <div class="card-wrap-bottom card-border-red">
             <h3 class="title-bottom">美勞區</h3>
             <div class="mask-bottom mask-red"></div>
@@ -78,7 +78,7 @@
             />
           </div>
         </a>
-        <a href="/learning-corner/contruction">
+        <a href="./learning-corner/contruction">
           <div class="card-wrap-bottom card-border-blue">
             <h3 class="title-bottom">組合建構區</h3>
             <div class="mask-bottom mask-blue"></div>
