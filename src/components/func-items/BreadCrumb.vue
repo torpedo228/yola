@@ -1,39 +1,67 @@
 <template>
   <div class="breadcrumb-wrap">
-    <img src="../../assets/icons/logo/bread-crumb-logo.svg" alt="麵包屑logo">
+    <img src="../../assets/icons/logo/bread-crumb-logo.svg" alt="麵包屑logo" />
     <ol class="flex">
-      <li v-for="(item, i) in breadcrumbList" :key="i" class="pl-2">
-        <router-link :to="item.path">{{ item.meta.title }}</router-link>
+      <li v-for="(layer, i) in breadcrumbList" :key="i" class="pl-2">
+        <router-link :to="layer.path">{{ layer.meta.title }}</router-link>
       </li>
     </ol>
   </div>
 </template>
 
 <script>
-import { ref, watch, onMounted } from "vue";
-import { useRoute } from "vue-router";
 export default {
   name: "Breadcrumb",
-  setup() {
-    const route = useRoute();
-    const breadcrumbList = ref([]);
-    const isHome = () => {
-      return route.name === "Home";
+  props: {},
+  components: {},
+  data() {
+    return {
+      breadcrumbList: [],
     };
-    const getBreadcrumbs = () => {
-      let matched = route.matched;
-      if (!isHome(matched[0])) {
+  },
+  computed: {
+    route() {
+      return this.$route;
+    },
+  },
+  mounted() {
+    this.updateBreadcrumbs(this.$route);
+  },
+  watch: {
+    route(curRoute) {
+      this.updateBreadcrumbs(curRoute);
+    },
+  },
+  methods: {
+    isNotHome(routeName) {
+      return routeName != "Home";
+    },
+    updateBreadcrumbs(curRoute) {
+      let vm = this;
+      let matched = curRoute.matched;
+      if (vm.isNotHome(matched[0].name)) {
         matched = [{ path: "/", meta: { title: "首頁" } }].concat(matched);
       }
-      breadcrumbList.value = matched;
-    };
-    watch(route, () => {
-      getBreadcrumbs();
-    });
-    onMounted(() => {
-      getBreadcrumbs();
-    });
-    return { breadcrumbList, getBreadcrumbs };
+
+      vm.breadcrumbList = filterEmptyTitle(matched);
+
+      function filterEmptyTitle(matched) {
+        var fullPath = [];
+        matched.forEach((layer) => {
+          if (
+            vm.hasValue(layer.path) &&
+            vm.hasValue(layer.meta) &&
+            vm.hasValue(layer.meta.title)
+          ) {
+            fullPath.push(layer);
+          }
+        });
+        return fullPath;
+      }
+    },
+    hasValue(val) {
+      return typeof val != "undefined" && val != null && val !== "";
+    },
   },
 };
 </script>
