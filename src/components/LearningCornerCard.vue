@@ -120,8 +120,6 @@ div.card-wrap-top {
     position: absolute;
     width: 150px;
     height: 60%;
-
-    border-radius: 10px;
     z-index: 1;
   }
 

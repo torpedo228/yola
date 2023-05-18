@@ -1,16 +1,21 @@
-import { createRouter, createWebHistory } from "vue-router";
+import {
+  createRouter,
+  createWebHistory
+} from "vue-router";
 // import { publicPath } from "../../vue.config";
-import MainView from "@/views/Home.vue";
+import HomeView from "@/views/Home.vue";
 import TestView from "@/views/TestView.vue";
 
-const routes = [
-  {
+const routes = [{
     path: "/",
     name: "home",
     components: {
-      default: MainView,
+      default: HomeView,
     },
-    meta: { transition: "slide-right" },
+    meta: {
+      transition: "slide-right",
+      title: '首頁'
+    },
   },
   {
     path: "/learning-corner",
@@ -18,17 +23,26 @@ const routes = [
     components: {
       default: () => import("@/views/learning-corner/LearningCorner.vue"),
     },
-    meta: { transition: "slide-right" },
+    meta: {
+      transition: "slide-right",
+      title: '學習區'
+    },
   },
   {
     path: "/learning-corner/art",
     name: "art",
-    component: () => import("@/views/learning-corner/Art.vue"),
+    component: () => import("@/views/learning-corner/class/Art.vue"),
+    meta: {
+      title: '美勞區'
+    },
   },
   {
     path: "/learning-corner/contruction",
     name: "contruction",
-    component: () => import("@/views/learning-corner/Construction.vue"),
+    component: () => import("@/views/learning-corner/class/Construction.vue"),
+    meta: {
+      title: '組合建構區'
+    },
   },
   {
     path: "/test",

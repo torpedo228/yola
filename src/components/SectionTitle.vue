@@ -9,8 +9,8 @@
 export default {
   props: {
     title: String,
-    alt: String,
     imgSrc: String,
+    alt: String,
   },
   components: {},
   data() {

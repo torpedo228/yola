@@ -17,9 +17,10 @@
 import Footer from "@/components/func-items/Footer.vue";
 import GoToTop from "@/components/func-items/GoToTop.vue";
 import Header from "@/components/func-items/Header.vue";
+import SideMenu from "@/components/func-items/SideMenu.vue"
 
 export default {
-  components: { GoToTop, Header, Footer },
+  components: { GoToTop, Header, Footer,SideMenu },
   data() {
     return {};
   },
@@ -48,7 +49,7 @@ body {
     bottom: 0;
   }
 
-  ul {
+  ul,ol {
     list-style: none;
   }
 }

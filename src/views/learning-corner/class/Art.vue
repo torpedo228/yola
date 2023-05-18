@@ -1,20 +1,25 @@
 <template>
-  <div class="learning-corner">
-    <div class="title">
-      <img src="../../../assets/icons/logo/learning-corner-logo-red.svg" alt="美勞區logo" />
-      <h2>美勞區 Art</h2>
-    </div>
+  <div>
+    <BreadCrumb />
+    <SectionTitle
+      title="美勞區 Art"
+      imgSrc="require('@/assets/icons/logo/learning-corner-logo-red.svg')"
+      alt="美勞區logo"
+    />
   </div>
 </template>
 
 <script>
+import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
+import SectionTitle from "@/components/SectionTitle.vue";
+
 export default {
-  components: {},
+  components: { SectionTitle,BreadCrumb },
   data() {
     return {};
   },
   mounted() {
-    // this.$store.commit("SET_LEARNING_CORNER_PAGE");
+    this.$store.commit("SET_ART_PAGE");
   },
 };
 </script>
@@ -22,7 +27,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
-
 
 div.learning-corner {
   width: 100%;
@@ -61,7 +65,7 @@ div.learning-corner {
 
           img {
             transform: scale(1.2);
-            transition-duration: .5s;
+            transition-duration: 0.5s;
           }
         }
       }
@@ -99,10 +103,10 @@ div.learning-corner {
 
       img {
         width: 150px;
-
       }
 
-      img.img-top {}
+      img.img-top {
+      }
 
       img.img-bottom {
         position: absolute;
@@ -121,18 +125,24 @@ div.learning-corner {
 
       div.mask-bottom {
         bottom: -1px;
-        --mask: radial-gradient(53.68px at 50% 72.5px, #000 99%, #0000 101%) calc(50% - 50px) 0/100px 100%,
-          radial-gradient(53.68px at 50% -47.5px, #0000 99%, #000 101%) 50% 25px/100px 100% repeat-x;
+        --mask: radial-gradient(53.68px at 50% 72.5px, #000 99%, #0000 101%)
+            calc(50% - 50px) 0/100px 100%,
+          radial-gradient(53.68px at 50% -47.5px, #0000 99%, #000 101%) 50% 25px/100px
+            100% repeat-x;
         -webkit-mask: var(--mask);
         mask: var(--mask);
       }
     }
 
     div.mask-top {
-      --mask: radial-gradient(55.9px at 50% calc(100% - 75px),
-          #000 99%,
-          #0000 101%) calc(50% - 50px) 0/100px 100%,
-        radial-gradient(55.9px at 50% calc(100% + 50px), #0000 99%, #000 101%) 50% calc(100% - 25px) / 100px 100% repeat-x;
+      --mask: radial-gradient(
+            55.9px at 50% calc(100% - 75px),
+            #000 99%,
+            #0000 101%
+          )
+          calc(50% - 50px) 0/100px 100%,
+        radial-gradient(55.9px at 50% calc(100% + 50px), #0000 99%, #000 101%)
+          50% calc(100% - 25px) / 100px 100% repeat-x;
       -webkit-mask: var(--mask);
       mask: var(--mask);
     }

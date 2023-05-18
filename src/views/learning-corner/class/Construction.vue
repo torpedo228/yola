@@ -1,19 +1,21 @@
 <template>
   <div>
-    <ArtContent v-if="$store.getters.isArtPage" />
+    <SectionTitle title="組合建構區 Cnstruction" imgSrc="require('@/assets/icons/logo/learning-corner-logo-blue.svg')"
+      alt="組合建構區logo" />
   </div>
 </template>
 
 <script>
-import ArtContent from "@/components/learning-corner/art/ArtContent.vue";
+import SectionTitle from "@/components/SectionTitle.vue";
+
 
 export default {
-  components: { ArtContent },
+  components: { SectionTitle },
   data() {
     return {};
   },
   mounted() {
-    this.$store.commit("SET_ART_PAGE");
+    this.$store.commit("SET_CONSTRUCTION_PAGE");
   },
 };
 </script>

@@ -1,90 +1,42 @@
 <template>
+  <BreadCrumb />
+  <router-view />
   <div class="learning-corner">
-    <SectionTitle
-      title="學習區 Learning Corner"
-      alt="學習區logo"
-      :imgSrc="require('@/assets/icons/logo/learning-corner-logo-red.svg')"
-    />
+    <SectionTitle title="學習區 Learning Corner" :imgSrc="require('@/assets/icons/logo/learning-corner-logo-red.svg')"
+      alt="學習區logo" />
 
     <div class="card-container">
       <div class="card-container-top">
-        <LearningCornerCard
-          href="./learning-corner/art"
-          title="語文區"
-          alt="語文區"
-          :img-upper="true"
-          color="blue"
-          :imgSrc="require('@/assets/images/learning-corner/literacy.jpg')"
-        />
-        <LearningCornerCard
-          href="./learning-corner/art"
-          title="扮演區"
-          alt="扮演區"
-          :img-upper="false"
-          color="green"
-          :imgSrc="require('@/assets/images/learning-corner/role-playing.jpg')"
-        />
-        <LearningCornerCard
-          href="./learning-corner/art"
-          title="美勞區"
-          alt="美勞區"
-          :img-upper="true"
-          color="red"
-          :imgSrc="require('@/assets/images/learning-corner/art.jpg')"
-        />
-        <LearningCornerCard
-          href="./learning-corner/art"
-          title="數學區"
-          alt="數學區"
-          :img-upper="false"
-          color="yellow"
-          :imgSrc="require('@/assets/images/learning-corner/math.jpg')"
-        />
+        <LearningCornerCard href="./learning-corner/art" title="語文區" alt="語文區" :img-upper="true" color="blue"
+          :imgSrc="require('@/assets/images/learning-corner/literacy.jpg')" />
+        <LearningCornerCard href="./learning-corner/art" title="扮演區" alt="扮演區" :img-upper="false" color="green"
+          :imgSrc="require('@/assets/images/learning-corner/role-playing.jpg')" />
+        <LearningCornerCard href="./learning-corner/art" title="美勞區" alt="美勞區" :img-upper="true" color="red"
+          :imgSrc="require('@/assets/images/learning-corner/art.jpg')" />
+        <LearningCornerCard href="./learning-corner/art" title="數學區" alt="數學區" :img-upper="false" color="yellow"
+          :imgSrc="require('@/assets/images/learning-corner/math.jpg')" />
       </div>
       <div class="card-container-bottom">
-        <LearningCornerCard
-          href="./learning-corner/art"
-          title="積木區"
-          alt="積木區"
-          :img-upper="true"
-          color="red"
-          :imgSrc="require('@/assets/images/learning-corner/blocks.jpg')"
-        />
-        <LearningCornerCard
-          href="./learning-corner/art"
-          title="烹飪區"
-          alt="烹飪區"
-          :img-upper="false"
-          color="yellow"
-          :imgSrc="require('@/assets/images/learning-corner/cooking.jpg')"
-        />
-        <LearningCornerCard
-          href="./learning-corner/art"
-          title="組合建構區"
-          alt="組合建構區"
-          :img-upper="true"
-          color="blue"
-          :imgSrc="require('@/assets/images/learning-corner/construction.png')"
-        />
-        <LearningCornerCard
-          href="./learning-corner/art"
-          title="自然觀察區"
-          alt="自然觀察區"
-          :img-upper="false"
-          color="green"
-          :imgSrc="require('@/assets/images/learning-corner/natural-observe.jpg')"
-        />
+        <LearningCornerCard href="./learning-corner/art" title="積木區" alt="積木區" :img-upper="true" color="red"
+          :imgSrc="require('@/assets/images/learning-corner/blocks.jpg')" />
+        <LearningCornerCard href="./learning-corner/art" title="烹飪區" alt="烹飪區" :img-upper="false" color="yellow"
+          :imgSrc="require('@/assets/images/learning-corner/cooking.jpg')" />
+        <LearningCornerCard href="./learning-corner/art" title="組合建構區" alt="組合建構區" :img-upper="true" color="blue"
+          :imgSrc="require('@/assets/images/learning-corner/construction.png')" />
+        <LearningCornerCard href="./learning-corner/art" title="自然觀察區" alt="自然觀察區" :img-upper="false" color="green"
+          :imgSrc="require('@/assets/images/learning-corner/natural-observe.jpg')" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
 import SectionTitle from "@/components/SectionTitle.vue";
 import LearningCornerCard from "@/components/LearningCornerCard.vue";
 
 export default {
-  components: { SectionTitle, LearningCornerCard },
+  components: { BreadCrumb, SectionTitle, LearningCornerCard },
   data() {
     return {};
   },
