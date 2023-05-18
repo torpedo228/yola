@@ -4,6 +4,7 @@
       <GoToTop />
     </div>
     <Header />
+    <SideMenu />
     <router-view v-slot="{ Component, route }">
       <transition :name="route.meta.transition || 'fade'">
         <component :is="Component" />
@@ -17,10 +18,10 @@
 import Footer from "@/components/func-items/Footer.vue";
 import GoToTop from "@/components/func-items/GoToTop.vue";
 import Header from "@/components/func-items/Header.vue";
-import SideMenu from "@/components/func-items/SideMenu.vue"
+import SideMenu from "@/components/func-items/SideMenu.vue";
 
 export default {
-  components: { GoToTop, Header, Footer,SideMenu },
+  components: { GoToTop, Header, Footer, SideMenu },
   data() {
     return {};
   },
@@ -45,7 +46,8 @@ body {
     font-size: $main-title;
     margin: 0;
   }
-  h3{
+
+  h3 {
     font-weight: $font-weight-light;
     margin: 0;
   }
@@ -55,7 +57,8 @@ body {
     bottom: 0;
   }
 
-  ul,ol {
+  ul,
+  ol {
     list-style: none;
   }
 }

@@ -4,7 +4,7 @@
       <a href="#" @click="backToHome">
         <img :class="isStandardMode ? 'logo' : 'left-logo'" src="../../assets/icons/logo/yola.svg" alt="幼樂園Yo-La! Logo" />
       </a>
-      <a href="#">
+      <a href="#" @click="$store.commit('SET_SIDEMENU_PAGE')">
         <img class="nav-button" src="../../assets/icons/flag.svg" alt="選單按鈕" />
       </a>
       <div class="social-media" :class="isStandardMode ? 'fade-in' : 'fade-out'" v-show="isStandardMode">

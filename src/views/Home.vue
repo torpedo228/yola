@@ -25,7 +25,6 @@ export default {
   },
   mounted() {
     this.$store.commit("SET_HOME_PAGE");
-    console.log(this.$route);
   },
 };
 </script>
