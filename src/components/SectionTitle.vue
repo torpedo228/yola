@@ -1,10 +1,17 @@
 <template>
-  <div></div>
+  <div class="title">
+    <img :src="imgSrc" :alt="alt" />
+    <h2>{{ title }}</h2>
+  </div>
 </template>
 
 <script>
 export default {
-  props: {},
+  props: {
+    title: String,
+    alt: String,
+    imgSrc: String,
+  },
   components: {},
   data() {
     return {};
@@ -19,4 +26,16 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
+
+div.title {
+  color: $primary-black;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+
+  img {
+    width: 30px;
+  }
+}
 </style>
