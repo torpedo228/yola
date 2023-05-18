@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import Footer from "@/components/Footer.vue";
-import GoToTop from "@/components/GoToTop.vue";
-import Header from "@/components/Header.vue";
+import Footer from "@/components/func-items/Footer.vue";
+import GoToTop from "@/components/func-items/GoToTop.vue";
+import Header from "@/components/func-items/Header.vue";
 
 export default {
   components: { GoToTop, Header, Footer },

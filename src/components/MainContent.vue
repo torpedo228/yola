@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import LearningCorner from "@/components/LearningCorner.vue";
+import LearningCorner from "@/views/learning-corner/LearningCorner.vue";
 
 export default {
   components: { LearningCorner },

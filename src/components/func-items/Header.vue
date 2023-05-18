@@ -2,10 +2,10 @@
   <div class="header-container" id="page-top">
     <div class="index-header" >
       <a href="#" @click="backToHome">
-        <img :class="isStandardMode ? 'logo' : 'left-logo'" src="../assets/icons/logo/yola.svg" alt="幼樂園Yo-La! Logo" />
+        <img :class="isStandardMode ? 'logo' : 'left-logo'" src="../../assets/icons/logo/yola.svg" alt="幼樂園Yo-La! Logo" />
       </a>
       <a href="#">
-        <img class="nav-button" src="../assets/icons/flag.svg" alt="選單按鈕" />
+        <img class="nav-button" src="../../assets/icons/flag.svg" alt="選單按鈕" />
       </a>
       <div class="social-media" :class="isStandardMode ? 'fade-in' : 'fade-out'" v-show="isStandardMode">
         <a href="#">
@@ -29,7 +29,7 @@ export default {
   },
   computed: {
     isStandardMode() {
-      return this.$store.getters.isIndexPage;
+      return this.$store.getters.isHomePage;
     },
   },
   mounted() {},

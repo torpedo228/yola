@@ -2,7 +2,11 @@
   <div class="index-footer">
     <div class="footer-content-wrap">
       <div class="decoration-wrapper">
-        <img class="footer-decoration" src="../assets/decorations/footer.svg" alt="footer裝飾" />
+        <img
+          class="footer-decoration"
+          src="../../assets/decorations/footer.svg"
+          alt="footer裝飾"
+        />
       </div>
       <ul class="footer_link">
         <li class="link_item"><a href="#">網站導覽</a></li>
@@ -48,20 +52,18 @@ div.index-footer {
     align-content: center;
     gap: $content/3;
 
-
     div.decoration-wrapper {
       position: absolute;
       width: 100%;
       height: 60px;
       top: -65%;
-      overflow-X: hidden;
+      overflow-x: hidden;
 
       img {
         position: absolute;
         left: -50%;
         height: 60px;
         width: 200%;
-
       }
     }
 

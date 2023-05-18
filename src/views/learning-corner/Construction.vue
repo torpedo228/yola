@@ -1,19 +1,19 @@
 <template>
   <div>
-    <LearningCornerContent />
+    <ConstructionContent v-if="$store.getters.isConstructionPage" />
   </div>
 </template>
 
 <script>
-import LearningCornerContent from "@/components/learning-corner/LearningCornerContent.vue";
+import ConstructionContent from "@/components/learning-corner/construction/ConstructionContent.vue";
 
 export default {
-  components: { LearningCornerContent },
+  components: { ConstructionContent },
   data() {
     return {};
   },
   mounted() {
-    this.$store.commit("SET_LEARNING_CORNER_PAGE");
+    this.$store.commit("SET_CONSTRUCTION_PAGE");
   },
 };
 </script>

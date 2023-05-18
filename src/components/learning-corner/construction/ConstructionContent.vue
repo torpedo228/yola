@@ -1,19 +1,20 @@
 <template>
-  <div>
-    <LearningCornerContent />
+  <div class="learning-corner">
+    <div class="title">
+      <img src="../../../assets/icons/logo/learning-corner-logo-blue.svg" alt="組合建構區logo" />
+      <h2>組合建構區 Construction</h2>
+    </div>
   </div>
 </template>
 
 <script>
-import LearningCornerContent from "@/components/learning-corner/LearningCornerContent.vue";
-
 export default {
-  components: { LearningCornerContent },
+  components: {},
   data() {
     return {};
   },
   mounted() {
-    this.$store.commit("SET_LEARNING_CORNER_PAGE");
+    // this.$store.commit("SET_LEARNING_CORNER_PAGE");
   },
 };
 </script>
