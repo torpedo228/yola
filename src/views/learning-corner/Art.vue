@@ -2,7 +2,7 @@
   <div class="learning-corner">
     <div class="title">
       <img src="../../assets/icons/logo/learning-corner-logo-red.svg" alt="學習區logo" />
-      <h2>學習區 Learning Corner</h2>
+      <h2>學習區 Learning Corner - Art</h2>
     </div>
 
     <div class="card-container">
@@ -21,7 +21,7 @@
             <img class="img-bottom" src="../../assets/images/learning-corner/role-playing.jpg" alt="扮演區" />
           </div>
         </a>
-        <a href="#" @click="$router.push({ name: 'art' })">
+        <a href="">
           <div class="card-wrap-bottom card-border-red">
             <h3 class="title-bottom">美勞區</h3>
             <div class="mask-bottom mask-red"></div>
@@ -77,7 +77,7 @@ export default {
     return {};
   },
   mounted() {
-    this.$store.commit("SET_LEARNING_CORNER_PAGE");
+    // this.$store.commit("SET_LEARNING_CORNER_PAGE");
   },
 };
 </script>

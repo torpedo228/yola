@@ -15,18 +15,21 @@ const routes = [
     path: "/learning-corner",
     name: "learning-corner",
     components: {
-      default: import("@/views/learning-corner/LearningCorner.vue"),
+      default: () => import("@/views/learning-corner/LearningCorner.vue"),
     },
     meta: { transition: "slide-right" },
   },
   {
     path: "/learning-corner/art",
     name: "art",
-    component: TestView,
+    component: () => import("@/views/learning-corner/Art.vue"),
   },
   {
     path: "/test",
     name: "test",
+    // this.$router.push({ name: "test" });
+    // or <a href="#" @click="$router.push({ name: 'test' })">
+    // or <a href="/test">
     component: TestView,
   },
 ];
