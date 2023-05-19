@@ -2,7 +2,7 @@
   <div>
     <img class="side-menu-btn" src="../../assets/icons/flag.svg" alt="選單按鈕" @click="toggle()" />
 
-    <div class="side-menu-container" v-bind:style="{ right: (isShow ? '-10%' : '-40%') }">
+    <div class="side-menu-container" v-bind:style="{ right: isShow ? '-10%' : '-40%' }">
       <img class="side-menu-img" src="../../assets/icons/side-menu.svg" alt="" />
       <div class="shortcut-wrap">
         <a id="my-land" href="#">
@@ -67,7 +67,6 @@ export default {
 @import "@/assets/scss/all.scss";
 
 img.side-menu-btn {
-
   width: 40px;
   cursor: pointer;
 }
@@ -82,12 +81,11 @@ div.side-menu-container {
   transition: 0.35s ease-in-out;
   display: flex;
   align-content: center;
-   justify-content: center;
+  justify-content: center;
 
   img.side-menu-img {
     width: 100%;
     height: 550px;
-
   }
 
   div.shortcut-wrap {
@@ -100,6 +98,9 @@ div.side-menu-container {
     gap: 20px;
 
     a {
+      display: inline-block;
+      border-radius: 30px;
+
       &:link {
         color: $primary-black;
       }
@@ -109,34 +110,67 @@ div.side-menu-container {
       }
 
       &:hover {
-        color: $primary-white;
         background-color: $primary-blue;
-        border-color: $primary-white;
       }
 
       &:active {
         color: $primary-white;
-        background-color: $primary-blue;
         opacity: 0.5;
       }
 
       span {
-        display: inline-block;
+        display: block;
         width: 150px;
         color: $primary-black;
         font-size: $sub-info;
         text-align: center;
+        border-radius: 30px;
 
+        &:hover {
+          color: $primary-white;
+        }
+      }
+    }
+
+    a#learning-corner {
+      &:hover {
+        background-color: $primary-red;
+      }
+    }
+
+    a#storybooks {
+      &:hover {
+        background-color: $primary-yellow;
+      }
+    }
+
+    a#physical-fitness-and-rhythm-movement {
+      &:hover {
+        background-color: $primary-green;
       }
     }
 
     a#my-land {
       width: 150px;
-      margin-bottom: 20%;
+      padding: 5px 0;
+      margin-bottom: 10%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: 10px;
+
+      &:hover {
+        background-color: $primary-red;
+
+        i {
+
+          &::before {
+            outline: 10px solid $secondary-red;
+            border-radius: 50px;
+          }
+        }
+
+      }
 
       span.my-land {
         color: $primary-white;
@@ -146,6 +180,9 @@ div.side-menu-container {
       i {
         color: $primary-white;
         font-size: 80px;
+
+
+
       }
     }
   }
