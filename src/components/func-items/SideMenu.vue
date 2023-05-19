@@ -2,7 +2,7 @@
   <div>
     <img class="side-menu-btn" src="../../assets/icons/flag.svg" alt="選單按鈕" @click="toggle()" />
 
-    <div class="side-menu-container" v-bind:style="{ right: (isShow ? '0' : '-30%') }">
+    <div class="side-menu-container" v-bind:style="{ right: (isShow ? '-10%' : '-40%') }">
       <img class="side-menu-img" src="../../assets/icons/side-menu.svg" alt="" />
       <div class="shortcut-wrap">
         <a id="my-land" href="#">
@@ -73,15 +73,19 @@ img.side-menu-btn {
 }
 
 div.side-menu-container {
-  width: 500px;
+  width: 400px;
   height: 550px;
   z-index: 999;
   position: fixed;
   text-align: center;
   -webkit-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
+  display: flex;
+  align-content: center;
+   justify-content: center;
 
   img.side-menu-img {
+    width: 100%;
     height: 550px;
 
   }
@@ -89,11 +93,10 @@ div.side-menu-container {
   div.shortcut-wrap {
     width: 150px;
     position: absolute;
-    top: 10%;
-    right: 25%;
+    top: 15%;
     display: flex;
     flex-direction: column;
-    align-content: center;
+    justify-content: center;
     gap: 20px;
 
     a {
