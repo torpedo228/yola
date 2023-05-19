@@ -6,7 +6,10 @@
       <img class="side-menu-img" src="../../assets/icons/side-menu.svg" alt="" />
       <div class="shortcut-wrap">
         <a id="my-land" href="#">
-          <i class="fa-solid fa-circle-user"></i>
+          <div class="profile-img">
+            <img src="https://avatars.githubusercontent.com/u/110772689?v=4" alt="" />
+          </div>
+          <!-- <i class="fa-solid fa-circle-user"></i> -->
           <span class="my-land">我的樂園</span>
         </a>
         <a id="home" href="./home">
@@ -15,16 +18,16 @@
         <a id="learning-corner" href="./learning-corner">
           <span>學習區</span>
         </a>
-        <a id="themetic-teaching" href="#">
+        <a id="themetic-teaching" href="./test">
           <span>主題教學</span>
         </a>
-        <a id="storybooks" href="#">
+        <a id="storybooks" href="./test">
           <span>繪本故事</span>
         </a>
-        <a id="nursery-rhymes-and-finger-rhymes" href="#">
+        <a id="nursery-rhymes-and-finger-rhymes" href="./test">
           <span>兒歌&手指謠</span>
         </a>
-        <a id="physical-fitness-and-rhythm-movement" href="#">
+        <a id="physical-fitness-and-rhythm-movement" href="./test">
           <span>體能&律動</span>
         </a>
       </div>
@@ -152,8 +155,9 @@ div.side-menu-container {
 
     a#my-land {
       width: 150px;
+      
       padding: 5px 0;
-      margin-bottom: 10%;
+      margin-bottom: 5%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -161,15 +165,28 @@ div.side-menu-container {
 
       &:hover {
         background-color: $primary-red;
+      }
 
-        i {
+      div.profile-img {
+        width: 150px;
+        
+        img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
 
-          &::before {
+          &:hover {
             outline: 10px solid $secondary-red;
-            border-radius: 50px;
+            border-radius: 50%;
           }
         }
 
+        // i {
+        //   &::before {
+        //     outline: 10px solid $secondary-red;
+        //     border-radius: 50px;
+        //   }
+        // }
       }
 
       span.my-land {
@@ -180,7 +197,6 @@ div.side-menu-container {
       i {
         color: $primary-white;
         font-size: 80px;
-
       }
     }
   }
