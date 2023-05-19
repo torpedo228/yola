@@ -1,10 +1,12 @@
-import { createRouter, createWebHistory } from "vue-router";
+import {
+  createRouter,
+  createWebHistory
+} from "vue-router";
 // import { publicPath } from "../../vue.config";
 import HomeView from "@/views/Home.vue";
 import TestView from "@/views/TestView.vue";
 
-const routes = [
-  {
+const routes = [{
     path: "/",
     name: "home",
     components: {
@@ -23,8 +25,7 @@ const routes = [
       transition: "slide-right",
       title: "學習區",
     },
-    children: [
-      {
+    children: [{
         path: "",
         component: () => import("@/views/sections/learning-corner/Portal.vue"),
         name: "learning-corner-portal",
@@ -46,6 +47,54 @@ const routes = [
         component: () => import("@/views/sections/learning-corner/Construction.vue"),
         meta: {
           title: "組合建構區",
+        },
+      },
+      {
+        path: "thematic-teaching",
+        name: "thematic-teaching",
+        component: () => import("@/views/sections/ThematicTeaching.vue"),
+        meta: {
+          title: "主題教學",
+        },
+      },
+      {
+        path: "brain-storming",
+        name: "brain-storming",
+        component: () => import("@/views/sections/thematic-teaching/BrainStorming.vue"),
+        meta: {
+          title: "主題發想牆",
+        },
+      },
+      {
+        path: "construction",
+        name: "construction",
+        component: () => import("@/views/sections/Storybooks.vue"),
+        meta: {
+          title: "繪本故事",
+        },
+      },
+      {
+        path: "nursery-rhymes-and-finger-rhymes",
+        name: "nursery-rhymes-and-finger-rhymes",
+        component: () => import("@/views/sections/NurseryRhymesAndFingerRhymes.vue"),
+        meta: {
+          title: "兒歌&手指謠",
+        },
+      },
+      {
+        path: "physical-fitness-and-rhythm-movement",
+        name: "physical-fitness-and-rhythm-movement",
+        component: () => import("@/views/sections/PhysicalFitnessAndRhythmMovement.vue"),
+        meta: {
+          title: "體能&律動",
+        },
+      },
+      {
+        path: "my-land",
+        name: "my-land",
+        component: () => import("@/views/sections/MyLand.vue"),
+        meta: {
+          title: "我的樂園",
         },
       },
     ],

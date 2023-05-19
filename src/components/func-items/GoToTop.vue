@@ -18,8 +18,8 @@ export default {};
 
 div.go-to-top {
   position: fixed;
-  right: 30px;
-  bottom: 80px;
+  right: 1%;
+  bottom: 3%;
   transition-duration: 1s;
   z-index: 10;
 

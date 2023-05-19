@@ -1,11 +1,13 @@
 <template>
   <div>
-    <img class="side-menu-btn" src="../../assets/icons/flag.svg" alt="選單按鈕" @click="toggle()" />
+    <img class="side-menu-btn-open" src="../../assets/icons/menu-open.svg" alt="選單按鈕" @click="toggle()" />
+    <img class="side-menu-btn-close" src="../../assets/icons/menu-close.svg" alt="選單按鈕" @click="toggle()" />
+
 
     <div class="side-menu-container" v-bind:style="{ right: isShow ? '-10%' : '-40%' }">
       <img class="side-menu-img" src="../../assets/icons/side-menu.svg" alt="" />
       <div class="shortcut-wrap">
-        <a id="my-land" href="./test">
+        <a id="my-land" href="./my-land">
           <div class="profile-img">
             <img src="https://avatars.githubusercontent.com/u/110772689?v=4" alt="" />
           </div>
@@ -18,16 +20,16 @@
         <a id="learning-corner" href="./learning-corner">
           <span>學習區</span>
         </a>
-        <a id="themetic-teaching" href="./test">
+        <a id="themetic-teaching" href="./thematic-teaching">
           <span>主題教學</span>
         </a>
-        <a id="storybooks" href="./test">
+        <a id="storybooks" href="./storybooks">
           <span>繪本故事</span>
         </a>
-        <a id="nursery-rhymes-and-finger-rhymes" href="./test">
+        <a id="nursery-rhymes-and-finger-rhymes" href="./nursery-rhymes-and-finger-rhymes">
           <span>兒歌&手指謠</span>
         </a>
-        <a id="physical-fitness-and-rhythm-movement" href="./test">
+        <a id="physical-fitness-and-rhythm-movement" href="./physical-fitness-and-rhythm-movement">
           <span>體能&律動</span>
         </a>
       </div>
@@ -54,6 +56,8 @@ export default {
     turnOff() {
       this.isShow = false;
     },
+
+
     toggle() {
       if (this.isShow) {
         this.turnOff();
@@ -69,14 +73,18 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-img.side-menu-btn {
-  width: 40px;
+img.side-menu-btn-open,
+img.side-menu-btn-close {
+
   cursor: pointer;
 
   &:hover {
     opacity: 0.7;
   }
 }
+
+img.side-menu-btn-open{width: 50px;}
+img.side-menu-btn-close{width: 76px;}
 
 div.side-menu-container {
   width: 600px;

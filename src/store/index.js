@@ -34,6 +34,24 @@ export default createStore({
     SET_CONSTRUCTION_PAGE(state) {
       state.currentPage = "construction";
     },
+    SET_THEMATIC_TEACHING_PAGE(state) {
+      state.currentPage = "thematic-teaching";
+    },
+    SET_BRAIN_STORMING_PAGE(state) {
+      state.currentPage = "brain-storming";
+    },
+    SET_STORYBOOKS_PAGE(state) {
+      state.currentPage = "storybooks";
+    },
+    SET_NURSERY_RHYMES_AND_FINGER_RHYMES_PAGE(state) {
+      state.currentPage = "nursery-rhymes-and-finger-rhymes";
+    },
+    SET_PHYSICAL_FITNESS_AND_RHYTHM_MOVEMENT_PAGE(state) {
+      state.currentPage = "physical-fitness-and-rhythm-movement";
+    },
+    SET_MYLAND_PAGE(state) {
+      state.currentPage = "my-land";
+    },
     SET_TEST_PAGE(state) {
       state.currentPage = "test";
     },
