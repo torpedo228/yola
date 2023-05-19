@@ -1,9 +1,21 @@
 <template>
   <div>
-    <img class="side-menu-btn" src="../../assets/icons/flag.svg" alt="選單按鈕" @click="toggle()" />
+    <img
+      class="side-menu-btn"
+      src="../../assets/icons/flag.svg"
+      alt="選單按鈕"
+      @click="toggle()"
+    />
 
-    <div class="side-menu-container" v-bind:style="{ right: isShow ? '-10%' : '-40%' }">
-      <img class="side-menu-img" src="../../assets/icons/side-menu.svg" alt="" />
+    <div
+      class="side-menu-container"
+      v-bind:style="{ right: isShow ? '-10%' : '-40%' }"
+    >
+      <img
+        class="side-menu-img"
+        src="../../assets/icons/side-menu.svg"
+        alt=""
+      />
       <div class="shortcut-wrap">
         <a id="my-land" href="#">
           <i class="fa-solid fa-circle-user"></i>
@@ -42,7 +54,7 @@ export default {
     };
   },
   computed: {},
-  mounted() { },
+  mounted() {},
   watch: {},
   methods: {
     turnOn() {
@@ -124,7 +136,6 @@ div.side-menu-container {
         color: $primary-black;
         font-size: $sub-info;
         text-align: center;
-<<<<<<< HEAD
         border-radius: 30px;
 
         &:hover {
@@ -148,9 +159,6 @@ div.side-menu-container {
     a#physical-fitness-and-rhythm-movement {
       &:hover {
         background-color: $primary-green;
-=======
-
->>>>>>> main
       }
     }
 
@@ -162,7 +170,6 @@ div.side-menu-container {
       flex-direction: column;
       justify-content: center;
       gap: 10px;
-<<<<<<< HEAD
 
       &:hover {
         background-color: $primary-red;
@@ -177,9 +184,6 @@ div.side-menu-container {
 
       }
 
-=======
-
->>>>>>> main
       span.my-land {
         color: $primary-white;
         font-size: $sub-info;
@@ -188,12 +192,7 @@ div.side-menu-container {
       i {
         color: $primary-white;
         font-size: 80px;
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> main
       }
     }
   }
