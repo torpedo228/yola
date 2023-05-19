@@ -35,11 +35,13 @@
     </div>
 
     <div class="decoration">
-      <img src="" alt="">
-      <img src="" alt="">
+
       <img src="../../../assets/icons/characters/red-square.svg" alt="">
-      <img src="" alt="">
-      <img src="" alt="">
+      <img src="../../../assets/icons/characters/yellow-circle.svg" alt="">
+      <img src="../../../assets/icons/characters/green-arch.svg" alt="">
+      <img src="../../../assets/icons/characters/blue-triangle.svg" alt="">
+
+      <img src="../../../assets/decorations/intruduction.svg" alt="">
     </div>
   </div>
 </template>
@@ -61,7 +63,7 @@ export default {
 @import "@/assets/scss/all.scss";
 
 div.container {
-  padding-top:100px;
+  padding-top: 100px;
   width: 100%;
   height: 1000px;
 
@@ -153,5 +155,7 @@ div.container {
       }
     }
   }
+
+  div.decoration {}
 }
 </style>
