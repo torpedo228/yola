@@ -124,6 +124,7 @@ div.side-menu-container {
         color: $primary-black;
         font-size: $sub-info;
         text-align: center;
+<<<<<<< HEAD
         border-radius: 30px;
 
         &:hover {
@@ -147,6 +148,9 @@ div.side-menu-container {
     a#physical-fitness-and-rhythm-movement {
       &:hover {
         background-color: $primary-green;
+=======
+
+>>>>>>> main
       }
     }
 
@@ -158,6 +162,7 @@ div.side-menu-container {
       flex-direction: column;
       justify-content: center;
       gap: 10px;
+<<<<<<< HEAD
 
       &:hover {
         background-color: $primary-red;
@@ -172,6 +177,9 @@ div.side-menu-container {
 
       }
 
+=======
+
+>>>>>>> main
       span.my-land {
         color: $primary-white;
         font-size: $sub-info;
@@ -180,9 +188,12 @@ div.side-menu-container {
       i {
         color: $primary-white;
         font-size: 80px;
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> main
       }
     }
   }
