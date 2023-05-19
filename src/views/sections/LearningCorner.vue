@@ -1,23 +1,15 @@
 <template>
   <div class="container">
     <BreadCrumb />
-    <SectionTitle
-      title="學習區 Learning Corner"
-      :imgSrc="require('@/assets/icons/logo/learning-corner-logo-red.svg')"
-      alt="學習區logo"
-    />
     <router-view />
-    <Portal />
   </div>
 </template>
 
 <script>
 import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
-import SectionTitle from "@/components/SectionTitle.vue";
-import Portal from "@/views/sections/learning-corner/Portal.vue";
 
 export default {
-  components: { BreadCrumb, SectionTitle, Portal },
+  components: { BreadCrumb },
   data() {
     return {};
   },

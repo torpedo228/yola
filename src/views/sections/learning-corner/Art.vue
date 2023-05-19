@@ -1,21 +1,18 @@
 <template>
   <div class="container">
-    <BreadCrumb />
     <SectionTitle
       title="美勞區 Art"
       :imgSrc="require('@/assets/icons/logo/learning-corner-logo-red.svg')"
       alt="美勞區logo"
     />
-    <router-view />
   </div>
 </template>
 
 <script>
-import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
 import SectionTitle from "@/components/SectionTitle.vue";
 
 export default {
-  components: { BreadCrumb, SectionTitle },
+  components: { SectionTitle },
   data() {
     return {};
   },

@@ -1,22 +1,22 @@
 <template>
-  <div>
+  <div class="container">
     <BreadCrumb />
-    <div class="my-land">
+      <SectionTitle title="繪本故事 Storybooks" :imgSrc="require('@/assets/icons/logo/storybooks-logo.svg')" alt="繪本故事logo" />
       <router-view />
-    </div>
   </div>
 </template>
 
 <script>
 import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
+import SectionTitle from "@/components/SectionTitle.vue";
 
 export default {
-  components: { BreadCrumb },
+  components: { BreadCrumb, SectionTitle },
   data() {
     return {};
   },
   mounted() {
-    this.$store.commit("SET_MYLAND_PAGE");
+    this.$store.commit("SET_STORYBOOKS_PAGE");
   },
 };
 </script>
@@ -24,7 +24,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
-div.my-land {
+
+div.container {
   width: 100%;
   position: absolute;
   top: 10%;

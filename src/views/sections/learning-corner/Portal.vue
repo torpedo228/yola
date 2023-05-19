@@ -1,5 +1,10 @@
 <template>
   <div>
+    <SectionTitle
+      title="學習區 Learning Corner"
+      :imgSrc="require('@/assets/icons/logo/learning-corner-logo-red.svg')"
+      alt="學習區logo"
+    />
     <div class="card-container">
       <div class="card-container-top">
         <LearningCornerCard
@@ -76,10 +81,11 @@
 </template>
 
 <script>
+import SectionTitle from "@/components/SectionTitle.vue";
 import LearningCornerCard from "@/components/LearningCornerCard.vue";
 
 export default {
-  components: { LearningCornerCard },
+  components: { SectionTitle, LearningCornerCard },
   data() {
     return {};
   },

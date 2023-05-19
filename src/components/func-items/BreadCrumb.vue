@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     isNotHome(routeName) {
-      return routeName != "Home";
+      return routeName != "home";
     },
     updateBreadcrumbs(curRoute) {
       let vm = this;
@@ -72,7 +72,6 @@ export default {
 
 div.breadcrumb-wrap {
   position: absolute;
-  top: 10%;
   left: 5%;
   display: flex;
 

@@ -1,15 +1,11 @@
 <template>
   <div class="container">
-    <BreadCrumb />
-      <router-view />
     </div>
 </template>
 
 <script>
-import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
-
 export default {
-  components: { BreadCrumb },
+  components: {  },
   data() {
     return {};
   },

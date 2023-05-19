@@ -19,23 +19,29 @@ const routes = [{
   {
     path: "/learning-corner",
     component: () => import("@/views/sections/LearningCorner.vue"),
-    name: "learning-corner",
     meta: {
       title: "學習區",
     },
-    children: [
+    children: [{
+        path: "",
+        name: "learning-corner",
+        component: () => import("@/views/sections/learning-corner/Portal.vue"),
+        meta: {
+          title: "",
+        },
+      },
       {
-        path: "/art",
+        path: "art",
         name: "art",
-        component: () => import("@/views/sections/Art.vue"),
+        component: () => import("@/views/sections/learning-corner/Art.vue"),
         meta: {
           title: "美勞區",
         },
       },
       {
-        path: "/construction",
+        path: "construction",
         name: "construction",
-        component: () => import("@/views/sections/Construction.vue"),
+        component: () => import("@/views/sections/learning-corner/Construction.vue"),
         meta: {
           title: "組合建構區",
         },
