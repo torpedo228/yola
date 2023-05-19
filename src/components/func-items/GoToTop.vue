@@ -21,6 +21,7 @@ div.go-to-top {
   right: 30px;
   bottom: 80px;
   transition-duration: 1s;
+  z-index: 10;
 
   img {
     width: 60px;

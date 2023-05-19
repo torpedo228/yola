@@ -28,12 +28,22 @@ $top-spacing: 80px;
 
 @font-face {
   font-family: 'FakePearl-Regular';
-  src: url("/src/assets/fonts/FakePearl-Regular.woff") format("woff");
+  src: url("https://torpedo228.github.io/resources/fonts/FakePearl-Regular.woff") format("woff");
 }
 
 @font-face {
   font-family: 'FakePearl-Light';
-  src: url("/src/assets/fonts/FakePearl-Light.woff") format("woff");
+  src: url("https://torpedo228.github.io/resources/fonts/FakePearl-Light.woff") format("woff");
 }
+
+// @font-face {
+//   font-family: 'FakePearl-Regular';
+//   src: url("/src/assets/fonts/FakePearl-Regular.woff") format("woff");
+// }
+
+// @font-face {
+//   font-family: 'FakePearl-Light';
+//   src: url("/src/assets/fonts/FakePearl-Light.woff") format("woff");
+// }
 
 

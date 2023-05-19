@@ -9,9 +9,10 @@
         </a>
       </div>
 
-      <img class="decoration-2" src="../assets/decorations/hero-2.svg" alt="" />
+      <img class="decoration-2" src="2../assets/decorations/hero-2.svg" alt="" />
       <img class="decoration-3" src="../assets/decorations/hero-3.svg" alt="" />
-      <img class="hero-img" src="../assets/images/home/hero.svg" alt="" />
+      <img class="under-decoration " src="../assets/decorations/under-decoration.svg" alt="">
+      <img class="hero-img" src="../assets/images/home/hero.png" alt="" />
 
     </div>
   </div>
@@ -49,8 +50,7 @@ div.hero-container {
     h2 {
       position: absolute;
       color: $primary-white;
-      font-size: $main-title;
-      transform: translate(80%, 170%);
+      transform: translate(80%, 160%);
       line-height: $main-title;
     }
 
@@ -73,9 +73,6 @@ div.hero-container {
         position: absolute;
         right: -10%;
         bottom: 20%;
-
-
-
         display: flex;
         align-items: center;
         justify-content: center;
@@ -91,6 +88,7 @@ div.hero-container {
         &:hover {
           color: $primary-white;
           background-color: $primary-blue;
+          border-color: $primary-white;
         }
 
         &:active {
@@ -107,14 +105,6 @@ div.hero-container {
     position: absolute;
   }
 
-  img.hero-img {
-    width: 500px;
-    top: 15%;
-    right: 0;
-
-  }
-
-
 
   img.decoration-2 {
     top: 40px;
@@ -127,5 +117,11 @@ div.hero-container {
   }
 
 
+  img.hero-img,
+  img.under-decoration {
+    width: 500px;
+    top: 15%;
+    right: 0;
+  }
 }
 </style>

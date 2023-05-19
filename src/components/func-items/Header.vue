@@ -87,8 +87,8 @@ div.header-container {
       position: absolute;
       width: 40px;
       height: $height;
-      right: 3%;
-      top: calc(50% - $height / 2);
+      right: 4%;
+      top: 25%;
     }
 
     div.fade-in {
