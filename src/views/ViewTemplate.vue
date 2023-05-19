@@ -1,20 +1,15 @@
 <template>
   <div>
-    <Hero />
   </div>
 </template>
 
 <script>
-import Hero from "@/views/sections/home/Hero.vue";
-
 export default {
-  components: { Hero },
+  components: {},
   data() {
     return {};
   },
-  mounted() {
-    this.$store.commit("SET_HOME_PAGE");
-  },
+  mounted() {},
 };
 </script>
 
@@ -22,6 +17,4 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.container {
-}
 </style>

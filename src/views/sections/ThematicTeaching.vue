@@ -1,17 +1,21 @@
 <template>
-  <div>
+  <div class="container">
     <BreadCrumb />
-    <div class="thematic-teaching">
+      <SectionTitle
+        title="主題教學 Thematic Teaching"
+        :imgSrc="require('@/assets/icons/logo/thematic-teaching-logo.svg')"
+        alt="學習區logo"
+      />
       <router-view />
     </div>
-  </div>
 </template>
 
 <script>
 import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
+import SectionTitle from "@/components/SectionTitle.vue";
 
 export default {
-  components: { BreadCrumb },
+  components: { BreadCrumb,SectionTitle },
   data() {
     return {};
   },
@@ -24,10 +28,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
-div.thematic-teaching {
+
+div.container {
   width: 100%;
   position: absolute;
   top: 10%;
-  font-family: $light;
 }
 </style>
+z

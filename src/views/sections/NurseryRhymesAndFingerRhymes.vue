@@ -1,17 +1,26 @@
 <template>
-  <div>
+  <div class="container">
     <BreadCrumb />
-    <div class="nursery-rhymes-and-finger-rhymes">
+      <SectionTitle
+        title="兒歌 Nursery Rhymes"
+        :imgSrc="require('@/assets/icons/logo/nursery-rhymes-logo.svg')"
+        alt="兒歌logo"
+      />
+      <SectionTitle
+        title="手指謠 Finger Rhymes"
+        :imgSrc="require('@/assets/icons/logo/finger-rhymes-logo.svg')"
+        alt="手指謠logo"
+      />
       <router-view />
     </div>
-  </div>
 </template>
 
 <script>
 import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
+import SectionTitle from "@/components/SectionTitle.vue";
 
 export default {
-  components: { BreadCrumb },
+  components: { BreadCrumb,SectionTitle },
   data() {
     return {};
   },
@@ -24,10 +33,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
-div.nursery-rhymes-and-finger-rhymes {
+
+div.container {
   width: 100%;
   position: absolute;
   top: 10%;
-  font-family: $light;
 }
 </style>

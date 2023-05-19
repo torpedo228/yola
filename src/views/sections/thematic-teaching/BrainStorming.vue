@@ -1,22 +1,26 @@
 <template>
-  <div>
+  <div class="container">
     <BreadCrumb />
-    <div class="learning-corner">
-      <router-view />
-    </div>
+    <SectionTitle
+      title="主題發想牆 Learning Corner"
+      :imgSrc="require('@/assets/icons/logo/thematic-teaching-logo.svg')"
+      alt="主題發想牆logo"
+    />
+    <router-view />
   </div>
 </template>
 
 <script>
 import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
+import SectionTitle from "@/components/SectionTitle.vue";
 
 export default {
-  components: { BreadCrumb },
+  components: { BreadCrumb, SectionTitle },
   data() {
     return {};
   },
   mounted() {
-    this.$store.commit("SET_LEARNING_CORNER_PAGE");
+    this.$store.commit("SET_BRAIN_STORMING_PAGE");
   },
 };
 </script>
@@ -24,10 +28,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
-div.learning-corner {
+
+div.container {
   width: 100%;
   position: absolute;
   top: 10%;
-  font-family: $light;
 }
 </style>

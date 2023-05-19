@@ -7,7 +7,7 @@
     <div class="side-menu-container" v-bind:style="{ right: isShow ? '-10%' : '-40%' }">
       <img class="side-menu-img" src="../../assets/icons/side-menu.svg" alt="" />
       <div class="shortcut-wrap">
-        <a id="my-land" href="./my-land">
+        <a id="my-land" href="/my-land">
           <div class="profile-img">
             <img src="https://avatars.githubusercontent.com/u/110772689?v=4" alt="" />
           </div>
@@ -17,19 +17,19 @@
         <a id="home" href="./">
           <span>首頁</span>
         </a>
-        <a id="learning-corner" href="./learning-corner">
+        <a id="learning-corner" href="/learning-corner">
           <span>學習區</span>
         </a>
-        <a id="themetic-teaching" href="./thematic-teaching">
+        <a id="themetic-teaching" href="/thematic-teaching">
           <span>主題教學</span>
         </a>
-        <a id="storybooks" href="./storybooks">
+        <a id="storybooks" href="/storybooks">
           <span>繪本故事</span>
         </a>
-        <a id="nursery-rhymes-and-finger-rhymes" href="./nursery-rhymes-and-finger-rhymes">
+        <a id="nursery-rhymes-and-finger-rhymes" href="/nursery-rhymes-and-finger-rhymes">
           <span>兒歌&手指謠</span>
         </a>
-        <a id="physical-fitness-and-rhythm-movement" href="./physical-fitness-and-rhythm-movement">
+        <a id="physical-fitness-and-rhythm-movement" href="/physical-fitness-and-rhythm-movement">
           <span>體能&律動</span>
         </a>
       </div>

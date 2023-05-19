@@ -1,11 +1,5 @@
 <template>
   <div>
-    <SectionTitle
-      title="學習區 Learning Corner"
-      :imgSrc="require('@/assets/icons/logo/learning-corner-logo-red.svg')"
-      alt="學習區logo"
-    />
-
     <div class="card-container">
       <div class="card-container-top">
         <LearningCornerCard
@@ -51,7 +45,7 @@
           :imgSrc="require('@/assets/images/learning-corner/blocks.jpg')"
         />
         <LearningCornerCard
-          href="./learning-cornercooking"
+          href="./learning-corner/cooking"
           title="烹飪區"
           alt="烹飪區"
           :img-upper="false"
@@ -82,17 +76,14 @@
 </template>
 
 <script>
-import SectionTitle from "@/components/SectionTitle.vue";
 import LearningCornerCard from "@/components/LearningCornerCard.vue";
 
 export default {
-  components: { SectionTitle, LearningCornerCard },
+  components: { LearningCornerCard },
   data() {
     return {};
   },
-  mounted() {
-    this.$store.commit("SET_LEARNING_CORNER_PAGE");
-  },
+  mounted() {},
 };
 </script>
 

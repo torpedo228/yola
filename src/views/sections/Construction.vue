@@ -1,10 +1,8 @@
 <template>
-  <div>
+  <div class="container">
     <BreadCrumb />
-    <div class="learning-corner">
       <router-view />
     </div>
-  </div>
 </template>
 
 <script>
@@ -16,7 +14,7 @@ export default {
     return {};
   },
   mounted() {
-    this.$store.commit("SET_LEARNING_CORNER_PAGE");
+    this.$store.commit("SET_CONSTRUCTION_PAGE");
   },
 };
 </script>
@@ -24,7 +22,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
-div.learning-corner {
+div.container {
   width: 100%;
   position: absolute;
   top: 10%;
