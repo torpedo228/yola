@@ -55,7 +55,7 @@ div.header-container {
 
   div.index-header {
     background-color: $primary-white;
-    position: sticky;
+    position: fixed;
     width: 100%;
     height: 80px;
     top: 0;

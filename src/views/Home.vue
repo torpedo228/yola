@@ -1,14 +1,16 @@
 <template>
   <div>
     <Hero />
+    <Introduction />
   </div>
 </template>
 
 <script>
 import Hero from "@/views/sections/home/Hero.vue";
+import Introduction from "@/views/sections/home/Introduction.vue";
 
 export default {
-  components: { Hero },
+  components: { Hero, Introduction },
   data() {
     return {};
   },
@@ -22,6 +24,5 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.container {
-}
+div.container {}
 </style>

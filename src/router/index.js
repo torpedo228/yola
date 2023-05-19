@@ -15,6 +15,14 @@ const routes = [{
     meta: {
       title: "首頁",
     },
+    // children: [{
+    //   path: "introduction",
+    //   name: "introduction",
+    //   component: () => import("@/views/sections/home/Introduction.vue"),
+    //   meta: {
+    //     title: "園區介紹",
+    //   },
+    // }],
   },
   {
     path: "/learning-corner",

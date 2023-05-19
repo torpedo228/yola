@@ -115,10 +115,12 @@ img.side-menu-btn-close {
 
 img.side-menu-btn-open {
   width: 50px;
+  height: 50px;
 }
 
 img.side-menu-btn-close {
-  width: 55px;
+  width: 50px;
+  height: 50px;
 }
 
 div.side-menu-container {

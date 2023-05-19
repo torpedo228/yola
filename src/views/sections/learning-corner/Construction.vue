@@ -1,11 +1,18 @@
 <template>
   <div class="container">
-    </div>
+    <SectionTitle
+      title="組合建構區 Construction"
+      :imgSrc="require('@/assets/icons/logo/learning-corner-logo-blue.svg')"
+      alt="組合建構區logo"
+    />
+  </div>
 </template>
 
 <script>
+import SectionTitle from "@/components/SectionTitle.vue";
+
 export default {
-  components: {  },
+  components: { SectionTitle },
   data() {
     return {};
   },

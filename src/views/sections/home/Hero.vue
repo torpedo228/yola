@@ -1,10 +1,9 @@
 <template>
-  <div>
-    <div class="hero-container">
+    <div class="container">
       <div class="main-content">
         <img class="decoration-1" src="../../../assets/decorations/hero-1.svg" alt="" />
         <h2>聚焦幼兒教育<br><br>資源共享互惠</h2>
-        <a class="go-to-introduction-btn" href="./learning-corner">
+        <a class="go-to-introduction-btn" v-scroll-to="'#introduction'">
           <h3>開始探索</h3>
         </a>
       </div>
@@ -15,7 +14,6 @@
       <img class="hero-img" src="../../../assets/images/home/hero.png" alt="" />
 
     </div>
-  </div>
 </template>
 
 <script>
@@ -34,17 +32,15 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.hero-container {
+div.container {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
 
   div.main-content {
     width: 450px;
     height: 450px;
     position: absolute;
-    top: 15%;
+    top: 8%;
     left: 20%;
 
     h2 {
@@ -62,6 +58,7 @@ div.hero-container {
       display: inline-block;
       font-size: $sub-info;
       color: $primary-black;
+      cursor: pointer;
 
       h3 {
         display: inline-block;
@@ -72,7 +69,7 @@ div.hero-container {
         border-radius: 40px;
         position: absolute;
         right: -10%;
-        bottom: 20%;
+        top: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -112,7 +109,8 @@ div.hero-container {
   }
 
   img.decoration-3 {
-    bottom: 25%;
+    width: 200px;
+    top: 25%;
     left: 5%;
   }
 
@@ -120,7 +118,7 @@ div.hero-container {
   img.hero-img,
   img.under-decoration {
     width: 500px;
-    top: 15%;
+    top: 5%;
     right: 0;
   }
 }
