@@ -1,7 +1,7 @@
 <template>
   <div class="header-container" id="page-top">
     <div class="index-header">
-      <a href="/" @click="backToHome">
+      <a href="" @click="backToHome">
         <img :class="isStandardMode ? 'logo' : 'left-logo'" src="../../assets/icons/logo/yola.svg" alt="幼樂園Yo-La! Logo" />
       </a>
       <div class="side-menu">
