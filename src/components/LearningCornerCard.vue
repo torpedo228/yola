@@ -90,7 +90,7 @@ div.card-wrap-top {
     color: $primary-white;
     position: absolute;
     transform: translate(-50%, -50%);
-    z-index: 2;
+    
   }
 
   h3.title-bottom {
@@ -108,11 +108,14 @@ div.card-wrap-top {
   }
 
   img.img-top {
+    position: absolute;
+    z-index: -2;
   }
 
   img.img-bottom {
     position: absolute;
     bottom: 0;
+    z-index: -2;
   }
 
   div.mask-bottom,
@@ -120,7 +123,7 @@ div.card-wrap-top {
     position: absolute;
     width: 150px;
     height: 60%;
-    z-index: 1;
+    z-index: -1;
   }
 
   div.mask-bottom {

@@ -5,14 +5,14 @@
     <div class="side-menu-container" v-bind:style="{ right: isShow ? '-10%' : '-40%' }">
       <img class="side-menu-img" src="../../assets/icons/side-menu.svg" alt="" />
       <div class="shortcut-wrap">
-        <a id="my-land" href="#">
+        <a id="my-land" href="./test">
           <div class="profile-img">
             <img src="https://avatars.githubusercontent.com/u/110772689?v=4" alt="" />
           </div>
           <!-- <i class="fa-solid fa-circle-user"></i> -->
           <span class="my-land">我的樂園</span>
         </a>
-        <a id="home" href="./home">
+        <a id="home" href="./">
           <span>首頁</span>
         </a>
         <a id="learning-corner" href="./learning-corner">
@@ -72,12 +72,15 @@ export default {
 img.side-menu-btn {
   width: 40px;
   cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 div.side-menu-container {
-  width: 500px;
+  width: 600px;
   height: 550px;
-  z-index: 999;
   position: fixed;
   text-align: center;
   -webkit-transition: 0.35s ease-in-out;
@@ -88,7 +91,7 @@ div.side-menu-container {
 
   img.side-menu-img {
     width: 100%;
-    height: 550px;
+    height: 100%;
   }
 
   div.shortcut-wrap {
@@ -155,7 +158,7 @@ div.side-menu-container {
 
     a#my-land {
       width: 150px;
-      
+
       padding: 5px 0;
       margin-bottom: 5%;
       display: flex;
@@ -169,7 +172,7 @@ div.side-menu-container {
 
       div.profile-img {
         width: 150px;
-        
+
         img {
           width: 80px;
           height: 80px;
