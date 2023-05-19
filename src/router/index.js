@@ -66,8 +66,8 @@ const routes = [{
         },
       },
       {
-        path: "construction",
-        name: "construction",
+        path: "storybooks",
+        name: "storybooks",
         component: () => import("@/views/sections/Storybooks.vue"),
         meta: {
           title: "繪本故事",

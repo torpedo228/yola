@@ -83,8 +83,13 @@ img.side-menu-btn-close {
   }
 }
 
-img.side-menu-btn-open{width: 50px;}
-img.side-menu-btn-close{width: 76px;}
+img.side-menu-btn-open {
+  width: 50px;
+}
+
+img.side-menu-btn-close {
+  width: 55px;
+}
 
 div.side-menu-container {
   width: 600px;
@@ -166,7 +171,6 @@ div.side-menu-container {
 
     a#my-land {
       width: 150px;
-
       padding: 5px 0;
       margin-bottom: 5%;
       display: flex;
@@ -176,6 +180,14 @@ div.side-menu-container {
 
       &:hover {
         background-color: $primary-red;
+
+
+        img {
+          background-color: $primary-red;
+          outline: 10px solid $secondary-red;
+          border-radius: 50%;
+        }
+
       }
 
       div.profile-img {
@@ -185,11 +197,6 @@ div.side-menu-container {
           width: 80px;
           height: 80px;
           border-radius: 50%;
-
-          &:hover {
-            outline: 10px solid $secondary-red;
-            border-radius: 50%;
-          }
         }
 
         // i {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <BreadCrumb />
-    <div class="learning-corner">
+    <div class="physical-fitness-and-rhythm-movement">
       <router-view />
     </div>
   </div>
@@ -16,7 +16,7 @@ export default {
     return {};
   },
   mounted() {
-    this.$store.commit("SET_LEARNING_CORNER_PAGE");
+    this.$store.commit("SET_PHYSICAL_FITNESS_AND_RHYTHM_MOVEMENT_PAGE");
   },
 };
 </script>
@@ -24,7 +24,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
-div.learning-corner {
+div.physical-fitness-and-rhythm-movement {
   width: 100%;
   position: absolute;
   top: 10%;

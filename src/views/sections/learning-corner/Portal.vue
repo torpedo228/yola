@@ -9,7 +9,7 @@
     <div class="card-container">
       <div class="card-container-top">
         <LearningCornerCard
-          href="./learning-corner/art"
+          href="./learning-corner/literacy"
           title="語文區"
           alt="語文區"
           :img-upper="true"
@@ -17,7 +17,7 @@
           :imgSrc="require('@/assets/images/learning-corner/literacy.jpg')"
         />
         <LearningCornerCard
-          href="./learning-corner/art"
+          href="./learning-corner/role-playing"
           title="扮演區"
           alt="扮演區"
           :img-upper="false"
@@ -33,7 +33,7 @@
           :imgSrc="require('@/assets/images/learning-corner/art.jpg')"
         />
         <LearningCornerCard
-          href="./learning-corner/art"
+          href="./learning-corner/math"
           title="數學區"
           alt="數學區"
           :img-upper="false"
@@ -43,7 +43,7 @@
       </div>
       <div class="card-container-bottom">
         <LearningCornerCard
-          href="./learning-corner/art"
+          href="./learning-corner/blocks"
           title="積木區"
           alt="積木區"
           :img-upper="true"
@@ -51,7 +51,7 @@
           :imgSrc="require('@/assets/images/learning-corner/blocks.jpg')"
         />
         <LearningCornerCard
-          href="./learning-corner/art"
+          href="./learning-cornercooking"
           title="烹飪區"
           alt="烹飪區"
           :img-upper="false"
@@ -59,7 +59,7 @@
           :imgSrc="require('@/assets/images/learning-corner/cooking.jpg')"
         />
         <LearningCornerCard
-          href="./learning-corner/art"
+          href="./learning-corner/construction"
           title="組合建構區"
           alt="組合建構區"
           :img-upper="true"
@@ -67,7 +67,7 @@
           :imgSrc="require('@/assets/images/learning-corner/construction.png')"
         />
         <LearningCornerCard
-          href="./learning-corner/art"
+          href="./learning-corner/natural-observe"
           title="自然觀察區"
           alt="自然觀察區"
           :img-upper="false"
