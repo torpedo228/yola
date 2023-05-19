@@ -73,7 +73,7 @@ img.side-menu-btn {
 }
 
 div.side-menu-container {
-  width: 400px;
+  width: 500px;
   height: 550px;
   z-index: 999;
   position: fixed;
@@ -126,6 +126,7 @@ div.side-menu-container {
         color: $primary-black;
         font-size: $sub-info;
         text-align: center;
+
       }
     }
 
@@ -135,13 +136,16 @@ div.side-menu-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 20px;
+      gap: 10px;
 
-      span.my-land {}
+      span.my-land {
+        color: $primary-white;
+        font-size: $sub-info;
+      }
 
       i {
-        color: $primary-grey;
-        font-size: 70px;
+        color: $primary-white;
+        font-size: 80px;
       }
     }
   }
