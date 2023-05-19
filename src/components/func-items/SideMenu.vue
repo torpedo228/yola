@@ -1,21 +1,9 @@
 <template>
   <div>
-    <img
-      class="side-menu-btn"
-      src="../../assets/icons/flag.svg"
-      alt="選單按鈕"
-      @click="toggle()"
-    />
+    <img class="side-menu-btn" src="../../assets/icons/flag.svg" alt="選單按鈕" @click="toggle()" />
 
-    <div
-      class="side-menu-container"
-      v-bind:style="{ right: isShow ? '-10%' : '-40%' }"
-    >
-      <img
-        class="side-menu-img"
-        src="../../assets/icons/side-menu.svg"
-        alt=""
-      />
+    <div class="side-menu-container" v-bind:style="{ right: isShow ? '-10%' : '-40%' }">
+      <img class="side-menu-img" src="../../assets/icons/side-menu.svg" alt="" />
       <div class="shortcut-wrap">
         <a id="my-land" href="#">
           <i class="fa-solid fa-circle-user"></i>
@@ -50,11 +38,11 @@ export default {
   components: {},
   data() {
     return {
-      isShow: true,
+      isShow: false,
     };
   },
   computed: {},
-  mounted() {},
+  mounted() { },
   watch: {},
   methods: {
     turnOn() {
