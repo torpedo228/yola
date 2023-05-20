@@ -24,7 +24,7 @@ export default {
   data() {
     return {};
   },
-  mounted() {},
+  mounted() { },
 };
 </script>
 
@@ -47,6 +47,14 @@ body {
 
   h3 {
     font-weight: $font-weight-light;
+    color: $primary-black;
+    font-size: $h3;
+  }
+
+  h4 {
+    font-weight: $font-weight-light;
+    color: $primary-black;
+    font-size: $h4;
   }
 
   a {
