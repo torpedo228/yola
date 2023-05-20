@@ -25,10 +25,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
-div.container {
+div.container{
   width: 100%;
-  position: absolute;
-  top: 10%;
-  font-family: $light;
+  height: 700px;
+  margin-top:80px;
+  position: relative;
 }
 </style>

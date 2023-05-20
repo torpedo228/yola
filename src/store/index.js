@@ -52,6 +52,9 @@ export default createStore({
     SET_MYLAND_PAGE(state) {
       state.currentPage = "my-land";
     },
+    SET_STILL_BUILDING_PAGE(state) {
+      state.currentPage = "still-building";
+    },
     SET_TEST_PAGE(state) {
       state.currentPage = "test";
     },

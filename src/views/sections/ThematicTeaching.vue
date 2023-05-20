@@ -29,10 +29,10 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.container {
+div.container{
   width: 100%;
-  position: absolute;
-  top: 10%;
+  height: 700px;
+  margin-top:80px;
+  position: relative;
 }
 </style>
-z

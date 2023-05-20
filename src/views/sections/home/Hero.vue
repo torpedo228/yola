@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" id="hero">
       <div class="main-content">
         <img class="decoration-1" src="../../../assets/decorations/hero-1.svg" alt="" />
         <h2>聚焦幼兒教育<br><br>資源共享互惠</h2>
@@ -34,13 +34,15 @@ export default {
 
 div.container {
   width: 100%;
-  height: 100%;
+  height: 550px;
+  position: relative;
+  margin-top:80px;
 
   div.main-content {
     width: 450px;
     height: 450px;
     position: absolute;
-    top: 8%;
+    top: 10%;
     left: 20%;
 
     h2 {
@@ -104,13 +106,14 @@ div.container {
 
 
   img.decoration-2 {
-    top: 40px;
+    top: -10%;
     left: 0;
   }
 
   img.decoration-3 {
-    width: 200px;
-    top: 25%;
+    width: 300px;
+    height: 200px;
+    top: 60%;
     left: 5%;
   }
 
@@ -118,7 +121,7 @@ div.container {
   img.hero-img,
   img.under-decoration {
     width: 500px;
-    top: 5%;
+    top: 3%;
     right: 0;
   }
 }

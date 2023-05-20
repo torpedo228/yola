@@ -32,7 +32,7 @@ div.title {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin: 10px 0;
+  margin: 5px 0;
 
   img {
     width: 30px;

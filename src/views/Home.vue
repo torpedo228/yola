@@ -2,15 +2,22 @@
   <div>
     <Hero />
     <Introduction />
+    <LatestNews />
+    <TopicArticle />
+    <RelatedLink />
+
   </div>
 </template>
 
 <script>
 import Hero from "@/views/sections/home/Hero.vue";
 import Introduction from "@/views/sections/home/Introduction.vue";
+import LatestNews from "@/views/sections/home/LatestNews.vue";
+import TopicArticle from "@/views/sections/home/TopicArticle.vue";
+import RelatedLink from "@/views/sections/home/RelatedLink.vue";
 
 export default {
-  components: { Hero, Introduction },
+  components: { Hero, Introduction, LatestNews, TopicArticle, RelatedLink },
   data() {
     return {};
   },

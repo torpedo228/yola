@@ -105,6 +105,14 @@ const routes = [{
     },
   },
   {
+    path: "/still-building",
+    name: "still-building",
+    component: () => import("@/views/StillBuilding.vue"),
+    meta: {
+      title: "建造中",
+    },
+  },
+  {
     path: "/test",
     name: "test",
     // this.$router.push({ name: "test" });

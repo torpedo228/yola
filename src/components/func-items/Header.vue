@@ -1,6 +1,6 @@
 <template>
-  <div class="header-container" id="page-top">
-    <div class="index-header">
+  <div class="container" id="page-top">
+    <div class="home-header">
       <a href="#" @click="backToHome">
         <img :class="isStandardMode ? 'logo' : 'left-logo'" src="../../assets/icons/logo/yola.svg" alt="幼樂園Yo-La! Logo" />
       </a>
@@ -50,10 +50,12 @@ export default {
 @import "@/assets/scss/all.scss";
 $height: 100%;
 
-div.header-container {
-  height: 800px;
+div.container {
+  width: 100%;
+  position: relative;
 
-  div.index-header {
+
+  div.home-header {
     background-color: $primary-white;
     position: fixed;
     width: 100%;
