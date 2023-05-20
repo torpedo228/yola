@@ -48,8 +48,8 @@ div.container {
     h2 {
       position: absolute;
       color: $primary-white;
-      transform: translate(80%, 160%);
-      line-height: $main-title;
+      transform: translate(50%, 100%);
+      line-height: $h2;
     }
 
     img.decoration-1 {
@@ -71,7 +71,7 @@ div.container {
         border-radius: 40px;
         position: absolute;
         right: -10%;
-        top: 50%;
+        top: 60%;
         display: flex;
         align-items: center;
         justify-content: center;

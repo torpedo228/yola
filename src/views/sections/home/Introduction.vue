@@ -1,209 +1,70 @@
 <template>
   <div class="container" id="introduction">
-    <SectionTitle
-      title="園區介紹 Introduction"
-      :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
-      alt="園區介紹logo"
-    />
+    <SectionTitle title="園區介紹 Introduction" :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')" alt="園區介紹logo" />
 
     <div class="decoration">
-      <img
-        class="all-characters"
-        src="../../../assets/icons/characters/all-characters.svg"
-        alt=""
-      />
-      <img src="../../../assets/decorations/intruduction.svg" alt="" />
+      <img class="all-characters" src="../../../assets/icons/characters/all-characters.svg" alt="" />
+      <img class="rainbow-stripe" src="../../../assets/decorations/intruduction.svg" alt="" />
     </div>
 
     <div class="portal-container">
       <div class="go-to-botton-left-wrap">
-        <a
-          href="./learning-corner"
-          @mouseover="showLearningCorner()"
-          @mouseleave="turnOnAutoSlide()"
-        >
-          <div
-            class="go-to-btn"
-            :class="
-              ' learning-corner' + (isLearningCornerActive ? '-active' : '')
-            "
-          >
+        <a href="./learning-corner" @mouseover="showLearningCorner()" @mouseleave="turnOnAutoSlide()">
+          <div class="go-to-btn" :class="' learning-corner' + (isLearningCornerActive ? '-active' : '')
+            ">
             學習區
           </div>
         </a>
 
-        <a
-          href="./thematic-teaching"
-          @mouseover="showThematicTeaching()"
-          @mouseleave="turnOnAutoSlide()"
-        >
-          <div
-            class="go-to-btn"
-            :class="
-              ' thematic-teaching' + (isThematicTeachingActive ? '-active' : '')
-            "
-          >
+        <a href="./thematic-teaching" @mouseover="showThematicTeaching()" @mouseleave="turnOnAutoSlide()">
+          <div class="go-to-btn" :class="' thematic-teaching' + (isThematicTeachingActive ? '-active' : '')
+            ">
             主題教學
           </div>
         </a>
 
-        <a
-          href="./storybooks"
-          @mouseover="showStorybooks()"
-          @mouseleave="turnOnAutoSlide()"
-        >
-          <div
-            class="go-to-btn"
-            :class="' storybooks' + (isStorybooksActive ? '-active' : '')"
-          >
+        <a href="./storybooks" @mouseover="showStorybooks()" @mouseleave="turnOnAutoSlide()">
+          <div class="go-to-btn" :class="' storybooks' + (isStorybooksActive ? '-active' : '')">
             繪本故事
           </div>
         </a>
       </div>
       <div class="introduction-panel">
-        <div
-          class="intro-card"
-          :class="sectionMeta[currentSectionNo].name + '-intro-card'"
-        >
+        <div class="intro-card" :class="sectionMeta[currentSectionNo].name + '-intro-card'">
           <div class="title-wrap">
             <img :src="sectionMeta[currentSectionNo].logo1" alt="" />
 
             <h3>{{ sectionMeta[currentSectionNo].title }}</h3>
 
-            <img
-              v-if="sectionMeta[currentSectionNo].logo2 !== ''"
-              :src="sectionMeta[currentSectionNo].logo2"
-              alt=""
-            />
+            <img v-if="sectionMeta[currentSectionNo].logo2 !== ''" :src="sectionMeta[currentSectionNo].logo2" alt="" />
           </div>
           <p>
             {{ sectionMeta[currentSectionNo].content }}
           </p>
-          <img
-            :class="'icon-' + sectionMeta[currentSectionNo].iconPosition"
-            src="../../../assets/icons/logo/yola-icon.svg"
-            alt=""
-          />
+          <img :class="'icon-' + sectionMeta[currentSectionNo].iconPosition"
+            src="../../../assets/icons/logo/yola-icon.svg" alt="" />
         </div>
-
-        <!-- <div class="learning-corner-intro-card intro-card" v-if="isLearningCorner">
-          <div class="title-wrap">
-            <img src="../../../assets/icons/logo/learning-corner-logo-red.svg" alt="" />
-            <h3>學習區</h3>
-          </div>
-          <p>
-            目前開放八大區，分別為
-            語文區、扮演區、美勞區、數學區、積木區、烹飪區、組合建構區以及鬆散素材區，
-            每ㄧ區備有各式素材的介紹、玩法、範例圖等等可供參考使用，並網羅主題相關好站，提供使用者延伸參考。
-          </p>
-          <img class="icon-right" src="../../../assets/icons/logo/yola-icon.svg" alt="" />
-        </div>
-
-        <div class="thematic-teaching-intro-card intro-card" v-else-if="isThematicTeaching">
-          <div class="title-wrap">
-            <img src="../../../assets/icons/logo/thematic-teaching-logo.svg" alt="" />
-            <h3>主題教學</h3>
-          </div>
-          <p>
-            目前開放三大功能，分別為
-            主題教學設計、教學活動參考及主題發想牆，提供使用者在規劃課程、設計活動時的參考管道，也能透過分享大會專區參閱他人想法及提供各種教學點子。
-          </p>
-          <img class="icon-left" src="../../../assets/icons/logo/yola-icon.svg" alt="" />
-        </div>
-
-        <div class="storybooks-intro-card intro-card" v-else-if="isStorybooks">
-          <div class="title-wrap">
-            <img src="../../../assets/icons/logo/storybooks-logo.svg" alt="" />
-            <h3>繪本故事</h3>
-          </div>
-          <p>
-            提供授權之繪本電子檔讓使用者下載、便於教學，並整理網路上之影音資源供使用者參考，不定期舉辦主題書展讓使用者對繪本有更近一步的認識。
-          </p>
-          <img class="icon-right" src="../../../assets/icons/logo/yola-icon.svg" alt="" />
-        </div>
-
-        <div class="nursery-rhymes-and-finger-rhymes-intro-card intro-card" v-else-if="isNurseryRhymesAndFingerRhymes">
-          <div class="title-wrap">
-            <img src="../../../assets/icons/logo/nursery-rhymes-logo.svg" alt="" />
-            <h3>兒歌&手指謠</h3>
-            <img src="../../../assets/icons/logo/finger-rhymes-logo.svg" alt="" />
-          </div>
-          <p>
-            整理各式熱門兒歌，不管是懷舊、經典、最新最流行的歌曲都能這裡找的到。此外，本區也收集了上百首班級經營必備手指謠，其中更涵蓋手指謠念詞與教學影片，供老師與家長隨時取用隨時取用參考。
-          </p>
-          <img class="icon-left" src="../../../assets/icons/logo/yola-icon.svg" alt="" />
-        </div>
-
-        <div class="physical-fitness-and-rhythm-movement-intro-card intro-card"
-          v-else-if="isPhysicalFitnessAndRhythmMovement">
-          <div class="title-wrap">
-            <img src="../../../assets/icons/logo/physical-fitness-logo.svg" alt="" />
-            <h3>體能&律動</h3>
-            <img src="../../../assets/icons/logo/rhythm-and-movement-logo.svg" alt="" />
-          </div>
-          <p>
-            網羅多樣體能器材與提供相關活動，並統整熱門律動歌曲與教學影片供使用者參考。
-          </p>
-          <img class="icon-right" src="../../../assets/icons/logo/yola-icon.svg" alt="" />
-        </div>
-
-        <div class="my-land-intro-card intro-card" v-else-if="isMyLand">
-          <div class="title-wrap">
-            <img src="../../../assets/icons/logo/my-land.svg" alt="" />
-            <h3>我的樂園</h3>
-          </div>
-          <p>
-            提供使用者一個管理收藏與自訂風格的個人專區，也可以拜訪他人的樂園欣賞他人公開的收藏資訊。
-          </p>
-          <img class="icon-left" src="../../../assets/icons/logo/yola-icon.svg" alt="" />
-        </div> -->
-
-        <!-- <div class="blank-intro-card intro-card" v-else>
-          <h3>請將滑鼠移到各區按鈕觀看詳細說明!</h3>
-          <img src="../../../assets/icons/logo/yola-icon.svg" alt="" />
-        </div> -->
       </div>
 
       <div class="go-to-botton-right-wrap">
-        <a
-          href="./nursery-rhymes-and-finger-rhymes"
-          @mouseover="showNurseryRhymesAndFingerRhymes()"
-          @mouseleave="turnOnAutoSlide()"
-        >
-          <div
-            class="go-to-btn"
-            :class="
-              'nursery-rhymes-and-finger-rhymes' +
-              (isNurseryRhymesAndFingerRhymesActive ? '-active' : '')
-            "
-          >
+        <a href="./nursery-rhymes-and-finger-rhymes" @mouseover="showNurseryRhymesAndFingerRhymes()"
+          @mouseleave="turnOnAutoSlide()">
+          <div class="go-to-btn" :class="'nursery-rhymes-and-finger-rhymes' +
+            (isNurseryRhymesAndFingerRhymesActive ? '-active' : '')
+            ">
             兒歌&手指謠
           </div>
         </a>
-        <a
-          href="./physical-fitness-and-rhythm-movement"
-          @mouseover="showPhysicalFitnessAndRhythmMovement()"
-          @mouseleave="turnOnAutoSlide()"
-        >
-          <div
-            class="go-to-btn"
-            :class="
-              'physical-fitness-and-rhythm-movement' +
-              (isPhysicalFitnessAndRhythmMovementActive ? '-active' : '')
-            "
-          >
+        <a href="./physical-fitness-and-rhythm-movement" @mouseover="showPhysicalFitnessAndRhythmMovement()"
+          @mouseleave="turnOnAutoSlide()">
+          <div class="go-to-btn" :class="'physical-fitness-and-rhythm-movement' +
+            (isPhysicalFitnessAndRhythmMovementActive ? '-active' : '')
+            ">
             體能&律動
           </div>
         </a>
-        <a
-          href="./my-land"
-          @mouseover="showMyLand()"
-          @mouseleave="turnOnAutoSlide()"
-        >
-          <div
-            class="go-to-btn"
-            :class="'my-land' + (isMyLandActive ? '-active' : '')"
-          >
+        <a href="./my-land" @mouseover="showMyLand()" @mouseleave="turnOnAutoSlide()">
+          <div class="go-to-btn" :class="'my-land' + (isMyLandActive ? '-active' : '')">
             我的樂園
           </div>
         </a>
@@ -385,7 +246,7 @@ div.container {
     div.introduction-panel {
       padding: 10px 20px;
       width: 450px;
-      height: 250px;
+      height: 230px;
       border: 10px solid;
       border-color: $primary-red $primary-blue $primary-green $primary-yellow;
       border-radius: 30px;
@@ -398,7 +259,7 @@ div.container {
 
         h3 {
           text-align: center;
-          font-size: $sub-title;
+          font-size: $h3;
         }
 
         img {
@@ -417,12 +278,12 @@ div.container {
           gap: 10px;
 
           img {
-            width: $main-title;
+            width: $h3;
           }
 
           h3 {
             margin: 10px 0;
-            font-size: $main-title;
+            font-size: $h3;
           }
         }
 
@@ -457,8 +318,7 @@ div.container {
       gap: 10px;
     }
 
-    div.go-to-botton-right-wrap {
-    }
+    div.go-to-botton-right-wrap {}
 
     div.go-to-btn {
       line-height: 70px;
@@ -551,10 +411,14 @@ div.container {
     display: flex;
     justify-content: center;
 
+    img.rainbow-stripe{
+      height: 50px;
+    }
+
     img.all-characters {
-      height: 200%;
+      height: 250%;
       position: absolute;
-      bottom: 50%;
+      bottom: 35%;
     }
   }
 }

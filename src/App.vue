@@ -42,7 +42,7 @@ body {
   h2 {
     font-weight: $font-weight-light;
     color: $primary-black;
-    font-size: $main-title;
+    font-size: $h2;
   }
 
   h3 {

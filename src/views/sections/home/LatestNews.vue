@@ -62,27 +62,11 @@ export default defineComponent({
 @import "@/assets/scss/all.scss";
 
 .carousel__slide {
-  margin: 20px 0;
+  padding: 5px;
 }
 
 .carousel__viewport {
   perspective: 2000px;
-}
-
-ol.carousel__pagination {
-  li.carousel__pagination-item {
-    width: 200px;
-
-    button.carousel__pagination-button {
-    }
-  }
-}
-
-button.carousel__prev {
-  width: 400px;
-}
-
-button.carousel__next {
 }
 
 .carousel__track {

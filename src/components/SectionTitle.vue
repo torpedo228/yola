@@ -17,7 +17,7 @@ export default {
     return {};
   },
   computed: {},
-  mounted() {},
+  mounted() { },
   watch: {},
   methods: {},
 };
@@ -28,6 +28,7 @@ export default {
 @import "@/assets/scss/all.scss";
 
 div.title {
+
   color: $primary-black;
   display: flex;
   justify-content: center;
@@ -36,6 +37,10 @@ div.title {
 
   img {
     width: 30px;
+  }
+
+  h2 {
+    font-size: $h2;
   }
 }
 </style>
