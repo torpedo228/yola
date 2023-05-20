@@ -17,7 +17,11 @@
 
     <div class="portal-container">
       <div class="go-to-botton-left-wrap">
-        <a href="./learning-corner" @mouseover="showLearningCorner()">
+        <a
+          href="./learning-corner"
+          @mouseover="showLearningCorner()"
+          @mouseleave="turnOnAutoSlide()"
+        >
           <div
             class="go-to-btn"
             :class="
@@ -28,7 +32,11 @@
           </div>
         </a>
 
-        <a href="./thematic-teaching" @mouseover="showThematicTeaching()">
+        <a
+          href="./thematic-teaching"
+          @mouseover="showThematicTeaching()"
+          @mouseleave="turnOnAutoSlide()"
+        >
           <div
             class="go-to-btn"
             :class="
@@ -39,7 +47,11 @@
           </div>
         </a>
 
-        <a href="./storybooks" @mouseover="showStorybooks()">
+        <a
+          href="./storybooks"
+          @mouseover="showStorybooks()"
+          @mouseleave="turnOnAutoSlide()"
+        >
           <div
             class="go-to-btn"
             :class="' storybooks' + (isStorybooksActive ? '-active' : '')"
@@ -156,6 +168,7 @@
         <a
           href="./nursery-rhymes-and-finger-rhymes"
           @mouseover="showNurseryRhymesAndFingerRhymes()"
+          @mouseleave="turnOnAutoSlide()"
         >
           <div
             class="go-to-btn"
@@ -170,6 +183,7 @@
         <a
           href="./physical-fitness-and-rhythm-movement"
           @mouseover="showPhysicalFitnessAndRhythmMovement()"
+          @mouseleave="turnOnAutoSlide()"
         >
           <div
             class="go-to-btn"
@@ -181,7 +195,11 @@
             體能&律動
           </div>
         </a>
-        <a href="./my-land" @mouseover="showMyLand()">
+        <a
+          href="./my-land"
+          @mouseover="showMyLand()"
+          @mouseleave="turnOnAutoSlide()"
+        >
           <div
             class="go-to-btn"
             :class="'my-land' + (isMyLandActive ? '-active' : '')"
@@ -201,6 +219,10 @@ export default {
   components: { SectionTitle },
   data() {
     return {
+      timer: {
+        instance: null,
+        countdownMs: 2000,
+      },
       currentSectionNo: 0,
       sectionMeta: [
         {
@@ -282,7 +304,12 @@ export default {
       return this.sectionMeta[this.currentSectionNo].name == "my-land";
     },
   },
-  mounted() {},
+  mounted() {
+    this.turnOnAutoSlide();
+  },
+  beforeUnmount() {
+    this.turnOffAutoSlide();
+  },
   methods: {
     showLearningCorner() {
       this.showSection(0);
@@ -305,6 +332,20 @@ export default {
 
     showSection(sectionNo) {
       this.currentSectionNo = sectionNo;
+      this.turnOffAutoSlide();
+    },
+    nextSection() {
+      this.currentSectionNo =
+        (this.currentSectionNo + 1) % this.sectionMeta.length;
+    },
+    turnOnAutoSlide() {
+      this.timer.instance = setInterval(
+        this.nextSection,
+        this.timer.countdownMs
+      );
+    },
+    turnOffAutoSlide() {
+      clearInterval(this.timer.instance);
     },
   },
 };
