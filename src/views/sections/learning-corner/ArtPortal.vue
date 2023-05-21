@@ -7,28 +7,38 @@
         <a href="/learning-corner/art/drawings" id="drawings">
           <div class="portal-item drawings">繪畫</div>
         </a>
-        <a href="./still-building" id="paper-work">
+        <a href="/still-building" id="paper-work">
           <div class="portal-item paper-work">紙工</div>
         </a>
-        <a href="./still-building" id="kneading">
-          <div class="portal-item kneading">捏塑</div>
+
+        <a href="/still-building" id="kneading">
+          <div class="kneading">
+            <div class="triangle triangle1"></div>
+            <div class="triangle triangle2"></div>
+            <div class="triangle triangle3"></div>
+            <div class="triangle triangle4"></div>
+            <p>捏塑</p>
+          </div>
         </a>
       </div>
-
-
-
-      <!-- <div class="portal-bottom">
-        <a href="">
-          <div class="portal-item weaving">編織</div>
+      <div class="portal-bottom">
+        <a href="/still-building" id="weaving">
+          <div class="weaving">
+            <div class="triangle triangle1"></div>
+            <div class="triangle triangle2"></div>
+            <div class="triangle triangle3"></div>
+            <div class="triangle triangle4"></div>
+            <p>編織</p>
+          </div>
         </a>
-        <a href="">
-          <div class="portal-item 
-multi-material-creation">多元材料創作</div>
+
+        <a href="/still-building" id="multi-material-creation">
+          <div class="portal-item multi-material-creation">多元材料創作</div>
         </a>
-        <a href="">
-          <div class="portal-item recycle-material-creation">回收材料創作</div>
+        <a href="/still-building" id="recycle-material-creation">
+          <div class="portal-item  recycle-material-creation">回收材料創作</div>
         </a>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
@@ -37,7 +47,7 @@ multi-material-creation">多元材料創作</div>
 import SectionTitle from "@/components/SectionTitle.vue";
 
 export default {
-  components: { SectionTitle, },
+  components: { SectionTitle },
   data() {
     return {};
   },
@@ -61,105 +71,258 @@ div.container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 40px;
 
-    div.portal-top {
+    div.portal-top,
+    div.portal-bottom {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 30px;
+      gap: 60px;
 
       a {
-        width: 180px;
-        height: 180px;
+        width: 150px;
+        height: 150px;
         display: block;
         border: 25px solid;
 
+        &:link {
+          color: $primary-black;
+        }
+
+        &:visited {
+          color: $primary-black;
+        }
+
+        &:hover {
+          opacity: 0.7;
+        }
+
         div.portal-item {
           text-align: center;
-          line-height: 170px;
+          line-height: 140px;
           border: 5px solid;
           outline: 10px solid $primary-white;
-          color: $primary-black ;
+          color: $primary-black;
           font-size: $h3;
         }
       }
 
       a#drawings {
-        border-radius: $border-radius-circle ;
+        border-radius: $border-radius-circle;
         border-color: $primary-yellow;
 
-        &:link {
-          color:
-            $primary-yellow;
-        }
-
-        &:visited {
-          color:
-            $primary-yellow;
-        }
-
         div.drawings {
-          border-radius: $border-radius-circle ;
+          border-radius: $border-radius-circle;
           border-color: $primary-yellow;
         }
       }
 
       a#paper-work {
-        border-radius: 30px ;
+        border-radius: 20px;
         border-color: $primary-green;
 
-        &:link {
-          color:
-            $primary-green;
-        }
-
-        &:visited {
-          color:
-            $primary-green;
-        }
-
         div.paper-work {
-          border-radius: 30px ;
+          border-radius: 10px;
           border-color: $primary-green;
         }
       }
 
-      a#kneading {
-        border-radius: $border-radius-circle ;
-        border-color: $primary-yellow;
-
-        &:link {
-          color:
-            $primary-yellow;
-        }
-
-        &:visited {
-          color:
-            $primary-yellow;
-        }
-
-        div.drawings {
-          border-radius: $border-radius-circle ;
-          border-color: $primary-yellow;
-        }
+      a#kneading,
+      a#weaving {
+        border-radius: 30px;
+        border-color: $primary-blue;
+        border-width: 0 75px 150px 75px;
+        display: block;
+        position: relative;
+        border: 0;
       }
 
-      div.paper-work {}
+      a#kneading {
+        margin-left: 50px;
+      }
 
-      div.kneading {}
+      a#weaving {
+        margin-left: 25px;
+      }
 
+      div.kneading,
+      div.weaving {
+        .triangle {
+          position: relative;
+          text-align: left;
 
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            background-color: inherit;
+          }
+        }
 
-      div.portal-top {}
+        .triangle1 {
+          position: relative;
 
-      div.weaving {}
+          background-color: $primary-white;
 
-      div.multi-material-creation {}
+          transform: rotate(-60deg) skewX(-30deg) scale(1, 0.866);
+          width: 85px;
+          height: 85px;
+          border-top-right-radius: 30%;
+          border-bottom-left-radius: 30%;
+          border: 20px solid $primary-blue;
 
-      div.recycle-material-creation {}
+          &::before,
+          &::after {
+            width: 85px;
+            height: 85px;
+            border-top-right-radius: 30%;
+            border-bottom-left-radius: 30%;
+            border: 20px solid $primary-blue;
+          }
+
+          &::before {
+            transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translate(15.75%, -50.25%);
+          }
+
+          &::after {
+            transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%, 15.75%);
+          }
+        }
+
+        .triangle2 {
+          position: absolute;
+          top: 12%;
+          left: 12%;
+          border: 10px solid $primary-white;
+
+          background-color: $primary-blue;
+          transform: rotate(-60deg) skewX(-30deg) scale(1, 0.866);
+          width: 70px;
+          height: 70px;
+          border-top-right-radius: 20%;
+          border-bottom-left-radius: 20%;
+
+          &::before,
+          &::after {
+            width: 85px;
+            height: 85px;
+            border-top-right-radius: 20%;
+            border-bottom-left-radius: 30%;
+
+            border: 10px solid $primary-white;
+          }
+
+          &::before {
+            transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translate(9.25%, -50.25%);
+          }
+
+          &::after {
+            transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%, 23.75%);
+          }
+        }
+
+        .triangle3 {
+          position: absolute;
+          top: 21%;
+          left: 13.5%;
+          border: 13px solid $primary-blue;
+
+          transform: rotate(-60deg) skewX(-30deg) scale(1, 0.866);
+          width: 60px;
+          height: 60px;
+          border-top-right-radius: 10%;
+          border-bottom-left-radius: 20%;
+
+          &::before,
+          &::after {
+            width: 60px;
+            height: 60px;
+            border-top-right-radius: 20%;
+            border-bottom-left-radius: 30%;
+
+            border: 13px solid $primary-blue;
+          }
+
+          &::before {
+            transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translate(14.75%, -50%);
+          }
+
+          &::after {
+            transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%, 14.75%);
+          }
+        }
+
+        .triangle4 {
+          position: absolute;
+          top: 25.25%;
+          left: 15.25%;
+
+          background-color: $primary-white;
+          transform: rotate(-60deg) skewX(-30deg) scale(1, 0.866);
+          width: 80px;
+          height: 80px;
+          border-top-right-radius: 10%;
+          border-bottom-left-radius: 20%;
+
+          &::before,
+          &::after {
+            width: 80px;
+            height: 80px;
+            border-top-right-radius: 20%;
+            border-bottom-left-radius: 30%;
+          }
+
+          &::before {
+            transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translate(0%, -46%);
+          }
+
+          &::after {
+            transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(46%, 0%);
+          }
+        }
+
+        p {
+          font-size: $h3;
+          position: absolute;
+          top: 45%;
+          left: 42%;
+          transform: translate(-50%, -50%);
+        }
+      }
     }
   }
 
+  div.portal-bottom {
+
+    a#multi-material-creation {
+      border-radius: 100px 100px 0 0;
+      border-color: $primary-green;
+
+      div.multi-material-creation {
+        height: 140px;
+        border-radius: 100px 100px 0 0;
+        border-color: $primary-green;
+        line-height: 35px;
+      }
+    }
+
+
+    a#recycle-material-creation {
+      display: block;
+      border-radius: 20px;
+      border-color: $primary-red;
+      line-height: 140px;
+
+      div.recycle-material-creation {
+        height: auto;
+        border-radius: 10px;
+        border-color: $primary-red;
+        display: inline-block;
+        vertical-align: middle;
+        line-height:1;
+      }
+    }
+  }
 }
 </style>
-
