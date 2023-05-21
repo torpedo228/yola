@@ -94,9 +94,6 @@ div.container {
           color: $primary-black;
         }
 
-        &:hover {
-          opacity: 0.7;
-        }
 
         div.portal-item {
           text-align: center;
@@ -105,6 +102,33 @@ div.container {
           outline: 10px solid $primary-white;
           color: $primary-black;
           font-size: $h3;
+
+
+          &:hover {
+            opacity: 0.7;
+
+            animation-name: heartbeat;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+
+
+            @keyframes heartbeat {
+              0% {
+                transform: scale(0.8);
+              }
+
+              50% {
+                transform: scale(1.5);
+              }
+
+              100% {
+                transform: scale(1);
+              }
+            }
+
+          }
+
+
         }
       }
 
@@ -120,11 +144,11 @@ div.container {
 
       a#paper-work {
         border-radius: 20px;
-        border-color: $primary-green;
+        border-color: $primary-red;
 
         div.paper-work {
           border-radius: 10px;
-          border-color: $primary-green;
+          border-color: $primary-red;
         }
       }
 
@@ -300,10 +324,10 @@ div.container {
       border-color: $primary-green;
 
       div.multi-material-creation {
-        height: 140px;
         border-radius: 100px 100px 0 0;
         border-color: $primary-green;
         line-height: 35px;
+        padding: 45px 0 25px;
       }
     }
 
@@ -312,15 +336,16 @@ div.container {
       display: block;
       border-radius: 20px;
       border-color: $primary-red;
-      line-height: 140px;
+      margin-right: 20px;
+
 
       div.recycle-material-creation {
-        height: auto;
         border-radius: 10px;
         border-color: $primary-red;
         display: inline-block;
         vertical-align: middle;
-        line-height:1;
+        line-height: 35px;
+        padding: 40px 0 30px;
       }
     }
   }
