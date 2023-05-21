@@ -49,10 +49,12 @@ export default {
 div.container {
   width: 100%;
 
+
   div.portal-container {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 
     div.grid {
       width: 900px;
