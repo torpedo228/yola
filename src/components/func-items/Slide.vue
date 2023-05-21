@@ -1,22 +1,48 @@
 <template>
-  <div class="slide-container">
-    <div
-      v-for="(slidePage, slidePageNo) in slidePage"
-      :key="slidePageNo"
-      class="slide-page"
-    >
-      <div class="slide-page-content" :style="makeAddOnStyle(slidePageNo)">
-        <a :href="slidePage.href">
-          <img :src="slidePage.imgSrc" alt="" />
-        </a>
+  <div>
+    <div class="slide-container">
+      <div
+        v-for="(slidePage, slidePageNo) in slidePage"
+        :key="slidePageNo"
+        class="slide-page"
+      >
+        <div class="slide-page-content" :style="makeAddOnStyle(slidePageNo)">
+          <a :href="slidePage.href">
+            <img :src="slidePage.imgSrc" alt="" />
+          </a>
+        </div>
+
+        <div class="button-wrap">
+          <div class="prev" @click="prev(1)">
+            <i class="fa-solid fa-arrow-left"></i>
+          </div>
+          <div class="next" @click="next(1)">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+
+        <!-- <button @click="moveTo(0)">page1</button>
+        <button @click="moveTo(1)">page2</button>
+        <button @click="moveTo(2)">page3</button> -->
       </div>
     </div>
-
-    <button @click="prev(1)">prev</button>
-    <button @click="next(1)">next</button>
-    <button @click="moveTo(0)">page1</button>
-    <button @click="moveTo(1)">page2</button>
-    <button @click="moveTo(2)">page3</button>
+    <div class="pagination-wrap">
+      <div
+        class="page-1"
+        :class="isActive(0) ? 'page-red' : 'page-grey'"
+        @click="moveTo(0)"
+      ></div>
+      <div
+        class="page-2"
+        :class="isActive(1) ? 'page-blue' : 'page-grey'"
+        @click="moveTo(1)"
+      ></div>
+      <div
+        class="page-3"
+        :class="isActive(2) ? 'page-blue' : 'page-grey'"
+        @click="moveTo(2)"
+      ></div>
+    </div>
   </div>
 </template>
 
@@ -76,7 +102,8 @@ export default {
     },
     prev(stepNum) {
       this.curSlideNo =
-        (this.curSlideNo + (this.slidePage.length - stepNum)) % this.slidePage.length;
+        (this.curSlideNo + (this.slidePage.length - stepNum)) %
+        this.slidePage.length;
     },
     moveTo(viewSlideNo) {
       var gap = this.curViewSlideNo - viewSlideNo;
@@ -109,6 +136,9 @@ export default {
         return "calc((calc(100% - 15%) * " + -1 * mainOffset + ") + 50%)";
       }
     },
+    isActive(slidePageNo) {
+      return slidePageNo == this.curViewSlideNo;
+    },
   },
 };
 </script>
@@ -123,29 +153,108 @@ $page-width: 50%;
 //   $adjust-offset: 15%;
 //   left: calc((calc(100% - #{$adjust-offset}) * #{$main-offset}) + 50%);
 // }
-
-div.slide-container {
+div {
   position: relative;
   width: 100%;
-  height: 80%;
-  overflow: hidden;
+  height: 80vh;
 
-  div.slide-page {
-    width: $page-width;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  div.slide-container {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
 
-    div.slide-page-content {
+    div.slide-page {
+      width: $page-width;
       position: absolute;
-      width: 100%;
-      top: 50%;
       left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
 
-      img {
+      div.slide-page-content {
+        position: absolute;
         width: 100%;
-        height: 100%;
+        top: 50%;
+        left: 50%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    div.button-wrap {
+      left: 50%;
+      top: 50%;
+
+      div.prev,
+      div.next {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        border-radius: $border-radius-circle;
+        background-color: $primary-white;
+        border: 5px solid;
+        cursor: pointer;
+
+        i {
+          font-size: 40px;
+          transform: translate(35%, 25%);
+        }
+      }
+
+      div.prev {
+        border-color: $primary-green;
+        left: -52%;
+
+        i {
+          color: $primary-green;
+        }
+
+        &:hover {
+          background-color: $primary-green;
+
+          i {
+            color: $primary-white;
+          }
+        }
+
+        &:active {
+          background-color: $primary-green;
+          opacity: 0.8;
+
+          i {
+            color: $primary-white;
+          }
+        }
+      }
+
+      div.next {
+        border-color: $primary-yellow;
+        left: 52%;
+
+        i {
+          color: $primary-yellow;
+        }
+
+        &:hover {
+          background-color: $primary-yellow;
+
+          i {
+            color: $primary-white;
+          }
+        }
+
+        &:active {
+          background-color: $primary-yellow;
+          opacity: 0.8;
+
+          i {
+            color: $primary-white;
+          }
+        }
       }
     }
 
@@ -183,6 +292,51 @@ div.slide-container {
     //   opacity: 0;
     //   transform: translate(-50%, -50%) scale(0.6);
     // }
+  }
+
+  div.pagination-wrap {
+    position: relative;
+    left: 50%;
+    bottom: -3%;
+
+    div.page-1,
+    div.page-2,
+    div.page-3 {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      border-radius: $border-radius-circle;
+      background-color: $primary-grey;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $secondary-grey;
+      }
+    }
+
+    div.page-1 {
+      left: -3%;
+    }
+
+    div.page-2 {
+    }
+
+    div.page-3 {
+      left: 3%;
+    }
+
+    div.page-red {
+      background-color: $primary-red;
+    }
+
+    div.page-blue {
+      background-color: $primary-blue;
+    }
+
+    div.page-grey {
+      background-color: $primary-grey;
+    }
   }
 }
 </style>
