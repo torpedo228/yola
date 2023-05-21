@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="slide-outer">
     <div class="slide-container">
       <div v-for="(slidePage, slidePageNo) in slidePage" :key="slidePageNo" class="slide-page">
         <div class="slide-page-content" :style="makeAddOnStyle(slidePageNo)">
@@ -12,21 +12,21 @@
         <button @click="moveTo(2)">page3</button> -->
       </div>
 
-      <!-- <div class="button-wrap">
+      <div class="button-wrap">
         <div class="prev" @click="prev(1)">
           <i class="fa-solid fa-arrow-left"></i>
         </div>
         <div class="next" @click="next(1)">
           <i class="fa-solid fa-arrow-right"></i>
         </div>
-      </div> -->
+      </div>
     </div>
 
-    <!-- <div class="pagination-wrap">
-      <div class="page-1" :class="isActive(0) ? 'page-red' : 'page-grey'" @click="moveTo(0)"></div>
-      <div class="page-2" :class="isActive(1) ? 'page-blue' : 'page-grey'" @click="moveTo(1)"></div>
-      <div class="page-3" :class="isActive(2) ? 'page-green' : 'page-grey'" @click="moveTo(2)"></div>
-    </div> -->
+    <div class="pagination-wrap">
+      <div class="page-1" :class="pageIsActive(0) ? 'page-red' : 'page-grey'" @click="moveTo(0)"></div>
+      <div class="page-2" :class="pageIsActive(1) ? 'page-blue' : 'page-grey'" @click="moveTo(1)"></div>
+      <div class="page-3" :class="pageIsActive(2) ? 'page-green' : 'page-grey'" @click="moveTo(2)"></div>
+    </div>
   </div>
 </template>
 
@@ -110,7 +110,7 @@ export default {
           (isActive ? "" : "scale(" + inactiveScale + ")"),
         left: offsetedLeft(mainOffset),
         transition: isHeadOrTail ? "" : "all 0.5s ease-out",
-        // pointerEvents: isActive ? "" : "none",
+        pointerEvents: isActive ? "" : "none",
       };
 
       function offsetedLeft(mainOffset) {
@@ -120,7 +120,7 @@ export default {
         return "calc((calc(100% - 15%) * " + -1 * mainOffset + ") + 50%)";
       }
     },
-    isActive(slidePageNo) {
+    pageIsActive(slidePageNo) {
       return slidePageNo == this.curViewSlideNo;
     },
   },
@@ -137,10 +137,11 @@ $page-width: 50%;
 //   $adjust-offset: 15%;
 //   left: calc((calc(100% - #{$adjust-offset}) * #{$main-offset}) + 50%);
 // }
-div {
+div.slide-outer {
   position: relative;
   width: 100%;
   height: 80vh;
+  overflow: hidden;
 
   div.slide-container {
     position: relative;
@@ -206,6 +207,7 @@ div {
     // }
 
     div.button-wrap {
+      position: relative;
       left: 50%;
       top: 50%;
 
@@ -283,9 +285,10 @@ div {
   }
 
   div.pagination-wrap {
-    position: relative;
-    left: 50%;
-    bottom: -3%;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+left: 50%;
 
     div.page-1,
     div.page-2,
