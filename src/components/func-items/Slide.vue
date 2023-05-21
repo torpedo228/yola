@@ -1,48 +1,32 @@
 <template>
   <div>
     <div class="slide-container">
-      <div
-        v-for="(slidePage, slidePageNo) in slidePage"
-        :key="slidePageNo"
-        class="slide-page"
-      >
+      <div v-for="(slidePage, slidePageNo) in slidePage" :key="slidePageNo" class="slide-page">
         <div class="slide-page-content" :style="makeAddOnStyle(slidePageNo)">
           <a :href="slidePage.href">
             <img :src="slidePage.imgSrc" alt="" />
           </a>
         </div>
-
-        <div class="button-wrap">
-          <div class="prev" @click="prev(1)">
-            <i class="fa-solid fa-arrow-left"></i>
-          </div>
-          <div class="next" @click="next(1)">
-            <i class="fa-solid fa-arrow-right"></i>
-          </div>
-        </div>
-
         <!-- <button @click="moveTo(0)">page1</button>
         <button @click="moveTo(1)">page2</button>
         <button @click="moveTo(2)">page3</button> -->
       </div>
+
+      <!-- <div class="button-wrap">
+        <div class="prev" @click="prev(1)">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <div class="next" @click="next(1)">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div> -->
     </div>
-    <div class="pagination-wrap">
-      <div
-        class="page-1"
-        :class="isActive(0) ? 'page-red' : 'page-grey'"
-        @click="moveTo(0)"
-      ></div>
-      <div
-        class="page-2"
-        :class="isActive(1) ? 'page-blue' : 'page-grey'"
-        @click="moveTo(1)"
-      ></div>
-      <div
-        class="page-3"
-        :class="isActive(2) ? 'page-green' : 'page-grey'"
-        @click="moveTo(2)"
-      ></div>
-    </div>
+
+    <!-- <div class="pagination-wrap">
+      <div class="page-1" :class="isActive(0) ? 'page-red' : 'page-grey'" @click="moveTo(0)"></div>
+      <div class="page-2" :class="isActive(1) ? 'page-blue' : 'page-grey'" @click="moveTo(1)"></div>
+      <div class="page-3" :class="isActive(2) ? 'page-green' : 'page-grey'" @click="moveTo(2)"></div>
+    </div> -->
   </div>
 </template>
 
@@ -71,7 +55,7 @@ export default {
   },
   computed: {
     curViewSlideNo() {
-      return (this.curSlideNo + 3) % this.slideMeta.length;
+      return this.curSlideNo % this.slideMeta.length;
     },
     slidePage() {
       let basicSlideLength = this.slideMeta.length;
@@ -94,7 +78,7 @@ export default {
       }
     },
   },
-  mounted() {},
+  mounted() { },
   watch: {},
   methods: {
     next(stepNum) {
@@ -126,7 +110,7 @@ export default {
           (isActive ? "" : "scale(" + inactiveScale + ")"),
         left: offsetedLeft(mainOffset),
         transition: isHeadOrTail ? "" : "all 0.5s ease-out",
-        pointerEvents: isActive ? "" : "none",
+        // pointerEvents: isActive ? "" : "none",
       };
 
       function offsetedLeft(mainOffset) {
@@ -184,79 +168,7 @@ div {
       }
     }
 
-    div.button-wrap {
-      left: 50%;
-      top: 50%;
 
-      div.prev,
-      div.next {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        width: 60px;
-        height: 60px;
-        border-radius: $border-radius-circle;
-        background-color: $primary-white;
-        border: 5px solid;
-        cursor: pointer;
-
-        i {
-          font-size: 40px;
-          transform: translate(35%, 25%);
-        }
-      }
-
-      div.prev {
-        border-color: $primary-green;
-        left: -52%;
-
-        i {
-          color: $primary-green;
-        }
-
-        &:hover {
-          background-color: $primary-green;
-
-          i {
-            color: $primary-white;
-          }
-        }
-
-        &:active {
-          background-color: $primary-green;
-          opacity: 0.8;
-
-          i {
-            color: $primary-white;
-          }
-        }
-      }
-
-      div.next {
-        border-color: $primary-yellow;
-        left: 52%;
-
-        i {
-          color: $primary-yellow;
-        }
-
-        &:hover {
-          background-color: $primary-yellow;
-
-          i {
-            color: $primary-white;
-          }
-        }
-
-        &:active {
-          background-color: $primary-yellow;
-          opacity: 0.8;
-
-          i {
-            color: $primary-white;
-          }
-        }
-      }
-    }
 
     // div.active {
     //   @include offseted-left(0);
@@ -292,6 +204,82 @@ div {
     //   opacity: 0;
     //   transform: translate(-50%, -50%) scale(0.6);
     // }
+
+    div.button-wrap {
+      left: 50%;
+      top: 50%;
+
+      div.prev,
+      div.next {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        border-radius: $border-radius-circle;
+        background-color: $primary-white;
+        border: 5px solid;
+        cursor: pointer;
+
+        i {
+          font-size: 40px;
+          transform: translate(35%, 25%);
+        }
+      }
+
+      div.prev {
+        border-color: $primary-green;
+        left: -26%;
+
+        i {
+          color: $primary-green;
+        }
+
+        &:hover {
+          background-color: $primary-green;
+
+          i {
+            color: $primary-white;
+          }
+        }
+
+        &:active {
+          background-color: $primary-green;
+          opacity: 0.8;
+
+          i {
+            color: $primary-white;
+          }
+        }
+      }
+
+      div.next {
+        border-color: $primary-yellow;
+        left: 26%;
+
+        i {
+          color: $primary-yellow;
+        }
+
+        &:hover {
+          background-color: $primary-yellow;
+
+          i {
+            color: $primary-white;
+          }
+        }
+
+        &:active {
+          background-color: $primary-yellow;
+          opacity: 0.8;
+
+          i {
+            color: $primary-white;
+          }
+        }
+      }
+    }
+
+
   }
 
   div.pagination-wrap {
@@ -319,8 +307,7 @@ div {
       left: -3%;
     }
 
-    div.page-2 {
-    }
+    div.page-2 {}
 
     div.page-3 {
       left: 3%;
