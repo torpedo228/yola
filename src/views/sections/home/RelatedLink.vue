@@ -113,6 +113,10 @@ div.container {
           margin-bottom: 20px;
 
           a {
+
+            &:link {
+              color: $primary-black;
+            }
             &:visited {
               color: $primary-black;
             }
