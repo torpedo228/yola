@@ -69,7 +69,7 @@ export default {
 
 div.container {
   width: 100%;
-  height:80vh;
+  height:90vh;
   position: relative;
 
   div.related-link-container {
