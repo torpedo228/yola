@@ -105,10 +105,10 @@ div.container {
 
 
           &:hover {
-            opacity: 0.7;
+  
 
             animation-name: heartbeat;
-            animation-duration: 5s;
+            animation-duration: .5s;
             animation-iteration-count: infinite;
 
 
