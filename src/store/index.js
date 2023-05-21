@@ -31,6 +31,12 @@ export default createStore({
     SET_ART_PAGE(state) {
       state.currentPage = "art";
     },
+    SET_DRAWINGS_PAGE(state) {
+      state.currentPage = "drawings";
+    },
+    SET_FINGERPRINT_PAGE(state) {
+      state.currentPage = "fingerprint";
+    },
     SET_CONSTRUCTION_PAGE(state) {
       state.currentPage = "construction";
     },

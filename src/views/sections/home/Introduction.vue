@@ -219,7 +219,7 @@ export default {
 div.container {
   width: 100%;
   height: 570px;
-  margin: 50px 0;
+  margin: 30px 0;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -227,7 +227,6 @@ div.container {
   align-items: center;
 
   div.portal-container {
-    margin-top: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -245,9 +244,9 @@ div.container {
     }
 
     div.introduction-panel {
-      padding: 10px 20px;
+      padding: 5px 20px;
       width: 450px;
-      height: 230px;
+      height: 260px;
       border: 10px solid;
       border-color: $primary-red $primary-blue $primary-green $primary-yellow;
       border-radius: 30px;
@@ -307,9 +306,9 @@ div.container {
 
 
     div.go-to-btn {
-      line-height: 70px;
+      line-height: 80px;
       width: 150px;
-      height: 70px;
+      height: 80px;
       border-radius: 20px;
       text-align: center;
       vertical-align: middle;

@@ -2,9 +2,11 @@
   <div class="container">
     <BreadCrumb />
     <router-view />
-    <h2>建造中，空空如也，點擊下方logo返回首頁</h2>
+    <h2>建造中，空空如也，請返回上一頁<br>或點擊下方logo返回首頁</h2>
     <a href="/"><img src="../assets/icons/logo/yola.svg" alt=""></a>
     
+    <img class="red-square" src="../assets/icons/characters/all-characters.svg" alt="">
+
   </div>
 </template>
 
@@ -28,14 +30,14 @@ export default {
 
 div.container {
   width: 100%;
-  height: 600px;
+  height: 90vh;
   margin-top: 80px;
   position: relative;
   text-align: center;
 
   h2 {
-    padding-top: 100px;
-    font-size: 50px;
+    padding-top: 50px;
+    font-size: 40px;
   }
 
   a{
@@ -44,7 +46,8 @@ div.container {
 }
   
   img {
-    width: 500px;
+    width:300px;
+    margin-bottom: 60px;
   }
 }
 }
