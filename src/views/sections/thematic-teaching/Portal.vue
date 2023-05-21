@@ -5,38 +5,26 @@
 
     <div class="portal-container">
       <div class="grid">
-
         <div class="item item1">
-          <a class="thematic-teaching-design" href="./still-building">
-          <div class="inline-block">主題教學設計</div> </a>
+          <a class="thematic-teaching-design" href="./still-building">主題教學 設計</a>
         </div>
 
         <div class="item item2"></div>
         <div class="item item3"></div>
         <div class="item item4"></div>
-        <div class="item item5"></div>
+
+        <div class="item item5">
+          <a class="brain-storming" href="./brain-storming">主題發想牆</a>
+        </div>
         <div class="item item6"></div>
-        <div class="item item7"></div>
+        <div class="item item7">
+          <a class="lesson-plans" href="./still-building"> 教學活動 參考 </a>
+        </div>
         <div class="item item8"></div>
         <div class="item item9"></div>
         <div class="item item10"></div>
         <div class="item item11"></div>
         <div class="item item12"></div>
-        <div class="item item13"></div>
-        <div class="item item14"></div>
-        <div class="item item15"></div>
-        <div class="item item16"></div>
-        <div class="item item17"></div>
-        <div class="item item18"></div>
-        <div class="item item19"></div>
-        <div class="item item20"></div>
-        <div class="item item21"></div>
-        <div class="item item22"></div>
-        <div class="item item23"></div>
-        <div class="item item24"></div>
-        <div class="item item25"></div>
-        <div class="item item26"></div>
-        <div class="item item27"></div>
       </div>
     </div>
   </div>
@@ -61,7 +49,6 @@ export default {
 div.container {
   width: 100%;
 
-
   div.portal-container {
     width: 100%;
     display: flex;
@@ -71,52 +58,122 @@ div.container {
       width: 900px;
       height: 300px;
       display: grid;
-      grid-template: repeat(3, 1fr) /repeat(9, 1fr);
+      grid-template: repeat(3, 1fr) / repeat(9, 1fr);
       gap: 10px;
 
+      div.item {
+        border-radius: 30px;
 
-      a.thematic-teaching-design {
+        a {
+          display: block;
+          width: 180px;
+          padding: 40px 0;
 
-        &:visited {
-          color: $primary-black;
-        }
+          &:link {
+            color: $primary-black;
+          }
 
-        &:hover {
-          color: $primary-white;
-          background-color: $primary-red ;
+          &:visited {
+            color: $primary-black;
+          }
         }
       }
 
-
-      div.item {
+      div.item1,
+      div.item5,
+      div.item7 {
         font-size: $h3;
         text-align: center;
-        vertical-align: middle;
-        line-height: $h3;
-        border: 1px solid black;
-        border-radius: 30px;
-        line-height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          a {
+            color: $primary-white;
+          }
+        }
       }
 
       div.item1 {
-        grid-row: 1/span 2;
-        grid-column: 1/span 2;
+        grid-row: 1 / span 2;
+        grid-column: 1 / span 2;
         border: 20px solid $primary-red;
 
         &:hover {
-          color: $primary-white;
-          background-color: $primary-red ;
+          background-color: $primary-red;
         }
+      }
 
-        div.inline-block {
-          height: 200px;
-          display: inline-block;
-          vertical-align: middle;
-          text-align: center;
-          line-height: 1;
-          padding: 10px;
+      div.item2 {
+        grid-row: 1 / span 2;
+        background-color: $primary-yellow;
+      }
+
+      div.item3 {
+        grid-column: 4 / span 2;
+        background-color: $primary-red;
+      }
+
+      div.item4 {
+        grid-column: 6 / span 1;
+        grid-row: 1 / span 2;
+        background-color: $primary-blue;
+      }
+
+      div.item5 {
+        grid-column: 7 / span 2;
+        grid-row: 1 / span 2;
+        border: 20px solid $primary-blue;
+
+        &:hover {
+          background-color: $primary-blue;
         }
+      }
 
+      div.item6 {
+        grid-column: 9 / span 1;
+        background-color: $primary-yellow;
+      }
+
+      div.item7 {
+        grid-column: 4 / span 2;
+        grid-row: 2 / span 2;
+        border: 20px solid $primary-green;
+
+        &:hover {
+          background-color: $primary-green;
+        }
+      }
+
+      div.item8 {
+        grid-column: 9 / span 1;
+        grid-row: 2 / span 2;
+        background-color: $primary-green;
+      }
+
+      div.item9 {
+        grid-column: 6 / span 1;
+        grid-row: 3 / span 1;
+        background-color: $primary-yellow;
+      }
+
+      div.item10 {
+        grid-column: 1 / span 2;
+        grid-row: 3 / span 1;
+        background-color: $primary-green;
+      }
+
+      div.item11 {
+        grid-column: 3 / span 1;
+        grid-row: 3 / span 1;
+        background-color: $primary-blue;
+      }
+
+      div.item12 {
+        grid-column: 7 / span 2;
+        grid-row: 3 / span 1;
+        background-color: $primary-red;
       }
     }
   }
