@@ -39,7 +39,7 @@
       ></div>
       <div
         class="page-3"
-        :class="isActive(2) ? 'page-blue' : 'page-grey'"
+        :class="isActive(2) ? 'page-green' : 'page-grey'"
         @click="moveTo(2)"
       ></div>
     </div>
@@ -71,7 +71,7 @@ export default {
   },
   computed: {
     curViewSlideNo() {
-      return this.curSlideNo % this.slideMeta.length;
+      return (this.curSlideNo + 3) % this.slideMeta.length;
     },
     slidePage() {
       let basicSlideLength = this.slideMeta.length;
@@ -328,6 +328,10 @@ div {
 
     div.page-red {
       background-color: $primary-red;
+    }
+
+    div.page-green {
+      background-color: $primary-green;
     }
 
     div.page-blue {
