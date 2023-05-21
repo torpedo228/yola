@@ -227,6 +227,7 @@ div.container {
   align-items: center;
 
   div.portal-container {
+    margin-top: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -251,21 +252,6 @@ div.container {
       border-color: $primary-red $primary-blue $primary-green $primary-yellow;
       border-radius: 30px;
 
-      div.blank-intro-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        h3 {
-          text-align: center;
-          font-size: $h3;
-        }
-
-        img {
-          width: 150px;
-        }
-      }
 
       div.intro-card {
         position: relative;
@@ -318,13 +304,13 @@ div.container {
       gap: 10px;
     }
 
-    div.go-to-botton-right-wrap {}
+
 
     div.go-to-btn {
       line-height: 70px;
       width: 150px;
       height: 70px;
-      border-radius: 30px;
+      border-radius: 20px;
       text-align: center;
       vertical-align: middle;
       font-size: $main-info;
@@ -416,9 +402,9 @@ div.container {
     }
 
     img.all-characters {
-      height: 250%;
+      height: 300%;
       position: absolute;
-      bottom: 35%;
+      bottom: 25%;
     }
   }
 }

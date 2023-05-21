@@ -58,12 +58,18 @@ const routes = [{
   },
   {
     path: "/thematic-teaching",
-    name: "thematic-teaching",
     component: () => import("@/views/sections/ThematicTeaching.vue"),
     meta: {
       title: "主題教學",
     },
     children: [{
+      path: "",
+      name: "thematic-teaching",
+      component: () => import("@/views/sections/thematic-teaching/Portal.vue"),
+      meta: {
+        title: "",
+      },
+    }, {
       path: "/brain-storming",
       name: "brain-storming",
       component: () => import("@/views/sections/thematic-teaching/BrainStorming.vue"),

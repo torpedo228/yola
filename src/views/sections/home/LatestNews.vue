@@ -1,109 +1,134 @@
 <template>
   <div class="container" id="latest-news">
-    <SectionTitle
-      title="最新消息 Latest News"
-      :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
-      alt="最新消息logo"
-    />
-    <Carousel :itemsToShow="2.5" :wrapAround="true" :transition="500">
-      <Slide v-for="slide in 1" :key="slide">
-        <img
-          src="../../../assets/images/home/latest-news/latest-news-1.svg"
-          alt=""
-        />
-        <div class="carousel__item"></div>
-      </Slide>
-      <Slide v-for="slide in 1" :key="slide">
-        <img
-          src="../../../assets/images/home/latest-news/latest-news-2.svg"
-          alt=""
-        />
-        <div class="carousel__item"></div>
-      </Slide>
+    <SectionTitle title="最新消息 Latest News" :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')" alt="最新消息logo"
+      id="latest-news-title" />
 
-      <Slide v-for="slide in 1" :key="slide">
-        <img
-          src="../../../assets/images/home/latest-news/latest-news-3.svg"
-          alt=""
-        />
-        <div class="carousel__item"></div>
-      </Slide>
+    <div class="slide-container">
+      <div class="slide-page-wrap">
+        <a href="./still-building">
+          <div class="slide-page slide-page-left">
+            <img class="side-img" src="../../../assets/images/home/latest-news/latest-news-2.svg" alt="" />
+          </div>
+        </a>
+      </div>
 
-      <template #addons>
-        <Pagination />
-        <Navigation />
-      </template>
-    </Carousel>
+      <div class="slide-page-wrap">
+        <a href="./still-building">
+          <div class="slide-page slide-page-left">
+            <img class="side-img" src="../../../assets/images/home/latest-news/latest-news-2.svg" alt="" />
+          </div>
+        </a>
+      </div>
+
+      <div class="slide-page-wrap">
+        <a href="./still-building">
+          <div class="slide-page slide-page-center">
+            <img class="main-img" src="../../../assets/images/home/latest-news/latest-news-1.svg" alt="" />
+          </div>
+        </a>
+      </div>
+
+      <div class="slide-page-wrap">
+        <a href="./still-building">
+          <div class="slide-page slide-page-right">
+            <img class="side-img" src="../../../assets/images/home/latest-news/latest-news-3.svg" alt="" />
+          </div>
+        </a>
+      </div>
+
+      <div class="slide-page-wrap">
+        <a href="./still-building">
+          <div class="slide-page slide-page-right">
+            <img class="side-img" src="../../../assets/images/home/latest-news/latest-news-3.svg" alt="" />
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- <div class="slide-page"><img src="../../../assets/images/home/latest-news/latest-news-1.svg" alt="" /></div>
+
+      <div class="slide-page2"><img src="../../../assets/images/home/latest-news/latest-news-2.svg" alt="" /></div> -->
   </div>
 </template>
 
 <script>
 import SectionTitle from "@/components/SectionTitle.vue";
 
-import { defineComponent } from "vue";
-import { Carousel, Pagination, Navigation, Slide } from "vue3-carousel";
-
-import "vue3-carousel/dist/carousel.css";
-
-export default defineComponent({
-  name: "WrapAround",
-  components: {
-    SectionTitle,
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
+export default {
+  components: { SectionTitle },
+  data() {
+    return {};
   },
-});
+  mounted() { },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-.carousel__slide {
-  padding: 5px;
-}
-
-.carousel__viewport {
-  perspective: 2000px;
-}
-
-.carousel__track {
-  transform-style: preserve-3d;
-}
-
-.carousel__slide--sliding {
-  transition: 0.5s;
-}
-
-.carousel__slide {
-  opacity: 0.9;
-  transform: rotateY(-20deg) scale(0.9);
-}
-
-.carousel__slide--active ~ .carousel__slide {
-  transform: rotateY(20deg) scale(0.9);
-}
-
-.carousel__slide--prev {
-  opacity: 1;
-  transform: rotateY(-10deg) scale(0.95);
-}
-
-.carousel__slide--next {
-  opacity: 1;
-  transform: rotateY(10deg) scale(0.95);
-}
-
-.carousel__slide--active {
-  opacity: 1;
-  transform: rotateY(0) scale(1.1);
-}
-
 div.container {
   width: 100%;
-  height: 600px;
+  height: 100vh;
   position: relative;
+
+  #latest-news-title {
+    margin: 0;
+  }
+
+  div.slide-container {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    div.slide-page-wrap {
+      width: 50%;
+      height: 80%;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      div.slide-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      div.slide-page-center {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 135%;
+
+        img.main-img {
+          width: 100%;
+        }
+      }
+
+      div.slide-page-left {
+        position: relative;
+        right: -5%;
+        
+
+        img.side-img {
+          width: 100%;
+        }
+      }
+
+      div.slide-page-right {
+        position: relative;
+        left: -5%;
+
+        img.side-img {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 </style>

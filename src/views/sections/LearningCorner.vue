@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="learning-corner-container">
     <BreadCrumb />
     <router-view />
   </div>
@@ -23,7 +23,7 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.container {
+div.learning-corner-container {
   width: 100%;
   height: 100%;
   position: relative;

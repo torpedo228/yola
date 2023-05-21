@@ -28,19 +28,18 @@ export default {
 @import "@/assets/scss/all.scss";
 
 div.title {
-
   color: $primary-black;
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin: 5px 0;
 
   img {
-    width: 30px;
+    width: 40px;
   }
 
   h2 {
     font-size: $h2;
+    margin: 30px 0;
   }
 }
 </style>
