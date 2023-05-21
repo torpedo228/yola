@@ -105,7 +105,6 @@ div.container {
 
 
           &:hover {
-  
 
             animation-name: heartbeat;
             animation-duration: .5s;
@@ -114,11 +113,19 @@ div.container {
 
             @keyframes heartbeat {
               0% {
-                transform: scale(0.8);
+                transform: scale(1);
+              }
+
+              25% {
+                transform: scale(1.5);
               }
 
               50% {
-                transform: scale(1.5);
+                transform: scale(1);
+              }
+
+              75% {
+                transform: scale(0.8);
               }
 
               100% {
@@ -164,6 +171,8 @@ div.container {
 
       a#kneading {
         margin-left: 50px;
+
+
       }
 
       a#weaving {
@@ -323,6 +332,8 @@ div.container {
       border-radius: 100px 100px 0 0;
       border-color: $primary-green;
 
+
+
       div.multi-material-creation {
         border-radius: 100px 100px 0 0;
         border-color: $primary-green;
@@ -349,5 +360,4 @@ div.container {
       }
     }
   }
-}
-</style>
+}</style>
