@@ -95,7 +95,7 @@ div.container {
         line-height: $h3;
         border: 1px solid black;
         border-radius: 30px;
-        line-height: 200px;
+        line-height: 300px;
       }
 
       div.item1 {
@@ -108,10 +108,8 @@ div.container {
           background-color: $primary-red ;
         }
 
-
-
         div.inline-block {
-          height: 100px;
+          height: 200px;
           display: inline-block;
           vertical-align: middle;
           text-align: center;

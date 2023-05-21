@@ -402,9 +402,9 @@ div.container {
     }
 
     img.all-characters {
-      height: 300%;
+      height: 250%;
       position: absolute;
-      bottom: 25%;
+      bottom: 35%;
     }
   }
 }
