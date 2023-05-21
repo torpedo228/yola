@@ -5,6 +5,12 @@
       :imgSrc="require('@/assets/icons/logo/learning-corner-logo-red.svg')"
       alt="美勞區logo"
     />
+
+
+<div class="portal"></div>
+
+
+
   </div>
 </template>
 

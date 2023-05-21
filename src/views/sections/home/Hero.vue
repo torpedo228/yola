@@ -4,7 +4,7 @@
         <img class="decoration-1" src="../../../assets/decorations/hero-1.svg" alt="" />
         <h2>聚焦幼兒教育<br><br>資源共享互惠</h2>
         <a class="go-to-introduction-btn" v-scroll-to="'#introduction'">
-          <h3>開始探索</h3>
+          <h4>開始探索</h4>
         </a>
       </div>
 
@@ -62,7 +62,7 @@ div.container {
       color: $primary-black;
       cursor: pointer;
 
-      h3 {
+      h4 {
         display: inline-block;
         width: 150px;
         height: 60px;
