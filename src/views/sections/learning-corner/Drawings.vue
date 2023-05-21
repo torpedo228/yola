@@ -1,19 +1,19 @@
 <template>
   <div class="container">
-    <ArtPortal />
+    <DrawingsPortal />
   </div>
 </template>
 
 <script>
-import ArtPortal from "@/views/sections/learning-corner/ArtPortal.vue";
+import DrawingsPortal from "@/views/sections/learning-corner/DrawingsPortal.vue";
 
 export default {
-  components: { ArtPortal },
+  components: { DrawingsPortal },
   data() {
     return {};
   },
   mounted() {
-    this.$store.commit("SET_ART_PAGE");
+    this.$store.commit("SET_DRAWINGS_PAGE");
   },
 };
 </script>

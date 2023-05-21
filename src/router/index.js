@@ -1,12 +1,10 @@
-import {
-  createRouter,
-  createWebHistory
-} from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 // import { publicPath } from "../../vue.config";
 import HomeView from "@/views/Home.vue";
 import TestView from "@/views/TestView.vue";
 
-const routes = [{
+const routes = [
+  {
     path: "/",
     name: "home",
     components: {
@@ -30,7 +28,8 @@ const routes = [{
     meta: {
       title: "學習區",
     },
-    children: [{
+    children: [
+      {
         path: "",
         name: "learning-corner",
         component: () => import("@/views/sections/learning-corner/Portal.vue"),
@@ -40,21 +39,69 @@ const routes = [{
       },
       {
         path: "art",
-        name: "art",
         component: () => import("@/views/sections/learning-corner/Art.vue"),
         meta: {
           title: "美勞區",
         },
+        children: [
+          {
+            path: "",
+            name: "art",
+            component: () =>
+              import("@/views/sections/learning-corner/ArtPortal.vue"),
+            meta: {
+              title: "",
+            },
+            children: [
+              {
+                path: "drawings",
+                component: () =>
+                  import("@/views/sections/learning-corner/Drawings.vue"),
+                meta: {
+                  title: "繪畫",
+                },
+                children: [
+                  {
+                    path: "",
+                    name: "drawings",
+                    component: () =>
+                      import(
+                        "@/views/sections/learning-corner/DrawingsPortal.vue"
+                      ),
+                    meta: {
+                      title: "",
+                    },
+                    children: [
+                      {
+                        path: "fingerprint",
+                        name: "fingerprint",
+                        component: () =>
+                          import(
+                            "@/views/sections/learning-corner/Fingerprint.vue"
+                          ),
+                        meta: {
+                          title: "指印",
+                        },
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
+
       {
         path: "construction",
         name: "construction",
-        component: () => import("@/views/sections/learning-corner/Construction.vue"),
+        component: () =>
+          import("@/views/sections/learning-corner/Construction.vue"),
         meta: {
           title: "組合建構區",
         },
-      }
-    ]
+      },
+    ],
   },
   {
     path: "/thematic-teaching",
@@ -62,21 +109,26 @@ const routes = [{
     meta: {
       title: "主題教學",
     },
-    children: [{
-      path: "",
-      name: "thematic-teaching",
-      component: () => import("@/views/sections/thematic-teaching/Portal.vue"),
-      meta: {
-        title: "",
+    children: [
+      {
+        path: "",
+        name: "thematic-teaching",
+        component: () =>
+          import("@/views/sections/thematic-teaching/Portal.vue"),
+        meta: {
+          title: "",
+        },
       },
-    }, {
-      path: "/brain-storming",
-      name: "brain-storming",
-      component: () => import("@/views/sections/thematic-teaching/BrainStorming.vue"),
-      meta: {
-        title: "主題發想牆",
+      {
+        path: "/brain-storming",
+        name: "brain-storming",
+        component: () =>
+          import("@/views/sections/thematic-teaching/BrainStorming.vue"),
+        meta: {
+          title: "主題發想牆",
+        },
       },
-    }],
+    ],
   },
   {
     path: "/storybooks",
@@ -89,7 +141,8 @@ const routes = [{
   {
     path: "/nursery-rhymes-and-finger-rhymes",
     name: "nursery-rhymes-and-finger-rhymes",
-    component: () => import("@/views/sections/NurseryRhymesAndFingerRhymes.vue"),
+    component: () =>
+      import("@/views/sections/NurseryRhymesAndFingerRhymes.vue"),
     meta: {
       title: "兒歌&手指謠",
     },
@@ -97,7 +150,8 @@ const routes = [{
   {
     path: "/physical-fitness-and-rhythm-movement",
     name: "physical-fitness-and-rhythm-movement",
-    component: () => import("@/views/sections/PhysicalFitnessAndRhythmMovement.vue"),
+    component: () =>
+      import("@/views/sections/PhysicalFitnessAndRhythmMovement.vue"),
     meta: {
       title: "體能&律動",
     },
@@ -125,8 +179,8 @@ const routes = [{
     // or <a href="#" @click="$router.push({ name: 'test' })">
     // or <a href="/test">
     component: TestView,
-  }
-]
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
