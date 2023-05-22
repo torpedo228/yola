@@ -4,7 +4,7 @@
 
     <div class="portal-container">
       <div class="portal-top">
-        <a href="/learning-corner/art/drawings" id="drawings">
+        <a href="./art/drawings" id="drawings">
           <div class="portal-item drawings">繪畫</div>
         </a>
         <a href="/still-building" id="paper-work">

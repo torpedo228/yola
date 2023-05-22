@@ -1,14 +1,12 @@
 <template>
   <div class="container">
-    <DrawingsPortal />
+    <router-view />
   </div>
 </template>
 
 <script>
-import DrawingsPortal from "@/views/sections/learning-corner/DrawingsPortal.vue";
-
 export default {
-  components: { DrawingsPortal },
+  components: {  },
   data() {
     return {};
   },

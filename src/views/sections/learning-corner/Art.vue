@@ -1,14 +1,15 @@
 <template>
   <div class="container">
-    <ArtPortal />
+    <BreadCrumb />
+    <router-view />
   </div>
 </template>
 
 <script>
-import ArtPortal from "@/views/sections/learning-corner/ArtPortal.vue";
+import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
 
 export default {
-  components: { ArtPortal },
+  components: { BreadCrumb },
   data() {
     return {};
   },

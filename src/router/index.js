@@ -52,40 +52,32 @@ const routes = [
             meta: {
               title: "",
             },
+          },
+          {
+            path: "drawings",
+            component: () =>
+              import("@/views/sections/learning-corner/Drawings.vue"),
+            meta: {
+              title: "繪畫",
+            },
             children: [
               {
-                path: "drawings",
+                path: "",
+                name: "drawings",
                 component: () =>
-                  import("@/views/sections/learning-corner/Drawings.vue"),
+                  import("@/views/sections/learning-corner/DrawingsPortal.vue"),
                 meta: {
-                  title: "繪畫",
+                  title: "",
                 },
-                children: [
-                  {
-                    path: "",
-                    name: "drawings",
-                    component: () =>
-                      import(
-                        "@/views/sections/learning-corner/DrawingsPortal.vue"
-                      ),
-                    meta: {
-                      title: "",
-                    },
-                    children: [
-                      {
-                        path: "fingerprint",
-                        name: "fingerprint",
-                        component: () =>
-                          import(
-                            "@/views/sections/learning-corner/Fingerprint.vue"
-                          ),
-                        meta: {
-                          title: "指印",
-                        },
-                      },
-                    ],
-                  },
-                ],
+              },
+              {
+                path: "fingerprint",
+                name: "fingerprint",
+                component: () =>
+                  import("@/views/sections/learning-corner/Fingerprint.vue"),
+                meta: {
+                  title: "指印",
+                },
               },
             ],
           },

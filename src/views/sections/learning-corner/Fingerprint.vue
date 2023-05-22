@@ -1,18 +1,15 @@
 <template>
   <div class="container">
-    <BreadCrumb />
     <SectionTitle title="指印 Fingerprints" :imgSrc="require('@/assets/icons/logo/learning-corner-logo-green.svg')"
       alt="指印logo" />
-    <router-view />
   </div>
 </template>
 
 <script>
-import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
 import SectionTitle from "@/components/SectionTitle.vue";
 
 export default {
-  components: { BreadCrumb, SectionTitle },
+  components: { SectionTitle },
   data() {
     return {};
   },

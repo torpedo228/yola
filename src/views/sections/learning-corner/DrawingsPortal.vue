@@ -1,11 +1,14 @@
 <template>
   <div class="container" id="portal">
-    <SectionTitle title="繪畫 Drawings" :imgSrc="require('@/assets/icons/logo/learning-corner-logo-yellow.svg')" alt="繪畫logo" />
+    <SectionTitle
+      title="繪畫 Drawings"
+      :imgSrc="require('@/assets/icons/logo/learning-corner-logo-yellow.svg')"
+      alt="繪畫logo"
+    />
 
-        <a href="./learning-corner/art/drawings/fingerprint">
-          <div class="portal-item drawings">指印</div>
-        </a>
-
+    <a href="./drawings/fingerprint">
+      <div class="portal-item drawings">指印</div>
+    </a>
   </div>
 </template>
 
@@ -13,11 +16,11 @@
 import SectionTitle from "@/components/SectionTitle.vue";
 
 export default {
-  components: { SectionTitle, },
+  components: { SectionTitle },
   data() {
     return {};
   },
-  mounted() { },
+  mounted() {},
 };
 </script>
 
@@ -31,7 +34,7 @@ div.container {
   margin-top: 80px;
   position: relative;
 
-  div.portal-container {}
+  div.portal-container {
+  }
 }
 </style>
-
