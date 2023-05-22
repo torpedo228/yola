@@ -138,7 +138,7 @@ div.art-portal-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 60px;
+      gap: 30px;
 
       a {
         width: 150px;

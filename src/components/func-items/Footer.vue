@@ -1,14 +1,11 @@
 <template>
   <div class="index-footer">
     <div class="footer-content-wrap">
-      <div class="decoration-wrapper">
-        <img
-          class="footer-decoration"
-          src="../../assets/decorations/footer.svg"
-          alt="footer裝飾"
-        />
-      </div>
+      <!-- <div class="decoration-wrapper">
+        <img class="footer-decoration" src="../../assets/decorations/footer.svg" alt="footer裝飾" />
+      </div> -->
       <ul class="footer_link">
+
         <li class="link_item"><a href="#">網站導覽</a></li>
         <li>|</li>
         <li class="link_item"><a href="#">關於幼樂園</a></li>
@@ -41,30 +38,38 @@ div.index-footer {
   bottom: 0;
   left: 0;
 
+
   div.footer-content-wrap {
     width: 100%;
-    height: 60px;
+    padding: 10px 0;
     background-color: $primary-blue;
     font-size: $content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    gap: $content/3;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-content: center;
+    // gap: $content/3;
+
+    &::before {
+      display: block;
+      content: "";
+      background: url("../../assets/decorations/footer.svg");
+      width: 100vw;
+      height: 2vw;
+      background-repeat: repeat-x;
+      position: absolute;
+      top:-30%;
+
+    }
 
     div.decoration-wrapper {
-      position: absolute;
+      position: relative;
       width: 100%;
-      height: 60px;
+
       bottom: 65%;
       overflow-x: hidden;
 
-      img {
-        position: absolute;
-        left: -50%;
-        height: 60px;
-        width: 200%;
-      }
+
     }
 
     ul {
