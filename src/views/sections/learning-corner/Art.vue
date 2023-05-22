@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="art-container">
     <BreadCrumb />
     <router-view />
   </div>
@@ -23,10 +23,10 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.container {
+div.art-container {
   width: 100%;
-  height: 90vh;
-  margin-top: 80px;
+  height: 100vh;
+
   position: relative;
 }
 </style>

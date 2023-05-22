@@ -37,7 +37,7 @@ export default {};
 
 div.index-footer {
   width: 100%;
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 0;
 
@@ -56,7 +56,7 @@ div.index-footer {
       position: absolute;
       width: 100%;
       height: 60px;
-      top: -65%;
+      bottom: 65%;
       overflow-x: hidden;
 
       img {

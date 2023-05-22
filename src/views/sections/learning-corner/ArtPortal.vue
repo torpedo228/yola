@@ -1,43 +1,59 @@
 <template>
-  <div class="art-container" id="portal">
+  <div class="art-portal-container" id="portal">
     <SectionTitle title="美勞區 Art" :imgSrc="require('@/assets/icons/logo/learning-corner-logo-red.svg')" alt="美勞區logo" />
 
     <div class="portal-container">
       <div class="portal-top">
-        <a href="./art/drawings" id="drawings">
-          <div class="portal-item drawings">繪畫</div>
-        </a>
-        <a href="/still-building" id="paper-work">
-          <div class="portal-item paper-work">紙工</div>
-        </a>
+        <div class="outter">
+          <a href="./art/drawings" id="drawings">
+            <div class="portal-item drawings">繪畫</div>
+          </a>
+        </div>
 
-        <a href="/still-building" id="kneading">
-          <div class="kneading">
-            <div class="triangle triangle1"></div>
-            <div class="triangle triangle2"></div>
-            <div class="triangle triangle3"></div>
-            <div class="triangle triangle4"></div>
-            <p>捏塑</p>
-          </div>
-        </a>
+        <div class="outter">
+          <a href="/still-building" id="paper-work">
+            <div class="portal-item paper-work">紙工</div>
+          </a>
+        </div>
+
+        <div class="outter">
+          <a href="/still-building" id="kneading">
+            <div class="kneading">
+              <div class="triangle triangle1"></div>
+              <div class="triangle triangle2"></div>
+              <div class="triangle triangle3"></div>
+              <div class="triangle triangle4"></div>
+              <p>捏塑</p>
+            </div>
+          </a>
+        </div>
       </div>
       <div class="portal-bottom">
-        <a href="/still-building" id="weaving">
-          <div class="weaving">
-            <div class="triangle triangle1"></div>
-            <div class="triangle triangle2"></div>
-            <div class="triangle triangle3"></div>
-            <div class="triangle triangle4"></div>
-            <p>編織</p>
-          </div>
-        </a>
+        <div class="outter">
+          <a href="/still-building" id="weaving">
+            <div class="weaving">
+              <div class="triangle triangle1"></div>
+              <div class="triangle triangle2"></div>
+              <div class="triangle triangle3"></div>
+              <div class="triangle triangle4"></div>
+              <p>編織</p>
+            </div>
+          </a>
+        </div>
 
-        <a href="/still-building" id="multi-material-creation">
-          <div class="portal-item multi-material-creation">多元材料創作</div>
-        </a>
-        <a href="/still-building" id="recycle-material-creation">
-          <div class="portal-item  recycle-material-creation">回收材料創作</div>
-        </a>
+        <div class="outter">
+          <a href="/still-building" id="multi-material-creation">
+            <div class="portal-item multi-material-creation">多元材料創作</div>
+          </a>
+        </div>
+
+        <div class="outter">
+          <a href="/still-building" id="recycle-material-creation">
+            <div class="portal-item recycle-material-creation">
+              回收材料創作
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -59,19 +75,63 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.art-container {
+@mixin heartbeat() {
+  animation-name: heartbeat;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+
+  @keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+
+    25% {
+      transform: scale(1.1);
+    }
+
+    50% {
+      transform: scale(1);
+    }
+
+    75% {
+      transform: scale(0.8);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+div.outter {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    &:hover {
+      @include heartbeat();
+    }
+  }
+}
+
+div.art-portal-container {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   margin-top: 80px;
   position: relative;
 
   div.portal-container {
+    margin: -20px 0 30px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 40px;
+
 
     div.portal-top,
     div.portal-bottom {
@@ -94,7 +154,6 @@ div.art-container {
           color: $primary-black;
         }
 
-
         div.portal-item {
           text-align: center;
           line-height: 140px;
@@ -102,39 +161,6 @@ div.art-container {
           outline: 10px solid $primary-white;
           color: $primary-black;
           font-size: $h3;
-
-
-          &:hover {
-
-            animation-name: heartbeat;
-            animation-duration: .5s;
-            animation-iteration-count: infinite;
-
-
-            @keyframes heartbeat {
-              0% {
-                transform: scale(1);
-              }
-
-              25% {
-                transform: scale(1.5);
-              }
-
-              50% {
-                transform: scale(1);
-              }
-
-              75% {
-                transform: scale(0.8);
-              }
-
-              100% {
-                transform: scale(1);
-              }
-            }
-
-          }
-
 
         }
       }
@@ -152,7 +178,6 @@ div.art-container {
       a#paper-work {
         border-radius: 20px;
         border-color: $primary-red;
-         margin-right: 50px;
 
         div.paper-work {
           border-radius: 10px;
@@ -168,50 +193,16 @@ div.art-container {
         display: block;
         position: relative;
         border: 0;
+        margin-left: 25px;
 
         &:hover {
-
-animation-name: heartbeat;
-animation-duration: .5s;
-animation-iteration-count: infinite;
-
-
-@keyframes heartbeat {
-  0% {
-    transform: scale(1);
-  }
-
-  25% {
-    transform: scale(1.5);
-  }
-
-  50% {
-    transform: scale(1);
-  }
-
-  75% {
-    transform: scale(0.8);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-}
-
+          @include heartbeat();
+        }
       }
 
-      a#kneading {
-       
+      a#kneading {}
 
-
-      }
-
-      a#weaving {
-        margin-left: 50px;
-        margin-right: 15px;
-      }
+      a#weaving {}
 
       div.kneading,
       div.weaving {
@@ -355,23 +346,15 @@ animation-iteration-count: infinite;
           top: 45%;
           left: 42%;
           transform: translate(-50%, -50%);
-
-
-
-
-          
         }
       }
     }
   }
 
   div.portal-bottom {
-
     a#multi-material-creation {
       border-radius: 100px 100px 0 0;
       border-color: $primary-green;
-
-
 
       div.multi-material-creation {
         border-radius: 100px 100px 0 0;
@@ -381,13 +364,10 @@ animation-iteration-count: infinite;
       }
     }
 
-
     a#recycle-material-creation {
       display: block;
       border-radius: 20px;
       border-color: $primary-red;
-      margin-left: 15px;
-
 
       div.recycle-material-creation {
         border-radius: 10px;
@@ -399,4 +379,5 @@ animation-iteration-count: infinite;
       }
     }
   }
-}</style>
+}
+</style>

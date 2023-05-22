@@ -1,5 +1,5 @@
 <template>
-  <div class="container" id="portal">
+  <div class="learning-corner-portal-container" id="portal">
     <SectionTitle title="學習區 Learning Corner" :imgSrc="require('@/assets/icons/logo/learning-corner-logo-red.svg')"
       alt="學習區logo" />
     <div class="card-container">
@@ -45,8 +45,9 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.container {
+div.learning-corner-portal-container {
   width: 100%;
+  height: 100vh;
   margin-top:80px;
   position: relative;
 

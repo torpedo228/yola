@@ -1,5 +1,5 @@
 <template>
-  <div class="container" id="introduction">
+  <div class="introduction-container" id="introduction">
     <SectionTitle title="園區介紹 Introduction" :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')" alt="園區介紹logo" />
 
     <div class="decoration">
@@ -216,9 +216,9 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.container {
+div.introduction-container {
   width: 100%;
-  height: 570px;
+  height: 89vh;
   margin: 30px 0;
   position: relative;
   overflow: hidden;
@@ -230,6 +230,7 @@ div.container {
     width: 100%;
     display: flex;
     justify-content: center;
+    position: relative;
     align-content: center;
     gap: 20px;
 

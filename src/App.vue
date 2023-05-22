@@ -34,10 +34,12 @@ export default {
 
 
 html {
-  width: 100%;  
+  width: 100%;
+  height: 100%;
 
   body {
     width: 100%;
+    height: 100%;
     font-family: $light;
     font-weight: $font-weight-light;
     box-sizing: border-box;
