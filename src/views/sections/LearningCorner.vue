@@ -25,7 +25,7 @@ export default {
 
 div.learning-corner-container {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: relative;
 }
 </style>

@@ -31,40 +31,47 @@ export default {
 <style lang="scss">
 @import "@/assets/scss/all.scss";
 
-body {
-  font-family: $light;
-  font-weight: $font-weight-light;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0px;
-  position: relative;
 
-  h2 {
+
+html {
+  width: 100%;  
+
+  body {
+    width: 100%;
+    font-family: $light;
     font-weight: $font-weight-light;
-    color: $primary-black;
-    font-size: $h2;
-  }
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0px;
+    position: relative;
 
-  h3 {
-    font-weight: $font-weight-light;
-    color: $primary-black;
-    font-size: $h3;
-  }
+    h2 {
+      font-weight: $font-weight-light;
+      color: $primary-black;
+      font-size: $h2;
+    }
 
-  h4 {
-    font-weight: $font-weight-light;
-    color: $primary-black;
-    font-size: $h4;
-  }
+    h3 {
+      font-weight: $font-weight-light;
+      color: $primary-black;
+      font-size: $h3;
+    }
 
-  a {
-    text-decoration: none;
-    bottom: 0;
-  }
+    h4 {
+      font-weight: $font-weight-light;
+      color: $primary-black;
+      font-size: $h4;
+    }
 
-  ul,
-  ol {
-    list-style: none;
+    a {
+      text-decoration: none;
+      bottom: 0;
+    }
+
+    ul,
+    ol {
+      list-style: none;
+    }
   }
 }
 </style>

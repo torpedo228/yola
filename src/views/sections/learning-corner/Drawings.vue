@@ -22,7 +22,7 @@ export default {
 
 div.container {
   width: 100%;
-  height: 700px;
+  height:100vh;
   margin-top: 80px;
   position: relative;
 }

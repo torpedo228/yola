@@ -1,5 +1,5 @@
 <template>
-  <div class="container" id="portal">
+  <div class="art-container" id="portal">
     <SectionTitle title="美勞區 Art" :imgSrc="require('@/assets/icons/logo/learning-corner-logo-red.svg')" alt="美勞區logo" />
 
     <div class="portal-container">
@@ -59,9 +59,9 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.container {
+div.art-container {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   margin-top: 80px;
   position: relative;
 
@@ -152,6 +152,7 @@ div.container {
       a#paper-work {
         border-radius: 20px;
         border-color: $primary-red;
+         margin-right: 50px;
 
         div.paper-work {
           border-radius: 10px;
@@ -202,13 +203,14 @@ animation-iteration-count: infinite;
       }
 
       a#kneading {
-        margin-left: 50px;
+       
 
 
       }
 
       a#weaving {
-        margin-left: 25px;
+        margin-left: 50px;
+        margin-right: 15px;
       }
 
       div.kneading,
@@ -384,7 +386,7 @@ animation-iteration-count: infinite;
       display: block;
       border-radius: 20px;
       border-color: $primary-red;
-      margin-right: 20px;
+      margin-left: 15px;
 
 
       div.recycle-material-creation {
