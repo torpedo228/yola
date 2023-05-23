@@ -1,5 +1,5 @@
 <template>
-  <div class="learning-corner-portal-container" id="portal">
+  <div class="thematic-teaching-portal-container" id="portal">
     <SectionTitle title="主題教學 Thematic Teaching" :imgSrc="require('@/assets/icons/logo/thematic-teaching-logo.svg')"
       alt="學習區logo" />
 
@@ -46,9 +46,9 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.themetic-teaching-portal-container {
+div.thematic-teaching-portal-container {
   width: 100%;
-  height: 80vh;
+  height:100vh;
 
 
   div.portal-container {
