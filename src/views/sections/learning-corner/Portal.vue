@@ -30,7 +30,7 @@
 
 <script>
 import SectionTitle from "@/components/SectionTitle.vue";
-import LearningCornerCard from "@/components/LearningCornerCard.vue";
+import LearningCornerCard from "@/components/learning-corner/LearningCornerCard.vue";
 
 export default {
   components: { SectionTitle, LearningCornerCard },

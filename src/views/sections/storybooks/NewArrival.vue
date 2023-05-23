@@ -5,6 +5,8 @@
       :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
       alt="最新上架logo"
     />
+
+    123
   </div>
 </template>
 
