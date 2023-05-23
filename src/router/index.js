@@ -125,7 +125,7 @@ const routes = [
   {
     path: "/storybooks",
     name: "storybooks",
-    component: () => import("@/views/sections/Storybooks.vue"),
+    component: () => import("@/views/sections/storybooks/Storybooks.vue"),
     meta: {
       title: "繪本故事",
     },

@@ -25,7 +25,13 @@ $light: 'FakePearl-Light';
 $font-weight-light:100;
 
 $border-radius-circle: 50%;
-$top-spacing: 80px;
+
+
+@mixin vm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @font-face {
   font-family: 'FakePearl-Regular';

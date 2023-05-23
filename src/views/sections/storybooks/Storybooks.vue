@@ -1,17 +1,23 @@
 <template>
   <div class="container">
     <BreadCrumb />
-      <SectionTitle title="繪本故事 Storybooks" :imgSrc="require('@/assets/icons/logo/storybooks-logo.svg')" alt="繪本故事logo" />
-      <router-view />
+    <SectionTitle
+      title="繪本故事 Storybooks"
+      :imgSrc="require('@/assets/icons/logo/storybooks-logo.svg')"
+      alt="繪本故事logo"
+    />
+
+    <NewArrival />
   </div>
 </template>
 
 <script>
 import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
 import SectionTitle from "@/components/SectionTitle.vue";
+import NewArrival from "@/views/sections/storybooks/NewArrival.vue";
 
 export default {
-  components: { BreadCrumb, SectionTitle },
+  components: { BreadCrumb, SectionTitle, NewArrival },
   data() {
     return {};
   },
@@ -25,10 +31,10 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.container{
+div.container {
   width: 100%;
   height: 700px;
-  margin-top:80px;
+  margin-top: 80px;
   position: relative;
 }
 </style>
