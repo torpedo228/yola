@@ -6,7 +6,7 @@
       alt="最新上架logo"
     />
     <div class="storybookcard-row-wrap">
-      <StoryBooksCard
+      <StoryBookCard
         v-for="(book, bookNo) in books"
         :key="bookNo"
         :imgSrc="book.imgSrc"
@@ -61,4 +61,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
+
+div.storybookcard-row-wrap{
+  @include hm();
+}
 </style>
