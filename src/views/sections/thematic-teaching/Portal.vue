@@ -48,7 +48,9 @@ export default {
 
 div.thematic-teaching-portal-container {
   width: 100%;
-  height:100vh;
+  height: 80vh;
+  margin-top: 80px;
+  position: relative;
 
 
   div.portal-container {
