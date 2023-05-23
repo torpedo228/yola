@@ -5,18 +5,54 @@
       :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
       alt="最新上架logo"
     />
-
-    123
+    <div class="storybookcard-row-wrap">
+      <StoryBooksCard
+        v-for="(book, bookNo) in books"
+        :key="bookNo"
+        :imgSrc="book.imgSrc"
+        :name="book.name"
+        :authors="book.authors"
+        :color="book.color"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import SubSectionTitle from "@/components/SubSectionTitle.vue";
+import StoryBookCard from "@/components/storybooks/StoryBookCard.vue";
 
 export default {
-  components: { SubSectionTitle },
+  components: { SubSectionTitle, StoryBookCard },
   data() {
-    return {};
+    return {
+      books: [
+        {
+          imgSrc: require("../../../assets/images/storybooks/new-arrival/new-arrival-1.jpg"),
+          name: "鱷魚怕怕牙醫怕怕",
+          authors: "五味太郎",
+          color: "red",
+        },
+        {
+          imgSrc: require("../../../assets/images/storybooks/new-arrival/new-arrival-1.jpg"),
+          name: "鱷魚怕怕牙醫怕怕",
+          authors: "五味太郎",
+          color: "red",
+        },
+        {
+          imgSrc: require("../../../assets/images/storybooks/new-arrival/new-arrival-1.jpg"),
+          name: "鱷魚怕怕牙醫怕怕",
+          authors: "五味太郎",
+          color: "red",
+        },
+        {
+          imgSrc: require("../../../assets/images/storybooks/new-arrival/new-arrival-1.jpg"),
+          name: "鱷魚怕怕牙醫怕怕",
+          authors: "五味太郎",
+          color: "red",
+        },
+      ],
+    };
   },
   mounted() {},
 };
