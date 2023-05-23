@@ -68,6 +68,15 @@ html {
     a {
       text-decoration: none;
       bottom: 0;
+
+      &:link {
+        color: $primary-black;
+      }
+
+      &:visited {
+        color: $primary-black;
+      }
+
     }
 
     ul,

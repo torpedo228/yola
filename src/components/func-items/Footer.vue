@@ -44,17 +44,14 @@ div.index-footer {
     padding: 10px 0;
     background-color: $primary-blue;
     font-size: $content;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-content: center;
-    // gap: $content/3;
+    position: relative;
+
 
     &::before {
       display: block;
       content: "";
       background: url("../../assets/decorations/footer.svg");
-      width: 100vw;
+      width: 100%;
       height: 2vw;
       background-repeat: repeat-x;
       position: absolute;
@@ -65,7 +62,6 @@ div.index-footer {
     div.decoration-wrapper {
       position: relative;
       width: 100%;
-
       bottom: 65%;
       overflow-x: hidden;
 

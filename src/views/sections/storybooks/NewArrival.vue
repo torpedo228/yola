@@ -63,6 +63,7 @@ export default {
 @import "@/assets/scss/all.scss";
 
 div.storybookcard-row-wrap{
+  width: 100%;
   @include hm();
 }
 </style>

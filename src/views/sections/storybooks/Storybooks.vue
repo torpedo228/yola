@@ -1,13 +1,14 @@
 <template>
-  <div class="container">
+  <div class="storybooks-container">
     <BreadCrumb />
-    <SectionTitle
-      title="繪本故事 Storybooks"
-      :imgSrc="require('@/assets/icons/logo/storybooks-logo.svg')"
-      alt="繪本故事logo"
-    />
+    <SectionTitle title="繪本故事 Storybooks" :imgSrc="require('@/assets/icons/logo/storybooks-logo.svg')" alt="繪本故事logo" />
 
     <NewArrival />
+    <HotBooks />
+    <div class="decoration">
+      <img src="../../../assets/decorations/hot-books-bottom.svg" alt="">
+    </div>
+    <AllBooks />
   </div>
 </template>
 
@@ -15,9 +16,11 @@
 import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
 import SectionTitle from "@/components/SectionTitle.vue";
 import NewArrival from "@/views/sections/storybooks/NewArrival.vue";
+import HotBooks from "@/views/sections/storybooks/HotBooks.vue";
+import AllBooks from "@/views/sections/storybooks/AllBooks.vue";
 
 export default {
-  components: { BreadCrumb, SectionTitle, NewArrival },
+  components: { BreadCrumb, SectionTitle, NewArrival, HotBooks, AllBooks },
   data() {
     return {};
   },
@@ -31,10 +34,19 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.container {
+div.storybooks-container {
   width: 100%;
-  height: 700px;
   margin-top: 80px;
   position: relative;
+
+  div.decoration {
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
 }
 </style>
