@@ -1,9 +1,18 @@
 <template>
   <div class="all-books-container">
-    <SubSectionTitle title="繪本總覽 All Books" :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')" alt="繪本總覽logo" />
+    <SubSectionTitle
+      title="繪本總覽 All Books"
+      :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
+      alt="繪本總覽logo"
+    />
 
-    <AllBooksSortRow v-for="(label, labelNo) in labels" :key="labelNo" :labelName="label.labelName"
-      :subLabelList="label.subLabelList" :showAll="label.showAll" />
+    <AllBooksSortRow
+      v-for="(label, labelNo) in labels"
+      :key="labelNo"
+      :labelName="label.labelName"
+      :subLabelList="label.subLabelList"
+      :showAll="label.showAll"
+    />
 
     <div class="all-books-sort-result">
       <div>篩選結果:</div>
@@ -14,12 +23,24 @@
     </div>
 
     <div class="storybookcard-row-wrap">
-      <StoryBookCard v-for="(book, bookNo) in books" :key="bookNo" :imgSrc="book.imgSrc" :name="book.name"
-        :authors="book.authors" :color="book.color" />
+      <StoryBookCard
+        v-for="(book, bookNo) in books"
+        :key="bookNo"
+        :imgSrc="book.imgSrc"
+        :name="book.name"
+        :authors="book.authors"
+        :color="book.color"
+      />
     </div>
     <div class="storybookcard-row-wrap">
-      <StoryBookCard v-for="(book, bookNo) in books" :key="bookNo" :imgSrc="book.imgSrc" :name="book.name"
-        :authors="book.authors" :color="book.color" />
+      <StoryBookCard
+        v-for="(book, bookNo) in books"
+        :key="bookNo"
+        :imgSrc="book.imgSrc"
+        :name="book.name"
+        :authors="book.authors"
+        :color="book.color"
+      />
     </div>
     <section class="pagnition">
       <ol>
@@ -97,7 +118,7 @@ export default {
       ],
     };
   },
-  mounted() { },
+  mounted() {},
 };
 </script>
 
@@ -134,10 +155,7 @@ div.all-books-container {
       border-radius: 20px;
       padding: 10px;
     }
-
-
   }
-
 
   div.storybookcard-row-wrap {
     width: 100%;

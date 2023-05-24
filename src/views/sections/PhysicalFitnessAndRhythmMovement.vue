@@ -9,7 +9,7 @@
     <a
       href=""
       class="go-to-rhythm-and-movement-section"
-      v-scroll-to="'#rhythm-movement'"
+      v-scroll-to="'#rhythm-and-movement'"
     >
       直接前往律動
     </a>
@@ -23,7 +23,7 @@
     <SectionTitle
       title="律動 Rhythm and Movement"
       :imgSrc="require('@/assets/icons/logo/rhythm-and-movement-logo.svg')"
-      alt="律動logo"
+      alt="律動logo" id="rhythm-and-movement"
     />
     <HotSongs />
     <router-view />
@@ -74,7 +74,7 @@ div.physical-fitness-and-rhythm-movement-container {
     text-align: center;
     position: absolute;
     right: 15%;
-    top: 3%;
+    top: 1%;
     border-radius: 30px;
 
     &:hover {

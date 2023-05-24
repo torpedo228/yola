@@ -1,5 +1,5 @@
 <template>
-  <div class="card-outter">
+  <div class="card-outer">
     <div class="card-wrap">
       <div class="pic" :class="'pic-' + color">
         <img :src="imgSrc" alt="" />
@@ -41,7 +41,7 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.card-outter {
+div.card-outer {
   @include unit-block(200px, 350px);
 
   div.card-wrap {

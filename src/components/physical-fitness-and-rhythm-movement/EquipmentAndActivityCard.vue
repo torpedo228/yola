@@ -1,5 +1,5 @@
 <template>
-  <div class="equipment-outter">
+  <div class="equipment-outer">
     <div class="equipment-wrap" :class="'equipment-' + color">
       <div class="pic">
         <img :src="imgSrc" alt="" />
@@ -7,7 +7,7 @@
       <div class="portal-brick">
         <div class="circle-decoration"></div>
         <h4>{{ name }}</h4>
-        <a href="">
+        <a href="./still-building">
           <div class="go-to-btn">
             活動 <i class="fa-solid fa-arrow-right"></i>
           </div>
@@ -40,7 +40,7 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.equipment-outter {
+div.equipment-outer {
   @include unit-block(150px, 200px);
 
   div.equipment-wrap {

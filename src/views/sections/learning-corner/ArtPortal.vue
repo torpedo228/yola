@@ -4,19 +4,19 @@
 
     <div class="portal-container">
       <div class="portal-top">
-        <div class="outter">
+        <div class="outer">
           <a href="./art/drawings" id="drawings">
             <div class="portal-item drawings">繪畫</div>
           </a>
         </div>
 
-        <div class="outter">
+        <div class="outer">
           <a href="/still-building" id="paper-work">
             <div class="portal-item paper-work">紙工</div>
           </a>
         </div>
 
-        <div class="outter">
+        <div class="outer">
           <a href="/still-building" id="kneading">
             <div class="kneading">
               <div class="triangle triangle1"></div>
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="portal-bottom">
-        <div class="outter">
+        <div class="outer">
           <a href="/still-building" id="weaving">
             <div class="weaving">
               <div class="triangle triangle1"></div>
@@ -41,13 +41,13 @@
           </a>
         </div>
 
-        <div class="outter">
+        <div class="outer">
           <a href="/still-building" id="multi-material-creation">
             <div class="portal-item multi-material-creation">多元材料創作</div>
           </a>
         </div>
 
-        <div class="outter">
+        <div class="outer">
           <a href="/still-building" id="recycle-material-creation">
             <div class="portal-item recycle-material-creation">
               回收材料創作
@@ -103,7 +103,7 @@ export default {
   }
 }
 
-div.outter {
+div.outer {
   position: relative;
   width: 250px;
   height: 250px;
