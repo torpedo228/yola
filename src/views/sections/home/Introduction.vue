@@ -216,6 +216,10 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
+@mixin btn-active-effect(){
+  transition: all 0.3s ease-in;
+}
+
 div.introduction-container {
   width: 100%;
   height: 89vh;
@@ -251,7 +255,6 @@ div.introduction-container {
       border: 10px solid;
       border-color: $primary-red $primary-blue $primary-green $primary-yellow;
       border-radius: 30px;
-
 
       div.intro-card {
         position: relative;
@@ -325,6 +328,7 @@ div.introduction-container {
     div.my-land {
       border-color: $primary-red;
       background-color: $primary-white;
+      @include btn-active-effect();
 
       &:hover {
         background-color: $primary-red;
@@ -337,12 +341,14 @@ div.introduction-container {
       border: 5px solid $primary-red;
       background-color: $primary-red;
       color: $primary-white;
+      @include btn-active-effect();
     }
 
     div.thematic-teaching,
     div.nursery-rhymes-and-finger-rhymes {
       border-color: $primary-blue;
       background-color: $primary-white;
+      @include btn-active-effect();
 
       &:hover {
         background-color: $primary-blue;
@@ -355,11 +361,13 @@ div.introduction-container {
       border: 5px solid $primary-blue;
       background-color: $primary-blue;
       color: $primary-white;
+      @include btn-active-effect();
     }
 
     div.storybooks {
       border-color: $primary-yellow;
       background-color: $primary-white;
+      @include btn-active-effect();
 
       &:hover {
         background-color: $primary-yellow;
@@ -371,11 +379,13 @@ div.introduction-container {
       border: 5px solid $primary-yellow;
       background-color: $primary-yellow;
       color: $primary-white;
+      @include btn-active-effect();
     }
 
     div.physical-fitness-and-rhythm-movement {
       border-color: $primary-green;
       background-color: $primary-white;
+      @include btn-active-effect();
 
       &:hover {
         background-color: $primary-green;
@@ -387,6 +397,7 @@ div.introduction-container {
       border: 5px solid $primary-green;
       background-color: $primary-green;
       color: $primary-white;
+      @include btn-active-effect();
     }
   }
 
