@@ -1,35 +1,42 @@
 <template>
-  <div class="nursey-rythmes-compoments-container" id="nursey-rythmes">
+  <div class="nursey-rhymes-compoments-container" id="nursey-rhymes">
 
 
-    <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 547.74 547.74" xml:space="preserve" stroke="#000000">
-      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-      <g id="SVGRepo_iconCarrier">
-        <g>
-          <g>
-            <path
-              d="M273.87,345.132c39.293,0,71.262-31.969,71.262-71.262c0-39.293-31.969-71.261-71.262-71.261 c-39.293,0-71.261,31.968-71.261,71.261C202.609,313.163,234.577,345.132,273.87,345.132z M273.87,228.735 c24.927,0,45.135,20.208,45.135,45.135s-20.208,45.135-45.135,45.135s-45.135-20.208-45.135-45.135 S248.943,228.735,273.87,228.735z">
-            </path>
-            <path
-              d="M273.87,547.74c151.256,0,273.87-122.617,273.87-273.87S425.126,0,273.87,0S0,122.617,0,273.87 S122.614,547.74,273.87,547.74z M273.87,47.43c124.86,0,226.44,101.58,226.44,226.44H485.01 c0-116.424-94.716-211.14-211.14-211.14V47.43z M273.87,116.051c87.023,0,157.822,70.799,157.822,157.819h-15.3 c0-78.587-63.936-142.52-142.522-142.52V116.051z M273.87,187.309c47.729,0,86.562,38.832,86.562,86.562 c0,47.729-38.832,86.562-86.562,86.562c-47.73,0-86.562-38.832-86.562-86.562C187.309,226.14,226.14,187.309,273.87,187.309z">
-            </path>
-          </g>
-        </g>
-      </g>
-    </svg>
+    <div class="disc-wrap">
+      <Disc color="green" :width="'300px'" :height="'300px'" running />
+    </div>
+
+    <div class="container">
+      <h3>哈巴狗</h3>
+      <span>詞、曲：佚名</span>
+      <p>一隻哈巴狗，坐在大門口，<br />
+        眼睛黑黝黝，想吃肉骨頭，<br />
+        一隻哈巴狗，吃完肉骨頭，<br />
+        尾巴搖一搖，向我點點頭。</p>
+      <div class="yt-download"><i class="fa-brands fa-youtube"></i>影音資源</div>
+      <a href="https://torpedo228.github.io/resources/pdf/habadog.pdf" download>
+        <div class="pdf-download"><i class="fa-solid fa-file-pdf"></i>PDF下載</div>
+      </a>
+      <audio autoplay controls>
+        <source src="../../assets/audio/nursey-ryhmes-1.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <div class="control-btn">
+      <div class="next-rhymes-btn">下一首<i class="fa-solid fa-forward"></i></div>
+      <a href="" class="go-to-all-rhymes-btn">
+        <div>直接前往歌曲庫</div>
+      </a>
+    </div>
 
   </div>
 </template>
 
 <script>
-
-
-
+import Disc from "@/components/nursery-rhymes-and-finger-rhymes/Disc.vue";
 
 export default {
-  components: {},
+  components: { Disc },
   data() {
     return {};
   },
@@ -38,8 +45,123 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">@import "@/assets/scss/all.scss";
+<style scoped lang="scss">
+@import "@/assets/scss/all.scss";
 
-div.hot-rythmes-container {}
+div.nursey-rhymes-compoments-container {
+  @include vm();
+  position: relative;
+  margin: 200px 0 0;
 
+
+  div.disc-wrap {
+    position: absolute;
+    top: -35%;
+    z-index: -1;
+
+  }
+
+  div.container {
+    @include hm();
+    flex-wrap: wrap;
+    width: 400px;
+    border: 10px solid $primary-green;
+    background-color: $primary-white;
+    border-radius: 30px;
+    padding: 30px 0;
+
+    h3{
+      margin: 0 30px 0 0;
+    }
+    span{
+      display: inline-block;
+    }
+
+    p {
+      width: 400px;
+      text-align: center;
+      font-size: $sub-info;
+    }
+
+    div.yt-download,
+    div.pdf-download {
+      margin: 0 10px 30px;
+      width: 150px;
+      height: 50px;
+      text-align: center;
+      border: 5px solid $primary-green;
+      border-radius: 40px;
+      font-size: $sub-info;
+      line-height: 50px;
+      cursor: pointer;
+
+      &:hover{
+
+opacity: 0.7;
+}
+
+      i {
+        font-size: $sub-info;
+        margin-right: 5px;
+
+      
+      }
+    }
+
+    div.yt-download {
+
+      i {
+        color: $primary-red;
+      }
+
+    }
+
+    div.pdf-download {
+      i {
+        color: $primary-red;
+      }
+    }
+
+
+
+  }
+
+
+  div.control-btn {
+
+  
+
+    div.next-rhymes-btn,
+    a.go-to-all-rhymes-btn {
+      display: block;
+      width: 160px;
+      height: 50px;
+      text-align: center;
+      border: 5px solid $primary-green;
+      border-radius: 40px;
+      font-size: $sub-info;
+      line-height: 50px;
+      margin: 20px 0;
+      cursor: pointer;
+
+      &:hover{
+
+opacity: 0.7;
+}
+
+    }
+
+    div.next-rhymes-btn {
+      i {
+        color: $primary-green;
+        margin-left: 5px;
+      }
+    }
+
+    a.go-to-all-rhymes-btn {
+      background-color: $primary-green;
+      color: $primary-white;
+    }
+  }
+}
 </style>
