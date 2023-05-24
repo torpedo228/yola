@@ -90,7 +90,7 @@ div.physical-fitness-and-rhythm-movement-container {
     width: 100%;
     overflow: hidden;
     position: absolute;
-    top: 69vh;
+    top: 17%;
 
     img {
       width: 100%;

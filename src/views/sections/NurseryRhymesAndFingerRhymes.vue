@@ -15,11 +15,18 @@
       直接前往手指謠
     </a>
 
-    <SubSectionTitle
-      title="熱門兒歌 Hot! Rhymes"
-      :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
-      alt="熱門兒歌logo"
-    />
+    <div class="flex-wrap">
+      <SubSectionTitle
+        title="熱門兒歌 Hot! Rhymes"
+        :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
+        alt="熱門兒歌logo"
+      />
+      <SubSectionTitle
+        title="編輯推薦 Recommend"
+        :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
+        alt="編輯推薦logo"
+      />
+    </div>
   
     <SectionTitle
       title="手指謠 Finger Rhymes"
@@ -27,6 +34,7 @@
       alt="手指謠logo"
       id="finger-rhymes"
     />
+
     <router-view />
   </div>
 </template>
@@ -51,9 +59,8 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.container {
+div.nursery-rhymes-and-finger-rhymes-container {
   width: 100%;
-  height: 700px;
   margin-top: 80px;
   position: relative;
 
@@ -61,7 +68,7 @@ div.container {
     display: block;
     width: 150px;
     height: 50px;
-    background-color: $primary-green;
+    background-color: $primary-blue;
     color: $primary-white;
     line-height: 50px;
     text-align: center;
@@ -77,6 +84,11 @@ div.container {
     &:active {
       background-color: $secondary-green;
     }
+  }
+
+  div.flex-wrap{
+    @include hm();
+    gap:30px;
   }
 }
 </style>
