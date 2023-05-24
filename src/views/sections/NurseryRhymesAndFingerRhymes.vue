@@ -1,22 +1,22 @@
 <template>
-  <div class="container">
+  <div class="nursery-rhymes-and-finger-rhymes-container">
     <BreadCrumb />
     <SectionTitle title="兒歌 Nursery Rhymes" :imgSrc="require('@/assets/icons/logo/nursery-rhymes-logo.svg')"
       alt="兒歌logo" />
 
       <a
       href=""
-      class="go-to-rhythm-and-movement-section"
-      v-scroll-to="'#rhythm-and-movement'"
+      class="go-to-finger-rhymes-section"
+      v-scroll-to="'#finger-rhymes'"
     >
-      直接前往律動
+      直接前往手指謠
     </a>
 
       <SubSectionTitle title="熱門兒歌 Hot! Rhymes" :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
       alt="熱門兒歌logo" />
     <HotRhymes />
     <SectionTitle title="手指謠 Finger Rhymes" :imgSrc="require('@/assets/icons/logo/finger-rhymes-logo.svg')"
-      alt="手指謠logo" />
+      alt="手指謠logo"  id="finger-rhymes"/>
     <router-view />
   </div>
 </template>
@@ -47,5 +47,27 @@ div.container {
   height: 700px;
   margin-top: 80px;
   position: relative;
+
+  a.go-to-finger-rhymes-section {
+    display: block;
+    width: 150px;
+    height: 50px;
+    background-color: $primary-green;
+    color: $primary-white;
+    line-height: 50px;
+    text-align: center;
+    position: absolute;
+    right: 15%;
+    top: 1%;
+    border-radius: 30px;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      background-color: $secondary-green;
+    }
+  }
 }
 </style>
