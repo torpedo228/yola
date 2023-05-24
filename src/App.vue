@@ -40,7 +40,6 @@ html {
     width: 100%;
     font-family: $light;
     font-weight: $font-weight-light;
-    box-sizing: border-box;
     margin: 0;
     padding: 0px;
     position: relative;

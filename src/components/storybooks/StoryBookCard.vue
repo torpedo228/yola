@@ -1,6 +1,6 @@
 <template>
   <div class="card-outter">
-    <div class="card-wrapper">
+    <div class="card-wrap">
       <div class="pic" :class="'pic-' + color">
         <img :src="imgSrc" alt="" />
       </div>
@@ -17,7 +17,6 @@
   </div>
 </template>
 
-../../assets/images/storybooks/new-arrival/new-arrival-1.jpg
 
 <script>
 export default {
@@ -45,7 +44,7 @@ export default {
 div.card-outter {
   @include unit-block(200px, 350px);
 
-  div.card-wrapper {
+  div.card-wrap {
     width: 100%;
     height: 100%;
     display: flex;

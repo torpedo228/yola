@@ -5,6 +5,8 @@
       :imgSrc="require('@/assets/icons/logo/storybooks-logo.svg')"
       alt="繪本故事logo"
     />
+
+    
   </div>
 </template>
 

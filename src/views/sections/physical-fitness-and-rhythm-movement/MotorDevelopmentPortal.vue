@@ -43,60 +43,65 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.portal-container {
-  width: 100%;
-  @include vm();
+
+div.physical-fitness-and-rhythm-movement-portal {
+height: 600px;
+
+  div.portal-container {
+    width: 100%;
+    @include vm();
 
 
 
-  div.upper-portal,
-  div.lower-portal {
-    @include hm();
-    gap: 40px;
+    div.upper-portal,
+    div.lower-portal {
+      @include hm();
+      gap: 40px;
 
-    a {
-      display: block;
-      box-shadow: 10px 5px $secondary-green;
-      color: $primary-white;
-      font-size: $h4;
-      text-align: center;
-      border-radius: $border-radius-circle;
-      background-color: $primary-green;
-
-      &:hover {
-        opacity: 0.7;
-      }
-
-      &:active {
-        background-color: $secondary-green;
-
-      }
-    }
-  }
-
-  div.upper-portal {
-    gap: 80px;
-
-    a {
-      width: 160px;
-      height: 160px;
-      line-height: 160px;
-    }
-  }
-
-  div.lower-portal {
-    a {
-      width: 200px;
-      height: 200px;
-      line-height: 200px;
-
-      div {
-        vertical-align: middle;
+      a {
+        display: block;
+        box-shadow: 10px 5px $secondary-green;
+        color: $primary-white;
+        font-size: $h4;
         text-align: center;
-        width: 100px;
-        display: inline-block;
-        height: auto;
-        line-height: 1;
+        border-radius: $border-radius-circle;
+        background-color: $primary-green;
+
+        &:hover {
+          opacity: 0.7;
+        }
+
+        &:active {
+          background-color: $secondary-green;
+
+        }
+      }
+    }
+
+    div.upper-portal {
+      gap: 80px;
+
+      a {
+        width: 160px;
+        height: 160px;
+        line-height: 160px;
+      }
+    }
+
+    div.lower-portal {
+      a {
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+
+        div {
+          vertical-align: middle;
+          text-align: center;
+          width: 100px;
+          display: inline-block;
+          height: auto;
+          line-height: 1;
+        }
       }
     }
   }
