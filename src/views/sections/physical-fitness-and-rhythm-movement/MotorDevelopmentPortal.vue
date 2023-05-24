@@ -93,6 +93,7 @@ height: 600px;
         width: 200px;
         height: 200px;
         line-height: 200px;
+        z-index: 1;
 
         div {
           vertical-align: middle;
