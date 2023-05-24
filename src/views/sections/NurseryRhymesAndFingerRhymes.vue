@@ -1,10 +1,13 @@
 <template>
   <div class="nursery-rhymes-and-finger-rhymes-container">
     <BreadCrumb />
-    <SectionTitle title="兒歌 Nursery Rhymes" :imgSrc="require('@/assets/icons/logo/nursery-rhymes-logo.svg')"
-      alt="兒歌logo" />
+    <SectionTitle
+      title="兒歌 Nursery Rhymes"
+      :imgSrc="require('@/assets/icons/logo/nursery-rhymes-logo.svg')"
+      alt="兒歌logo"
+    />
 
-      <a
+    <a
       href=""
       class="go-to-finger-rhymes-section"
       v-scroll-to="'#finger-rhymes'"
@@ -12,11 +15,18 @@
       直接前往手指謠
     </a>
 
-      <SubSectionTitle title="熱門兒歌 Hot! Rhymes" :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
-      alt="熱門兒歌logo" />
-    <HotRhymes />
-    <SectionTitle title="手指謠 Finger Rhymes" :imgSrc="require('@/assets/icons/logo/finger-rhymes-logo.svg')"
-      alt="手指謠logo"  id="finger-rhymes"/>
+    <SubSectionTitle
+      title="熱門兒歌 Hot! Rhymes"
+      :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
+      alt="熱門兒歌logo"
+    />
+  
+    <SectionTitle
+      title="手指謠 Finger Rhymes"
+      :imgSrc="require('@/assets/icons/logo/finger-rhymes-logo.svg')"
+      alt="手指謠logo"
+      id="finger-rhymes"
+    />
     <router-view />
   </div>
 </template>
@@ -25,10 +35,9 @@
 import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
 import SectionTitle from "@/components/SectionTitle.vue";
 import SubSectionTitle from "@/components/SubSectionTitle.vue";
-import HotRhymes from "@/views/nursery-rhymes-and-finger-rhymes/HotRhymes.vue";
 
 export default {
-  components: { BreadCrumb, SectionTitle,SubSectionTitle, HotRhymes },
+  components: { BreadCrumb, SectionTitle, SubSectionTitle,  },
   data() {
     return {};
   },
