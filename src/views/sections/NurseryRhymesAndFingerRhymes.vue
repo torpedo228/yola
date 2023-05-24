@@ -15,7 +15,10 @@
         alt="編輯推薦logo" />
     </div>
 
-    <NurseryRhymesCompoments />
+    <div class="flex-wrap">
+      <NurseryRhymesCompoments />
+      <NurseryRhymesCompoments />
+    </div>
 
     <SectionTitle title="手指謠 Finger Rhymes" :imgSrc="require('@/assets/icons/logo/finger-rhymes-logo.svg')" alt="手指謠logo"
       id="finger-rhymes" />
@@ -60,7 +63,7 @@ div.nursery-rhymes-and-finger-rhymes-container {
     text-align: center;
     position: absolute;
     right: 15%;
-    top: 1%;
+    top: 3%;
     border-radius: 30px;
 
     &:hover {
