@@ -2,11 +2,18 @@
   <div class="container">
     <BreadCrumb />
     <router-view />
-    <h2>建造中，空空如也，請返回上一頁<br>或點擊下方logo返回首頁</h2>
-    <a href="/"><img src="../assets/icons/logo/yola.svg" alt=""></a>
-    
-    <img class="red-square" src="../assets/icons/characters/all-characters.svg" alt="">
+    <h2>建造中，空空如也，請點擊下方logo返回上一頁</h2>
 
+    <a href="#" @click="$router.back()"
+      ><img src="../assets/icons/logo/yola.svg" alt=""
+    /></a>
+
+    <br />
+    <img
+      class="red-square"
+      src="../assets/icons/characters/all-characters.svg"
+      alt=""
+    />
   </div>
 </template>
 
@@ -40,15 +47,15 @@ div.container {
     font-size: 40px;
   }
 
-  a{
-&:hover{
-  opacity: 0.7;
-}
-  
-  img {
-    width:300px;
-    margin-bottom: 60px;
+  a {
+    &:hover {
+      opacity: 0.7;
+    }
+
+    img {
+      width: 300px;
+      margin-bottom: 60px;
+    }
   }
-}
 }
 </style>
