@@ -1,0 +1,41 @@
+<svg width="1280" height="240" viewBox="0 0 1280 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="180" width="1280" height="60" fill="#4CAF50"/>
+<circle cx="35" cy="210" r="20" fill="#F44336"/>
+<circle cx="90" cy="210" r="20" fill="white"/>
+<circle cx="145" cy="210" r="20" fill="#FFC107"/>
+<circle cx="200" cy="210" r="20" fill="white"/>
+<circle cx="255" cy="210" r="20" fill="#1E88E5"/>
+<circle cx="310" cy="210" r="20" fill="white"/>
+<circle cx="365" cy="210" r="20" fill="#F44336"/>
+<circle cx="420" cy="210" r="20" fill="white"/>
+<circle cx="475" cy="210" r="20" fill="#FFC107"/>
+<circle cx="530" cy="210" r="20" fill="white"/>
+<circle cx="585" cy="210" r="20" fill="#1E88E5"/>
+<circle cx="640" cy="210" r="20" fill="white"/>
+<circle cx="695" cy="210" r="20" fill="#F44336"/>
+<circle cx="750" cy="210" r="20" fill="white"/>
+<circle cx="805" cy="210" r="20" fill="#FFC107"/>
+<circle cx="860" cy="210" r="20" fill="white"/>
+<circle cx="915" cy="210" r="20" fill="#1E88E5"/>
+<circle cx="970" cy="210" r="20" fill="white"/>
+<circle cx="1025" cy="210" r="20" fill="#F44336"/>
+<circle cx="1080" cy="210" r="20" fill="white"/>
+<circle cx="1135" cy="210" r="20" fill="#FFC107"/>
+<circle cx="1190" cy="210" r="20" fill="white"/>
+<circle cx="1245" cy="210" r="20" fill="#1E88E5"/>
+<circle cx="1085" cy="47" r="30" fill="#F44336"/>
+<circle cx="1131" cy="30" r="30" fill="#A6D7A8"/>
+<circle cx="1180" cy="56" r="30" fill="#4CAF50"/>
+<circle cx="1200" cy="101" r="30" fill="#A6D7A8"/>
+<circle cx="1190" cy="148" r="30" fill="#1E88E5"/>
+<circle cx="75" cy="75" r="75" transform="matrix(-1 0 0 1 1201 38)" fill="#FFC107"/>
+<rect width="37" height="4" rx="2" transform="matrix(-1 0 0 1 1125 119)" fill="black" fill-opacity="0.8"/>
+<circle cx="17.25" cy="17.25" r="17.25" transform="matrix(-1 0 0 1 1140.25 72.5)" fill="white"/>
+<circle cx="17.25" cy="17.25" r="17.25" transform="matrix(-1 0 0 1 1107.25 72.5)" fill="white"/>
+<circle cx="5.25" cy="5.25" r="5.25" transform="matrix(-1 0 0 1 1128.25 84.5)" fill="black" fill-opacity="0.8"/>
+<circle cx="5.25" cy="5.25" r="5.25" transform="matrix(-1 0 0 1 1095.25 84.5)" fill="black" fill-opacity="0.8"/>
+<circle cx="13.125" cy="13.125" r="13.125" transform="matrix(-1 0 0 1 1156.75 106.25)" fill="#FFE083"/>
+<circle cx="13.125" cy="13.125" r="13.125" transform="matrix(-1 0 0 1 1084.75 104.75)" fill="#FFE083"/>
+<circle cx="1.875" cy="1.875" r="1.875" transform="matrix(-1 0 0 1 1112.5 107.75)" fill="black" fill-opacity="0.8"/>
+<circle cx="1.875" cy="1.875" r="1.875" transform="matrix(-1 0 0 1 1104.25 107.75)" fill="black" fill-opacity="0.8"/>
+</svg>
