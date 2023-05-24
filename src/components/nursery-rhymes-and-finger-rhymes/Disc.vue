@@ -1,5 +1,8 @@
 <template>
-  <div :class="['disc', color]" :style="{ width: width, height: height }">
+  <div
+    :class="[{ running: running }, color]"
+    :style="{ width: width, height: height }"
+  >
     <svg
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -30,6 +33,7 @@
 </template>
 
 <script>
+// example: <Disc color="yellow" height="100px" width="100px" running />
 export default {
   components: {},
   props: {
@@ -38,6 +42,7 @@ export default {
     color: String,
     width: String,
     height: String,
+    running: Boolean,
   },
   data() {
     return {};
@@ -49,6 +54,22 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
+
+div.running {
+  animation-name: rotate;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 div.yellow {
   fill: $primary-yellow;
