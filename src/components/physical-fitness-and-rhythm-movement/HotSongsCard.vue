@@ -211,6 +211,9 @@ a.watch-all{
   border-radius: 20px;
   font-size: $h4;
 
+&:hover{
+  opacity:.7;
+}
 
 }
 
