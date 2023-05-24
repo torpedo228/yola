@@ -27,28 +27,28 @@ export default {
   data() {
     return {
       books: [
-        {
+      {
           imgSrc: require("../../../assets/images/storybooks/new-arrival/new-arrival-1.jpg"),
           name: "鱷魚怕怕牙醫怕怕",
           authors: "五味太郎",
           color: "red",
         },
         {
-          imgSrc: require("../../../assets/images/storybooks/new-arrival/new-arrival-1.jpg"),
-          name: "鱷魚怕怕牙醫怕怕",
-          authors: "五味太郎",
+          imgSrc: require("../../../assets/images/storybooks/new-arrival/new-arrival-2.png"),
+          name: "遲到大王",
+          authors: "約翰伯林罕",
           color: "red",
         },
         {
-          imgSrc: require("../../../assets/images/storybooks/new-arrival/new-arrival-1.jpg"),
-          name: "鱷魚怕怕牙醫怕怕",
-          authors: "五味太郎",
+          imgSrc: require("../../../assets/images/storybooks/new-arrival/new-arrival-3.png"),
+          name: "好餓好餓的毛毛蟲",
+          authors: "艾瑞卡爾",
           color: "red",
         },
         {
-          imgSrc: require("../../../assets/images/storybooks/new-arrival/new-arrival-1.jpg"),
-          name: "鱷魚怕怕牙醫怕怕",
-          authors: "五味太郎",
+          imgSrc: require("../../../assets/images/storybooks/new-arrival/new-arrival-4.png"),
+          name: "你看起來很好吃",
+          authors: "宮西達也",
           color: "red",
         },
       ],

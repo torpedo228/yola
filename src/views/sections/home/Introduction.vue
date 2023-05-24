@@ -217,7 +217,7 @@ export default {
 @import "@/assets/scss/all.scss";
 
 @mixin btn-active-effect(){
-  transition: all 0.3s ease-in;
+  transition: all 0.1s ease-in;
 }
 
 div.introduction-container {

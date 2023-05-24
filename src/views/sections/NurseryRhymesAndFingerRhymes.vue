@@ -20,9 +20,20 @@
       <NurseryRhymesCompoments />
     </div>
 
+    <div class="nursery-rhymes-decoration">
+      <img src="../../assets/decorations/nursery-rhymes-and-finger-rhymes.svg" alt="" />
+    </div>
+
     <SectionTitle title="手指謠 Finger Rhymes" :imgSrc="require('@/assets/icons/logo/finger-rhymes-logo.svg')" alt="手指謠logo"
       id="finger-rhymes" />
 
+    <div class="flex-wrap">
+      <SubSectionTitle title="老師最愛用 Teacher’s Favorite" :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
+        alt="熱門兒歌logo" />
+      <SubSectionTitle title="編輯推薦 Recommend" :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
+        alt="編輯推薦logo" />
+    </div>
+    <FingerRhymesCompoments />
     <router-view />
   </div>
 </template>
@@ -32,11 +43,21 @@ import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
 import SectionTitle from "@/components/SectionTitle.vue";
 import SubSectionTitle from "@/components/SubSectionTitle.vue";
 import NurseryRhymesCompoments from "@/components/nursery-rhymes-and-finger-rhymes/NurseryRhymesCompoments.vue";
+import FingerRhymesCompoments from "@/components/nursery-rhymes-and-finger-rhymes/FingerRhymesCompoments.vue";
 
 export default {
-  components: { BreadCrumb, SectionTitle, SubSectionTitle, NurseryRhymesCompoments },
+  components: { BreadCrumb, SectionTitle, SubSectionTitle, NurseryRhymesCompoments,FingerRhymesCompoments },
   data() {
-    return {};
+    return {
+      // color: [
+      //   { color: "green" },
+      //   { color: "yellow" }
+      // ]
+
+
+
+
+    };
   },
   mounted() {
     this.$store.commit("SET_NURSERY_RHYMES_AND_FINGER_RHYMES_PAGE");
@@ -79,5 +100,15 @@ div.nursery-rhymes-and-finger-rhymes-container {
     @include hm();
     gap: 100px;
   }
+
+  div.nursery-rhymes-decoration{
+    width: 100%;
+    overflow: hidden;
+  }
+
+
+
 }
+
+
 </style>
