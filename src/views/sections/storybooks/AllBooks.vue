@@ -2,8 +2,8 @@
   <div class="all-books-container">
     <SubSectionTitle
       title="繪本總覽 All Books"
-      :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
-      alt="繪本總覽logo"
+      :imgSrc="require('@/assets/icons/title/subtitle-logo.svg')"
+      alt="繪本總覽icon"
     />
 
     <AllBooksSortRow
@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import SubSectionTitle from "@/components/SubSectionTitle.vue";
+import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
 import StoryBookCard from "@/components/storybooks/StoryBookCard.vue";
 import AllBooksSortRow from "@/components/storybooks/AllBooksSortRow.vue";
 

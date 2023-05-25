@@ -1,9 +1,9 @@
 <template>
-  <div class="container">
+  <div class="container" id="portal">
     <SectionTitle
-      title="指印 Fingerprints"
-      :imgSrc="require('@/assets/icons/section/learning-corner/green.svg')"
-      alt="指印icon"
+      title="美勞區 Art"
+      :imgSrc="require('@/assets/icons/section/learning-corner/red.svg')"
+      alt="美勞區icon"
     />
   </div>
 </template>
@@ -16,9 +16,7 @@ export default {
   data() {
     return {};
   },
-  mounted() {
-    this.$store.commit("SET_FINGERPRINT_PAGE");
-  },
+  mounted() {},
 };
 </script>
 
@@ -28,7 +26,7 @@ export default {
 
 div.container {
   width: 100%;
-
+  height: 100vh;
   margin-top: 80px;
   position: relative;
 }

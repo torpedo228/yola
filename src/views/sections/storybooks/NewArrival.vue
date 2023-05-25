@@ -2,8 +2,8 @@
   <div>
     <SubSectionTitle
       title="最新上架 New Arrival"
-      :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
-      alt="最新上架logo"
+      :imgSrc="require('@/assets/icons/title/subtitle-logo.svg')"
+      alt="最新上架icon"
     />
     <div class="storybookcard-row-wrap">
       <StoryBookCard
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import SubSectionTitle from "@/components/SubSectionTitle.vue";
+import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
 import StoryBookCard from "@/components/storybooks/StoryBookCard.vue";
 
 export default {
@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       books: [
-      {
+        {
           imgSrc: require("../../../assets/images/storybooks/new-arrival/new-arrival-1.jpg"),
           name: "鱷魚怕怕牙醫怕怕",
           authors: "五味太郎",
@@ -62,7 +62,7 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.storybookcard-row-wrap{
+div.storybookcard-row-wrap {
   width: 100%;
   @include hm();
 }

@@ -2,8 +2,8 @@
   <div>
     <SubSectionTitle
       title="熱門繪本 Hot! Books"
-      :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
-      alt="熱門繪本logo"
+      :imgSrc="require('@/assets/icons/title/subtitle-logo.svg')"
+      alt="熱門繪本icon"
     />
     <div class="storybookcard-row-wrap">
       <StoryBookCard
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import SubSectionTitle from "@/components/SubSectionTitle.vue";
+import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
 import StoryBookCard from "@/components/storybooks/StoryBookCard.vue";
 
 export default {

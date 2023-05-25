@@ -2,7 +2,7 @@
   <div>
     <div class="go-to-top">
       <a href="#" v-scroll-to="'#page-top'">
-        <img src="../../assets/icons/go-to-top.svg" alt="回到頂端"
+        <img src="../../assets/icons/func-items/go-to-top.svg" alt="回到頂端"
       /></a>
     </div>
   </div>

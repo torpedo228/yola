@@ -1,22 +1,43 @@
 <template>
   <div class="hot-songs-container" id="hot-songs">
-    <SubSectionTitle title="熱門歌單 Hot! Songs" :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')" alt="熱門歌單logo" />
+    <SubSectionTitle
+      title="熱門歌單 Hot! Songs"
+      :imgSrc="require('@/assets/icons/title/subtitle-logo.svg')"
+      alt="熱門歌單icon"
+    />
 
     <div class="leaderboard-song-row-wrap">
-      <LeaderboardSongCard v-for="(leaderboardSong, leaderboardSongNo) in leaderboards" :key="leaderboardSongNo"
-        :rankNo="leaderboardSong.rankNo" :name="leaderboardSong.name" :singer="leaderboardSong.singer"
-        :time="leaderboardSong.time" :color="leaderboardSong.color" />
+      <LeaderboardSongCard
+        v-for="(leaderboardSong, leaderboardSongNo) in leaderboards"
+        :key="leaderboardSongNo"
+        :rankNo="leaderboardSong.rankNo"
+        :name="leaderboardSong.name"
+        :singer="leaderboardSong.singer"
+        :time="leaderboardSong.time"
+        :color="leaderboardSong.color"
+      />
     </div>
 
-    <div class="hot-songs-row-wrap" v-for="(hotSongsRow, hotSongsRowNo) in arrangedHotSongList" :key="hotSongsRowNo">
-      <HotSongsCard v-for="(hotSong, hotSongNo) in hotSongsRow" :key="hotSongNo" :name="hotSong.name"
-        :singer="hotSong.singer" :time="hotSong.time" :color="hotSong.color" :isFinal="hotSong.isFinal" />
+    <div
+      class="hot-songs-row-wrap"
+      v-for="(hotSongsRow, hotSongsRowNo) in arrangedHotSongList"
+      :key="hotSongsRowNo"
+    >
+      <HotSongsCard
+        v-for="(hotSong, hotSongNo) in hotSongsRow"
+        :key="hotSongNo"
+        :name="hotSong.name"
+        :singer="hotSong.singer"
+        :time="hotSong.time"
+        :color="hotSong.color"
+        :isFinal="hotSong.isFinal"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import SubSectionTitle from "@/components/SubSectionTitle.vue";
+import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
 import LeaderboardSongCard from "@/components/physical-fitness-and-rhythm-movement/LeaderboardSongCard.vue";
 import HotSongsCard from "@/components/physical-fitness-and-rhythm-movement/HotSongsCard.vue";
 

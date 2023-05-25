@@ -116,14 +116,10 @@ div.all-books-sort-row-container {
         margin-bottom: 10px;
         cursor: pointer;
 
-        &:hover{
+        &:hover {
           background-color: $secondary-yellow;
           border: 5px solid $secondary-yellow;
         }
-      }
-
-      div.sort-items-all {
-
       }
 
       div.sort-item-wrap {

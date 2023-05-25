@@ -1,15 +1,15 @@
 <template>
-  <div class="container">
+  <div class="construction-container">
     <SectionTitle
       title="組合建構區 Construction"
-      :imgSrc="require('@/assets/icons/logo/learning-corner-logo-blue.svg')"
-      alt="組合建構區logo"
+      :imgSrc="require('@/assets/icons/section/learning-corner/blue.svg')"
+      alt="組合建構區icon"
     />
   </div>
 </template>
 
 <script>
-import SectionTitle from "@/components/SectionTitle.vue";
+import SectionTitle from "@/components/title/SectionTitle.vue";
 
 export default {
   components: { SectionTitle },
@@ -25,10 +25,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
-div.container{
+
+div.construction-container {
   width: 100%;
-  height: 100vh;
-  margin-top:80px;
+  margin-top: 80px;
   position: relative;
 }
 </style>

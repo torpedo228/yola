@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 // import { publicPath } from "../../vue.config";
-import HomeView from "@/views/Home.vue";
-import TestView from "@/views/TestView.vue";
+import HomeView from "@/views/pages/Home.vue";
+import TestView from "@/views/others/TestView.vue";
 
 const routes = [
   {
@@ -24,7 +24,7 @@ const routes = [
   },
   {
     path: "/learning-corner",
-    component: () => import("@/views/sections/LearningCorner.vue"),
+    component: () => import("@/views/pages/LearningCorner.vue"),
     meta: {
       title: "學習區",
     },
@@ -32,7 +32,8 @@ const routes = [
       {
         path: "",
         name: "learning-corner",
-        component: () => import("@/views/sections/learning-corner/Portal.vue"),
+        component: () =>
+          import("@/views/sections/learning-corner/LearningCornerPortal.vue"),
         meta: {
           title: "",
         },
@@ -97,7 +98,7 @@ const routes = [
   },
   {
     path: "/thematic-teaching",
-    component: () => import("@/views/sections/ThematicTeaching.vue"),
+    component: () => import("@/views/pages/ThematicTeaching.vue"),
     meta: {
       title: "主題教學",
     },
@@ -106,7 +107,9 @@ const routes = [
         path: "",
         name: "thematic-teaching",
         component: () =>
-          import("@/views/sections/thematic-teaching/Portal.vue"),
+          import(
+            "@/views/sections/thematic-teaching/ThematicTeachingPortal.vue"
+          ),
         meta: {
           title: "",
         },
@@ -133,8 +136,7 @@ const routes = [
   {
     path: "/nursery-rhymes-and-finger-rhymes",
     name: "nursery-rhymes-and-finger-rhymes",
-    component: () =>
-      import("@/views/sections/NurseryRhymesAndFingerRhymes.vue"),
+    component: () => import("@/views/pages/NurseryRhymesAndFingerRhymes.vue"),
     meta: {
       title: "兒歌&手指謠",
     },
@@ -143,7 +145,7 @@ const routes = [
     path: "/physical-fitness-and-rhythm-movement",
     name: "physical-fitness-and-rhythm-movement",
     component: () =>
-      import("@/views/sections/PhysicalFitnessAndRhythmMovement.vue"),
+      import("@/views/pages/PhysicalFitnessAndRhythmMovement.vue"),
     meta: {
       title: "體能&律動",
     },
@@ -151,7 +153,7 @@ const routes = [
   {
     path: "/my-land",
     name: "my-land",
-    component: () => import("@/views/sections/MyLand.vue"),
+    component: () => import("@/views/pages/MyLand.vue"),
     meta: {
       title: "我的樂園",
     },
@@ -159,7 +161,7 @@ const routes = [
   {
     path: "/still-building",
     name: "still-building",
-    component: () => import("@/views/StillBuilding.vue"),
+    component: () => import("@/views/others/StillBuilding.vue"),
     meta: {
       title: "建造中",
     },

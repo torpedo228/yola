@@ -1,12 +1,19 @@
 <template>
   <div class="storybooks-container">
     <BreadCrumb />
-    <SectionTitle title="繪本故事 Storybooks" :imgSrc="require('@/assets/icons/logo/storybooks-logo.svg')" alt="繪本故事logo" />
+    <SectionTitle
+      title="繪本故事 Storybooks"
+      :imgSrc="require('@/assets/icons/section/storybooks.svg')"
+      alt="繪本故事icon"
+    />
 
     <NewArrival />
     <HotBooks />
     <div class="decoration">
-      <img src="../../../assets/decorations/hot-books-bottom.svg" alt="">
+      <img
+        src="../../../assets/decorations/storybooks/hot-books-bottom.svg"
+        alt=""
+      />
     </div>
     <AllBooks />
   </div>
@@ -14,7 +21,7 @@
 
 <script>
 import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
-import SectionTitle from "@/components/SectionTitle.vue";
+import SectionTitle from "@/components/title/SectionTitle.vue";
 import NewArrival from "@/views/sections/storybooks/NewArrival.vue";
 import HotBooks from "@/views/sections/storybooks/HotBooks.vue";
 import AllBooks from "@/views/sections/storybooks/AllBooks.vue";
@@ -47,6 +54,5 @@ div.storybooks-container {
       width: 100%;
     }
   }
-
 }
 </style>

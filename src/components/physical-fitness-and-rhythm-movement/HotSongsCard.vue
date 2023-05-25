@@ -1,8 +1,10 @@
 <template>
   <div class="hot-songs-card-outer">
-
-    <div class="hot-songs-card-wrap" :class="'hot-songs-card-wrap-' + color" v-if="!isFinal">
-
+    <div
+      class="hot-songs-card-wrap"
+      :class="'hot-songs-card-wrap-' + color"
+      v-if="!isFinal"
+    >
       <div class="text">
         <h3>{{ name }}</h3>
         <h4>{{ singer }}</h4>
@@ -10,17 +12,12 @@
       </div>
 
       <a href="./still-building">
-        <div class="go-to-btn"><i class="fa-solid fa-music"></i>
-        </div>
+        <div class="go-to-btn"><i class="fa-solid fa-music"></i></div>
       </a>
     </div>
 
-    <a href="" class="watch-all" v-else>
-        看全部
-    </a>
-
+    <a href="" class="watch-all" v-else> 看全部 </a>
   </div>
-
 </template>
 
 <script>
@@ -37,7 +34,7 @@ export default {
     return {};
   },
   computed: {},
-  mounted() { },
+  mounted() {},
   watch: {},
   methods: {},
 };
@@ -66,19 +63,17 @@ div.hot-songs-card-outer {
       h4 {
         display: inline-block;
         margin: 10px 15px 0 0;
-        font-size: $content ;
+        font-size: $content;
       }
 
       span {
         font-size: 12px;
       }
-
     }
 
     a {
       &:hover {
         div.go-to-btn {
-
           i {
             color: $primary-white;
           }
@@ -137,8 +132,6 @@ div.hot-songs-card-outer {
         background-color: $primary-green;
 
         div.go-to-btn {
-
-
           background-color: $primary-green;
         }
       }
@@ -149,7 +142,6 @@ div.hot-songs-card-outer {
         i {
           color: $primary-green;
         }
-
       }
     }
   }
@@ -162,7 +154,6 @@ div.hot-songs-card-outer {
         background-color: $primary-yellow;
 
         div.go-to-btn {
-
           background-color: $primary-yellow;
         }
       }
@@ -185,7 +176,6 @@ div.hot-songs-card-outer {
         background-color: $primary-blue;
 
         div.go-to-btn {
-
           background-color: $primary-blue;
         }
       }
@@ -200,22 +190,20 @@ div.hot-songs-card-outer {
     }
   }
 
-a.watch-all{
-  display: block;
-  width: 170px;
-  height: 170px;
-  line-height:170px;
-  background-color: $primary-green;
-  color: $primary-white;
-  text-align: center;
-  border-radius: 20px;
-  font-size: $h4;
+  a.watch-all {
+    display: block;
+    width: 170px;
+    height: 170px;
+    line-height: 170px;
+    background-color: $primary-green;
+    color: $primary-white;
+    text-align: center;
+    border-radius: 20px;
+    font-size: $h4;
 
-&:hover{
-  opacity:.7;
-}
-
-}
-
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="breadcrumb-wrap">
-    <img src="../../assets/icons/logo/bread-crumb-logo.svg" alt="麵包屑logo" />
-    <ol class="flex">
+    <img src="../../assets/icons/func-items/bread-crumb.svg" alt="麵包屑icon" />
+    <ol>
       <li v-for="(layer, i) in breadcrumbList" :key="i" class="pl-2">
         <router-link :to="layer.path">{{ layer.meta.title }}</router-link>
       </li>
@@ -75,7 +75,6 @@ div.breadcrumb-wrap {
   left: 5%;
   display: flex;
 
-  img {}
 }
 
 ol {

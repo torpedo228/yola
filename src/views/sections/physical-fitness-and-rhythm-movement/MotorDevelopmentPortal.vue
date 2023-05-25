@@ -1,9 +1,12 @@
 <template>
-  <div class="physical-fitness-and-rhythm-movement-portal">
-    <SubSectionTitle title="基本動作技能 Motor Development" :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
-      alt="繪本故事logo" />
+  <div class="motor-development-portal-container">
+    <SubSectionTitle
+      title="基本動作技能 Motor Development"
+      :imgSrc="require('@/assets/icons/title/subtitle-logo.svg')"
+      alt="基本動作技能icon"
+    />
 
-    <div class="portal-container">
+    <div class="portal-wrap">
       <div class="upper-portal">
         <a href="">穩定平衡</a>
         <a href="">協調控制</a>
@@ -21,21 +24,18 @@
         </a>
       </div>
     </div>
-
-
-
   </div>
 </template>
 
 <script>
-import SubSectionTitle from "@/components/SubSectionTitle.vue";
+import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
 
 export default {
   components: { SubSectionTitle },
   data() {
     return {};
   },
-  mounted() { },
+  mounted() {},
 };
 </script>
 
@@ -43,15 +43,12 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
+div.motor-development-portal-container {
+  height: 600px;
 
-div.physical-fitness-and-rhythm-movement-portal {
-height: 600px;
-
-  div.portal-container {
+  div.portal-wrap {
     width: 100%;
     @include vm();
-
-
 
     div.upper-portal,
     div.lower-portal {
@@ -73,7 +70,6 @@ height: 600px;
 
         &:active {
           background-color: $secondary-green;
-
         }
       }
     }

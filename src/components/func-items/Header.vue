@@ -1,13 +1,21 @@
 <template>
-  <div class="container" id="page-top">
-    <div class="home-header">
+  <div class="header-container" id="page-top">
+    <div class="header-wrap">
       <a href="#" @click="backToHome">
-        <img :class="isStandardMode ? 'logo' : 'left-logo'" src="../../assets/icons/logo/yola.svg" alt="幼樂園Yo-La! Logo" />
+        <img
+          :class="isStandardMode ? 'logo' : 'left-logo'"
+          src="../../assets/logo/yola.svg"
+          alt="幼樂園Yo-La! Logo"
+        />
       </a>
       <div class="side-menu">
         <SideMenu />
       </div>
-      <div class="social-media" :class="isStandardMode ? 'fade-in' : 'fade-out'" v-show="isStandardMode">
+      <div
+        class="social-media"
+        :class="isStandardMode ? 'fade-in' : 'fade-out'"
+        v-show="isStandardMode"
+      >
         <a href="#">
           <div class="fb"><i class="fa-brands fa-square-facebook"></i></div>
         </a>
@@ -32,10 +40,13 @@ export default {
   },
   computed: {
     isStandardMode() {
-      return this.$route.matched.length == 0 || this.$route.matched[0].name === "home";
+      return (
+        this.$route.matched.length == 0 ||
+        this.$route.matched[0].name === "home"
+      );
     },
   },
-  mounted() { },
+  mounted() {},
   watch: {},
   methods: {
     backToHome() {
@@ -48,46 +59,40 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
-$height: 100%;
 
-div.container {
+div.header-container {
   width: 100%;
   position: relative;
 
-
-  div.home-header {
-    background-color: $primary-white;
-    position: fixed;
+  div.header-wrap {
     width: 100%;
-    height: 80px;
+    position: fixed;
     top: 0;
+    background-color: $primary-white;
     border-bottom: 1px solid $secondary-grey;
-    z-index: 2;
+    z-index: 9999;
 
     img.logo {
-      $width: 150px;
-      position: absolute;
-      width: $width;
-      height: $height;
-      left: calc(50% - $width / 2);
-      top: calc(50% - $height / 2);
+      width: 150px;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       transition-duration: 0.5s;
     }
 
     img.left-logo {
-      $width: 150px;
-      position: absolute;
-      width: $width;
-      height: $height;
+      width: 150px;
+      position: relative;
+
       left: 2%;
-      top: calc(50% - $height / 2);
+      top: 10%;
       transition-duration: 0.5s;
     }
 
     div.side-menu {
       position: absolute;
       width: 40px;
-      height: $height;
       right: 4%;
       top: 20%;
     }
@@ -136,12 +141,14 @@ div.container {
         width: 30px;
         height: 30px;
         color: transparent;
-        background: radial-gradient(circle at 30% 107%,
-            #fdf497 0%,
-            #fdf497 5%,
-            #fd5949 45%,
-            #d6249f 60%,
-            #285aeb 90%);
+        background: radial-gradient(
+          circle at 30% 107%,
+          #fdf497 0%,
+          #fdf497 5%,
+          #fd5949 45%,
+          #d6249f 60%,
+          #285aeb 90%
+        );
         -webkit-background-clip: text;
         display: flex;
         align-items: center;

@@ -3,14 +3,14 @@
     <img
       v-if="isShow"
       class="side-menu-btn-close"
-      src="../../assets/icons/menu-close.svg"
+      src="../../assets/icons/func-items/menu-close.svg"
       alt="選單按鈕"
       @click="turnOff()"
     />
     <img
       v-else
       class="side-menu-btn-open"
-      src="../../assets/icons/menu-open.svg"
+      src="../../assets/icons/func-items/menu-open.svg"
       alt="選單按鈕"
       @click="turnOn()"
     />
@@ -21,7 +21,7 @@
     >
       <img
         class="side-menu-img"
-        src="../../assets/icons/side-menu.svg"
+        src="../../assets/icons/func-items/side-menu.svg"
         alt=""
       />
       <div class="shortcut-wrap">
@@ -41,7 +41,7 @@
         <a id="learning-corner" @click="jumpTo('learning-corner')">
           <span>學習區</span>
         </a>
-        <a id="themetic-teaching" @click="jumpTo('thematic-teaching')">
+        <a id="thematic-teaching" @click="jumpTo('thematic-teaching')">
           <span>主題教學</span>
         </a>
         <a id="storybooks" @click="jumpTo('storybooks')">

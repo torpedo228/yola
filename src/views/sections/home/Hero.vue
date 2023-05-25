@@ -1,19 +1,38 @@
 <template>
-    <div class="container" id="hero">
-      <div class="main-content">
-        <img class="decoration-1" src="../../../assets/decorations/hero-1.svg" alt="" />
-        <h2>聚焦幼兒教育<br><br>資源共享互惠</h2>
-        <a class="go-to-introduction-btn" v-scroll-to="'#introduction'">
-          <h4>開始探索</h4>
-        </a>
-      </div>
-
-      <img class="decoration-2" src="../../../assets/decorations/hero-2.svg" alt="" />
-      <img class="decoration-3" src="../../../assets/decorations/hero-3.svg" alt="" />
-      <img class="under-decoration " src="../../../assets/decorations/under-decoration.svg" alt="">
-      <img class="hero-img" src="../../../assets/images/home/hero.png" alt="" />
-
+  <div class="container" id="hero">
+    <div class="main-content">
+      <img
+        class="decoration-blue"
+        src="../../../assets/decorations/home/hero-blue.svg"
+        alt=""
+      />
+      <h2>聚焦幼兒教育<br /><br />資源共享互惠</h2>
+      <a class="go-to-introduction-btn" v-scroll-to="'#introduction'">
+        <h4>開始探索</h4>
+      </a>
     </div>
+
+    <img
+      class="decoration-red"
+      src="../../../assets/decorations/home/hero-red.svg"
+      alt=""
+    />
+    <img
+      class="decoration-yellow"
+      src="../../../assets/decorations/home/hero-yellow.svg"
+      alt=""
+    />
+    <img
+      class="under-decoration"
+      src="../../../assets/decorations/home/hero-green.svg"
+      alt=""
+    />
+    <img
+      class="hero-img"
+      src="../../../assets/images/home/hero/hero.png"
+      alt=""
+    />
+  </div>
 </template>
 
 <script>
@@ -22,9 +41,7 @@ export default {
   data() {
     return {};
   },
-  mounted() {
-
-  },
+  mounted() {},
 };
 </script>
 
@@ -36,7 +53,7 @@ div.container {
   width: 100%;
   height: 100vh;
   position: relative;
-  margin-top:80px;
+  margin-top: 80px;
 
   div.main-content {
     width: 450px;
@@ -52,7 +69,7 @@ div.container {
       line-height: $h2;
     }
 
-    img.decoration-1 {
+    img.decoration-blue {
       width: 100%;
     }
 
@@ -99,24 +116,21 @@ div.container {
     }
   }
 
-
   img {
     position: absolute;
   }
 
-
-  img.decoration-2 {
+  img.decoration-red {
     top: -10%;
     left: 0;
   }
 
-  img.decoration-3 {
+  img.decoration-yellow {
     width: 300px;
     height: 200px;
     top: 60%;
     left: 5%;
   }
-
 
   img.hero-img,
   img.under-decoration {

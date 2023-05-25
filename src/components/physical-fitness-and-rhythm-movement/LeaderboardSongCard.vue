@@ -1,8 +1,9 @@
 <template>
   <div class="leaderboard-song-card-outer">
-
-    <div class="leaderboard-song-wrap" :class="'leaderboard-song-wrap-' + color">
-
+    <div
+      class="leaderboard-song-wrap"
+      :class="'leaderboard-song-wrap-' + color"
+    >
       <div class="rank">
         {{ rankNo }}
       </div>
@@ -14,8 +15,7 @@
       </div>
 
       <a href="./still-building">
-        <div class="go-to-btn"><i class="fa-solid fa-music"></i>
-        </div>
+        <div class="go-to-btn"><i class="fa-solid fa-music"></i></div>
       </a>
     </div>
   </div>
@@ -35,7 +35,7 @@ export default {
     return {};
   },
   computed: {},
-  mounted() { },
+  mounted() {},
   watch: {},
   methods: {},
 };
@@ -49,7 +49,7 @@ div.leaderboard-song-card-outer {
   @include unit-block(250px, 300px);
   display: flex;
   justify-content: center;
-  align-items:flex-end;
+  align-items: flex-end;
 
   div.leaderboard-song-wrap {
     width: 200px;
@@ -58,7 +58,6 @@ div.leaderboard-song-card-outer {
     border-radius: 20px;
     position: relative;
     @include vm();
-
 
     div.rank {
       width: 80px;
@@ -71,7 +70,7 @@ div.leaderboard-song-card-outer {
       font-size: 60px;
       font-weight: bold;
       position: relative;
-      
+
       top: -30%;
     }
 
@@ -81,25 +80,24 @@ div.leaderboard-song-card-outer {
       bottom: 35%;
 
       h3 {
-        color: $primary-white ;
+        color: $primary-white;
 
         margin: 20px 0 0;
       }
 
       h4 {
-        color: $primary-white ;
+        color: $primary-white;
 
         display: inline-block;
         margin: 10px 15px 0 0;
-        font-size: $content ;
+        font-size: $content;
       }
 
       span {
-        color: $primary-white ;
+        color: $primary-white;
 
         font-size: 12px;
       }
-
     }
 
     a {
@@ -107,7 +105,7 @@ div.leaderboard-song-card-outer {
       bottom: 5%;
 
       &:hover {
-        opacity: .7;
+        opacity: 0.7;
       }
 
       &:active {
@@ -130,9 +128,7 @@ div.leaderboard-song-card-outer {
           line-height: 50px;
         }
       }
-
     }
-
   }
 
   div.leaderboard-song-wrap-yellow {
@@ -149,7 +145,7 @@ div.leaderboard-song-card-outer {
       }
 
       span {
-        font-size: $content ;
+        font-size: $content;
       }
     }
 
@@ -161,7 +157,6 @@ div.leaderboard-song-card-outer {
       font-size: 80px;
       line-height: 100px;
     }
-
   }
 
   div.leaderboard-song-wrap-red {
@@ -169,7 +164,6 @@ div.leaderboard-song-card-outer {
       border-color: $primary-red;
       color: $primary-red;
     }
-
   }
 
   div.leaderboard-song-wrap-blue {
@@ -177,6 +171,6 @@ div.leaderboard-song-card-outer {
       border-color: $primary-blue;
       color: $primary-blue;
     }
-
   }
-}</style>
+}
+</style>

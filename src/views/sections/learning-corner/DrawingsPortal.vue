@@ -2,8 +2,8 @@
   <div class="container" id="portal">
     <SectionTitle
       title="繪畫 Drawings"
-      :imgSrc="require('@/assets/icons/logo/learning-corner-logo-yellow.svg')"
-      alt="繪畫logo"
+      :imgSrc="require('@/assets/icons/section/learning-corner/yellow.svg')"
+      alt="繪畫icon"
     />
 
     <a href="./drawings/fingerprint">
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import SectionTitle from "@/components/SectionTitle.vue";
+import SectionTitle from "@/components/title/SectionTitle.vue";
 
 export default {
   components: { SectionTitle },

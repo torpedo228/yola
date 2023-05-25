@@ -3,8 +3,8 @@
     <BreadCrumb />
     <SectionTitle
       title="主題發想牆 Learning Corner"
-      :imgSrc="require('@/assets/icons/logo/thematic-teaching-logo.svg')"
-      alt="主題發想牆logo"
+      :imgSrc="require('@/assets/icons/section/thematic-teaching.svg')"
+      alt="主題發想牆icon"
     />
     <router-view />
   </div>
@@ -12,7 +12,7 @@
 
 <script>
 import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
-import SectionTitle from "@/components/SectionTitle.vue";
+import SectionTitle from "@/components/title/SectionTitle.vue";
 
 export default {
   components: { BreadCrumb, SectionTitle },

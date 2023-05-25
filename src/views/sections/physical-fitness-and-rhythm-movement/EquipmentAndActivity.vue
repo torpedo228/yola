@@ -1,22 +1,35 @@
 <template>
   <div class="equipment-and-activity-container">
-    <SubSectionTitle title="器材與活動 Equipment and Activity" :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')"
-      alt="器材與活動logo" />
+    <SubSectionTitle
+      title="器材與活動 Equipment and Activity"
+      :imgSrc="require('@/assets/icons/title/subtitle-logo.svg')"
+      alt="器材與活動icon"
+    />
 
     <div class="equipment-row-wrap">
-      <EquipmentAndActivityCard v-for="(equipment, equipmentNo) in equipments" :key="equipmentNo"
-        :imgSrc="equipment.imgSrc" :name="equipment.name" :color="equipment.color" />
+      <EquipmentAndActivityCard
+        v-for="(equipment, equipmentNo) in equipments"
+        :key="equipmentNo"
+        :imgSrc="equipment.imgSrc"
+        :name="equipment.name"
+        :color="equipment.color"
+      />
     </div>
 
     <div class="equipment-row-wrap">
-      <EquipmentAndActivityCard v-for="(equipment, equipmentNo) in equipments" :key="equipmentNo"
-        :imgSrc="equipment.imgSrc" :name="equipment.name" :color="equipment.color" />
+      <EquipmentAndActivityCard
+        v-for="(equipment, equipmentNo) in equipments"
+        :key="equipmentNo"
+        :imgSrc="equipment.imgSrc"
+        :name="equipment.name"
+        :color="equipment.color"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import SubSectionTitle from "@/components/SubSectionTitle.vue";
+import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
 import EquipmentAndActivityCard from "@/components/physical-fitness-and-rhythm-movement/EquipmentAndActivityCard.vue";
 
 export default {
@@ -30,34 +43,34 @@ export default {
     return {
       equipments: [
         {
-          imgSrc: require("../../../assets/images/physical-fitness/Equipment-and-Activity/scarf.png"),
+          imgSrc: require("../../../assets/images/physical-fitness/equipment-and-activity/scarf.png"),
           name: "方巾 / 絲巾",
           color: "green",
         },
         {
-          imgSrc: require("../../../assets/images/physical-fitness/Equipment-and-Activity/skateboard.jpg"),
+          imgSrc: require("../../../assets/images/physical-fitness/equipment-and-activity/skateboard.jpg"),
           name: "滑板車",
           color: "white",
         },
         {
-          imgSrc: require("../../../assets/images/physical-fitness/Equipment-and-Activity/air-stick.png"),
+          imgSrc: require("../../../assets/images/physical-fitness/equipment-and-activity/air-stick.png"),
           name: "空氣棒",
           color: "green",
         },
         {
-          imgSrc: require("../../../assets/images/physical-fitness/Equipment-and-Activity/balance-bike.jpg"),
+          imgSrc: require("../../../assets/images/physical-fitness/equipment-and-activity/balance-bike.jpg"),
           name: "滑步車",
           color: "white",
         },
         {
-          imgSrc: require("../../../assets/images/physical-fitness/Equipment-and-Activity/ball.jpg"),
+          imgSrc: require("../../../assets/images/physical-fitness/equipment-and-activity/ball.jpg"),
           name: "皮球",
           color: "green",
         },
       ],
     };
   },
-  mounted() { },
+  mounted() {},
 };
 </script>
 
@@ -68,7 +81,6 @@ export default {
 div.equipment-and-activity-container {
   @include vm();
   margin-bottom: 30px;
-
 
   div.equipment-row-wrap {
     width: 100%;

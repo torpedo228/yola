@@ -1,14 +1,18 @@
 <template>
-  <div class="container" id="latest-news">
-    <SectionTitle title="最新消息 Latest News" :imgSrc="require('@/assets/icons/logo/sub-title-logo.svg')" alt="最新消息logo"
-      id="latest-news-title" />
+  <div class="latest-news-container" id="latest-news">
+    <SectionTitle
+      title="最新消息 Latest News"
+      :imgSrc="require('@/assets/icons/title/subtitle-logo.svg')"
+      alt="最新消息icon"
+      id="latest-news-title"
+    />
 
     <Slide />
   </div>
 </template>
 
 <script>
-import SectionTitle from "@/components/SectionTitle.vue";
+import SectionTitle from "@/components/title/SectionTitle.vue";
 import Slide from "@/components/func-items/Slide.vue";
 
 export default {
@@ -16,7 +20,7 @@ export default {
   data() {
     return {};
   },
-  mounted() { },
+  mounted() {},
 };
 </script>
 
@@ -24,9 +28,8 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.container {
+div.latest-news-container {
   width: 100%;
-  height: 100vh;
   position: relative;
 }
 </style>
