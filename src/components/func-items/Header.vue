@@ -2,20 +2,12 @@
   <div class="header-container" id="page-top">
     <div class="header-wrap">
       <a href="#" @click="backToHome">
-        <img
-          :class="isStandardMode ? 'logo' : 'left-logo'"
-          src="../../assets/logo/yola.svg"
-          alt="幼樂園Yo-La! Logo"
-        />
+        <img :class="isStandardMode ? 'logo' : 'left-logo'" src="../../assets/logo/yola.svg" alt="幼樂園Yo-La! Logo" />
       </a>
       <div class="side-menu">
         <SideMenu />
       </div>
-      <div
-        class="social-media"
-        :class="isStandardMode ? 'fade-in' : 'fade-out'"
-        v-show="isStandardMode"
-      >
+      <div class="social-media" :class="isStandardMode ? 'fade-in' : 'fade-out'" v-show="isStandardMode">
         <a href="#">
           <div class="fb"><i class="fa-brands fa-square-facebook"></i></div>
         </a>
@@ -46,7 +38,7 @@ export default {
       );
     },
   },
-  mounted() {},
+  mounted() { },
   watch: {},
   methods: {
     backToHome() {
@@ -77,7 +69,6 @@ div.header-container {
       position: relative;
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -50%);
       transition-duration: 0.5s;
     }
 
@@ -141,14 +132,12 @@ div.header-container {
         width: 30px;
         height: 30px;
         color: transparent;
-        background: radial-gradient(
-          circle at 30% 107%,
-          #fdf497 0%,
-          #fdf497 5%,
-          #fd5949 45%,
-          #d6249f 60%,
-          #285aeb 90%
-        );
+        background: radial-gradient(circle at 30% 107%,
+            #fdf497 0%,
+            #fdf497 5%,
+            #fd5949 45%,
+            #d6249f 60%,
+            #285aeb 90%);
         -webkit-background-clip: text;
         display: flex;
         align-items: center;
@@ -158,6 +147,26 @@ div.header-container {
       div.yt i {
         color: $primary-red;
       }
+    }
+  }
+
+  @media screen and (min-width:768px) {
+    div.header-wrap {
+      img.logo {
+
+      }
+    }
+  }
+
+  @media screen and (min-width:1024px) {
+    div.header-wrap {
+      img.logo {}
+    }
+  }
+
+  @media screen and (min-width:1200px) {
+    div.header-wrap {
+      img.logo {}
     }
   }
 }
