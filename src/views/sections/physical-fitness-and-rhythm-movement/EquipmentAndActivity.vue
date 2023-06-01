@@ -10,7 +10,7 @@
       <EquipmentAndActivityCard
         v-for="(equipment, equipmentNo) in equipments"
         :key="equipmentNo"
-        :imgSrc="equipment.imgSrc"
+        :imgSrc="require(equipment.imgSrc)"
         :name="equipment.name"
         :color="equipment.color"
       />
@@ -43,7 +43,7 @@ export default {
     return {
       equipments: [
         {
-          imgSrc: require("@/assets/images/physical-fitness/equipment-and-activity/scarf.png"),
+          imgSrc: "@/assets/images/physical-fitness/equipment-and-activity/scarf.png",
           name: "方巾 / 絲巾",
           color: "green",
         },

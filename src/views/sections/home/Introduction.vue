@@ -22,7 +22,7 @@
     <div class="portal-container">
       <div class="go-to-bottom-left-wrap">
         <a
-          href="./learning-corner"
+          :href="learningCorner.href"
           @mouseover="showLearningCorner()"
           @mouseleave="turnOnAutoSlide()"
         >
