@@ -288,7 +288,7 @@ div.slide-outer {
     width: 100%;
     height: 20px;
     position: absolute;
-left: 50%;
+    left: 50%;
 
     div.page-1,
     div.page-2,

@@ -9,12 +9,12 @@
     <div class="decoration">
       <img
         class="all-characters"
-        src="../../../assets/characters/all-characters.svg"
+        :src="require('@/assets/characters/all-characters.svg')"
         alt=""
       />
       <img
         class="rainbow-stripe"
-        src="../../../assets/decorations/home/introduction-bottom-stripe.svg"
+        :src="require('@/assets/decorations/home/introduction-bottom-stripe.svg')"
         alt=""
       />
     </div>
@@ -85,7 +85,7 @@
           </p>
           <img
             :class="'icon-' + sectionMeta[currentSectionNo].iconPosition"
-            src="../../../assets/logo/yola-icon.svg"
+            :src="require('@/assets/logo/yola-icon.svg')"
             alt=""
           />
         </div>

@@ -11,7 +11,7 @@
     <HotBooks />
     <div class="decoration">
       <img
-        src="../../../assets/decorations/storybooks/hot-books-bottom.svg"
+        :src="require('@/assets/decorations/storybooks/hot-books-bottom.svg')"
         alt=""
       />
     </div>

@@ -1,37 +1,17 @@
 <template>
   <div class="container" id="hero">
     <div class="main-content">
-      <img
-        class="decoration-blue"
-        src="../../../assets/decorations/home/hero-blue.svg"
-        alt=""
-      />
+      <img class="decoration-blue" :src="require('@/assets/decorations/home/hero-blue.svg')" alt="" />
       <h2>聚焦幼兒教育<br /><br />資源共享互惠</h2>
       <a class="go-to-introduction-btn" v-scroll-to="'#introduction'">
         <h4>開始探索</h4>
       </a>
     </div>
 
-    <img
-      class="decoration-red"
-      src="../../../assets/decorations/home/hero-red.svg"
-      alt=""
-    />
-    <img
-      class="decoration-yellow"
-      src="../../../assets/decorations/home/hero-yellow.svg"
-      alt=""
-    />
-    <img
-      class="under-decoration"
-      src="../../../assets/decorations/home/hero-green.svg"
-      alt=""
-    />
-    <img
-      class="hero-img"
-      src="../../../assets/images/home/hero/hero.png"
-      alt=""
-    />
+    <img class="decoration-red" :src="require('@/assets/decorations/home/hero-red.svg')" alt="" />
+    <img class="decoration-yellow" :src="require('@/assets/decorations/home/hero-yellow.svg')" alt="" />
+    <img class="under-decoration" :src="require('@/assets/decorations/home/hero-green.svg')" alt="" />
+    <img class="hero-img" :src="require('@/assets/images/home/hero/hero.png')" alt="" />
   </div>
 </template>
 
@@ -41,7 +21,7 @@ export default {
   data() {
     return {};
   },
-  mounted() {},
+  mounted() { },
 };
 </script>
 

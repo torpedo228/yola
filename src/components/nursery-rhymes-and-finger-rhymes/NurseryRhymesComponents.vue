@@ -27,7 +27,7 @@
       </a>
       <audio autoplay controls>
         <source
-          src="../../assets/audio/nursery-rhymes-1.mp3"
+          :src="require('@/assets/audio/nursery-rhymes-1.mp3')"
           type="audio/mpeg"
         />
       </audio>

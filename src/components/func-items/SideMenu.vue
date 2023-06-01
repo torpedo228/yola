@@ -3,14 +3,14 @@
     <img
       v-if="isShow"
       class="side-menu-btn-close"
-      src="../../assets/icons/func-items/menu-close.svg"
+      :src="require('@/assets/icons/func-items/menu-close.svg')"
       alt="選單按鈕"
       @click="turnOff()"
     />
     <img
       v-else
       class="side-menu-btn-open"
-      src="../../assets/icons/func-items/menu-open.svg"
+      :src="require('@/assets/icons/func-items/menu-open.svg')"
       alt="選單按鈕"
       @click="turnOn()"
     />
@@ -21,7 +21,7 @@
     >
       <img
         class="side-menu-img"
-        src="../../assets/icons/func-items/side-menu.svg"
+        :src="require('@/assets/icons/func-items/side-menu.svg')"
         alt=""
       />
       <div class="shortcut-wrap">

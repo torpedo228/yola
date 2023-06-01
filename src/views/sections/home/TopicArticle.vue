@@ -10,7 +10,7 @@
       <div class="article-top">
         <div class="article-img">
           <img
-            src="../../../assets/images/home/topic-article/topic-article-1.jpg"
+            :src="require('@/assets/images/home/topic-article/topic-article-1.jpg')"
             alt=""
           />
         </div>
@@ -35,7 +35,7 @@
       <div class="article-bottom">
         <div class="article-img">
           <img
-            src="../../../assets/images/home/topic-article/topic-article-2.jpg"
+            :src="require('@/assets/images/home/topic-article/topic-article-2.jpg')"
             alt=""
           />
         </div>

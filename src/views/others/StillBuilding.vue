@@ -5,13 +5,13 @@
     <h2>建造中，空空如也，請點擊下方logo返回上一頁</h2>
 
     <a href="#" @click="$router.back()"
-      ><img src="../../assets/logo/yola.svg" alt=""
+      ><img :src="require('@/assets/logo/yola.svg')" alt=""
     /></a>
 
     <br />
     <img
       class="all-characters"
-      src="../../assets/characters/all-characters.svg"
+      :src="require('@/assets/characters/all-characters.svg')"
       alt=""
     />
   </div>

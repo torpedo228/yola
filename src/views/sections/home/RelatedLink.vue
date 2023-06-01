@@ -25,7 +25,7 @@
           </li>
         </ul>
         <img
-          src="../../../assets/images/home/related-link/house-red.svg"
+          :src="require('@/assets/images/home/related-link/house-red.svg')"
           alt=""
         />
       </div>
@@ -38,7 +38,7 @@
           <li><a href="">公共化教保服務</a></li>
         </ul>
         <img
-          src="../../../assets/images/home/related-link/house-yellow.svg"
+          :src="require('@/assets/images/home/related-link/house-yellow.svg')"
           alt=""
         />
       </div>
@@ -60,7 +60,7 @@
           </li>
         </ul>
         <img
-          src="../../../assets/images/home/related-link/house-green.svg"
+          :src="require('@/assets/images/home/related-link/house-green.svg')"
           alt=""
         />
       </div>
@@ -73,7 +73,7 @@
           <li><a href="">童言童語</a></li>
           <li><a href="">數星星繪本網</a></li>
         </ul>
-        <img src="../../../assets/images/home/related-link/house-blue.svg" />
+        <img :src="require('@/assets/images/home/related-link/house-blue.svg')" />
       </div>
     </div>
   </div>

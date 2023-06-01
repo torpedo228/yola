@@ -16,7 +16,7 @@
     <MotorDevelopmentPortal />
     <div class="motor-development-decoration">
       <img
-        src="../../assets/decorations/physical-fitness-and-rhythm-movement/motor-development-portal-bottom.svg"
+        :src="require('@/assets/decorations/physical-fitness-and-rhythm-movement/motor-development-portal-bottom.svg')"
         alt=""
       />
     </div>

@@ -35,7 +35,7 @@
 
     <div class="nursery-rhymes-decoration">
       <img
-        src="../../assets/decorations/nursery-rhymes-and-finger-rhymes/nursery-rhymes-and-finger-rhymes-stripe.svg"
+        :src="require('@/assets/decorations/nursery-rhymes-and-finger-rhymes/nursery-rhymes-and-finger-rhymes-stripe.svg')"
         alt=""
       />
     </div>
