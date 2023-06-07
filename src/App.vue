@@ -4,7 +4,7 @@
       <GoToTop />
     </div>
     <Header />
-    <router-view v-slot="{ Component, route }">
+    <router-view v-slot="{ Component, route }" v-if="!$store.state.isDebug">
       <transition :name="route.meta.transition || 'fade'">
         <component :is="Component" />
       </transition>
@@ -14,13 +14,13 @@
 </template>
 
 <script>
-import Footer from "@/components/func-items/Footer.vue";
-import GoToTop from "@/components/func-items/GoToTop.vue";
 import Header from "@/components/func-items/Header.vue";
+import GoToTop from "@/components/func-items/GoToTop.vue";
+import Footer from "@/components/func-items/Footer.vue";
 // import SideMenu from "@/components/func-items/SideMenu.vue";
 
 export default {
-  components: { GoToTop, Header, Footer },
+  components: { Header,GoToTop, Footer },
   data() {
     return {};
   },

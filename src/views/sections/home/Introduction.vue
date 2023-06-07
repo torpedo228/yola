@@ -14,7 +14,9 @@
       />
       <img
         class="rainbow-stripe"
-        :src="require('@/assets/decorations/home/introduction-bottom-stripe.svg')"
+        :src="
+          require('@/assets/decorations/home/introduction-bottom-stripe.svg')
+        "
         alt=""
       />
     </div>
@@ -22,7 +24,7 @@
     <div class="portal-container">
       <div class="go-to-bottom-left-wrap">
         <a
-          :href="learningCorner.href"
+          href="./learning-corner"
           @mouseover="showLearningCorner()"
           @mouseleave="turnOnAutoSlide()"
         >

@@ -37,9 +37,12 @@ div.index-footer {
   div.footer-content-wrap {
     width: 100%;
     padding: 10px 0;
-    background-color: $primary-blue;
+    // background-color: $primary-blue;
     font-size: $content;
     position: relative;
+
+
+
 
     &::before {
       display: block;

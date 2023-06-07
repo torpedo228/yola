@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="side-menu-container">
     <img
       v-if="isShow"
       class="side-menu-btn-close"
@@ -16,8 +16,8 @@
     />
 
     <div
-      class="side-menu-container"
-      v-bind:style="{ right: isShow ? '-10%' : '-40%' }"
+      class="side-menu-wrap"
+      v-bind:style="{ left: isShow ? '-400px' : '50px' }"
     >
       <img
         class="side-menu-img"
@@ -104,149 +104,133 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-img.side-menu-btn-open,
-img.side-menu-btn-close {
-  cursor: pointer;
+div#side-menu-container {
+  height: 100%;
 
-  &:hover {
-    opacity: 0.7;
-  }
-}
-
-img.side-menu-btn-open {
-  width: 50px;
-  height: 50px;
-}
-
-img.side-menu-btn-close {
-  width: 50px;
-  height: 50px;
-}
-
-div.side-menu-container {
-  width: 600px;
-  height: 550px;
-  position: fixed;
-  text-align: center;
-  -webkit-transition: 0.35s ease-in-out;
-  transition: 0.35s ease-in-out;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-
-  img.side-menu-img {
-    width: 100%;
+  img.side-menu-btn-open,
+  img.side-menu-btn-close {
     height: 100%;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
-  div.shortcut-wrap {
-    width: 150px;
-    position: absolute;
-    top: 15%;
+  div.side-menu-wrap {
+    width: 600px;
+    position: fixed;
+    -webkit-transition: 0.35s ease-in-out;
     display: flex;
-    flex-direction: column;
+    align-content: center;
     justify-content: center;
-    gap: 20px;
 
-    a {
-      display: inline-block;
-      border-radius: 30px;
-
-      &:link {
-        color: $primary-black;
-      }
-
-      &:visited {
-        color: $primary-black;
-      }
-
-      &:hover {
-        background-color: $primary-blue;
-      }
-
-      &:active {
-        color: $primary-white;
-        opacity: 0.5;
-      }
-
-      span {
-        display: block;
-        width: 150px;
-        color: $primary-black;
-        font-size: $sub-info;
-        text-align: center;
-        border-radius: 30px;
-        cursor: pointer;
-
-        &:hover {
-          color: $primary-white;
-        }
-      }
+    img.side-menu-img {
+      width: 100%;
     }
 
-    a#learning-corner {
-      &:hover {
-        background-color: $primary-red;
-      }
-    }
-
-    a#storybooks {
-      &:hover {
-        background-color: $primary-yellow;
-      }
-    }
-
-    a#physical-fitness-and-rhythm-movement {
-      &:hover {
-        background-color: $primary-green;
-      }
-    }
-
-    a#my-land {
-      cursor: pointer;
-      width: 150px;
-      padding: 5px 0;
-      margin-bottom: 5%;
+    div.shortcut-wrap {
+      text-align: center;
+      position: absolute;
+      top: 15%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 10px;
+      gap: 35px;
 
-      &:hover {
-        background-color: $primary-red;
+      a {
+        display: inline-block;
+        border-radius: 30px;
 
-        img {
+        &:link {
+          color: $primary-black;
+        }
+
+        &:visited {
+          color: $primary-black;
+        }
+
+        &:hover {
+          background-color: $primary-blue;
+        }
+
+        &:active {
+          color: $primary-white;
+          opacity: 0.5;
+        }
+
+        span {
+          display: block;
+          width: 150px;
+          color: $primary-black;
+          font-size: $sub-info;
+          text-align: center;
+          border-radius: 30px;
+          cursor: pointer;
+
+          &:hover {
+            color: $primary-white;
+          }
+        }
+      }
+
+      a#learning-corner {
+        &:hover {
           background-color: $primary-red;
-          outline: 10px solid $secondary-red;
-          border-radius: 50%;
         }
       }
 
-      div.profile-img {
+      a#storybooks {
+        &:hover {
+          background-color: $primary-yellow;
+        }
+      }
+
+      a#physical-fitness-and-rhythm-movement {
+        &:hover {
+          background-color: $primary-green;
+        }
+      }
+
+      a#my-land {
+        cursor: pointer;
         width: 150px;
+        padding: 5px 0;
+        margin-bottom: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
 
-        img {
-          width: 80px;
-          height: 80px;
-          border-radius: 50%;
+        &:hover {
+          background-color: $primary-red;
+
+          img {
+            background-color: $primary-red;
+            outline: 10px solid $secondary-red;
+            border-radius: 50%;
+          }
         }
 
-        // i {
-        //   &::before {
-        //     outline: 10px solid $secondary-red;
-        //     border-radius: 50px;
-        //   }
-        // }
-      }
+        div.profile-img {
+          width: 150px;
 
-      span.my-land {
-        color: $primary-white;
-        font-size: $sub-info;
-      }
+          img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+          }
+        }
 
-      i {
-        color: $primary-white;
-        font-size: 80px;
+        span.my-land {
+          color: $primary-white;
+          font-size: $sub-info;
+        }
+
+        i {
+          color: $primary-white;
+          font-size: 80px;
+        }
       }
     }
   }
