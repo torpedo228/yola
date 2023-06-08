@@ -38,6 +38,7 @@ html {
 
   body {
     width: 100%;
+    // font-size: 10vmin;
     font-family: $light;
     font-weight: $font-weight-light;
     margin: 0;
