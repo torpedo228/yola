@@ -46,27 +46,44 @@ export default {
   data() {
     return {
       learningCorner: {
-        main: { title: "學習區", routingName: "still-building", color: "red" },
+        main: { title: "學習區", routingName: "learning-corner", color: "red" },
         subList: [
           { title: "語文區", routingName: "still-building", color: "blue" },
           { title: "扮演區", routingName: "still-building", color: "green" },
+          { title: "美勞區", routingName: "art", color: "red" },
+          { title: "數學區", routingName: "still-building", color: "yellow" },
+          { title: "積木區", routingName: "still-building", color: "red" },
+          { title: "烹飪區", routingName: "still-building", color: "yellow" },
+          { title: "組合建構區", routingName: "construction", color: "blue" },
+          {
+            title: "鬆散素材區", routingName: "still-building", color: "green",
+          },
         ],
       },
       thematicTeaching: {
         main: {
           title: "主題教學",
-          routingName: "still-building",
+          routingName: "thematic-teaching",
           color: "blue",
         },
         subList: [
-          { title: "語文區", routingName: "still-building", color: "blue" },
-          { title: "扮演區", routingName: "still-building", color: "green" },
+          {
+            title: "主題教學設計",
+            routingName: "still-building",
+            color: "red",
+          },
+          {
+            title: "教學活動參考",
+            routingName: "still-building",
+            color: "green",
+          },
+          { title: "主題發想牆", routingName: "still-building", color: "blue" },
         ],
       },
       storybooks: {
         main: {
           title: "繪本故事",
-          routingName: "still-building",
+          routingName: "storybooks",
           color: "yellow",
         },
         subList: [],
@@ -74,7 +91,7 @@ export default {
       nurseryRhymesAndFingerRhymes: {
         main: {
           title: "兒歌&手指謠",
-          routingName: "still-building",
+          routingName: "nursery-rhymes-and-finger-rhymes",
           color: "blue",
         },
         subList: [],
@@ -82,7 +99,7 @@ export default {
       physicalFitnessAndRhythmMovement: {
         main: {
           title: "體能&律動",
-          routingName: "still-building",
+          routingName: "physical-fitness-and-rhythm-movement",
           color: "green",
         },
         subList: [],
@@ -90,7 +107,7 @@ export default {
       myLand: {
         main: {
           title: "我的樂園",
-          routingName: "still-building",
+          routingName: "my-land",
           color: "red",
         },
         subList: [],
@@ -178,6 +195,7 @@ div.header-container {
 
         @include custom-responsive("xl xxl") {
           display: block;
+          font-size: 1.5vw;
         }
       }
 
@@ -281,7 +299,7 @@ div.header-container {
           color: $primary-grey;
 
           @include custom-responsive("xl xxl") {
-            font-size: clamp(5rem, 4.5vw, 5.25rem);
+            font-size: 4.5vw;
           }
         }
 

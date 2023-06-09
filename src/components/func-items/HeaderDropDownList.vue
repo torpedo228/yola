@@ -2,19 +2,19 @@
   <div class="header-drop-down-list-container">
     <div
       :class="'main-title-' + main.color"
-      @onclick="router.push({ name: main.routingName })"
+      @click="toPage(main.routingName)"
     >
       {{ main.title }}
       <!-- <i v-if="hasSubList" class="fa-solid fa-angle-down"></i> -->
     </div>
 
-    <ul class="drop-down-list" v-if="hasSubList" >
+    <ul class="drop-down-list" v-if="hasSubList">
       <li
         v-for="(subItem, subItemNo) in subList"
         :key="subItemNo"
         class="drop-down-list-item"
         :class="'drop-down-list-item-' + subItem.color"
-        @onclick="router.push({ name: subItem.routingName })"
+        @click="toPage(subItem.routingName)"
       >
         {{ subItem.title }}
       </li>
@@ -39,7 +39,11 @@ export default {
   },
   mounted() {},
   watch: {},
-  methods: {},
+  methods: {
+    toPage(routingName) {
+      this.$router.push({ name: routingName });
+    },
+  },
 };
 </script>
 
@@ -79,20 +83,20 @@ div.header-drop-down-list-container {
     width: 13vw;
     display: none;
     position: absolute;
-    padding: 5px 0;
+    padding: 20px 0;
     background-color: $primary-white;
     border-radius: 20px;
     box-shadow: 2px 2px 2px $primary-grey;
-    transform: translate(-50%, -25%);
+    transform: translate(-50%, -3vh);
     left: 50%;
 
     li.drop-down-list-item {
       display: block;
       width: 100%;
       text-align: center;
-      height: 30px;
-      line-height: 30px;
-      margin: 10px 0;
+      height: 3vh;
+      line-height: 3vh;
+      padding: 10px 0;
 
       &:hover {
         color: $primary-white;
