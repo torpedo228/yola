@@ -27,7 +27,7 @@
       </a>
       <audio autoplay controls>
         <source
-          :src="require('@/assets/audio/nursery-rhymes-1.mp3')"
+          src= 'https://torpedo228.github.io/resources/media/audio/nursery-rhymes-1.mp3'
           type="audio/mpeg"
         />
       </audio>

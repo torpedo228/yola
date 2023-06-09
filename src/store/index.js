@@ -5,7 +5,7 @@ import {
 export default createStore({
   state: {
     currentPage: "home",
-    isDebug: true,
+    isDebug: false,
   },
   getters: {
     isHomePage(state) {

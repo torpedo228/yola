@@ -20,30 +20,70 @@ import Footer from "@/components/func-items/Footer.vue";
 // import SideMenu from "@/components/func-items/SideMenu.vue";
 
 export default {
-  components: { Header,GoToTop, Footer },
+  components: { Header, GoToTop, Footer },
   data() {
     return {};
   },
-  mounted() { },
+  mounted() {
+    const vw = Math.max(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0
+    );
+    const vh = Math.max(
+      document.documentElement.clientHeight || 0,
+      window.innerHeight || 0
+    );
+
+    var deviceScopeMsg =
+      "vw: " +
+      vw +
+      "\n" +
+      "vh: " +
+      vh +
+      "\n" +
+      "innerWidth: " +
+      innerWidth +
+      "\n" +
+      "innerHeight: " +
+      innerHeight;
+
+    console.log(deviceScopeMsg);
+    // window.alert(deviceScopeMsg);
+  },
 };
 </script>
 
 <style lang="scss">
 @import "@/assets/scss/all.scss";
 
-
-
 html {
   width: 100%;
+  font-size: 12px;
+  // @include custom-responsive("xs") {
+  //   font-size: 12px;
+  // }
+
+  // @include custom-responsive("sm md lg") {
+  //   font-size: 16px;
+  // }
+
+  // @include custom-responsive("xl") {
+  //   font-size: 18px;
+  // }
+
+  // @include custom-responsive("xxl") {
+  //   font-size: 24px;
+  // }
+
 
   body {
     width: 100%;
-    // font-size: 10vmin;
     font-family: $light;
     font-weight: $font-weight-light;
     margin: 0;
     padding: 0px;
     position: relative;
+
 
     h2 {
       font-weight: $font-weight-light;
@@ -74,7 +114,6 @@ html {
       &:visited {
         color: $primary-black;
       }
-
     }
 
     ul,
