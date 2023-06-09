@@ -17,13 +17,25 @@ export default {};
 
 div.go-to-top {
   position: fixed;
-  right: 1%;
-  bottom: 3%;
+  right: 3vmin;
+  bottom: 3vmin;
   transition-duration: 1s;
   z-index: 10;
 
   img {
-    width: 60px;
+
+    @include custom-responsive("xs") {
+      width: 15vmin;
+    }
+
+    @include custom-responsive("sm md lg") {
+      width: 10vmin;
+    }
+
+    @include custom-responsive("xl xxl") {
+      width: 10vmin;
+    }
+
   }
 
   &:hover {

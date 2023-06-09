@@ -40,24 +40,27 @@ div.footer-container {
   left: 0;
 
   div.footer-content-wrap {
-    width: 100%;
-    padding: 10px 0;
+    width: 100vw;
+    padding: 2vh 0;
     background-color: $primary-blue;
-    font-size: $content;
+
     position: relative;
 
 
     @include custom-responsive("xs") {
       @include hm();
       gap: 8vw;
+      font-size: 5vmin;
     }
 
     @include custom-responsive("sm md lg") {
       display: block;
+      font-size: 2.5vmin;
     }
 
     @include custom-responsive("xl xxl") {
       display: block;
+      font-size: 2.5vmin;
     }
 
 
@@ -73,14 +76,6 @@ div.footer-container {
       background-repeat: repeat-x;
       position: absolute;
       top: -100%;
-
-    }
-
-    div.decoration-wrapper {
-      position: relative;
-      width: 100%;
-      bottom: 65%;
-      overflow-x: hidden;
     }
 
     ul {
