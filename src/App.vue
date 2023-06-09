@@ -9,6 +9,7 @@
         <component :is="Component" />
       </transition>
     </router-view>
+    <div v-else><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
     <Footer />
   </div>
 </template>
