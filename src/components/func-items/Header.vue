@@ -139,10 +139,11 @@ export default {
 div.header-container {
   width: 100%;
   position: relative;
+  padding-bottom: 13vh;
 
   div.header-wrap {
     width: 100%;
-    height: 13%;
+    height: 13vh;
     position: fixed;
     top: 0;
     background-color: $primary-white;

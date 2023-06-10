@@ -4,12 +4,11 @@
       <GoToTop />
     </div>
     <Header />
-    <router-view v-slot="{ Component, route }" v-if="!$store.state.isDebug">
+    <router-view v-slot="{ Component, route }">
       <transition :name="route.meta.transition || 'fade'">
         <component :is="Component" />
       </transition>
     </router-view>
-    <div v-else><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
     <Footer />
   </div>
 </template>
@@ -76,7 +75,6 @@ html {
   //   font-size: 24px;
   // }
 
-
   body {
     width: 100%;
     font-family: $light;
@@ -84,7 +82,13 @@ html {
     margin: 0;
     padding: 0px;
     position: relative;
-
+    background: url("./assets/decorations/main/background.svg");
+    // background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
 
     h2 {
       font-weight: $font-weight-light;

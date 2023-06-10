@@ -3,7 +3,7 @@
     <BreadCrumb />
     <SectionTitle
       title="兒歌 Nursery Rhymes"
-      :imgSrc="require('@/assets/icons/section/nursery-rhymes.svg')"
+      :imgSrc="require('@/assets/icons/section/nursery-rhymes-and-finger-rhymes.svg')"
       alt="兒歌icon"
     />
 
@@ -42,7 +42,7 @@
 
     <SectionTitle
       title="手指謠 Finger Rhymes"
-      :imgSrc="require('@/assets/icons/section/finger-rhymes.svg')"
+      :imgSrc="require('@/assets/icons/section/nursery-rhymes-and-finger-rhymes.svg')"
       alt="手指謠icon"
       id="finger-rhymes"
     />

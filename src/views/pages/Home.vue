@@ -1,10 +1,13 @@
 <template>
-  <div>
+  <div id="home">
     <Hero />
-    <Introduction />
-    <LatestNews />
-    <TopicArticle />
-    <RelatedLink />
+    <div v-if="!$store.state.isDebug">
+      <Introduction />
+      <LatestNews />
+      <TopicArticle />
+      <RelatedLink />
+    </div>
+
   </div>
 </template>
 
@@ -30,4 +33,7 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
+div#home {
+  width: 100%;
+}
 </style>

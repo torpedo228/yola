@@ -173,10 +173,6 @@ div.footer-container {
           margin: 0 1vw;
         }
       }
-
-      span.declaration {}
-
-      span.reference {}
     }
 
   }

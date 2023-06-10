@@ -1,17 +1,22 @@
 <template>
-  <div class="container" id="hero">
+  <div class="hero-container" id="hero">
     <div class="main-content">
-      <img class="decoration-blue" :src="require('@/assets/decorations/home/hero-blue.svg')" alt="" />
-      <h2>聚焦幼兒教育<br /><br />資源共享互惠</h2>
-      <a class="go-to-introduction-btn" v-scroll-to="'#introduction'">
-        <h4>開始探索</h4>
-      </a>
-    </div>
+      <img class="hero-image" :src="require('@/assets/images/home/hero/hero.svg')" alt="" />
+      <img class="hero-image-mobile" :src="require('@/assets/images/home/hero/hero-mobile.svg')" alt="" />
+      <div class="hero-text">
+        <h2>聚焦幼兒教育</h2>
+        <h2>資源共享互惠</h2>
+        <p>
+          為家長與老師提供品質優良、豐富多元的學習資源！
+          <br />
+          提供關心幼兒教育的你一個分享與開源的集合平台！
+        </p>
 
-    <img class="decoration-red" :src="require('@/assets/decorations/home/hero-red.svg')" alt="" />
-    <img class="decoration-yellow" :src="require('@/assets/decorations/home/hero-yellow.svg')" alt="" />
-    <img class="under-decoration" :src="require('@/assets/decorations/home/hero-green.svg')" alt="" />
-    <img class="hero-img" :src="require('@/assets/images/home/hero/hero.png')" alt="" />
+        <div class="go-to-introduction-btn" v-scroll-to="'#introduction'">
+          開始探索
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -29,94 +34,166 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
 
-div.container {
+div.hero-container {
   width: 100%;
-  height: 100vh;
   position: relative;
-  margin-top: 80px;
 
   div.main-content {
-    width: 450px;
-    height: 450px;
-    position: absolute;
-    top: 10%;
-    left: 20%;
+    width: 100%;
+    height: 100%;
 
-    h2 {
+    img.hero-image {
+      @include custom-responsive("xs") {
+        display: none;
+      }
+
+      @include custom-responsive("sm md lg") {
+        display: block;
+        width: 100vw;
+      }
+
+      @include custom-responsive("xl xxl") {
+        display: block;
+        width: 100vw;
+      }
+    }
+
+    img.hero-image-mobile {
+      @include custom-responsive("xs") {
+        display: block;
+        width: 100vw;
+      }
+
+      @include custom-responsive("sm md lg") {
+        display: none;
+      }
+
+      @include custom-responsive("xl xxl") {
+        display: none;
+      }
+    }
+
+    div.hero-text {
       position: absolute;
-      color: $primary-white;
-      transform: translate(50%, 100%);
-      line-height: $h2;
-    }
+      
 
-    img.decoration-blue {
-      width: 100%;
-    }
+      @include custom-responsive("xs") {
+        top: 120vmin;
+        left: 50vmin;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 100%;
+      }
 
-    a.go-to-introduction-btn {
-      display: inline-block;
-      font-size: $sub-info;
-      color: $primary-black;
-      cursor: pointer;
+      @include custom-responsive("sm md lg") {
+        top: 11vmin;
+        left: 8vmin;
+        transform: translateX(0%);
+        text-align: left;
+        width: 80%;
 
-      h4 {
-        display: inline-block;
-        width: 150px;
-        height: 60px;
+      }
+
+      @include custom-responsive("xl xxl") {
+        top: 10vmax;
+        left: 8vmin;
+        transform: translateX(0%);
+        text-align: left;
+        width: 80%;
+
+      }
+
+
+      h2 {
+        color: $primary-white;
+
+        @include custom-responsive("xs") {
+          display: block;
+          font-size: 10vw;
+          margin: 1vh 0;
+
+        }
+
+        @include custom-responsive("sm md lg") {
+          display: inline-block;
+          margin: 0 1vw 1vh 0;
+          font-size: 4vw;
+
+        }
+
+        @include custom-responsive("xl xxl") {
+          display: inline-block;
+          font-size: 4vw;
+          margin: 0 1vw 1vh 0;
+
+        }
+      }
+
+      p {
+        color: $primary-white;
+        font-size: 2vw;
+
+        @include custom-responsive("xs") {
+          display: none;
+        }
+
+        @include custom-responsive("sm md lg") {
+          display: block;
+        }
+
+        @include custom-responsive("xl xxl") {
+          display: block;
+        }
+
+      }
+
+      div {
+        color: $primary-black;
+        display: block;
         background-color: $primary-white;
-        border: 5px solid $primary-blue;
-        border-radius: 40px;
-        position: absolute;
-        right: -10%;
-        top: 60%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        text-align: center;
+        cursor: pointer;
 
-        &:link {
-          color: $primary-black;
+
+        @include custom-responsive("xs") {
+          width: 60vmin;
+          height: 20vmin;
+          line-height: 20vmin;
+          font-size: 8vw;
+          margin: 3vh auto;
+          border-radius: 10vmin;
         }
 
-        &:visited {
-          color: $primary-black;
+        @include custom-responsive("sm md lg") {
+          width: 20vmax;
+          height: 6vmax;
+          line-height: 6vmax;
+          font-size: 2vw;
+          margin: 4vmin 0 0;
+          border-radius: 8vmax;
         }
+
+        @include custom-responsive("xl xxl") {
+          width: 18vmax;
+          height: 6vmax;
+          line-height: 6vmax;
+          font-size: 2vw;
+          margin: 6vmin 0 0;
+          border-radius: 8vmax;
+        }
+
 
         &:hover {
-          color: $primary-white;
-          background-color: $primary-blue;
-          border-color: $primary-white;
+
+          box-shadow: 5px 5px 0px $primary-black;
         }
 
         &:active {
-          color: $primary-white;
-          background-color: $primary-blue;
-          opacity: 0.5;
+          transform: translate(5px, 5px);
+          box-shadow: 0px 0px 0px$primary-black;
         }
       }
     }
-  }
-
-  img {
-    position: absolute;
-  }
-
-  img.decoration-red {
-    top: -10%;
-    left: 0;
-  }
-
-  img.decoration-yellow {
-    width: 300px;
-    height: 200px;
-    top: 60%;
-    left: 5%;
-  }
-
-  img.hero-img,
-  img.under-decoration {
-    width: 500px;
-    top: 3%;
-    right: 0;
   }
 }
 </style>

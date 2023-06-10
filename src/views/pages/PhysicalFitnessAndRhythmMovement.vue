@@ -3,7 +3,7 @@
     <BreadCrumb />
     <SectionTitle
       title="體能 Physical Fitness"
-      :imgSrc="require('@/assets/icons/section/physical-fitness.svg')"
+      :imgSrc="require('@/assets/icons/section/physical-fitness-and-rhythm-movement.svg')"
       alt="體能icon"
     />
     <a
@@ -25,7 +25,7 @@
 
     <SectionTitle
       title="律動 Rhythm and Movement"
-      :imgSrc="require('@/assets/icons/section/rhythm-and-movement.svg')"
+      :imgSrc="require('@/assets/icons/section/physical-fitness-and-rhythm-movement.svg')"
       alt="律動icon"
       id="rhythm-and-movement"
     />
