@@ -1,10 +1,7 @@
 <template>
   <div class="related-link-container" id="related-link">
-    <SubSectionTitle
-      title="相關連結 Related Link"
-      :imgSrc="require('@/assets/icons/title/subtitle-logo.svg')"
-      alt="相關連結icon"
-    />
+    <SubSectionTitle title="相關連結 Related Link" :imgSrc="require('@/assets/icons/title/subtitle-logo.svg')"
+      alt="相關連結icon" />
 
     <div class="related-link-wrap">
       <div class="related-link related-link-red">
@@ -13,21 +10,13 @@
         <ul>
           <li><a href="https://www.ece.moe.edu.tw/ch/">全國教保資訊網</a></li>
           <li>
-            <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0070031"
-              >幼兒教育及照顧法</a
-            >
+            <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0070031">幼兒教育及照顧法</a>
           </li>
           <li>
-            <a
-              href="https://www.ece.moe.edu.tw/ch/filelist/preschool/filelist-preschool/"
-              >幼兒園課綱、相關手冊與實例下載</a
-            >
+            <a href="https://www.ece.moe.edu.tw/ch/filelist/preschool/filelist-preschool/">幼兒園課綱、相關手冊與實例下載</a>
           </li>
         </ul>
-        <img
-          :src="require('@/assets/images/home/related-link/house-red.svg')"
-          alt=""
-        />
+        <img :src="require('@/assets/images/home/related-link/house-red.svg')" alt="" />
       </div>
 
       <div class="related-link related-link-yellow">
@@ -37,10 +26,7 @@
           <li><a href="">補助與津貼</a></li>
           <li><a href="">公共化教保服務</a></li>
         </ul>
-        <img
-          :src="require('@/assets/images/home/related-link/house-yellow.svg')"
-          alt=""
-        />
+        <img :src="require('@/assets/images/home/related-link/house-yellow.svg')" alt="" />
       </div>
 
       <div class="related-link related-link-green">
@@ -59,10 +45,7 @@
             <a href="">東部&離島<i class="fa-solid fa-chevron-down"></i></a>
           </li>
         </ul>
-        <img
-          :src="require('@/assets/images/home/related-link/house-green.svg')"
-          alt=""
-        />
+        <img :src="require('@/assets/images/home/related-link/house-green.svg')" alt="" />
       </div>
 
       <div class="related-link related-link-blue">
@@ -87,7 +70,7 @@ export default {
   data() {
     return {};
   },
-  mounted() {},
+  mounted() { },
 };
 </script>
 
@@ -99,6 +82,18 @@ div.related-link-container {
   width: 100%;
   height: 80vh;
   position: relative;
+
+  @include custom-responsive("xs") {
+    padding: 5vh 0;
+  }
+
+  @include custom-responsive("sm md") {
+    padding: 5vh 0;
+  }
+
+  @include custom-responsive("lg xl xxl") {
+    padding: 10vh 0;
+  }
 
   div.related-link-wrap {
     margin-top: 30px;

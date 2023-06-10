@@ -235,10 +235,10 @@ div.article-card-container {
 
     @include custom-responsive("lg xl xxl") {
       width: 12vw;
-      height: 3vw;
-      line-height: 3vw;
+      height: 4vw;
+      line-height:  4vw;
       font-size: 1.5vw;
-      border-radius: 2vw;
+      border-radius: 4vw;
     }
 
 

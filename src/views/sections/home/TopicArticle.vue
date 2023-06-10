@@ -72,8 +72,9 @@ export default {
 
 div.topic-article-container {
   width: 100%;
-  background-color: #b9d3ea;
+  background-color: #d8edfe;
   position: relative;
+  background-image: url(../../../assets/decorations/home/topic-article-decoration.png);
 
 
   @include custom-responsive("xs") {

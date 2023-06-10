@@ -4,11 +4,10 @@
     <Introduction />
     <LatestNews />
     <TopicArticle />
+    <RelatedLink />
+    
     <div v-if="!$store.state.isDebug">
 
-
-
-      <RelatedLink />
     </div>
 
   </div>
