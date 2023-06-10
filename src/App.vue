@@ -57,6 +57,7 @@ export default {
 @import "@/assets/scss/all.scss";
 
 html {
+  overflow-x: hidden;
   width: 100%;
   font-size: 12px;
   // @include custom-responsive("xs") {
@@ -88,7 +89,7 @@ html {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    overflow-x: hidden;
+    
 
     h2 {
       font-weight: $font-weight-light;

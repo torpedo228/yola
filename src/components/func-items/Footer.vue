@@ -1,6 +1,7 @@
 <template>
   <div class="footer-container">
     <div class="footer-content-wrap">
+      <div class="decoration-stripe"><img :src="require('@/assets/decorations/main/footer.svg')" alt=""></div>
       <ul class="footer_link">
         <li class="link_item"><a href="#">網站導覽</a></li>
         <li class="separator">|</li>
@@ -39,12 +40,26 @@ div.footer-container {
   bottom: 0;
   left: 0;
 
+
   div.footer-content-wrap {
     width: 100vw;
-    padding: 2vh 0;
     background-color: $primary-blue;
-
     position: relative;
+
+    padding: 2vh 0;
+
+    div.decoration-stripe {
+      width: 100%;
+      overflow-x: hidden;
+      height: 3vh;
+
+      position: absolute;
+      top: -3vh;
+
+      img {
+        height: 100%;
+      }
+    }
 
 
     @include custom-responsive("xs") {
@@ -66,18 +81,13 @@ div.footer-container {
 
 
 
-    &::before {
-      display: block;
-      content: "";
-      background: url("../../assets/decorations/main/footer.svg");
-      background-position: bottom;
-      height:100%;
-      width: 100%;
-      background-repeat: repeat-x;
-      position: absolute;
-      top: -100%;
-      z-index: -10;
-    }
+    // &::before {
+    //   display: block;
+    //   content: "";
+    //   background: url("../../assets/decorations/main/footer.svg");
+
+    //   z-index: -10;
+    // }
 
     ul {
       padding: 0;

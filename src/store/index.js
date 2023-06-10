@@ -1,11 +1,32 @@
-import {
-  createStore
-} from "vuex";
+import { createStore } from "vuex";
 
 export default createStore({
   state: {
     currentPage: "home",
     isDebug: true,
+    categories: new Map([
+      [
+        "art",
+        {
+          title: "美勞",
+          routingName: "still-building",
+        },
+      ],
+      [
+        "fine-movement",
+        {
+          title: "精細動作",
+          routingName: "still-building",
+        },
+      ],
+      [
+        "literacy",
+        {
+          title: "語文",
+          routingName: "still-building",
+        },
+      ],
+    ]),
   },
   getters: {
     isHomePage(state) {
