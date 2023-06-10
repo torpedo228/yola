@@ -1,8 +1,9 @@
 <template>
   <div id="home">
     <Hero />
+    <Introduction />
     <div v-if="!$store.state.isDebug">
-      <Introduction />
+
       <LatestNews />
       <TopicArticle />
       <RelatedLink />

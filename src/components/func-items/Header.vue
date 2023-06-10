@@ -56,7 +56,9 @@ export default {
           { title: "烹飪區", routingName: "still-building", color: "yellow" },
           { title: "組合建構區", routingName: "construction", color: "blue" },
           {
-            title: "鬆散素材區", routingName: "still-building", color: "green",
+            title: "鬆散素材區",
+            routingName: "still-building",
+            color: "green",
           },
         ],
       },
@@ -180,6 +182,30 @@ div.header-container {
 
         img.logo {
           height: 100%;
+
+          &:hover {
+            animation-name: shake;
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+
+
+            @keyframes shake {
+              0% {
+                transform: translateX(-0.5vw);
+              }
+
+              50% {
+                transform: translateX(0.5vw);
+              }
+
+              100% {
+                transform: translateX(-0.5vw);
+              }
+            }
+
+
+          }
+
         }
       }
 

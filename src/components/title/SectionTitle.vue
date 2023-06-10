@@ -31,15 +31,28 @@ div.title {
   color: $primary-black;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 1vw;
 
   img {
-    width: 40px;
+    width: 3vmax;
   }
 
   h2 {
-    font-size: $h2;
-    margin: 30px 0;
+
+    margin: 0;
+
+    @include custom-responsive("xs") {
+      font-size: $h1;
+    }
+
+    @include custom-responsive("sm md lg") {
+      font-size: $h2;
+    }
+
+    @include custom-responsive("xl xxl") {
+      font-size: $h2;
+    }
+
   }
 }
 </style>

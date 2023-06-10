@@ -1,151 +1,104 @@
 <template>
   <div class="introduction-container" id="introduction">
-    <SectionTitle
-      title="園區介紹 Introduction"
-      :imgSrc="require('@/assets/icons/title/subtitle-logo.svg')"
-      alt="園區介紹icon"
-    />
+    <div class="sub-section-title">
+      <SubSectionTitle title="園區介紹 Introduction" :imgSrc="require('@/assets/icons/title/subtitle-logo.svg')"
+        alt="園區介紹icon" />
+    </div>
 
-    <div class="decoration">
-      <img
-        class="all-characters"
-        :src="require('@/assets/characters/all-characters.svg')"
-        alt=""
-      />
-      <img
-        class="rainbow-stripe"
-        :src="
-          require('@/assets/decorations/home/introduction-bottom-stripe.svg')
-        "
-        alt=""
-      />
+    <div class="sub-section-title-mobile">
+      <SubSectionTitle title="園區探索 Explore" :imgSrc="require('@/assets/icons/title/subtitle-logo.svg')" alt="園區探索icon" />
     </div>
 
     <div class="portal-container">
       <div class="go-to-bottom-left-wrap">
-        <a
-          href="./learning-corner"
-          @mouseover="showLearningCorner()"
-          @mouseleave="turnOnAutoSlide()"
-        >
-          <div
-            class="go-to-btn"
-            :class="
-              ' learning-corner' + (isLearningCornerActive ? '-active' : '')
-            "
-          >
+        <a @click="jumpTo('learning-corner')" @mouseover="showLearningCorner()" @mouseleave="turnOnAutoSlide()">
+          <div class="go-to-btn" :class="' learning-corner' + (isLearningCornerActive ? '-active' : '')
+            ">
             學習區
           </div>
         </a>
 
-        <a
-          href="./thematic-teaching"
-          @mouseover="showThematicTeaching()"
-          @mouseleave="turnOnAutoSlide()"
-        >
-          <div
-            class="go-to-btn"
-            :class="
-              ' thematic-teaching' + (isThematicTeachingActive ? '-active' : '')
-            "
-          >
+        <a @click="jumpTo('thematic-teaching')" @mouseover="showThematicTeaching()" @mouseleave="turnOnAutoSlide()">
+          <div class="go-to-btn" :class="' thematic-teaching' + (isThematicTeachingActive ? '-active' : '')
+            ">
             主題教學
           </div>
         </a>
 
-        <a
-          href="./storybooks"
-          @mouseover="showStorybooks()"
-          @mouseleave="turnOnAutoSlide()"
-        >
-          <div
-            class="go-to-btn"
-            :class="' storybooks' + (isStorybooksActive ? '-active' : '')"
-          >
+        <a @click="jumpTo('storybooks')" @mouseover="showStorybooks()" @mouseleave="turnOnAutoSlide()">
+          <div class="go-to-btn" :class="' storybooks' + (isStorybooksActive ? '-active' : '')">
             繪本故事
           </div>
         </a>
       </div>
       <div class="introduction-panel">
-        <div
-          class="intro-card"
-          :class="sectionMeta[currentSectionNo].name + '-intro-card'"
-        >
+        <div class="intro-card" :class="sectionMeta[currentSectionNo].name + '-intro-card'">
           <div class="title-wrap">
-            <img :src="sectionMeta[currentSectionNo].logo1" alt="" />
+            <img :src="sectionMeta[currentSectionNo].logo" alt="" />
 
             <h3>{{ sectionMeta[currentSectionNo].title }}</h3>
-
-            <img
-              v-if="sectionMeta[currentSectionNo].logo2 !== ''"
-              :src="sectionMeta[currentSectionNo].logo2"
-              alt=""
-            />
           </div>
           <p>
             {{ sectionMeta[currentSectionNo].content }}
           </p>
-          <img
-            :class="'icon-' + sectionMeta[currentSectionNo].iconPosition"
-            :src="require('@/assets/logo/yola-icon.svg')"
-            alt=""
-          />
+          <img :class="'icon-' + sectionMeta[currentSectionNo].iconPosition" :src="require('@/assets/logo/yola-icon.svg')"
+            alt="" />
         </div>
       </div>
 
       <div class="go-to-bottom-right-wrap">
-        <a
-          href="./nursery-rhymes-and-finger-rhymes"
-          @mouseover="showNurseryRhymesAndFingerRhymes()"
-          @mouseleave="turnOnAutoSlide()"
-        >
-          <div
-            class="go-to-btn"
-            :class="
-              'nursery-rhymes-and-finger-rhymes' +
-              (isNurseryRhymesAndFingerRhymesActive ? '-active' : '')
-            "
-          >
+        <a @click="jumpTo('nursery-rhymes-and-finger-rhymes')" @mouseover="showNurseryRhymesAndFingerRhymes()"
+          @mouseleave="turnOnAutoSlide()">
+          <div class="go-to-btn" :class="'nursery-rhymes-and-finger-rhymes' +
+            (isNurseryRhymesAndFingerRhymesActive ? '-active' : '')
+            ">
             兒歌&手指謠
           </div>
         </a>
-        <a
-          href="./physical-fitness-and-rhythm-movement"
-          @mouseover="showPhysicalFitnessAndRhythmMovement()"
-          @mouseleave="turnOnAutoSlide()"
-        >
-          <div
-            class="go-to-btn"
-            :class="
-              'physical-fitness-and-rhythm-movement' +
-              (isPhysicalFitnessAndRhythmMovementActive ? '-active' : '')
-            "
-          >
+        <a @click="jumpTo('physical-fitness-and-rhythm-movement')" @mouseover="showPhysicalFitnessAndRhythmMovement()"
+          @mouseleave="turnOnAutoSlide()">
+          <div class="go-to-btn" :class="'physical-fitness-and-rhythm-movement' +
+            (isPhysicalFitnessAndRhythmMovementActive ? '-active' : '')
+            ">
             體能&律動
           </div>
         </a>
-        <a
-          href="./my-land"
-          @mouseover="showMyLand()"
-          @mouseleave="turnOnAutoSlide()"
-        >
-          <div
-            class="go-to-btn"
-            :class="'my-land' + (isMyLandActive ? '-active' : '')"
-          >
+        <a @click="jumpTo('my-land')" @mouseover="showMyLand()" @mouseleave="turnOnAutoSlide()">
+          <div class="go-to-btn" :class="'my-land' + (isMyLandActive ? '-active' : '')">
             我的樂園
           </div>
         </a>
       </div>
     </div>
+
+    <div class="portal-container-mobile">
+      <img @click="jumpTo('learning-corner')" :src="require('@/assets/images/home/explore/learning-corner.svg')" alt="" />
+
+      <img @click="jumpTo('nursery-rhymes-and-finger-rhymes')" :src="require('@/assets/images/home/explore/nursery-rhymes-and-finger-rhymes.svg')
+        " alt="" />
+      <img @click="jumpTo('thematic-teaching')" :src="require('@/assets/images/home/explore/thematic-teaching.svg')"
+        alt="" />
+
+      <img @click="jumpTo('physical-fitness-and-rhythm-movement')" :src="require('@/assets/images/home/explore/physical-fitness-and-rhythm-movement.svg')
+        " alt="" />
+      <img @click="jumpTo('storybooks')" :src="require('@/assets/images/home/explore/storybooks.svg')" alt="" />
+
+      <img @click="jumpTo('my-land')" :src="require('@/assets/images/home/explore/my-land.svg')" alt="" />
+    </div>
+
+    <div class="decoration">
+      <img class="all-characters" :src="require('@/assets/characters/all-characters.svg')" alt="" />
+      <img class="rainbow-stripe" :src="require('@/assets/decorations/home/introduction-bottom-stripe.svg')
+        " alt="" />
+    </div>
   </div>
 </template>
 
 <script>
-import SectionTitle from "@/components/title/SectionTitle.vue";
+import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
 
 export default {
-  components: { SectionTitle },
+  components: { SubSectionTitle },
   data() {
     return {
       timer: {
@@ -270,6 +223,9 @@ export default {
     turnOffAutoSlide() {
       clearInterval(this.timer.instance);
     },
+    jumpTo(name) {
+      this.$router.push({ name: name });
+    },
   },
 };
 </script>
@@ -279,26 +235,62 @@ export default {
 @import "@/assets/scss/all.scss";
 
 @mixin btn-active-effect() {
-  transition: all 0.1s ease-in;
+  transition: all 0.1s;
 }
 
 div.introduction-container {
   width: 100%;
-  height: 89vh;
-  margin: 30px 0;
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include vm();
+  gap: 5vh;
+
+  @include custom-responsive("xs") {
+    padding-top: 18vmax;
+  }
+
+  @include custom-responsive("sm md lg") {
+    padding-top: 18vmin;
+  }
+
+  @include custom-responsive("xl xxl") {
+    padding-top: 18vmin;
+  }
+
+
+
+  div.sub-section-title {
+    @include custom-responsive("xs") {
+      display: none;
+    }
+
+    @include custom-responsive("sm md lg") {
+      display: block;
+    }
+
+    @include custom-responsive("xl xxl") {
+      display: block;
+    }
+  }
+
+  div.sub-section-title-mobile {
+    @include custom-responsive("xs") {
+      font-size: 10vw;
+      display: block;
+    }
+
+    @include custom-responsive("sm md lg") {
+      display: none;
+    }
+
+    @include custom-responsive("xl xxl") {
+      display: none;
+    }
+  }
 
   div.portal-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    align-content: center;
-    gap: 20px;
+    width: 80vmax;
+    gap: 1vw;
 
     a {
       &:link {
@@ -311,12 +303,13 @@ div.introduction-container {
     }
 
     div.introduction-panel {
-      padding: 5px 20px;
-      width: 450px;
-      height: 260px;
-      border: 10px solid;
+      padding: 2vw 3vw 0;
+      width: 40vw;
+      height: 25vw;
+      border: 1vw solid;
       border-color: $primary-red $primary-blue $primary-green $primary-yellow;
-      border-radius: 30px;
+      border-radius: 2vw;
+      box-sizing: border-box;
 
       div.intro-card {
         position: relative;
@@ -329,23 +322,24 @@ div.introduction-container {
           gap: 10px;
 
           img {
-            width: $h3;
+            width: 3vw;
           }
 
           h3 {
-            margin: 10px 0;
-            font-size: $h3;
+            margin: 0.5vw 0;
+            font-size: 2.5vw;
           }
         }
 
         p {
-          font-size: $sub-info;
+          font-size: 1.5vw;
+          line-height: 1.5;
         }
 
         img.icon-right,
         img.icon-left {
-          opacity: 0.3;
-          width: 100px;
+          opacity: 0.5;
+          width: 10vw;
           position: absolute;
           bottom: 0;
         }
@@ -362,22 +356,19 @@ div.introduction-container {
 
     div.go-to-bottom-left-wrap,
     div.go-to-bottom-right-wrap {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-content: center;
-      gap: 10px;
+      @include vm();
+      gap: 1vw;
     }
 
     div.go-to-btn {
-      line-height: 80px;
-      width: 150px;
-      height: 80px;
-      border-radius: 20px;
+      line-height: 6vw;
+      width: 11vw;
+      height: 6vw;
+      border-radius: 2vw;
       text-align: center;
       vertical-align: middle;
-      font-size: $main-info;
-      border: 5px solid;
+      font-size: 1.75vw;
+      border: 0.5vw solid;
 
       &:active {
         opacity: 0.7;
@@ -398,7 +389,7 @@ div.introduction-container {
 
     div.learning-corner-active,
     div.my-land-active {
-      border: 5px solid $primary-red;
+      border: 0.5vw solid $primary-red;
       background-color: $primary-red;
       color: $primary-white;
       @include btn-active-effect();
@@ -418,7 +409,7 @@ div.introduction-container {
 
     div.thematic-teaching-active,
     div.nursery-rhymes-and-finger-rhymes-active {
-      border: 5px solid $primary-blue;
+      border: 0.5vw solid $primary-blue;
       background-color: $primary-blue;
       color: $primary-white;
       @include btn-active-effect();
@@ -436,7 +427,7 @@ div.introduction-container {
     }
 
     div.storybooks-active {
-      border: 5px solid $primary-yellow;
+      border: 0.5vw solid $primary-yellow;
       background-color: $primary-yellow;
       color: $primary-white;
       @include btn-active-effect();
@@ -454,28 +445,69 @@ div.introduction-container {
     }
 
     div.physical-fitness-and-rhythm-movement-active {
-      border: 5px solid $primary-green;
+      border: 0.5vw solid $primary-green;
       background-color: $primary-green;
       color: $primary-white;
       @include btn-active-effect();
     }
-  }
 
-  div.decoration {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-
-    img.rainbow-stripe {
-      height: 50px;
+    @include custom-responsive("xs") {
+      display: none;
     }
 
-    img.all-characters {
-      height: 250%;
-      position: absolute;
-      bottom: 35%;
+    @include custom-responsive("sm md lg") {
+      @include hm();
+    }
+
+    @include custom-responsive("xl xxl") {
+      @include hm();
+    }
+  }
+}
+
+div.portal-container-mobile {
+  width: 100%;
+  padding-left: 12vw;
+
+  img {
+    cursor: pointer;
+    width: 40vw;
+    display: inline-block;
+    margin: 2vw;
+  }
+
+  @include custom-responsive("xs") {
+    display: block;
+  }
+
+  @include custom-responsive("sm md lg") {
+    display: none;
+  }
+
+  @include custom-responsive("xl xxl") {
+    display: none;
+  }
+}
+
+div.decoration {
+  width: 100%;
+  @include vm();
+
+  img.rainbow-stripe {
+    height: 4vh;
+  }
+
+  img.all-characters {
+    @include custom-responsive("xs") {
+      width: 90vmin;
+    }
+
+    @include custom-responsive("sm md lg") {
+      width: 90vmin;
+    }
+
+    @include custom-responsive("xl xxl") {
+      width: 100vmin;
     }
   }
 }

@@ -50,11 +50,12 @@ div.hero-container {
       @include custom-responsive("sm md lg") {
         display: block;
         width: 100vw;
+
       }
 
       @include custom-responsive("xl xxl") {
         display: block;
-        width: 100vw;
+        width: 105vw;
       }
     }
 
@@ -75,7 +76,7 @@ div.hero-container {
 
     div.hero-text {
       position: absolute;
-      
+
 
       @include custom-responsive("xs") {
         top: 120vmin;
@@ -168,7 +169,7 @@ div.hero-container {
           width: 20vmax;
           height: 6vmax;
           line-height: 6vmax;
-          font-size: 2vw;
+          font-size: 2.5vw;
           margin: 4vmin 0 0;
           border-radius: 8vmax;
         }
@@ -177,7 +178,7 @@ div.hero-container {
           width: 18vmax;
           height: 6vmax;
           line-height: 6vmax;
-          font-size: 2vw;
+          font-size: 2.5vw;
           margin: 6vmin 0 0;
           border-radius: 8vmax;
         }
