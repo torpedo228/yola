@@ -1,11 +1,7 @@
 <template>
   <div class="slide-outer">
     <div class="slide-container">
-      <div
-        v-for="(slidePage, slidePageNo) in slidePage"
-        :key="slidePageNo"
-        class="slide-page"
-      >
+      <div v-for="(slidePage, slidePageNo) in slidePage" :key="slidePageNo" class="slide-page">
         <div class="slide-page-content" :style="makeAddOnStyle(slidePageNo)">
           <a :href="slidePage.href">
             <img :src="slidePage.imgSrc" alt="" />
@@ -26,21 +22,9 @@
       </div>
 
       <div class="pagination-wrap">
-        <div
-          class="page-1"
-          :class="pageIsActive(0) ? 'page-red' : 'page-grey'"
-          @click="moveTo(0)"
-        ></div>
-        <div
-          class="page-2"
-          :class="pageIsActive(1) ? 'page-blue' : 'page-grey'"
-          @click="moveTo(1)"
-        ></div>
-        <div
-          class="page-3"
-          :class="pageIsActive(2) ? 'page-green' : 'page-grey'"
-          @click="moveTo(2)"
-        ></div>
+        <div class="page-1" :class="pageIsActive(0) ? 'page-red' : 'page-grey'" @click="moveTo(0)"></div>
+        <div class="page-2" :class="pageIsActive(1) ? 'page-blue' : 'page-grey'" @click="moveTo(1)"></div>
+        <div class="page-3" :class="pageIsActive(2) ? 'page-green' : 'page-grey'" @click="moveTo(2)"></div>
       </div>
     </div>
   </div>
@@ -50,7 +34,7 @@
 export default {
   props: {},
   components: {},
-  data() { 
+  data() {
     return {
       curSlideNo: 0,
       // 圖片比例5:3
@@ -95,7 +79,7 @@ export default {
       }
     },
   },
-  mounted() {},
+  mounted() { },
   watch: {},
   methods: {
     next(stepNum) {
@@ -157,196 +141,273 @@ $page-width: 50%;
 div.slide-outer {
   position: relative;
   width: 100%;
-  height: 45vw;
+
   overflow: hidden;
 
-  div.slide-container {
-    position: relative;
-    width: 100%;
-    height: 80%;
-    overflow: hidden;
 
-    div.slide-page {
-      width: $page-width;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+  @include custom-responsive("xs") {
+    height: calc(45vw*2);
 
-      div.slide-page-content {
+    @include custom-responsive("sm md lg") {
+      height: 45vw;
+    }
+
+    @include custom-responsive("xl xxl") {
+      height: 45vw;
+    }
+
+    div.slide-container {
+      position: relative;
+      width: 100%;
+      height: 80%;
+      overflow: hidden;
+
+      div.slide-page {
+
+
+        @include custom-responsive("xs") {
+          width: calc($page-width*1.75);
+        }
+
+        @include custom-responsive("sm md lg") {
+          width: $page-width;
+        }
+
+        @include custom-responsive("xl xxl") {
+          width: $page-width;
+        }
+
+
         position: absolute;
-        width: 100%;
-        top: 50%;
         left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
 
-        img {
+        div.slide-page-content {
+          position: absolute;
           width: 100%;
-          height: 100%;
+          top: 50%;
+          left: 50%;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+
+
+      div.button-wrap {
+        position: relative;
+        left: 50%;
+        top: 50%;
+
+
+        div.prev,
+        div.next {
+          position: absolute;
+          transform: translate(-50%, -50%);
+
+          border-radius: $border-radius-circle;
+          background-color: $primary-white;
+         
+          cursor: pointer;
+
+          @include custom-responsive("xs") {
+            width: 7vw;
+            height: 7vw;
+            border: 1vw solid;
+          }
+
+          @include custom-responsive("sm md lg") {
+            width: 5vw;
+            height: 5vw;
+            border: 0.5vw solid;
+          }
+
+          @include custom-responsive("xl xxl") {
+            width: 5vw;
+            height: 5vw;
+            border: 0.5vw solid;
+          }
+
+          i {
+            transform: translate(0.8vw, 0.5vw);
+
+            @include custom-responsive("xs") {
+              font-size: 6vw;
+
+            }
+
+            @include custom-responsive("sm md lg") {
+              font-size: 4vw;
+
+            }
+
+            @include custom-responsive("xl xxl") {
+              font-size: 4vw;
+
+            }
+          }
+        }
+
+        div.prev {
+          border-color: $primary-green;
+
+          @include custom-responsive("xs") {
+            left: -45%;
+          }
+
+          @include custom-responsive("sm md lg") {
+            left: -26%;
+          }
+
+          @include custom-responsive("xl xxl") {
+            left: -26%;
+          }
+
+          i {
+            color: $primary-green;
+          }
+
+          &:hover {
+            background-color: $primary-green;
+
+            i {
+              color: $primary-white;
+            }
+          }
+
+          &:active {
+            background-color: $primary-green;
+            opacity: 0.8;
+
+            i {
+              color: $primary-white;
+            }
+          }
+        }
+
+        div.next {
+          border-color: $primary-yellow;
+
+
+          @include custom-responsive("xs") {
+            left: 45%;
+          }
+
+          @include custom-responsive("sm md lg") {
+            left: 26%;
+          }
+
+          @include custom-responsive("xl xxl") {
+            left: 26%;
+          }
+
+          i {
+            color: $primary-yellow;
+          }
+
+          &:hover {
+            background-color: $primary-yellow;
+
+            i {
+              color: $primary-white;
+            }
+          }
+
+          &:active {
+            background-color: $primary-yellow;
+            opacity: 0.8;
+
+            i {
+              color: $primary-white;
+            }
+          }
         }
       }
     }
 
-    // div.active {
-    //   @include offseted-left(0);
-    //   transform: translate(-50%, -50%);
-    // }
-
-    // div.prev {
-    //   @include offseted-left(-1);
-    //   opacity: 0.7;
-    //   transform: translate(-50%, -50%) scale(0.6);
-    // }
-
-    // div.prev-prev {
-    //   @include offseted-left(-2);
-    //   opacity: 0.7;
-    //   transform: translate(-50%, -50%) scale(0.6);
-    // }
-
-    // div.next {
-    //   @include offseted-left(1);
-    //   opacity: 0.7;
-    //   transform: translate(-50%, -50%) scale(0.6);
-    // }
-
-    // div.next-next {
-    //   @include offseted-left(2);
-    //   opacity: 0.7;
-    //   transform: translate(-50%, -50%) scale(0.6);
-    // }
-
-    // div.outside {
-    //   @include offseted-left(3);
-    //   opacity: 0;
-    //   transform: translate(-50%, -50%) scale(0.6);
-    // }
-
-    div.button-wrap {
+    div.pagination-wrap {
+      width: 20vw;
       position: relative;
       left: 50%;
       top: 50%;
 
-      div.prev,
-      div.next {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        width: 5vw;
-        height: 5vw;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      @include custom-responsive("xs") {
+        transform: translate(-50%, calc(-50% + 30vw));
+      }
+
+      @include custom-responsive("sm md lg") {
+        transform: translate(-50%, calc(-50% + 17vw));
+      }
+
+      @include custom-responsive("xl xxl") {
+        transform: translate(-50%, calc(-50% + 17vw));
+      }
+
+
+      div.page-1,
+      div.page-2,
+      div.page-3 {
+        display: inline-block;
+        width: 2vw;
+        height: 2vw;
         border-radius: $border-radius-circle;
-        background-color: $primary-white;
-        border: 0.5vw solid;
+        background-color: $primary-grey;
         cursor: pointer;
+        margin: auto;
 
-        i {
-          font-size: 4vw;
-          transform: translate(0.8vw, 0.5vw);
-        }
-      }
-
-      div.prev {
-        border-color: $primary-green;
-        left: -26%;
-
-        i {
-          color: $primary-green;
+        @include custom-responsive("xs") {
+          width: 4vw;
+          height: 4vw;
         }
 
-        &:hover {
-          background-color: $primary-green;
-
-          i {
-            color: $primary-white;
-          }
+        @include custom-responsive("sm md lg") {
+          width: 2vw;
+          height: 2vw;
         }
 
-        &:active {
-          background-color: $primary-green;
-          opacity: 0.8;
-
-          i {
-            color: $primary-white;
-          }
-        }
-      }
-
-      div.next {
-        border-color: $primary-yellow;
-        left: 26%;
-
-        i {
-          color: $primary-yellow;
+        @include custom-responsive("xl xxl") {
+          width: 2vw;
+          height: 2vw;
         }
 
         &:hover {
-          background-color: $primary-yellow;
-
-          i {
-            color: $primary-white;
-          }
+          background-color: $secondary-grey;
         }
+      }
 
-        &:active {
-          background-color: $primary-yellow;
-          opacity: 0.8;
+      div.page-1 {
+        left: -4vw;
+      }
 
-          i {
-            color: $primary-white;
-          }
-        }
+      div.page-2 {}
+
+      div.page-3 {
+        left: 4vw;
+      }
+
+      div.page-red {
+        background-color: $primary-red;
+      }
+
+      div.page-green {
+        background-color: $primary-green;
+      }
+
+      div.page-blue {
+        background-color: $primary-blue;
+      }
+
+      div.page-grey {
+        background-color: $primary-grey;
       }
     }
   }
-
-  div.pagination-wrap {
-    width: 15vw;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, calc(-50% + 17vw));
-    @include hm();
-
-    div.page-1,
-    div.page-2,
-    div.page-3 {
-      display: inline-block;
-      width: 2vw;
-      height: 2vw;
-      border-radius: $border-radius-circle;
-      background-color: $primary-grey;
-      cursor: pointer;
-      margin: auto;
-
-      &:hover {
-        background-color: $secondary-grey;
-      }
-    }
-
-    div.page-1 {
-      left: -4vw;
-    }
-
-    div.page-2 {
-    }
-
-    div.page-3 {
-      left: 4vw;
-    }
-
-    div.page-red {
-      background-color: $primary-red;
-    }
-
-    div.page-green {
-      background-color: $primary-green;
-    }
-
-    div.page-blue {
-      background-color: $primary-blue;
-    }
-
-    div.page-grey {
-      background-color: $primary-grey;
-    }
-  }
-}
-</style>
+}</style>

@@ -1,6 +1,6 @@
 <template>
   <div class="related-link-container" id="related-link">
-    <SectionTitle
+    <SubSectionTitle
       title="相關連結 Related Link"
       :imgSrc="require('@/assets/icons/title/subtitle-logo.svg')"
       alt="相關連結icon"
@@ -80,10 +80,10 @@
 </template>
 
 <script>
-import SectionTitle from "@/components/title/SectionTitle.vue";
+import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
 
 export default {
-  components: { SectionTitle },
+  components: { SubSectionTitle },
   data() {
     return {};
   },

@@ -3,10 +3,11 @@
     <Hero />
     <Introduction />
     <LatestNews />
+    <TopicArticle />
     <div v-if="!$store.state.isDebug">
 
 
-      <TopicArticle />
+
       <RelatedLink />
     </div>
 

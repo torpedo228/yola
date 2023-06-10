@@ -76,6 +76,7 @@ div.footer-container {
       background-repeat: repeat-x;
       position: absolute;
       top: -100%;
+      z-index: -10;
     }
 
     ul {
