@@ -1,7 +1,11 @@
 <template>
   <div class="slide-outer">
     <div class="slide-container">
-      <div v-for="(slidePage, slidePageNo) in slidePage" :key="slidePageNo" class="slide-page">
+      <div
+        v-for="(slidePage, slidePageNo) in slidePage"
+        :key="slidePageNo"
+        class="slide-page"
+      >
         <div class="slide-page-content" :style="makeAddOnStyle(slidePageNo)">
           <a :href="slidePage.href">
             <img :src="slidePage.imgSrc" alt="" />
@@ -20,12 +24,24 @@
           <i class="fa-solid fa-arrow-right"></i>
         </div>
       </div>
-    </div>
 
-    <div class="pagination-wrap">
-      <div class="page-1" :class="pageIsActive(0) ? 'page-red' : 'page-grey'" @click="moveTo(0)"></div>
-      <div class="page-2" :class="pageIsActive(1) ? 'page-blue' : 'page-grey'" @click="moveTo(1)"></div>
-      <div class="page-3" :class="pageIsActive(2) ? 'page-green' : 'page-grey'" @click="moveTo(2)"></div>
+      <div class="pagination-wrap">
+        <div
+          class="page-1"
+          :class="pageIsActive(0) ? 'page-red' : 'page-grey'"
+          @click="moveTo(0)"
+        ></div>
+        <div
+          class="page-2"
+          :class="pageIsActive(1) ? 'page-blue' : 'page-grey'"
+          @click="moveTo(1)"
+        ></div>
+        <div
+          class="page-3"
+          :class="pageIsActive(2) ? 'page-green' : 'page-grey'"
+          @click="moveTo(2)"
+        ></div>
+      </div>
     </div>
   </div>
 </template>
@@ -34,9 +50,10 @@
 export default {
   props: {},
   components: {},
-  data() {
+  data() { 
     return {
       curSlideNo: 0,
+      // 圖片比例5:3
       slideMeta: [
         {
           imgSrc: require("@/assets/images/home/latest-news/latest-news-1.svg"),
@@ -78,7 +95,7 @@ export default {
       }
     },
   },
-  mounted() { },
+  mounted() {},
   watch: {},
   methods: {
     next(stepNum) {
@@ -140,7 +157,7 @@ $page-width: 50%;
 div.slide-outer {
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 45vw;
   overflow: hidden;
 
   div.slide-container {
@@ -223,7 +240,6 @@ div.slide-outer {
         i {
           font-size: 4vw;
           transform: translate(0.8vw, 0.5vw);
-
         }
       }
 
@@ -282,22 +298,23 @@ div.slide-outer {
   }
 
   div.pagination-wrap {
-    width: 100%;
-    height: 2vw;
-    position: absolute;
+    width: 15vw;
+    position: relative;
     left: 50%;
-    bottom: 8vmin;
+    top: 50%;
+    transform: translate(-50%, calc(-50% + 17vw));
+    @include hm();
 
     div.page-1,
     div.page-2,
     div.page-3 {
-      position: absolute;
-      transform: translate(-50%, -50%);
+      display: inline-block;
       width: 2vw;
       height: 2vw;
       border-radius: $border-radius-circle;
       background-color: $primary-grey;
       cursor: pointer;
+      margin: auto;
 
       &:hover {
         background-color: $secondary-grey;
@@ -308,7 +325,8 @@ div.slide-outer {
       left: -4vw;
     }
 
-    div.page-2 {}
+    div.page-2 {
+    }
 
     div.page-3 {
       left: 4vw;
