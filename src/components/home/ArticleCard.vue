@@ -7,10 +7,10 @@
       <div class="sub-info">
         <span class="author">筆者:{{ author }}&ensp;</span>
         <span class="category">分類:
-          <a @click="toPage(mainCategory)">{{
+          <a v-if="mainCategory" @click="toPage(mainCategory)">{{
             getCategoryTitle(mainCategory)
           }}</a>&ensp;
-          <a @click="toPage(subCategory)">{{ getCategoryTitle(subCategory) }}</a>
+          <a v-if="subCategory" @click="toPage(subCategory)">{{ getCategoryTitle(subCategory) }}</a>
         </span>
       </div>
       <p class="content" v-html="content"></p>
@@ -59,13 +59,26 @@ export default {
 
 div.article-card-container {
   background-color: $primary-white;
-  width: 30vw;
-  height: 40vw;
-  margin: 3vw 8vw;
+
   position: relative;
 
-  @include custom-responsive("xs sm md") {}
-@include custom-responsive("lg xl xxl") {}  
+  @include custom-responsive("xs") {
+    width: 80vw;
+    height: 50vh;
+    margin: 3vh auto;
+  }
+
+  @include custom-responsive("sm md") {
+    width: 40vw;
+    height: 65vw;
+    margin: 3vw 1vw;
+  }
+
+  @include custom-responsive("lg xl xxl") {
+    width: 25vw;
+    height: 40vw;
+    margin:3vw 0;
+  }
 
 
   img.cover {
@@ -74,16 +87,40 @@ div.article-card-container {
   }
 
   span.date {
-    font-size: 1vw;
     text-align: center;
-    line-height: 2vw;
     display: block;
-    width: 9vw;
-    height: 2vw;
     position: absolute;
-    top: 1vw;
-    right: 1vw;
     color: $primary-white;
+
+
+    @include custom-responsive("xs") {
+      width: 30vw;
+      height: 5vw;
+      line-height: 5vw;
+      font-size: 2vw;
+      top: 3vw;
+      right: 3vw;
+    }
+
+    @include custom-responsive("sm md") {
+      width: 20vw;
+      height: 3vw;
+      line-height: 3vw;
+      font-size: 2vw;
+      top: 2vw;
+      right: 2vw;
+    }
+
+    @include custom-responsive("lg xl xxl") {
+      width: 9vw;
+      height: 2vw;
+      line-height: 2vw;
+      font-size: 1vw;
+      top: 1vw;
+      right: 1vw;
+    }
+
+
   }
 
   span.date-yellow {
@@ -95,11 +132,40 @@ div.article-card-container {
   }
 
   div.text {
-    padding: 1vw 2vw 0;
+
+    @include custom-responsive("xs") {
+      padding: 2vw 5vw 0;
+    }
+
+    @include custom-responsive("sm md") {
+      padding: 1vw 2vw 0;
+    }
+
+    @include custom-responsive("lg xl xxl") {
+      padding: 1vw 2vw 0;
+    }
 
     h4 {
-      margin: 0 0 1vw;
-      font-size: $h4;
+
+      font-weight: bold;
+
+
+      @include custom-responsive("xs") {
+        font-size: $h2;
+        margin: 0 0 3vw;
+      }
+
+      @include custom-responsive("sm md") {
+        font-size: $h3;
+        margin: 0 0 3vw;
+      }
+
+      @include custom-responsive("lg xl xxl") {
+        font-size: $h4;
+        margin: 0 0 1vw;
+      }
+
+
     }
 
     div.sub-info {
@@ -111,7 +177,7 @@ div.article-card-container {
         font-size: 1.2vw;
 
         a {
-          font-size:  1.2vw;
+          font-size: 1.2vw;
           cursor: pointer;
 
           &:hover {
@@ -122,20 +188,59 @@ div.article-card-container {
     }
 
     p {
-      font-size: 1.25vw;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      overflow: hidden;
+
+      @include custom-responsive("xs") {
+        font-size: 4vw;
+        margin: 1.25vh 0;
+      }
+
+      @include custom-responsive("sm md") {
+        font-size: 2vw;
+      }
+
+      @include custom-responsive("lg xl xxl") {
+        font-size: 1.25vw;
+        margin: 1vw 0;
+      }
+
+
     }
   }
 
   div.watch-more {
     margin: auto;
     cursor: pointer;
-    width: 12vw;
-    height: 3vw;
-    line-height: 3vw;
     text-align: center;
-    font-size: 1.5vw;
-    border-radius: 2vw;
     color: $primary-white;
+
+    @include custom-responsive("xs") {
+      width: 30vw;
+      height: 10vw;
+      line-height: 10vw;
+      font-size: 4vw;
+      border-radius: 10vw;
+    }
+
+    @include custom-responsive("sm md") {
+      width: 20vw;
+      height: 5vw;
+      line-height: 5vw;
+      font-size: 2vw;
+      border-radius: 5vw;
+    }
+
+    @include custom-responsive("lg xl xxl") {
+      width: 12vw;
+      height: 3vw;
+      line-height: 3vw;
+      font-size: 1.5vw;
+      border-radius: 2vw;
+    }
+
 
     &:active {
       transform: translate(2px, 2px);
