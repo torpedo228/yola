@@ -243,7 +243,7 @@ div.introduction-container {
   position: relative;
   overflow: hidden;
   @include vm();
-  gap: 5vh;
+  gap: 3vh;
 
   @include custom-responsive("xs") {
     padding-top: 18vmax;
@@ -490,11 +490,11 @@ div.portal-container-mobile {
 }
 
 div.decoration {
-  width: 100%;
+
   @include vm();
 
   img.rainbow-stripe {
-    height: 4vh;
+    width: 100vw;
   }
 
   img.all-characters {

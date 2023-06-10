@@ -2,9 +2,10 @@
   <div id="home">
     <Hero />
     <Introduction />
+    <LatestNews />
     <div v-if="!$store.state.isDebug">
 
-      <LatestNews />
+
       <TopicArticle />
       <RelatedLink />
     </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="latest-news-container" id="latest-news">
-    <SectionTitle
+    <SubSectionTitle
       title="最新消息 Latest News"
       :imgSrc="require('@/assets/icons/title/subtitle-logo.svg')"
       alt="最新消息icon"
@@ -12,11 +12,11 @@
 </template>
 
 <script>
-import SectionTitle from "@/components/title/SectionTitle.vue";
+import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
 import Slide from "@/components/func-items/Slide.vue";
 
 export default {
-  components: { SectionTitle, Slide },
+  components: { SubSectionTitle, Slide },
   data() {
     return {};
   },
@@ -31,5 +31,6 @@ export default {
 div.latest-news-container {
   width: 100%;
   position: relative;
+  padding-top: 10vmin;
 }
 </style>

@@ -83,12 +83,13 @@ div.header-drop-down-list-container {
     width: 13vw;
     display: none;
     position: absolute;
-    padding: 20px 0;
+    padding: 2vh 0;
     background-color: $primary-white;
-    border-radius: 20px;
+    border-radius: 2vw;
     box-shadow: 2px 2px 2px $primary-grey;
     transform: translate(-50%, -3vh);
     left: 50%;
+    overflow: hidden;
 
     li.drop-down-list-item {
       display: block;
@@ -96,7 +97,8 @@ div.header-drop-down-list-container {
       text-align: center;
       height: 3vh;
       line-height: 3vh;
-      padding: 10px 0;
+      padding: 2vh 0;
+     
 
       &:hover {
         color: $primary-white;

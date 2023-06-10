@@ -38,8 +38,7 @@ div.title {
   }
 
   h3 {
-    
-    margin: 0;
+    margin: 0.5vmin 0;
 
     @include custom-responsive("xs") {
       font-size: $h2;
@@ -54,4 +53,5 @@ div.title {
     }
 
   }
-}</style>
+}
+</style>

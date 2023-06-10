@@ -169,8 +169,6 @@ div.slide-outer {
       }
     }
 
-
-
     // div.active {
     //   @include offseted-left(0);
     //   transform: translate(-50%, -50%);
@@ -215,16 +213,17 @@ div.slide-outer {
       div.next {
         position: absolute;
         transform: translate(-50%, -50%);
-        width: 60px;
-        height: 60px;
+        width: 5vw;
+        height: 5vw;
         border-radius: $border-radius-circle;
         background-color: $primary-white;
-        border: 5px solid;
+        border: 0.5vw solid;
         cursor: pointer;
 
         i {
-          font-size: 40px;
-          transform: translate(35%, 25%);
+          font-size: 4vw;
+          transform: translate(0.8vw, 0.5vw);
+
         }
       }
 
@@ -280,23 +279,22 @@ div.slide-outer {
         }
       }
     }
-
-
   }
 
   div.pagination-wrap {
     width: 100%;
-    height: 20px;
+    height: 2vw;
     position: absolute;
     left: 50%;
+    bottom: 8vmin;
 
     div.page-1,
     div.page-2,
     div.page-3 {
       position: absolute;
       transform: translate(-50%, -50%);
-      width: 20px;
-      height: 20px;
+      width: 2vw;
+      height: 2vw;
       border-radius: $border-radius-circle;
       background-color: $primary-grey;
       cursor: pointer;
@@ -307,13 +305,13 @@ div.slide-outer {
     }
 
     div.page-1 {
-      left: -3%;
+      left: -4vw;
     }
 
     div.page-2 {}
 
     div.page-3 {
-      left: 3%;
+      left: 4vw;
     }
 
     div.page-red {

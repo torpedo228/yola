@@ -55,7 +55,7 @@ div.hero-container {
 
       @include custom-responsive("xl xxl") {
         display: block;
-        width: 105vw;
+        width: 100vw;
       }
     }
 
