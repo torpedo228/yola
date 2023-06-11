@@ -1,13 +1,21 @@
 <template>
   <div class="related-link-drop-down-list-container">
-    <a :href="main.mainUrl" class="main-title" :class="'main-title-' + main.color">
+    <a
+      :href="main.mainUrl"
+      class="main-title"
+      :class="'main-title-' + main.color"
+    >
       {{ main.title }}
-      <!-- <i v-if="hasSubList" class="fa-solid fa-angle-down"></i> -->
+      <i v-if="hasSubList" class="fa-solid fa-angle-down"></i>
     </a>
 
     <ul class="drop-down-list" v-if="hasSubList">
-      <li v-for="(subItem, subItemNo) in subList" :key="subItemNo" class="drop-down-list-item"
-        :class="'drop-down-list-item-' + subItem.color">
+      <li
+        v-for="(subItem, subItemNo) in subList"
+        :key="subItemNo"
+        class="drop-down-list-item"
+        :class="'drop-down-list-item-' + subItem.color"
+      >
         <a :href="subItem.subUrl"> {{ subItem.title }}</a>
       </li>
     </ul>
@@ -29,7 +37,7 @@ export default {
       return this.subList && this.subList.length > 0;
     },
   },
-  mounted() { },
+  mounted() {},
   watch: {},
   methods: {},
 };
@@ -41,9 +49,6 @@ export default {
 
 div.related-link-drop-down-list-container {
   position: relative;
-
-
-
 
   &:hover {
     a.main-title-red {
@@ -65,7 +70,6 @@ div.related-link-drop-down-list-container {
     ul.drop-down-list {
       display: block;
     }
-
   }
 
   a.main-title {
@@ -75,9 +79,8 @@ div.related-link-drop-down-list-container {
     @include custom-responsive("xs") {
       width: 50vw;
       font-size: 6vw;
-      border-bottom:2vw dotted;
+      border-bottom: 2vw dotted;
     }
-
 
     @include custom-responsive("sm md") {
       width: 25vw;
@@ -90,7 +93,6 @@ div.related-link-drop-down-list-container {
       font-size: 1.25vw;
       border-bottom: 0.4vw dotted;
     }
-
   }
 
   a.main-title-red {
@@ -108,8 +110,6 @@ div.related-link-drop-down-list-container {
   a.main-title-blue {
     border-bottom-color: $primary-blue;
   }
-
-
 
   ul.drop-down-list {
     width: 13vw;
@@ -151,6 +151,12 @@ div.related-link-drop-down-list-container {
     li.drop-down-list-item-green {
       &:hover {
         background-color: $primary-green;
+      }
+    }
+
+    li.drop-down-list-item-sec-green {
+      &:hover {
+        background-color: $secondary-green;
       }
     }
 

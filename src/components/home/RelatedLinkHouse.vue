@@ -6,11 +6,49 @@
         <h4 v-html="title"></h4>
       </div>
 
-      <div class="related-link-drop-down-list-wrap" :class="'related-link-drop-down-list-wrap-' + color">
-        <RelatedLinkDropDownList :main="mainTitle1.main" :sub-list="mainTitle1.subList" />
-        <RelatedLinkDropDownList :main="mainTitle2.main" :sub-list="mainTitle2.subList" />
-        <RelatedLinkDropDownList :main="mainTitle3.main" :sub-list="mainTitle3.subList" />
+      <div
+        class="related-link-drop-down-list-wrap"
+        :class="'related-link-drop-down-list-wrap-' + color"
+      >
+        <RelatedLinkDropDownList v-if="isHouseRed"
+          :main="houseRed[0].mainTitle1.main"
+          :sub-list="houseRed[0].mainTitle1.subList"
+        />
+        <RelatedLinkDropDownList v-if="isHouseRed"
+          :main="houseRed[1].mainTitle2.main"
+          :sub-list="houseRed[1].mainTitle2.subList"
+        />
+        <RelatedLinkDropDownList v-if="isHouseRed"
+          :main="houseRed[2].mainTitle3.main"
+          :sub-list="houseRed[2].mainTitle3.subList"
+        />
+
+        <RelatedLinkDropDownList v-if="isHouseYellow"
+          :main="houseYellow[0].mainTitle1.main"
+          :sub-list="houseYellow[0].mainTitle1.subList"
+        />
+
+
       </div>
+
+      <!-- <div
+        v-if="isHouseYellow"
+        class="related-link-drop-down-list-wrap"
+        :class="'related-link-drop-down-list-wrap-' + color"
+      >
+        <RelatedLinkDropDownList
+          :main="houseYellow[0].mainTitle1.main"
+          :sub-list="houseYellow[0].mainTitle1.subList"
+        />
+        <RelatedLinkDropDownList
+          :main="houseYellow[1].mainTitle2.main"
+          :sub-list="houseYellow[1].mainTitle2.subList"
+        />
+        <RelatedLinkDropDownList
+          :main="houseYellow[2].mainTitle3.main"
+          :sub-list="houseYellow[2].mainTitle3.subList"
+        />
+      </div> -->
     </div>
   </div>
 </template>
@@ -27,35 +65,225 @@ export default {
   components: { RelatedLinkDropDownList },
   data() {
     return {
-      mainTitle1: {
-        main: {
-          title: "全國教保資訊網",
-          mainUrl: "https://www.ece.moe.edu.tw/ch/",
-          color: "red",
+      houseRed: [
+        {
+          mainTitle1: {
+            main: {
+              title: "全國教保資訊網",
+              mainUrl: "https://www.ece.moe.edu.tw/ch/",
+              color: "red",
+            },
+            subList: [],
+          },
         },
-        subList: [],
-      },
-      mainTitle2: {
-        main: {
-          title: "幼兒教育及照顧法",
-          mainUrl: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0070031",
-          color: "red",
+        {
+          mainTitle2: {
+            main: {
+              title: "幼兒教育及照顧法",
+              mainUrl:
+                "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0070031",
+              color: "red",
+            },
+            subList: [],
+          },
         },
-        subList: [],
-      },
-      mainTitle3: {
-        main: {
-          title: "幼兒園課綱、相關手冊與實例下載",
-          mainUrl:
-            "https://www.ece.moe.edu.tw/ch/filelist/preschool/filelist-preschool/",
-          color: "red",
+        {
+          mainTitle3: {
+            main: {
+              title: "幼兒園課綱、相關手冊與實例下載",
+              mainUrl:
+                "https://www.ece.moe.edu.tw/ch/filelist/preschool/filelist-preschool/",
+              color: "red",
+            },
+            subList: [],
+          },
         },
-        subList: [],
-      },
+      ],
+
+      houseYellow: [
+        {
+          mainTitle1: {
+            main: {
+              title: "幼兒園查詢",
+              mainUrl: "",
+              color: "yellow",
+            },
+            subList: [],
+          },
+        },
+        {
+          mainTitle2: {
+            main: {
+              title: "補助與津貼",
+              mainUrl: "",
+              color: "yellow",
+            },
+            subList: [],
+          },
+        },
+        {
+          mainTitle3: {
+            main: {
+              title: "公共化教保服務",
+              mainUrl: "",
+              color: "yellow",
+            },
+            subList: [],
+          },
+        },
+      ],
+
+      houseGreen: [
+        {
+          mainTitle1: {
+            main: {
+              title: "北部",
+              mainUrl: "",
+              color: "green",
+            },
+            subList: [
+              {
+                title: "新北市",
+                subUrl: "",
+                color: "green",
+              },
+              {
+                title: "台北市",
+                subUrl: "",
+                color: "sec-green",
+              },
+              { title: "桃園市", subUrl: "", color: "green" },
+            ],
+          },
+        },
+        {
+          mainTitle2: {
+            main: {
+              title: "中部",
+              mainUrl: "",
+              color: "green",
+            },
+            subList: [
+              {
+                title: "苗栗縣",
+                subUrl: "",
+                color: "green",
+              },
+              {
+                title: "台中市",
+                subUrl: "",
+                color: "sec-green",
+              },
+              { title: "嘉義市", subUrl: "", color: "green" },
+            ],
+          },
+        },
+        {
+          mainTitle3: {
+            main: {
+              title: "南部",
+              mainUrl: "",
+              color: "green",
+            },
+            subList: [
+              {
+                title: "台南市",
+                subUrl: "",
+                color: "green",
+              },
+              {
+                title: "高雄市",
+                subUrl: "",
+                color: "sec-green",
+              },
+              { title: "屏東縣", subUrl: "", color: "green" },
+            ],
+          },
+        },
+        {
+          mainTitle3: {
+            main: {
+              title: "東部&離島",
+              mainUrl: "",
+              color: "green",
+            },
+            subList: [
+              {
+                title: "花蓮縣",
+                subUrl: "",
+                color: "green",
+              },
+              {
+                title: "台東縣",
+                subUrl: "",
+                color: "sec-green",
+              },
+              { title: "澎湖縣", subUrl: "", color: "green" },
+            ],
+          },
+        },
+      ],
+
+      houseBlue: [
+        {
+          mainTitle1: {
+            main: {
+              title: "幼兒闖天下",
+              mainUrl: "",
+              color: "blue",
+            },
+            subList: [],
+          },
+        },
+        {
+          mainTitle2: {
+            main: {
+              title: "樂學成長營",
+              mainUrl: "",
+              color: "blue",
+            },
+            subList: [],
+          },
+        },
+        {
+          mainTitle3: {
+            main: {
+              title: "童言童語",
+              mainUrl: "",
+              color: "blue",
+            },
+            subList: [],
+          },
+          mainTitle4: {
+            main: {
+              title: "數星星繪本網",
+              mainUrl: "",
+              color: "blue",
+            },
+            subList: [],
+          },
+        },
+      ],
     };
   },
-  computed: {},
-  mounted() { },
+  computed: {
+    isHouseRed() {
+      return this.houseRed;
+    },
+
+    isHouseYellow() {
+      return this.houseYellow;
+    },
+
+    isHouseGreen() {
+      return this.houseGreen;
+    },
+
+    isHouseBlue() {
+      return this.houseBlue;
+    },
+  },
+  mounted() {},
   watch: {},
   methods: {},
 };
@@ -71,7 +299,6 @@ div.related-link-house-container {
   div.title-wrap {
     position: relative;
 
-
     @include custom-responsive("xs") {
       top: 6vw;
     }
@@ -84,13 +311,10 @@ div.related-link-house-container {
       top: 2vw;
     }
 
-
     img {
-
       @include custom-responsive("xs") {
         width: 80vw;
       }
-
 
       @include custom-responsive("sm md") {
         width: 42vw;
@@ -99,23 +323,23 @@ div.related-link-house-container {
       @include custom-responsive("lg xl xxl") {
         width: 20vw;
       }
-
     }
 
     h4 {
       margin: 0;
       color: $primary-white;
       position: absolute;
-      transform: translateX(-50%);
-      top: 50%;
+      transform: translate(-50%, -50%);
+      top: 60%;
       left: 50%;
+      text-align: center;
 
       @include custom-responsive("xs") {
         font-size: 8vw;
       }
 
       @include custom-responsive("sm md") {
-        font-size: 2vw;
+        font-size: 4vw;
       }
 
       @include custom-responsive("lg xl xxl") {
@@ -129,7 +353,7 @@ div.related-link-house-container {
 
     margin: auto;
     background-color: $primary-white;
-    border: 0.5vmax solid;
+  
     border-radius: 2vmax;
     display: flex;
     flex-direction: column;
@@ -141,13 +365,15 @@ div.related-link-house-container {
       font-size: 4vw;
       width: 65vw;
       height: 65vw;
+      border: 1vmax solid;
     }
 
     @include custom-responsive("sm md") {
       padding: 2vw;
-      font-size: 4vw;
+      font-size: 5vw;
       width: 35vw;
       height: 45vw;
+      border: 0.5vmax solid;
     }
 
     @include custom-responsive("lg xl xxl") {
@@ -155,10 +381,8 @@ div.related-link-house-container {
       font-size: 1.25vw;
       width: 15vw;
       height: 18vw;
+      border: 0.5vmax solid;
     }
-
-
-
   }
 
   div.related-link-drop-down-list-wrap-red {

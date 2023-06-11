@@ -8,67 +8,28 @@
 
     <div class="related-link-wrap">
       <RelatedLinkHouse
-        :color="house1.color"
-        :img="house1.img"
-        :title="house1.title"
+        :color="houseRed.color"
+        :img="houseRed.img"
+        :title="houseRed.title"
       />
 
-      <!-- <div class="related-link related-link-red">
-        <h4>幼教寶典</h4>
+      <RelatedLinkHouse 
+        :color="houseYellow.color"
+        :img="houseYellow.img"
+        :title="houseYellow.title"
+      />
 
-        <ul>
-          <li><a href="https://www.ece.moe.edu.tw/ch/">全國教保資訊網</a></li>
-          <li>
-            <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0070031">幼兒教育及照顧法</a>
-          </li>
-          <li>
-            <a href="https://www.ece.moe.edu.tw/ch/filelist/preschool/filelist-preschool/">幼兒園課綱、相關手冊與實例下載</a>
-          </li>
-        </ul>
-        <img :src="require('@/assets/images/home/related-link/house-red.svg')" alt="" />
-      </div>
+      <RelatedLinkHouse
+        :color="houseGreen.color"
+        :img="houseGreen.img"
+        :title="houseGreen.title"
+      />
 
-      <div class="related-link related-link-yellow">
-        <h4>重點資訊</h4>
-        <ul>
-          <li><a href="">幼兒園查詢</a></li>
-          <li><a href="">補助與津貼</a></li>
-          <li><a href="">公共化教保服務</a></li>
-        </ul>
-        <img :src="require('@/assets/images/home/related-link/house-yellow.svg')" alt="" />
-      </div>
-
-      <div class="related-link related-link-green">
-        <h4>各縣市<br />幼教資源網</h4>
-        <ul>
-          <li>
-
-
-            <a href="">北部<i class="fa-solid fa-chevron-down"></i></a>
-          </li>
-          <li>
-            <a href="">中部<i class="fa-solid fa-chevron-down"></i></a>
-          </li>
-          <li>
-            <a href="">南部<i class="fa-solid fa-chevron-down"></i></a>
-          </li>
-          <li>
-            <a href="">東部&離島<i class="fa-solid fa-chevron-down"></i></a>
-          </li>
-        </ul>
-        <img :src="require('@/assets/images/home/related-link/house-green.svg')" alt="" />
-      </div>
-
-      <div class="related-link related-link-blue">
-        <h4>合作網站</h4>
-        <ul>
-          <li><a href="">幼兒闖天下</a></li>
-          <li><a href="">樂學成長營</a></li>
-          <li><a href="">童言童語</a></li>
-          <li><a href="">數星星繪本網</a></li>
-        </ul>
-        <img :src="require('@/assets/images/home/related-link/house-blue.svg')" />
-      </div> -->
+      <RelatedLinkHouse
+        :color="houseBlue.color"
+        :img="houseBlue.img"
+        :title="houseBlue.title"
+      />
     </div>
   </div>
 </template>
@@ -81,22 +42,22 @@ export default {
   components: { SubSectionTitle, RelatedLinkHouse },
   data() {
     return {
-      house1: {
+      houseRed: {
         color: "red",
         img: require("@/assets/images/home/related-link/top-red.svg"),
         title: "幼教寶典",
       },
-      house2: {
+      houseYellow: {
         color: "yellow",
         img: require("@/assets/images/home/related-link/top-yellow.svg"),
         title: "重點資訊",
       },
-      house3: {
+      houseGreen: {
         color: "green",
         img: require("@/assets/images/home/related-link/top-green.svg"),
         title: "各縣市<br />幼教資源網",
       },
-      house4: {
+      houseBlue: {
         color: "blue",
         img: require("@/assets/images/home/related-link/top-blue.svg"),
         title: "合作網站",
@@ -130,8 +91,21 @@ div.related-link-container {
   div.related-link-wrap {
     margin-top: 30px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+
+    @include custom-responsive("xs") {
+      flex-direction: column;
+    }
+
+    @include custom-responsive("sm md") {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    @include custom-responsive("lg xl xxl") {
+      flex-direction: row;
+    }
 
     div.related-link {
       position: relative;
