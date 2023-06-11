@@ -154,13 +154,13 @@ div#side-menu-container {
           }
 
           @include custom-responsive("sm md ") {
-            width: 11vmax;
-            height: 11vmax;
+            width: 10.5vmin;
+            height: 10.5vmin;
           }
 
           @include custom-responsive("lg ") {
-            width: 10vmax;
-            height: 10vmax;
+            width: 10.5vmin;
+            height: 10.5vmin;
           }
         }
       }
