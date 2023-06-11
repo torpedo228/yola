@@ -33,7 +33,10 @@
           <HeaderDropDownList :main="myLand.main" :sub-list="myLand.subList" />
         </div>
         <div class="side-menu">
-          <SideMenu />
+          <SideMenu
+            @before-turn-on-side-menu="$store.commit('TURN_ON_OVERLAY')"
+            @before-turn-off-side-menu="$store.commit('TURN_OFF_OVERLAY')"
+          />
         </div>
         <!-- <div class="social-media">
           <a class="fb" href="#">
@@ -241,7 +244,6 @@ div.header-container {
       }
 
       div.side-menu {
-
         height: 50%;
         position: absolute;
         right: 3%;

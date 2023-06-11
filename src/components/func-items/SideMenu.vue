@@ -52,10 +52,16 @@ export default {
   watch: {},
   methods: {
     turnOn() {
+      // this.$store.commit("TURN_ON_OVERLAY");
+      this.$emit("beforeTurnOnSideMenu");
       this.isShow = true;
+      this.$emit("afterTurnOnSideMenu");
     },
     turnOff() {
+      // this.$store.commit("TURN_OFF_OVERLAY");
+      this.$emit("beforeTurnOffSideMenu");
       this.isShow = false;
+      this.$emit("afterTurnOffSideMenu");
     },
 
     toggle() {
@@ -111,25 +117,20 @@ div#side-menu-container {
       justify-content: space-evenly;
 
       @include custom-responsive("xs") {
-
         top: 10%;
       }
 
       @include custom-responsive("sm") {
-
         top: 10%;
       }
 
       @include custom-responsive(" md") {
-
         top: 10%;
       }
 
       @include custom-responsive("lg") {
-
         top: 10%;
       }
-
 
       div#my-land {
         @include vm();
@@ -141,7 +142,6 @@ div#side-menu-container {
         justify-content: center;
         gap: 20px;
         color: $primary-white;
-
 
         img {
           background-color: $primary-red;
@@ -166,34 +166,30 @@ div#side-menu-container {
       }
 
       div.section-wrap {
-        height:40vh ;
+        height: 40vh;
+        width: 20vw;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        position: relative;
+        position: absolute;
+        transform: translate(-50%, -50%);
 
         @include custom-responsive("xs") {
           top: 5vh;
-
         }
 
         @include custom-responsive("sm") {
           top: 4.5vh;
-
         }
 
         @include custom-responsive(" md") {
           top: 4vh;
-
         }
 
         @include custom-responsive("lg") {
           top: 1.5vh;
-
         }
-
-        
 
         span.section {
           display: block;
@@ -204,6 +200,12 @@ div#side-menu-container {
 
           &:hover {
             color: $primary-white;
+          }
+        }
+
+        span#home {
+          &:hover {
+            background-color: $primary-blue;
           }
         }
 
@@ -232,21 +234,20 @@ div#side-menu-container {
 .section {
   display: block;
 
-  
   @include custom-responsive("xs") {
-          font-size: 3vmax;
-        }
+    font-size: 3vmax;
+  }
 
-        @include custom-responsive("sm") {
-          font-size: 3vmax;
-        }
+  @include custom-responsive("sm") {
+    font-size: 3vmax;
+  }
 
-        @include custom-responsive(" md") {
-          font-size: 2.75vmax;
-        }
+  @include custom-responsive(" md") {
+    font-size: 2.75vmax;
+  }
 
-        @include custom-responsive("lg") {
-          font-size: 2.5vmax;
-        }
+  @include custom-responsive("lg") {
+    font-size: 2.5vmax;
+  }
 }
 </style>

@@ -1,9 +1,12 @@
-import { createStore } from "vuex";
+import {
+  createStore
+} from "vuex";
 
 export default createStore({
   state: {
     currentPage: "home",
     isDebug: true,
+    showOverlay: false,
     categories: new Map([
       [
         "art",
@@ -88,6 +91,13 @@ export default createStore({
     SET_TEST_PAGE(state) {
       state.currentPage = "test";
     },
+
+    TURN_ON_OVERLAY(state) {
+      state.showOverlay = true;
+    },
+    TURN_OFF_OVERLAY(state) {
+      state.showOverlay = false;
+    }
   },
   actions: {},
   modules: {},
