@@ -3,16 +3,33 @@
     <div class="header-wrap">
       <div class="header-content">
         <a id="header-logo" href="#" @click="backToHome">
-          <img class="logo" :src="require('@/assets/logo/yola.svg')" alt="幼樂園Yo-La! Logo" />
+          <img
+            class="logo"
+            :src="require('@/assets/logo/yola.svg')"
+            alt="幼樂園Yo-La! Logo"
+          />
         </a>
         <div class="header-drop-down-list">
-          <HeaderDropDownList :main="learningCorner.main" :sub-list="learningCorner.subList" />
-          <HeaderDropDownList :main="thematicTeaching.main" :sub-list="thematicTeaching.subList" />
-          <HeaderDropDownList :main="storybooks.main" :sub-list="storybooks.subList" />
-          <HeaderDropDownList :main="nurseryRhymesAndFingerRhymes.main"
-            :sub-list="nurseryRhymesAndFingerRhymes.subList" />
-          <HeaderDropDownList :main="physicalFitnessAndRhythmMovement.main"
-            :sub-list="physicalFitnessAndRhythmMovement.subList" />
+          <HeaderDropDownList
+            :main="learningCorner.main"
+            :sub-list="learningCorner.subList"
+          />
+          <HeaderDropDownList
+            :main="thematicTeaching.main"
+            :sub-list="thematicTeaching.subList"
+          />
+          <HeaderDropDownList
+            :main="storybooks.main"
+            :sub-list="storybooks.subList"
+          />
+          <HeaderDropDownList
+            :main="nurseryRhymesAndFingerRhymes.main"
+            :sub-list="nurseryRhymesAndFingerRhymes.subList"
+          />
+          <HeaderDropDownList
+            :main="physicalFitnessAndRhythmMovement.main"
+            :sub-list="physicalFitnessAndRhythmMovement.subList"
+          />
           <HeaderDropDownList :main="myLand.main" :sub-list="myLand.subList" />
         </div>
         <div class="side-menu">
@@ -29,7 +46,8 @@
           </a>
         </div> -->
         <div class="profile-img">
-          <i class="fa-solid fa-circle-user"></i>
+          <!-- <i class="fa-solid fa-circle-user"></i> -->
+          <img :src="require('@/assets/icons/func-items/avatar.png')" alt="" />
         </div>
       </div>
     </div>
@@ -124,7 +142,7 @@ export default {
     //   );
     // },
   },
-  mounted() { },
+  mounted() {},
   watch: {},
   methods: {
     backToHome() {
@@ -188,7 +206,6 @@ div.header-container {
             animation-duration: 0.5s;
             animation-iteration-count: infinite;
 
-
             @keyframes shake {
               0% {
                 transform: translateX(-0.5vw);
@@ -202,10 +219,7 @@ div.header-container {
                 transform: translateX(-0.5vw);
               }
             }
-
-
           }
-
         }
       }
 
@@ -315,20 +329,24 @@ div.header-container {
         cursor: pointer;
         position: absolute;
         top: 50%;
-        right: 5%;
+        right: 0;
         transform: translate(-50%, -50%);
 
         &:hover {
-          outline: 5px solid $secondary-grey;
+          opacity: 0.7;
         }
 
-        i {
-          color: $primary-grey;
-
-          @include custom-responsive("xl xxl") {
-            font-size: 4.5vw;
-          }
+        img {
+          width: 6vw;
         }
+
+        // i {
+        //   color: $primary-grey;
+
+        //   @include custom-responsive("xl xxl") {
+        //     font-size: 4.5vw;
+        //   }
+        // }
 
         @include custom-responsive("xs") {
           display: none;

@@ -1,10 +1,19 @@
 <template>
   <div class="related-link-container" id="related-link">
-    <SubSectionTitle title="相關連結 Related Link" :imgSrc="require('@/assets/icons/title/subtitle-logo.svg')"
-      alt="相關連結icon" />
+    <SubSectionTitle
+      title="相關連結 Related Link"
+      :imgSrc="require('@/assets/icons/title/subtitle-logo.svg')"
+      alt="相關連結icon"
+    />
 
     <div class="related-link-wrap">
-      <div class="related-link related-link-red">
+      <RelatedLinkHouse
+        :color="house1.color"
+        :img="house1.img"
+        :title="house1.title"
+      />
+
+      <!-- <div class="related-link related-link-red">
         <h4>幼教寶典</h4>
 
         <ul>
@@ -33,6 +42,8 @@
         <h4>各縣市<br />幼教資源網</h4>
         <ul>
           <li>
+
+
             <a href="">北部<i class="fa-solid fa-chevron-down"></i></a>
           </li>
           <li>
@@ -57,20 +68,42 @@
           <li><a href="">數星星繪本網</a></li>
         </ul>
         <img :src="require('@/assets/images/home/related-link/house-blue.svg')" />
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
 import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
+import RelatedLinkHouse from "@/components/home/RelatedLinkHouse.vue";
 
 export default {
-  components: { SubSectionTitle },
+  components: { SubSectionTitle, RelatedLinkHouse },
   data() {
-    return {};
+    return {
+      house1: {
+        color: "red",
+        img: require("@/assets/images/home/related-link/top-red.svg"),
+        title: "幼教寶典",
+      },
+      house2: {
+        color: "yellow",
+        img: require("@/assets/images/home/related-link/top-yellow.svg"),
+        title: "重點資訊",
+      },
+      house3: {
+        color: "green",
+        img: require("@/assets/images/home/related-link/top-green.svg"),
+        title: "各縣市<br />幼教資源網",
+      },
+      house4: {
+        color: "blue",
+        img: require("@/assets/images/home/related-link/top-blue.svg"),
+        title: "合作網站",
+      },
+    };
   },
-  mounted() { },
+  mounted() {},
 };
 </script>
 
@@ -80,7 +113,6 @@ export default {
 
 div.related-link-container {
   width: 100%;
-  height: 80vh;
   position: relative;
 
   @include custom-responsive("xs") {

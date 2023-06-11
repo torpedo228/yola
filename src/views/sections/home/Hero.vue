@@ -50,7 +50,6 @@ div.hero-container {
       @include custom-responsive("sm md lg") {
         display: block;
         width: 100vw;
-
       }
 
       @include custom-responsive("xl xxl") {
@@ -77,7 +76,6 @@ div.hero-container {
     div.hero-text {
       position: absolute;
 
-
       @include custom-responsive("xs") {
         top: 120vmin;
         left: 50vmin;
@@ -92,7 +90,6 @@ div.hero-container {
         transform: translateX(0%);
         text-align: left;
         width: 80%;
-
       }
 
       @include custom-responsive("xl xxl") {
@@ -101,9 +98,7 @@ div.hero-container {
         transform: translateX(0%);
         text-align: left;
         width: 80%;
-
       }
-
 
       h2 {
         color: $primary-white;
@@ -112,21 +107,18 @@ div.hero-container {
           display: block;
           font-size: 10vw;
           margin: 1vh 0;
-
         }
 
         @include custom-responsive("sm md lg") {
           display: inline-block;
           margin: 0 1vw 1vh 0;
           font-size: 4vw;
-
         }
 
         @include custom-responsive("xl xxl") {
           display: inline-block;
           font-size: 4vw;
           margin: 0 1vw 1vh 0;
-
         }
       }
 
@@ -145,16 +137,15 @@ div.hero-container {
         @include custom-responsive("xl xxl") {
           display: block;
         }
-
       }
 
       div {
-        color: $primary-black;
+        // border:0.25vw solid $primary-white;
+        color: $primary-white;
         display: block;
-        background-color: $primary-white;
+        background-color: $primary-blue;
         text-align: center;
         cursor: pointer;
-
 
         @include custom-responsive("xs") {
           width: 60vmin;
@@ -162,16 +153,18 @@ div.hero-container {
           line-height: 20vmin;
           font-size: 8vw;
           margin: 3vh auto;
-          border-radius: 10vmin;
+          border-radius: 20vmin;
+          border: 1vw solid $primary-white;
         }
 
         @include custom-responsive("sm md lg") {
-          width: 20vmax;
-          height: 6vmax;
-          line-height: 6vmax;
+          width: 20vw;
+          height: 6vw;
+          line-height:6vw;
           font-size: 2.5vw;
           margin: 4vmin 0 0;
           border-radius: 8vmax;
+          border:0;
         }
 
         @include custom-responsive("xl xxl") {
@@ -181,17 +174,18 @@ div.hero-container {
           font-size: 2.5vw;
           margin: 6vmin 0 0;
           border-radius: 8vmax;
+          box-shadow: 5px 5px 0px $secondary-blue;
+          border:0;
         }
 
-
         &:hover {
+          transform: translate(5px, 5px);
+          box-shadow: 0px 0px 0px $secondary-blue;
 
-          box-shadow: 5px 5px 0px $primary-black;
         }
 
         &:active {
-          transform: translate(5px, 5px);
-          box-shadow: 0px 0px 0px$primary-black;
+          opacity: 0.8;
         }
       }
     }

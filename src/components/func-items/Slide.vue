@@ -149,7 +149,7 @@ div.slide-outer {
     height: calc(45vw*2);
 
     @include custom-responsive("sm md lg") {
-      height: 45vw;
+      height: 46vw;
     }
 
     @include custom-responsive("xl xxl") {
@@ -211,7 +211,7 @@ div.slide-outer {
 
           border-radius: $border-radius-circle;
           background-color: $primary-white;
-         
+
           cursor: pointer;
 
           @include custom-responsive("xs") {
@@ -379,7 +379,20 @@ div.slide-outer {
         }
 
         &:hover {
-          background-color: $secondary-grey;
+
+          @include custom-responsive("xs") {
+            
+          }
+
+          @include custom-responsive("sm md lg") {
+            
+          }
+
+          @include custom-responsive("xl xxl") {
+            background-color: $secondary-grey;
+          }
+
+
         }
       }
 
@@ -410,4 +423,5 @@ div.slide-outer {
       }
     }
   }
-}</style>
+}
+</style>

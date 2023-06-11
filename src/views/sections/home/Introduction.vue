@@ -361,6 +361,7 @@ div.introduction-container {
     }
 
     div.go-to-btn {
+      cursor: pointer;
       line-height: 6vw;
       width: 11vw;
       height: 6vw;
