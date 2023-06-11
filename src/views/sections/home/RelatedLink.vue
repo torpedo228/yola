@@ -297,7 +297,6 @@ div.related-link-container {
   }
 
   div.related-link-wrap {
-    margin-top: 30px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;

@@ -1,6 +1,7 @@
 <template>
   <div class="hero-container" id="hero">
     <div class="main-content">
+
       <img class="hero-image" :src="require('@/assets/images/home/hero/hero.svg')" alt="" />
       <img class="hero-image-mobile" :src="require('@/assets/images/home/hero/hero-mobile.svg')" alt="" />
       <div class="hero-text">
@@ -39,6 +40,7 @@ div.hero-container {
   position: relative;
 
   div.main-content {
+    overflow: hidden;
     width: 100%;
     height: 100%;
 
@@ -49,19 +51,19 @@ div.hero-container {
 
       @include custom-responsive("sm md lg") {
         display: block;
-        width: 100vw;
+        width: 105%
       }
 
       @include custom-responsive("xl xxl") {
         display: block;
-        width: 100vw;
+        width: 105%
       }
     }
 
     img.hero-image-mobile {
       @include custom-responsive("xs") {
         display: block;
-        width: 100vw;
+        width: 105%
       }
 
       @include custom-responsive("sm md lg") {

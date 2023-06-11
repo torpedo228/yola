@@ -1,64 +1,38 @@
 <template>
   <div id="side-menu-container">
-    <img
-      v-if="isShow"
-      class="side-menu-btn-close"
-      :src="require('@/assets/icons/func-items/menu-close.svg')"
-      alt="選單按鈕"
-      @click="turnOff()"
-    />
-    <img
-      v-else
-      class="side-menu-btn-open"
-      :src="require('@/assets/icons/func-items/menu-open.svg')"
-      alt="選單按鈕"
-      @click="turnOn()"
-    />
+    <img v-if="isShow" class="side-menu-btn-close" :src="require('@/assets/icons/func-items/menu-close.svg')" alt="選單按鈕"
+      @click="turnOff()" />
+    <img v-else class="side-menu-btn-open" :src="require('@/assets/icons/func-items/menu-open.svg')" alt="選單按鈕"
+      @click="turnOn()" />
 
-    <div
-      class="side-menu-wrap"
-      v-bind:style="{ left: isShow ? '-400px' : '50px' }"
-    >
-      <img
-        class="side-menu-img"
-        :src="require('@/assets/icons/func-items/side-menu.svg')"
-        alt=""
-      />
+    <div class="side-menu-wrap" v-bind:style="{ right: isShow ? '-300%' : '-1200%' }">
+      <img class="side-menu-img" :src="require('@/assets/icons/func-items/side-menu.svg')" alt="" />
+
       <div class="shortcut-wrap">
-        <a id="my-land" @click="jumpTo('my-land')">
-          <div class="profile-img">
-            <img
-              src="https://avatars.githubusercontent.com/u/110772689?v=4"
-              alt=""
-            />
-          </div>
-          <!-- <i class="fa-solid fa-circle-user"></i> -->
-          <span class="my-land">我的樂園</span>
-        </a>
-        <a id="home" @click="jumpTo('home')">
-          <span>首頁</span>
-        </a>
-        <a id="learning-corner" @click="jumpTo('learning-corner')">
-          <span>學習區</span>
-        </a>
-        <a id="thematic-teaching" @click="jumpTo('thematic-teaching')">
-          <span>主題教學</span>
-        </a>
-        <a id="storybooks" @click="jumpTo('storybooks')">
-          <span>繪本故事</span>
-        </a>
-        <a
-          id="nursery-rhymes-and-finger-rhymes"
-          @click="jumpTo('nursery-rhymes-and-finger-rhymes')"
-        >
-          <span>兒歌&手指謠</span>
-        </a>
-        <a
-          id="physical-fitness-and-rhythm-movement"
-          @click="jumpTo('physical-fitness-and-rhythm-movement')"
-        >
-          <span>體能&律動</span>
-        </a>
+        <div class="section" id="my-land" @click="jumpTo('my-land')">
+          <img src="https://avatars.githubusercontent.com/u/110772689?v=4" alt="" />
+          我的樂園
+        </div>
+
+        <div class="section-wrap">
+          <span class="section" id="home" @click="jumpTo('home')"> 首頁 </span>
+          <span class="section" id="learning-corner" @click="jumpTo('learning-corner')">
+            學習區
+          </span>
+          <span class="section" id="thematic-teaching" @click="jumpTo('thematic-teaching')">
+            主題教學
+          </span>
+          <span class="section" id="storybooks" @click="jumpTo('storybooks')">
+            繪本故事
+          </span>
+          <span class="section" id="nursery-rhymes-and-finger-rhymes" @click="jumpTo('nursery-rhymes-and-finger-rhymes')">
+            兒歌&手指謠
+          </span>
+          <span class="section" id="physical-fitness-and-rhythm-movement"
+            @click="jumpTo('physical-fitness-and-rhythm-movement')">
+            體能&律動
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -70,11 +44,11 @@ export default {
   components: {},
   data() {
     return {
-      isShow: false,
+      isShow: true,
     };
   },
   computed: {},
-  mounted() {},
+  mounted() { },
   watch: {},
   methods: {
     turnOn() {
@@ -118,7 +92,7 @@ div#side-menu-container {
   }
 
   div.side-menu-wrap {
-    width: 600px;
+    height: 100vh;
     position: fixed;
     -webkit-transition: 0.35s ease-in-out;
     display: flex;
@@ -126,44 +100,104 @@ div#side-menu-container {
     justify-content: center;
 
     img.side-menu-img {
-      width: 100%;
+      height: 80%;
     }
 
     div.shortcut-wrap {
       text-align: center;
       position: absolute;
-      top: 15%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      gap: 35px;
+      justify-content: space-evenly;
 
-      a {
-        display: inline-block;
-        border-radius: 30px;
+      @include custom-responsive("xs") {
 
-        &:link {
-          color: $primary-black;
+        top: 10%;
+      }
+
+      @include custom-responsive("sm") {
+
+        top: 10%;
+      }
+
+      @include custom-responsive(" md") {
+
+        top: 10%;
+      }
+
+      @include custom-responsive("lg") {
+
+        top: 10%;
+      }
+
+
+      div#my-land {
+        @include vm();
+        cursor: pointer;
+        padding: 5px 0;
+        margin-bottom: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        color: $primary-white;
+
+
+        img {
+          background-color: $primary-red;
+          outline: 10px solid $secondary-red;
+          border-radius: 50%;
+
+          @include custom-responsive("xs") {
+            width: 11vmax;
+            height: 11vmax;
+          }
+
+          @include custom-responsive("sm md ") {
+            width: 11vmax;
+            height: 11vmax;
+          }
+
+          @include custom-responsive("lg ") {
+            width: 10vmax;
+            height: 10vmax;
+          }
+        }
+      }
+
+      div.section-wrap {
+        height:40vh ;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        position: relative;
+
+        @include custom-responsive("xs") {
+          top: 5vh;
+
         }
 
-        &:visited {
-          color: $primary-black;
+        @include custom-responsive("sm") {
+          top: 4.5vh;
+
         }
 
-        &:hover {
-          background-color: $primary-blue;
+        @include custom-responsive(" md") {
+          top: 4vh;
+
         }
 
-        &:active {
-          color: $primary-white;
-          opacity: 0.5;
+        @include custom-responsive("lg") {
+          top: 1.5vh;
+
         }
 
-        span {
+        
+
+        span.section {
           display: block;
-          width: 150px;
           color: $primary-black;
-          font-size: $sub-info;
           text-align: center;
           border-radius: 30px;
           cursor: pointer;
@@ -172,67 +206,47 @@ div#side-menu-container {
             color: $primary-white;
           }
         }
-      }
 
-      a#learning-corner {
-        &:hover {
-          background-color: $primary-red;
-        }
-      }
-
-      a#storybooks {
-        &:hover {
-          background-color: $primary-yellow;
-        }
-      }
-
-      a#physical-fitness-and-rhythm-movement {
-        &:hover {
-          background-color: $primary-green;
-        }
-      }
-
-      a#my-land {
-        cursor: pointer;
-        width: 150px;
-        padding: 5px 0;
-        margin-bottom: 5%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 20px;
-
-        &:hover {
-          background-color: $primary-red;
-
-          img {
+        span#learning-corner {
+          &:hover {
             background-color: $primary-red;
-            outline: 10px solid $secondary-red;
-            border-radius: 50%;
           }
         }
 
-        div.profile-img {
-          width: 150px;
-
-          img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+        span#storybooks {
+          &:hover {
+            background-color: $primary-yellow;
           }
         }
 
-        span.my-land {
-          color: $primary-white;
-          font-size: $sub-info;
-        }
-
-        i {
-          color: $primary-white;
-          font-size: 80px;
+        span#physical-fitness-and-rhythm-movement {
+          &:hover {
+            background-color: $primary-green;
+          }
         }
       }
     }
   }
+}
+
+.section {
+  display: block;
+
+  
+  @include custom-responsive("xs") {
+          font-size: 3vmax;
+        }
+
+        @include custom-responsive("sm") {
+          font-size: 3vmax;
+        }
+
+        @include custom-responsive(" md") {
+          font-size: 2.75vmax;
+        }
+
+        @include custom-responsive("lg") {
+          font-size: 2.5vmax;
+        }
 }
 </style>

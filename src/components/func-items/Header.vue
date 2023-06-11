@@ -241,6 +241,7 @@ div.header-container {
       }
 
       div.side-menu {
+
         height: 50%;
         position: absolute;
         right: 3%;
