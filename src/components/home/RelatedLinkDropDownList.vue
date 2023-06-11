@@ -1,22 +1,17 @@
 <template>
   <div class="related-link-drop-down-list-container">
-    <a
-      :href="main.mainUrl"
-      class="main-title"
-      :class="'main-title-' + main.color"
-    >
-      {{ main.title }}
+    <a v-if="url" :href="url" class="main-title" :class="'main-title-' + color">
+      {{ title }}
       <i v-if="hasSubList" class="fa-solid fa-angle-down"></i>
     </a>
 
+    <span v-else class="main-title" :class="'main-title-' + color">
+      {{ title }} <i v-if="hasSubList" class="fa-solid fa-angle-down"></i></span>
+
     <ul class="drop-down-list" v-if="hasSubList">
-      <li
-        v-for="(subItem, subItemNo) in subList"
-        :key="subItemNo"
-        class="drop-down-list-item"
-        :class="'drop-down-list-item-' + subItem.color"
-      >
-        <a :href="subItem.subUrl"> {{ subItem.title }}</a>
+      <li v-for="(subLinkInfo, subLinkInfoNo) in subLinkInfoList" :key="subLinkInfoNo" class="drop-down-list-item"
+        :class="'drop-down-list-item-' + subLinkInfo.color">
+        <a :href="subLinkInfo.url"> {{ subLinkInfo.title }}</a>
       </li>
     </ul>
   </div>
@@ -25,8 +20,10 @@
 <script>
 export default {
   props: {
-    main: Object, // ex. {title:"",routingName:"",color:""}
-    subList: Array, // ex. [{title:"",routingName:"",color:""}]
+    title: String,
+    color: String,
+    url: String,
+    subLinkInfoList: Object, // ex. [{title:"",url:"",color:""}]
   },
   components: {},
   data() {
@@ -34,10 +31,11 @@ export default {
   },
   computed: {
     hasSubList() {
-      return this.subList && this.subList.length > 0;
+      return this.subLinkInfoList && this.subLinkInfoList.length > 0;
     },
   },
-  mounted() {},
+  mounted() {
+  },
   watch: {},
   methods: {},
 };
@@ -51,19 +49,24 @@ div.related-link-drop-down-list-container {
   position: relative;
 
   &:hover {
-    a.main-title-red {
+
+    a.main-title-red,
+    span.main-title-red {
       color: $primary-red;
     }
 
-    a.main-title-yellow {
+    a.main-title-yellow,
+    span.main-title-yellow {
       color: $primary-yellow;
     }
 
-    a.main-title-green {
+    a.main-title-green,
+    span.main-title-green {
       color: $primary-green;
     }
 
-    a.main-title-blue {
+    a.main-title-blue,
+    span.main-title-blue {
       color: $primary-blue;
     }
 
@@ -72,7 +75,9 @@ div.related-link-drop-down-list-container {
     }
   }
 
-  a.main-title {
+  a.main-title,
+  span.main-title {
+    cursor: pointer;
     display: block;
     text-align: center;
 
@@ -88,6 +93,7 @@ div.related-link-drop-down-list-container {
       border-bottom: 1vw dotted;
     }
 
+
     @include custom-responsive("lg xl xxl") {
       width: 11vw;
       font-size: 1.25vw;
@@ -95,24 +101,28 @@ div.related-link-drop-down-list-container {
     }
   }
 
-  a.main-title-red {
+  a.main-title-red,
+  span.main-title-red {
     border-bottom-color: $primary-red;
   }
 
-  a.main-title-yellow {
+  a.main-title-yellow,
+  span.main-title-yellow {
     border-bottom-color: $primary-yellow;
   }
 
-  a.main-title-green {
+  a.main-title-green,
+  span.main-title-green {
     border-bottom-color: $primary-green;
   }
 
-  a.main-title-blue {
+  a.main-title-blue,
+  span.main-title-blue {
     border-bottom-color: $primary-blue;
   }
 
   ul.drop-down-list {
-    width: 13vw;
+    z-index: 999;
     display: none;
     position: absolute;
     padding: 2vh 0;
@@ -121,18 +131,68 @@ div.related-link-drop-down-list-container {
     box-shadow: 2px 2px 2px $primary-grey;
     transform: translate(-50%, -3vh);
     left: 50%;
-    overflow: hidden;
+    overflow-x: hidden;
+
+    @include custom-responsive("xs") {
+      width: 50vw;
+      height: 20vh;
+      border-radius: 4vw;
+    }
+
+    @include custom-responsive("sm md") {
+      width: 30vw;
+      height: 10vh;
+      border-radius: 2vw;
+    }
+    @include custom-responsive("lg") {
+      width: 13vw;
+      height: 15vh;
+    }
+
+    @include custom-responsive("xl xxl") {
+      width: 13vw;
+      height: 20vh;
+      border-radius: 2vw;
+    }
+
+
 
     li.drop-down-list-item {
+      cursor: pointer;
       display: block;
       width: 100%;
       text-align: center;
-      height: 3vh;
-      line-height: 3vh;
+
       padding: 2vh 0;
 
+      @include custom-responsive("xs") {
+        font-size: 5vw;
+        height: 2vh;
+        line-height: 2vh;
+      }
+
+      @include custom-responsive("sm md") {
+        font-size: 3vw;
+        height: 2vh;
+        line-height: 2vh;
+      }
+
+      @include custom-responsive("lg") {
+        font-size: 1.5vw;
+        height: 2vh;
+        line-height: 2vh;
+      }
+
+      @include custom-responsive("xl xxl") {
+        font-size: 1.5vw;
+        height: 2.5vh;
+        line-height: 2.5vh;
+      }
+
       &:hover {
-        color: $primary-white;
+        a {
+          color: $primary-white;
+        }
       }
     }
 
@@ -151,12 +211,6 @@ div.related-link-drop-down-list-container {
     li.drop-down-list-item-green {
       &:hover {
         background-color: $primary-green;
-      }
-    }
-
-    li.drop-down-list-item-sec-green {
-      &:hover {
-        background-color: $secondary-green;
       }
     }
 

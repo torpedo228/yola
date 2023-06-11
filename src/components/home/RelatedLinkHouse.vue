@@ -2,7 +2,7 @@
   <div class="related-link-house-container">
     <div class="related-link" :class="'related-link-' + color">
       <div class="title-wrap">
-        <img :src="img" alt="" />
+        <img :src="imgSrcMap[color]" alt="" />
         <h4 v-html="title"></h4>
       </div>
 
@@ -10,45 +10,15 @@
         class="related-link-drop-down-list-wrap"
         :class="'related-link-drop-down-list-wrap-' + color"
       >
-        <RelatedLinkDropDownList v-if="isHouseRed"
-          :main="houseRed[0].mainTitle1.main"
-          :sub-list="houseRed[0].mainTitle1.subList"
+        <RelatedLinkDropDownList
+          v-for="(linkInfo, linkInfoNo) in linkInfoList"
+          :key="linkInfoNo"
+          :title="linkInfo.title"
+          :color="linkInfo.color"
+          :url="linkInfo.url"
+          :sub-link-info-list="linkInfo.subLinkInfoList"
         />
-        <RelatedLinkDropDownList v-if="isHouseRed"
-          :main="houseRed[1].mainTitle2.main"
-          :sub-list="houseRed[1].mainTitle2.subList"
-        />
-        <RelatedLinkDropDownList v-if="isHouseRed"
-          :main="houseRed[2].mainTitle3.main"
-          :sub-list="houseRed[2].mainTitle3.subList"
-        />
-
-        <RelatedLinkDropDownList v-if="isHouseYellow"
-          :main="houseYellow[0].mainTitle1.main"
-          :sub-list="houseYellow[0].mainTitle1.subList"
-        />
-
-
       </div>
-
-      <!-- <div
-        v-if="isHouseYellow"
-        class="related-link-drop-down-list-wrap"
-        :class="'related-link-drop-down-list-wrap-' + color"
-      >
-        <RelatedLinkDropDownList
-          :main="houseYellow[0].mainTitle1.main"
-          :sub-list="houseYellow[0].mainTitle1.subList"
-        />
-        <RelatedLinkDropDownList
-          :main="houseYellow[1].mainTitle2.main"
-          :sub-list="houseYellow[1].mainTitle2.subList"
-        />
-        <RelatedLinkDropDownList
-          :main="houseYellow[2].mainTitle3.main"
-          :sub-list="houseYellow[2].mainTitle3.subList"
-        />
-      </div> -->
     </div>
   </div>
 </template>
@@ -59,230 +29,29 @@ import RelatedLinkDropDownList from "@/components/home/RelatedLinkDropDownList.v
 export default {
   props: {
     color: String,
-    img: String,
     title: String,
+    linkInfoList: Object,
   },
   components: { RelatedLinkDropDownList },
   data() {
     return {
-      houseRed: [
-        {
-          mainTitle1: {
-            main: {
-              title: "全國教保資訊網",
-              mainUrl: "https://www.ece.moe.edu.tw/ch/",
-              color: "red",
-            },
-            subList: [],
-          },
-        },
-        {
-          mainTitle2: {
-            main: {
-              title: "幼兒教育及照顧法",
-              mainUrl:
-                "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0070031",
-              color: "red",
-            },
-            subList: [],
-          },
-        },
-        {
-          mainTitle3: {
-            main: {
-              title: "幼兒園課綱、相關手冊與實例下載",
-              mainUrl:
-                "https://www.ece.moe.edu.tw/ch/filelist/preschool/filelist-preschool/",
-              color: "red",
-            },
-            subList: [],
-          },
-        },
-      ],
+      // imgSrcMap: new Map([
+      //   ["red", require("@/assets/images/home/related-link/top-red.svg")],
+      //   ["yellow", require("@/assets/images/home/related-link/top-yellow.svg")],
+      //   ["green", require("@/assets/images/home/related-link/top-green.svg")],
+      //   ["blue", require("@/assets/images/home/related-link/top-blue.svg")],
+      // ]),
 
-      houseYellow: [
-        {
-          mainTitle1: {
-            main: {
-              title: "幼兒園查詢",
-              mainUrl: "",
-              color: "yellow",
-            },
-            subList: [],
-          },
-        },
-        {
-          mainTitle2: {
-            main: {
-              title: "補助與津貼",
-              mainUrl: "",
-              color: "yellow",
-            },
-            subList: [],
-          },
-        },
-        {
-          mainTitle3: {
-            main: {
-              title: "公共化教保服務",
-              mainUrl: "",
-              color: "yellow",
-            },
-            subList: [],
-          },
-        },
-      ],
+      imgSrcMap: {
+        red: require("@/assets/images/home/related-link/top-red.svg"),
+        yellow: require("@/assets/images/home/related-link/top-yellow.svg"),
+        green: require("@/assets/images/home/related-link/top-green.svg"),
+        blue: require("@/assets/images/home/related-link/top-blue.svg"),
+      },
 
-      houseGreen: [
-        {
-          mainTitle1: {
-            main: {
-              title: "北部",
-              mainUrl: "",
-              color: "green",
-            },
-            subList: [
-              {
-                title: "新北市",
-                subUrl: "",
-                color: "green",
-              },
-              {
-                title: "台北市",
-                subUrl: "",
-                color: "sec-green",
-              },
-              { title: "桃園市", subUrl: "", color: "green" },
-            ],
-          },
-        },
-        {
-          mainTitle2: {
-            main: {
-              title: "中部",
-              mainUrl: "",
-              color: "green",
-            },
-            subList: [
-              {
-                title: "苗栗縣",
-                subUrl: "",
-                color: "green",
-              },
-              {
-                title: "台中市",
-                subUrl: "",
-                color: "sec-green",
-              },
-              { title: "嘉義市", subUrl: "", color: "green" },
-            ],
-          },
-        },
-        {
-          mainTitle3: {
-            main: {
-              title: "南部",
-              mainUrl: "",
-              color: "green",
-            },
-            subList: [
-              {
-                title: "台南市",
-                subUrl: "",
-                color: "green",
-              },
-              {
-                title: "高雄市",
-                subUrl: "",
-                color: "sec-green",
-              },
-              { title: "屏東縣", subUrl: "", color: "green" },
-            ],
-          },
-        },
-        {
-          mainTitle3: {
-            main: {
-              title: "東部&離島",
-              mainUrl: "",
-              color: "green",
-            },
-            subList: [
-              {
-                title: "花蓮縣",
-                subUrl: "",
-                color: "green",
-              },
-              {
-                title: "台東縣",
-                subUrl: "",
-                color: "sec-green",
-              },
-              { title: "澎湖縣", subUrl: "", color: "green" },
-            ],
-          },
-        },
-      ],
-
-      houseBlue: [
-        {
-          mainTitle1: {
-            main: {
-              title: "幼兒闖天下",
-              mainUrl: "",
-              color: "blue",
-            },
-            subList: [],
-          },
-        },
-        {
-          mainTitle2: {
-            main: {
-              title: "樂學成長營",
-              mainUrl: "",
-              color: "blue",
-            },
-            subList: [],
-          },
-        },
-        {
-          mainTitle3: {
-            main: {
-              title: "童言童語",
-              mainUrl: "",
-              color: "blue",
-            },
-            subList: [],
-          },
-          mainTitle4: {
-            main: {
-              title: "數星星繪本網",
-              mainUrl: "",
-              color: "blue",
-            },
-            subList: [],
-          },
-        },
-      ],
     };
   },
-  computed: {
-    isHouseRed() {
-      return this.houseRed;
-    },
-
-    isHouseYellow() {
-      return this.houseYellow;
-    },
-
-    isHouseGreen() {
-      return this.houseGreen;
-    },
-
-    isHouseBlue() {
-      return this.houseBlue;
-    },
-  },
+  computed: {},
   mounted() {},
   watch: {},
   methods: {},
@@ -353,7 +122,7 @@ div.related-link-house-container {
 
     margin: auto;
     background-color: $primary-white;
-  
+
     border-radius: 2vmax;
     display: flex;
     flex-direction: column;
@@ -364,8 +133,9 @@ div.related-link-house-container {
       padding: 2vw;
       font-size: 4vw;
       width: 65vw;
-      height: 65vw;
+      height: 70vw;
       border: 1vmax solid;
+      border-radius: 3vmax;
     }
 
     @include custom-responsive("sm md") {
@@ -374,6 +144,7 @@ div.related-link-house-container {
       width: 35vw;
       height: 45vw;
       border: 0.5vmax solid;
+      border-radius: 3vmax;
     }
 
     @include custom-responsive("lg xl xxl") {
@@ -382,6 +153,7 @@ div.related-link-house-container {
       width: 15vw;
       height: 18vw;
       border: 0.5vmax solid;
+      border-radius: 2vmax;
     }
   }
 

@@ -9,26 +9,26 @@
     <div class="related-link-wrap">
       <RelatedLinkHouse
         :color="houseRed.color"
-        :img="houseRed.img"
         :title="houseRed.title"
+        :link-info-list="houseRed.linkInfoList"
       />
 
-      <RelatedLinkHouse 
+      <RelatedLinkHouse
         :color="houseYellow.color"
-        :img="houseYellow.img"
         :title="houseYellow.title"
+        :link-info-list="houseYellow.linkInfoList"
       />
 
       <RelatedLinkHouse
         :color="houseGreen.color"
-        :img="houseGreen.img"
         :title="houseGreen.title"
+         :link-info-list="houseGreen.linkInfoList"
       />
 
       <RelatedLinkHouse
         :color="houseBlue.color"
-        :img="houseBlue.img"
         :title="houseBlue.title"
+         :link-info-list="houseBlue.linkInfoList"
       />
     </div>
   </div>
@@ -44,23 +44,231 @@ export default {
     return {
       houseRed: {
         color: "red",
-        img: require("@/assets/images/home/related-link/top-red.svg"),
         title: "幼教寶典",
+        linkInfoList: [
+          {
+            title: "全國教保資訊網",
+            url: "https://www.ece.moe.edu.tw/ch/",
+            color: "red",
+            subLinkInfoList: [],
+          },
+          {
+            title: "幼兒教育及照顧法",
+            url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0070031",
+            color: "red",
+            subLinkInfoList: [],
+          },
+          {
+            title: "幼兒園課綱、相關手冊與實例下載",
+            url: "https://www.ece.moe.edu.tw/ch/filelist/preschool/filelist-preschool/",
+            color: "red",
+            subLinkInfoList: [],
+          },
+        ],
       },
       houseYellow: {
         color: "yellow",
-        img: require("@/assets/images/home/related-link/top-yellow.svg"),
         title: "重點資訊",
+        linkInfoList: [
+          {
+            title: "幼兒園查詢",
+            url: "",
+            color: "yellow",
+            subLinkInfoList: [],
+          },
+          {
+            title: "補助與津貼",
+            url: "",
+            color: "yellow",
+            subLinkInfoList: [],
+          },
+          {
+            title: "公共化教保服務",
+            url: "",
+            color: "yellow",
+            subLinkInfoList: [],
+          },
+        ],
       },
       houseGreen: {
         color: "green",
-        img: require("@/assets/images/home/related-link/top-green.svg"),
         title: "各縣市<br />幼教資源網",
+        linkInfoList: [
+          {
+            title: "北部",
+            url: "",
+            color: "green",
+            subLinkInfoList: [
+            {
+                title: "台北市",
+                url: "",
+                color: "green",
+              },
+            {
+                title: "新北市",
+                url: "",
+                color: "green",
+              },
+       
+              {
+                title: "基隆市",
+                url: "",
+                color: "green",
+              },
+              {
+                title: "桃園市",
+                url: "",
+                color: "green",
+              },
+              {
+                title: "新竹市",
+                url: "",
+                color: "green",
+              },
+              {
+                title: "新竹縣",
+                url: "",
+                color: "green",
+              },
+              {
+                title: "宜蘭縣",
+                url: "",
+                color: "green",
+              },
+
+            ],
+          },
+          {
+            title: "中部",
+            url: "",
+            color: "green",
+            subLinkInfoList: [
+            {
+                title: "苗栗縣",
+                url: "",
+                color: "green",
+              },
+              {
+                title: "台中市",
+                url: "",
+                color: "green",
+              },
+              {
+                title: "彰化縣",
+                url: "",
+                color: "green",
+              },
+              {
+                title: "南投縣",
+                url: "",
+                color: "green",
+              },
+              {
+                title: "雲林縣",
+                url: "",
+                color: "green",
+              },
+
+            ],
+          },
+          {
+            title: "南部",
+            url: "",
+            color: "green",
+            subLinkInfoList: [
+            {
+                title: "嘉義市",
+                url: "",
+                color: "green",
+              },
+              {
+                title: "嘉義縣",
+                url: "",
+                color: "green",
+              },
+
+              {
+                title: "台南市",
+                url: "",
+                color: "green",
+              },
+              {
+                title: "高雄市",
+                url: "",
+                color: "green",
+              },
+              {
+                title: "屏東縣",
+                url: "",
+                color: "green",
+              },
+              {
+                title: "澎湖縣",
+                url: "",
+                color: "green",
+              },
+
+            ],
+          },
+          {
+            title: "東部&離島",
+            url: "",
+            color: "green",
+            subLinkInfoList: [
+            {
+                title: "花蓮縣",
+                url: "",
+                color: "green",
+              },
+              {
+                title: "台東縣",
+                url: "",
+                color: "green",
+              },
+              {
+                title: "金門縣",
+                url: "",
+                color: "green",
+              },
+              {
+                title: "連江縣",
+                url: "",
+                color: "green",
+              },
+
+            ],
+          },
+        ],
       },
       houseBlue: {
         color: "blue",
-        img: require("@/assets/images/home/related-link/top-blue.svg"),
         title: "合作網站",
+        linkInfoList: [
+          {
+            title: "幼兒闖天下",
+            url: "",
+            color: "blue",
+            subLinkInfoList: [],
+          },
+          {
+            title: "樂學成長營",
+            url: "",
+            color: "blue",
+            subLinkInfoList: [],
+          },
+          {
+            title: "童言童語",
+            url: "",
+            color: "blue",
+            subLinkInfoList: [],
+          },
+          {
+            title: "數星星繪本網",
+            url: "",
+            color: "blue",
+            subLinkInfoList: [],
+          },
+        ],
       },
     };
   },
