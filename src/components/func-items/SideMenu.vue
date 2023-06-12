@@ -167,13 +167,13 @@ div#side-menu-container {
 
       div.section-wrap {
         height: 40vh;
-        width: 20vw;
+        width: 20vmax;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
         position: absolute;
-        transform: translate(-50%, -50%);
+        transform: translate(-25%, 50%);
 
         @include custom-responsive("xs") {
           top: 5vh;

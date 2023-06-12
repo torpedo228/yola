@@ -5,10 +5,7 @@
     <LatestNews />
     <TopicArticle />
     <RelatedLink />
-    
-    <div v-if="!$store.state.isDebug">
-
-    </div>
+  
 
   </div>
 </template>
