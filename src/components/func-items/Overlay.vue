@@ -1,5 +1,5 @@
 <template>
-  <div :class="$store.state.showOverlay ? 'overlay-on' : 'overlay-off'"></div>
+  <div  :class="$store.state.showOverlay ? 'overlay-on' : 'overlay-off'"></div>
 </template>
 
 <script>
@@ -12,7 +12,16 @@ export default {
   computed: {},
   mounted() { },
   watch: {},
-  methods: {},
+  methods: {
+    // fadeIn() {
+    //   document.getElementById("overlay-on").style.display = "block";
+    // },
+
+    // fadeOut() {
+    //   document.getElementById("overlay-off").style.display = "none";
+    // }
+
+  },
 };
 </script>
 
@@ -67,7 +76,7 @@ export default {
   transition: 2s;
   background-color: black;
   opacity: 0;
-  // display: none;
+  display: none;
 
   animation-name: fade-out;
   -webkit-animation-name: fade-out;
@@ -88,13 +97,11 @@ export default {
     from {
       opacity: 0.7;
     }
-    50% {
-      background-color: rgba(0, 0, 0, 0);
-    }
 
     to {
       opacity: 0;
       height: 0;
     }
   }
-}</style>
+}
+</style>
