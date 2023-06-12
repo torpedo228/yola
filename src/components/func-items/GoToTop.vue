@@ -20,7 +20,7 @@ div.go-to-top {
   right: 3vmin;
   bottom: 3vmin;
   transition-duration: 1s;
-  z-index: 10;
+  z-index: 9999;
 
   img {
 

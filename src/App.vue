@@ -2,6 +2,8 @@
   <div>
     <div class="func-items">
       <GoToTop />
+      <Overlay />
+
     </div>
     <Header />
     <router-view v-slot="{ Component, route }">
@@ -17,10 +19,11 @@
 import Header from "@/components/func-items/Header.vue";
 import GoToTop from "@/components/func-items/GoToTop.vue";
 import Footer from "@/components/func-items/Footer.vue";
+import Overlay from "@/components/func-items/Overlay.vue";
 // import SideMenu from "@/components/func-items/SideMenu.vue";
 
 export default {
-  components: { Header, GoToTop, Footer },
+  components: { Header, GoToTop, Footer,Overlay },
   data() {
     return {};
   },
@@ -89,7 +92,7 @@ html {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    
+
 
     h2 {
       font-weight: $font-weight-light;
@@ -128,4 +131,5 @@ html {
     }
   }
 }
+
 </style>

@@ -283,7 +283,7 @@ div.slide-outer {
     height: calc(45vw * 2);
 
     @include custom-responsive("sm md lg") {
-      height: 45vw;
+      height: 46vw;
     }
 
     @include custom-responsive("xl xxl") {
@@ -499,7 +499,18 @@ div.slide-outer {
         @include custom-responsive("xl xxl") {
           width: 2vw;
           height: 2vw;
+
           &:hover {
+            background-color: $secondary-grey;
+          }
+        }
+
+        &:hover {
+          @include custom-responsive("xs") {}
+
+          @include custom-responsive("sm md lg") {}
+
+          @include custom-responsive("xl xxl") {
             background-color: $secondary-grey;
           }
         }

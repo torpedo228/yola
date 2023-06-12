@@ -243,7 +243,7 @@ div.introduction-container {
   position: relative;
   overflow: hidden;
   @include vm();
-  gap: 3vh;
+  gap: 4vh;
 
   @include custom-responsive("xs") {
     padding-top: 18vmax;
@@ -254,7 +254,7 @@ div.introduction-container {
   }
 
   @include custom-responsive("xl xxl") {
-    padding-top: 18vmin;
+    padding-top: 18vh;
   }
 
 
@@ -361,6 +361,7 @@ div.introduction-container {
     }
 
     div.go-to-btn {
+      cursor: pointer;
       line-height: 6vw;
       width: 11vw;
       height: 6vw;
