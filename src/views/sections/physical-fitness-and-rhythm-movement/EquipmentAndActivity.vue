@@ -44,31 +44,31 @@ export default {
       equipments: [
         {
           imgSrc:
-            require('@/assets/images/physical-fitness/equipment-and-activity/scarf.png'),
+            require("@/assets/images/physical-fitness/equipment-and-activity/scarf.png"),
           name: "方巾 / 絲巾",
           color: "green",
         },
         {
           imgSrc:
-            require('@/assets/images/physical-fitness/equipment-and-activity/skateboard.jpg'),
+            require("@/assets/images/physical-fitness/equipment-and-activity/skateboard.jpg"),
           name: "滑板車",
           color: "white",
         },
         {
           imgSrc:
-            require('@/assets/images/physical-fitness/equipment-and-activity/air-stick.png'),
+            require("@/assets/images/physical-fitness/equipment-and-activity/air-stick.png"),
           name: "空氣棒",
           color: "green",
         },
         {
           imgSrc:
-            require('@/assets/images/physical-fitness/equipment-and-activity/balance-bike.jpg'),
+            require("@/assets/images/physical-fitness/equipment-and-activity/balance-bike.jpg"),
           name: "滑步車",
           color: "white",
         },
         {
           imgSrc:
-            require('@/assets/images/physical-fitness/equipment-and-activity/ball.jpg'),
+            require("@/assets/images/physical-fitness/equipment-and-activity/ball.jpg"),
           name: "皮球",
           color: "green",
         },
