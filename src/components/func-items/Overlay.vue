@@ -1,5 +1,5 @@
 <template>
-  <div  :class="$store.state.showOverlay ? 'overlay-on' : 'overlay-off'"></div>
+  <div :class="$store.state.showOverlay ? 'overlay-on' : 'overlay-off'"></div>
 </template>
 
 <script>
@@ -45,28 +45,42 @@ export default {
   animation-duration: 0.5s;
 
   @keyframes fade-in {
-    from {
+    0% {
       opacity: 0;
+      height: 100%;
     }
 
-    to {
+    99% {
       opacity: 0.7;
+      height: 100%;
+    }
+
+    100% {
+      opacity: 0.7;
+      height: 100%;
     }
   }
 
   @-webkit-keyframes fade-in {
-    from {
+    0% {
       opacity: 0;
+      height: 100%;
     }
 
-    to {
+    99% {
       opacity: 0.7;
+      height: 100%;
+    }
+
+    100% {
+      opacity: 0.7;
+      height: 100%;
     }
   }
 }
 
 .overlay-off {
-  height: 100%;
+  height: 0%;
   width: 100%;
   position: fixed;
   z-index: 1;
@@ -76,31 +90,43 @@ export default {
   transition: 2s;
   background-color: black;
   opacity: 0;
-  display: none;
+  // display: none;
 
   animation-name: fade-out;
   -webkit-animation-name: fade-out;
   animation-duration: 0.5s;
 
   @keyframes fade-out {
-    from {
+    0% {
       opacity: 0.7;
+      height: 100%;
     }
 
-    to {
+    99% {
       opacity: 0;
-      height: 0;
+      height: 100%;
+    }
+
+    100% {
+      opacity: 0;
+      height: 0%;
     }
   }
 
   @-webkit-keyframes fade-out {
-    from {
+    0% {
       opacity: 0.7;
+      height: 100%;
     }
 
-    to {
+    99% {
       opacity: 0;
-      height: 0;
+      height: 100%;
+    }
+
+    100% {
+      opacity: 0;
+      height: 0%;
     }
   }
 }
