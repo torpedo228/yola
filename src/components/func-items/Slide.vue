@@ -1,10 +1,27 @@
 <template>
   <div class="slide-outer">
     <div class="slide-container">
-      <div v-for="(slidePage, slidePageNo) in slidePage" :key="slidePageNo" class="slide-page">
+      <div
+        v-for="(slidePage, slidePageNo) in slidePage"
+        :key="slidePageNo"
+        class="slide-page"
+      >
         <div class="slide-page-content" :style="makeAddOnStyle(slidePageNo)">
-          <a :href="slidePage.href">
-            <img :src="slidePage.imgSrc" alt="" />
+          <!-- <a :href="slidePage.href"> -->
+          <a>
+            <img
+              class="no-draggable grabable"
+              :class="slideControl.isGragging ? 'grabbing' : 'grabable'"
+              :src="slidePage.imgSrc"
+              alt=""
+              @touchstart="handleTouchStart"
+              @touchmove="handleTouchMove"
+              @touchend="handleTouchEnd"
+              @mousedown="handleMousedown"
+              @mousemove="handleMousemove"
+              @mouseup="handleMouseup"
+              @mouseleave="handleMouseleave"
+            />
           </a>
         </div>
         <!-- <button @click="moveTo(0)">page1</button>
@@ -22,9 +39,21 @@
       </div>
 
       <div class="pagination-wrap">
-        <div class="page-1" :class="pageIsActive(0) ? 'page-red' : 'page-grey'" @click="moveTo(0)"></div>
-        <div class="page-2" :class="pageIsActive(1) ? 'page-blue' : 'page-grey'" @click="moveTo(1)"></div>
-        <div class="page-3" :class="pageIsActive(2) ? 'page-green' : 'page-grey'" @click="moveTo(2)"></div>
+        <div
+          class="page-1"
+          :class="pageIsActive(0) ? 'page-red' : 'page-grey'"
+          @click="moveTo(0)"
+        ></div>
+        <div
+          class="page-2"
+          :class="pageIsActive(1) ? 'page-blue' : 'page-grey'"
+          @click="moveTo(1)"
+        ></div>
+        <div
+          class="page-3"
+          :class="pageIsActive(2) ? 'page-green' : 'page-grey'"
+          @click="moveTo(2)"
+        ></div>
       </div>
     </div>
   </div>
@@ -36,6 +65,15 @@ export default {
   components: {},
   data() {
     return {
+      slideControl: {
+        isGragging: false,
+        mouseDownLocation: null,
+        touchStartLocation: null,
+        timer: {
+          instance: null,
+          countdownMs: 4000,
+        },
+      },
       curSlideNo: 0,
       // 圖片比例5:3
       slideMeta: [
@@ -52,6 +90,19 @@ export default {
           href: "./still-building",
         },
       ],
+      swipe: {
+        flag: false,
+        threshold: 60,
+        start: {
+          x: 0,
+        },
+        current: {
+          x: 0,
+        },
+        distance: {
+          x: 0,
+        },
+      },
     };
   },
   computed: {
@@ -79,9 +130,66 @@ export default {
       }
     },
   },
-  mounted() { },
+  mounted() {
+    this.turnOnAutoSlide();
+  },
+  beforeUnmount() {
+    this.turnOffAutoSlide();
+  },
   watch: {},
   methods: {
+    turnOnAutoSlide() {
+      let vm = this;
+      vm.slideControl.timer.instance = setInterval(() => {
+        vm.next(1);
+      }, vm.slideControl.timer.countdownMs);
+    },
+    turnOffAutoSlide() {
+      let vm = this;
+      clearInterval(vm.slideControl.timer.instance);
+    },
+    handleTouchStart(event) {
+      this.slideControl.isGragging = true;
+      this.slideControl.touchStartLocation = event.touches[0].clientX;
+    },
+    handleTouchMove(event) {
+      if (!this.slideControl.isGragging) return;
+      var offset =
+        event.touches[0].clientX - this.slideControl.touchStartLocation;
+      var triggerDistance = 20;
+      if (offset > triggerDistance) {
+        this.prev(1);
+        this.slideControl.isGragging = false;
+      } else if (offset < -triggerDistance) {
+        this.next(1);
+        this.slideControl.isGragging = false;
+      }
+    },
+    handleTouchEnd() {
+      this.slideControl.isGragging = false;
+    },
+    handleMousedown(event) {
+      this.slideControl.isGragging = true;
+      this.slideControl.mouseDownLocation = event.clientX;
+    },
+    handleMousemove(event) {
+      if (!this.slideControl.isGragging) return;
+      var offset = event.clientX - this.slideControl.mouseDownLocation;
+      var triggerDistance = 20;
+      if (offset > triggerDistance) {
+        this.prev(1);
+        this.slideControl.isGragging = false;
+      } else if (offset < -triggerDistance) {
+        this.next(1);
+        this.slideControl.isGragging = false;
+      }
+    },
+    handleMouseup() {
+      this.slideControl.isGragging = false;
+    },
+    handleMouseleave() {
+      this.slideControl.isGragging = false;
+    },
     next(stepNum) {
       this.curSlideNo = (this.curSlideNo + stepNum) % this.slidePage.length;
     },
@@ -124,6 +232,33 @@ export default {
     pageIsActive(slidePageNo) {
       return slidePageNo == this.curViewSlideNo;
     },
+    OnTouchStart(e) {
+      this.swipe.flag = true;
+      this.swipe.start.x = e.touches[0].pageX;
+    },
+    OnTouchMove(e) {
+      this.swipe.current.x = e.touches[0].pageX;
+      this.swipe.distance.x = this.swipe.current.x - this.swipe.start.x;
+      if (
+        this.swipe.flag &&
+        this.swipe.distance.x > 0 &&
+        this.swipe.distance.x >= this.swipe.threshold
+      ) {
+        // 右スワイプ後の処理を記述
+        this.swipe.flag = false;
+      }
+      if (
+        this.swipe.flag &&
+        this.swipe.distance.x < 0 &&
+        this.swipe.distance.x >= this.swipe.threshold * -1
+      ) {
+        // 左スワイプ後の処理を記述
+        this.swipe.flag = false;
+      }
+    },
+    OnTouchEnd() {
+      this.swipe.flag = false;
+    },
   },
 };
 </script>
@@ -144,9 +279,8 @@ div.slide-outer {
 
   overflow: hidden;
 
-
   @include custom-responsive("xs") {
-    height: calc(45vw*2);
+    height: calc(45vw * 2);
 
     @include custom-responsive("sm md lg") {
       height: 45vw;
@@ -163,10 +297,8 @@ div.slide-outer {
       overflow: hidden;
 
       div.slide-page {
-
-
         @include custom-responsive("xs") {
-          width: calc($page-width*1.75);
+          width: calc($page-width * 1.75);
         }
 
         @include custom-responsive("sm md lg") {
@@ -176,7 +308,6 @@ div.slide-outer {
         @include custom-responsive("xl xxl") {
           width: $page-width;
         }
-
 
         position: absolute;
         left: 50%;
@@ -196,13 +327,10 @@ div.slide-outer {
         }
       }
 
-
-
       div.button-wrap {
         position: relative;
         left: 50%;
         top: 50%;
-
 
         div.prev,
         div.next {
@@ -211,7 +339,7 @@ div.slide-outer {
 
           border-radius: $border-radius-circle;
           background-color: $primary-white;
-         
+
           cursor: pointer;
 
           @include custom-responsive("xs") {
@@ -237,17 +365,14 @@ div.slide-outer {
 
             @include custom-responsive("xs") {
               font-size: 6vw;
-
             }
 
             @include custom-responsive("sm md lg") {
               font-size: 4vw;
-
             }
 
             @include custom-responsive("xl xxl") {
               font-size: 4vw;
-
             }
           }
         }
@@ -291,7 +416,6 @@ div.slide-outer {
 
         div.next {
           border-color: $primary-yellow;
-
 
           @include custom-responsive("xs") {
             left: 45%;
@@ -351,7 +475,6 @@ div.slide-outer {
         transform: translate(-50%, calc(-50% + 17vw));
       }
 
-
       div.page-1,
       div.page-2,
       div.page-3 {
@@ -376,10 +499,9 @@ div.slide-outer {
         @include custom-responsive("xl xxl") {
           width: 2vw;
           height: 2vw;
-        }
-
-        &:hover {
-          background-color: $secondary-grey;
+          &:hover {
+            background-color: $secondary-grey;
+          }
         }
       }
 
@@ -387,7 +509,8 @@ div.slide-outer {
         left: -4vw;
       }
 
-      div.page-2 {}
+      div.page-2 {
+      }
 
       div.page-3 {
         left: 4vw;
@@ -410,4 +533,24 @@ div.slide-outer {
       }
     }
   }
-}</style>
+}
+
+.no-draggable {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.grabable {
+  cursor: grab;
+  cursor: -webkit-grab;
+}
+
+.grabbing {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+</style>
