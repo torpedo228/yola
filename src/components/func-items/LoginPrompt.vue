@@ -225,6 +225,10 @@ div.login-prompt-container {
           &:hover {
             box-shadow: 2px 2px 2px $primary-grey;
           }
+
+          &:active {
+            transform: translate(2px, 2px);
+          }
         }
 
         a.fb i {

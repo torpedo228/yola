@@ -31,14 +31,14 @@
         </div> -->
 
         <div class="login">
-          <div class="profile-img">
+          <div class="profile-img" >
             <!-- <i class="fa-solid fa-circle-user"></i> -->
 
             <img v-if="$store.getters.isLoggedIn" :src="$store.state.userInfo.profile.avatarSrc" alt="" />
             <img v-else @click="() => {
               $store.commit('SHOW_LOGIN_PROMPT');
-            }
-              " :src="require('@/assets/icons/func-items/login.svg')" alt="" />
+            } 
+              "   v-scroll-to="'#page-top'" :src="require('@/assets/icons/func-items/login.svg')" alt="" />
           </div>
 
 
