@@ -29,35 +29,31 @@ export default {
   top: 0;
   overflow-x: hidden;
   transition: 0.5s;
-  background-color: rgba(0, 0, 0, 0.7);
-
-  animation-name: showOverlay;
-  -webkit-animation-name: showOverlay;
+  background-color: black;
+  opacity: 0.7;
+  animation-name: fade-in;
+  -webkit-animation-name: fade-in;
   animation-duration: 0.5s;
 
-  @keyframes showOverlay {
-    0% {
-      background-color: rgba(0, 0, 0, 0);
+  @keyframes fade-in {
+    from {
+      opacity: 0;
     }
 
-    100% {
-      background-color: rgba(0, 0, 0, 0.7);
-
-    }
-  }
-
-  @-webkit-keyframes showOverlay {
-    0% {
-      background-color: rgba(0, 0, 0, 0);
-    }
-
-    100% {
-      background-color: rgba(0, 0, 0, 0.7);
-
+    to {
+      opacity: 0.7;
     }
   }
 
+  @-webkit-keyframes fade-in {
+    from {
+      opacity: 0;
+    }
 
+    to {
+      opacity: 0.7;
+    }
+  }
 }
 
 .overlay-off {
@@ -68,40 +64,34 @@ export default {
   right: 0;
   top: 0;
   overflow-x: hidden;
-  transition: 0.5s;
-  background-color: rgba(0, 0, 0, 0);
+  transition: 2s;
+  background-color: black;
+  opacity: 0;
+  // display: none;
 
+  animation-name: fade-out;
+  -webkit-animation-name: fade-out;
+  animation-duration: 0.5s;
 
-  animation-name: closeOverlay;
-  -webkit-animation-name: closeOverlay;
-  animation-duration: 1s;
-
-  @keyframes closeOverlay {
-    0% {
-      background-color: rgba(0, 0, 0, 0.7);
+  @keyframes fade-out {
+    from {
+      opacity: 0.7;
     }
 
-    50% {
-      background-color: rgba(0, 0, 0, 0);
-    }
-
-    100% {
-  
-      display: none;
+    to {
+      opacity: 0;
+      height: 0;
     }
   }
 
-  @-webkit-keyframes closeOverlay {
-    0% {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-    50% {
-      background-color: rgba(0, 0, 0, 0);
+  @-webkit-keyframes fade-out {
+    from {
+      opacity: 0.7;
     }
 
-    100% {
-      display: none;
+    to {
+      opacity: 0;
+      height: 0;
     }
   }
-
 }</style>

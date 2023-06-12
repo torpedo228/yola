@@ -1,35 +1,70 @@
 <template>
   <div id="side-menu-container">
-    <img v-if="isShow" class="side-menu-btn-close" :src="require('@/assets/icons/func-items/menu-close.svg')" alt="選單按鈕"
-      @click="turnOff()" />
-    <img v-else class="side-menu-btn-open" :src="require('@/assets/icons/func-items/menu-open.svg')" alt="選單按鈕"
-      @click="turnOn()" />
+    <img
+      v-if="isShow"
+      class="side-menu-btn-close"
+      :src="require('@/assets/icons/func-items/menu-close.svg')"
+      alt="選單按鈕"
+      @click="turnOff()"
+    />
+    <img
+      v-else
+      class="side-menu-btn-open"
+      :src="require('@/assets/icons/func-items/menu-open.svg')"
+      alt="選單按鈕"
+      @click="turnOn()"
+    />
 
-    <div class="side-menu-wrap" v-bind:style="{ right: isShow ? '-300%' : '-1200%' }">
-      <img class="side-menu-img" :src="require('@/assets/icons/func-items/side-menu.svg')" alt="" />
+    <div
+      class="side-menu-wrap"
+      v-bind:style="{ right: isShow ? '-300%' : '-1200%' }"
+    >
+      <img
+        class="side-menu-img"
+        :src="require('@/assets/icons/func-items/side-menu.svg')"
+        alt=""
+      />
 
       <div class="shortcut-wrap">
         <div class="section" id="my-land" @click="jumpTo('my-land')">
-          <img src="https://avatars.githubusercontent.com/u/110772689?v=4" alt="" />
+          <img
+            src="https://avatars.githubusercontent.com/u/110772689?v=4"
+            alt=""
+          />
           我的樂園
         </div>
 
         <div class="section-wrap">
           <span class="section" id="home" @click="jumpTo('home')"> 首頁 </span>
-          <span class="section" id="learning-corner" @click="jumpTo('learning-corner')">
+          <span
+            class="section"
+            id="learning-corner"
+            @click="jumpTo('learning-corner')"
+          >
             學習區
           </span>
-          <span class="section" id="thematic-teaching" @click="jumpTo('thematic-teaching')">
+          <span
+            class="section"
+            id="thematic-teaching"
+            @click="jumpTo('thematic-teaching')"
+          >
             主題教學
           </span>
           <span class="section" id="storybooks" @click="jumpTo('storybooks')">
             繪本故事
           </span>
-          <span class="section" id="nursery-rhymes-and-finger-rhymes" @click="jumpTo('nursery-rhymes-and-finger-rhymes')">
+          <span
+            class="section"
+            id="nursery-rhymes-and-finger-rhymes"
+            @click="jumpTo('nursery-rhymes-and-finger-rhymes')"
+          >
             兒歌&手指謠
           </span>
-          <span class="section" id="physical-fitness-and-rhythm-movement"
-            @click="jumpTo('physical-fitness-and-rhythm-movement')">
+          <span
+            class="section"
+            id="physical-fitness-and-rhythm-movement"
+            @click="jumpTo('physical-fitness-and-rhythm-movement')"
+          >
             體能&律動
           </span>
         </div>
@@ -48,7 +83,7 @@ export default {
     };
   },
   computed: {},
-  mounted() { },
+  mounted() {},
   watch: {},
   methods: {
     turnOn() {
@@ -154,13 +189,13 @@ div#side-menu-container {
           }
 
           @include custom-responsive("sm md ") {
-            width: 10.5vmin;
-            height: 10.5vmin;
+            width: 11vmax;
+            height: 11vmax;
           }
 
           @include custom-responsive("lg ") {
-            width: 10.5vmin;
-            height: 10.5vmin;
+            width: 11vmax;
+            height: 11vmax;
           }
         }
       }
@@ -173,22 +208,22 @@ div#side-menu-container {
         justify-content: space-evenly;
         align-items: center;
         position: absolute;
-        transform: translate(-25%, 50%);
+        transform: translateX(-25%);
 
         @include custom-responsive("xs") {
-          top: 5vh;
+          top: 130%;
         }
 
         @include custom-responsive("sm") {
-          top: 4.5vh;
+          top: 130%;
         }
 
         @include custom-responsive(" md") {
-          top: 4vh;
+          top: 130%;
         }
 
         @include custom-responsive("lg") {
-          top: 1.5vh;
+          top: 110%;
         }
 
         span.section {
@@ -243,11 +278,11 @@ div#side-menu-container {
   }
 
   @include custom-responsive(" md") {
-    font-size: 2.75vmax;
+    font-size: 3vmax;
   }
 
   @include custom-responsive("lg") {
-    font-size: 2.5vmax;
+    font-size: 3vmax;
   }
 }
 </style>
