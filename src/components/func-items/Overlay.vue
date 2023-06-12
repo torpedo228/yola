@@ -36,6 +36,7 @@ export default {
   -webkit-animation-name: fade-in;
   animation-duration: 0.5s;
 
+
   @keyframes fade-in {
     0% {
       opacity: 0;
@@ -68,6 +69,18 @@ export default {
       opacity: 0.7;
       height: 100%;
     }
+  }
+
+  @include custom-responsive("xs") {
+    display: block;
+  }
+
+  @include custom-responsive("sm md lg") {
+    display: block;
+  }
+
+  @include custom-responsive("xl xxl") {
+    display: none;
   }
 }
 
@@ -120,6 +133,18 @@ export default {
       opacity: 0;
       height: 0%;
     }
+  }
+
+  @include custom-responsive("xs") {
+    display: block;
+  }
+
+  @include custom-responsive("sm md lg") {
+    display: block;
+  }
+
+  @include custom-responsive("xl xxl") {
+    display: none;
   }
 }
 </style>

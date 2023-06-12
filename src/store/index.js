@@ -1,9 +1,33 @@
-import {
-  createStore
-} from "vuex";
+import { createStore } from "vuex";
 
 export default createStore({
   state: {
+    defaultUsers: [
+      {
+        account: "111",
+        password: "222",
+        userName: "MoMonga",
+        profile: {
+          avatarSrc: "https://avatars.githubusercontent.com/u/110772689?v=4",
+        },
+      },
+      {
+        account: "test",
+        password: "123",
+        userName: "測試",
+        profile: {
+          avatarSrc: "https://torpedo228.github.io/resources/img/avatar.png",
+        },
+      },
+    ],
+    userInfo: {
+      account: "",
+      userName: "",
+      profile: {
+        avatarSrc: "",
+      },
+    },
+    isLoggingIn: false,
     currentPage: "home",
     isDebug: true,
     showOverlay: false,
@@ -32,6 +56,10 @@ export default createStore({
     ]),
   },
   getters: {
+    isLoggedIn(state) {
+      return state.userInfo.account !== "";
+    },
+
     isHomePage(state) {
       return state.currentPage === "home";
     },
@@ -46,6 +74,22 @@ export default createStore({
     },
   },
   mutations: {
+    SET_USER_ACCOUNT(state, account) {
+      state.userInfo.account = account;
+    },
+    SET_USER_NAME(state, name) {
+      state.userInfo.userName = name;
+    },
+    SET_USER_PROFILE(state, profile) {
+      state.userInfo.profile = profile;
+    },
+
+    CLEAR_USER_INFO(state) {
+      state.userInfo.account = "";
+      state.userInfo.userName = "";
+      state.userInfo.profile = { avatarSrc: "" };
+    },
+
     // SET_CURRENT_PAGE(state, pageName) {
     //   state.currentPage = pageName;
     // },
@@ -97,7 +141,14 @@ export default createStore({
     },
     TURN_OFF_OVERLAY(state) {
       state.showOverlay = false;
-    }
+    },
+
+    SHOW_LOGIN_PROMPT(state) {
+      state.isLoggingIn = true;
+    },
+    CLOSE_LOGIN_PROMPT(state) {
+      state.isLoggingIn = false;
+    },
   },
   actions: {},
   modules: {},

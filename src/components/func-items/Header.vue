@@ -29,26 +29,26 @@
           <a class="yt" href="#"><i class="fa-brands fa-youtube"></i>
           </a>
         </div> -->
-        <div class="profile-img">
-          <!-- <i class="fa-solid fa-circle-user"></i> -->
-          <img :src="require('@/assets/icons/func-items/avatar.png')" alt="" />
-        </div>
 
-        <div class="light-box">
-          <img :src="require('@/assets/logo/yola.svg')" alt="">
-          <div id="Login">
-            <label for="user-id">帳號</label>
-            <input type="text" name="userId" id="user-id" placeholder="onlyhomefinished" value="onlyhomefinished">
-            <label for="userPsw">密碼</label>
-            <input type="password" name="userPsw" id="userPsw" placeholder="yeahidomybestsorry"
-              value="yeahidomybestsorry">
-            <button id="btnLogin">登入</button>
-            <button id="btnLogin">取消</button>
+        <div class="login">
+          <div class="profile-img">
+            <!-- <i class="fa-solid fa-circle-user"></i> -->
+
+            <img v-if="$store.getters.isLoggedIn" :src="$store.state.userInfo.profile.avatarSrc" alt="" />
+            <img v-else @click="() => {
+              $store.commit('SHOW_LOGIN_PROMPT');
+            }
+              " :src="require('@/assets/icons/func-items/login.svg')" alt="" />
           </div>
+
+
+          <span class="user-name">{{ $store.state.userInfo.userName }}</span>
+
+          <div class="logout" @click="() => {
+            $store.commit('CLEAR_USER_INFO');
+          }
+            " v-if="$store.getters.isLoggedIn">登出</div>
         </div>
-
-
-
       </div>
     </div>
   </div>
@@ -63,6 +63,8 @@ export default {
   components: { SideMenu, HeaderDropDownList },
   data() {
     return {
+      userName: "二狸貓",
+
       learningCorner: {
         main: { title: "學習區", routingName: "learning-corner", color: "red" },
         subList: [
@@ -323,30 +325,75 @@ div.header-container {
       //     color: $primary-red;
       //   }
       // }
-
-      div.profile-img {
-        border-radius: $border-radius-circle;
-        cursor: pointer;
+      div.login {
+        box-sizing:border-box ;
+        margin-left: 3vw;
         position: absolute;
         top: 50%;
-        right: 0;
-        transform: translate(-50%, -50%);
+        right: 2%;
+        transform: translateY(-50%);
+        @include hm();
+        gap: 1vw;
 
-        &:hover {
-          opacity: 0.7;
+        span.user-name {
+          display: block;
+          font-size: 1.5vw;
         }
 
-        img {
-          width: 6vw;
+        div.logout {
+          box-sizing: border-box;
+          font-size: 1.5vw;
+          cursor: pointer;
+          padding: 0.5vw;
+          border: 0.1vw solid $primary-black;
+
+          border-radius: 1vw;
+
+          &:hover {
+            background-color: $primary-black;
+            color: $primary-white;
+
+          }
+
+          &:active {
+            transform: translate(2px, 2px);
+          }
+
+
         }
 
-        // i {
-        //   color: $primary-grey;
+        div.profile-img {
+          width: 5vw;
+          height: 5vw;
+          border-radius: 50%;
+          overflow: hidden;
+          cursor: pointer;
 
-        //   @include custom-responsive("xl xxl") {
-        //     font-size: 4.5vw;
-        //   }
-        // }
+          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+
+
+          &:hover {
+            box-shadow: 4px 4px 2px $primary-grey;
+          }
+
+          &:active {
+            opacity: 0.7;
+          }
+
+          img {
+            width: 100%;
+          }
+
+
+          // i {
+          //   color: $primary-grey;
+
+          //   @include custom-responsive("xl xxl") {
+          //     font-size: 4.5vw;
+          //   }
+          // }
+
+        }
 
         @include custom-responsive("xs") {
           display: none;
@@ -357,11 +404,9 @@ div.header-container {
         }
 
         @include custom-responsive("xl xxl") {
-          display: block;
+          display: flex;
         }
       }
-
-      
     }
   }
 }

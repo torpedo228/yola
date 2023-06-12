@@ -7,9 +7,7 @@
         class="slide-page"
       >
         <div class="slide-page-content" :style="makeAddOnStyle(slidePageNo)">
-          <!-- <a :href="slidePage.href"> -->
-          <a>
-            <img
+            <img @click="()=>{$router.push({name:slidePage.routingName});}"
               class="no-draggable grabable"
               :class="slideControl.isGragging ? 'grabbing' : 'grabable'"
               :src="slidePage.imgSrc"
@@ -22,7 +20,6 @@
               @mouseup="handleMouseup"
               @mouseleave="handleMouseleave"
             />
-          </a>
         </div>
         <!-- <button @click="moveTo(0)">page1</button>
         <button @click="moveTo(1)">page2</button>
@@ -79,15 +76,15 @@ export default {
       slideMeta: [
         {
           imgSrc: require("@/assets/images/home/latest-news/latest-news-1.svg"),
-          href: "./still-building",
+          routingName: "still-building",
         },
         {
           imgSrc: require("@/assets/images/home/latest-news/latest-news-2.svg"),
-          href: "./still-building",
+          routingName: "still-building",
         },
         {
           imgSrc: require("@/assets/images/home/latest-news/latest-news-3.svg"),
-          href: "./still-building",
+          routingName: "still-building",
         },
       ],
       swipe: {
@@ -116,7 +113,7 @@ export default {
       for (var i = 0; i < viewSlideLength; i++) {
         slidePageArr[i] = {
           imgSrc: this.slideMeta[(i + 3) % basicSlideLength].imgSrc,
-          href: this.slideMeta[(i + 3) % basicSlideLength].href,
+          routingName: this.slideMeta[(i + 3) % basicSlideLength].routingName,
         };
       }
       return slidePageArr;
