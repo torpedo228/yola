@@ -182,6 +182,9 @@ div.article-card-container {
           font-size: 1.2vw;
           cursor: pointer;
 
+
+          
+
           &:hover {
             text-decoration: underline;
           }

@@ -55,6 +55,7 @@ div.footer-container {
       height: 3vh;
 
       position: absolute;
+      left: 0;
       top: -3vh;
 
       img {
