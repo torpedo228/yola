@@ -232,33 +232,6 @@ export default {
     pageIsActive(slidePageNo) {
       return slidePageNo == this.curViewSlideNo;
     },
-    OnTouchStart(e) {
-      this.swipe.flag = true;
-      this.swipe.start.x = e.touches[0].pageX;
-    },
-    OnTouchMove(e) {
-      this.swipe.current.x = e.touches[0].pageX;
-      this.swipe.distance.x = this.swipe.current.x - this.swipe.start.x;
-      if (
-        this.swipe.flag &&
-        this.swipe.distance.x > 0 &&
-        this.swipe.distance.x >= this.swipe.threshold
-      ) {
-        // 右スワイプ後の処理を記述
-        this.swipe.flag = false;
-      }
-      if (
-        this.swipe.flag &&
-        this.swipe.distance.x < 0 &&
-        this.swipe.distance.x >= this.swipe.threshold * -1
-      ) {
-        // 左スワイプ後の処理を記述
-        this.swipe.flag = false;
-      }
-    },
-    OnTouchEnd() {
-      this.swipe.flag = false;
-    },
   },
 };
 </script>
