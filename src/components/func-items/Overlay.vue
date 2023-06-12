@@ -88,6 +88,9 @@ export default {
     from {
       opacity: 0.7;
     }
+    50% {
+      background-color: rgba(0, 0, 0, 0);
+    }
 
     to {
       opacity: 0;
