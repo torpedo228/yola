@@ -58,12 +58,6 @@ export default {
   }
 
 
-
-
-
-
-
-
 }
 
 .overlay-off {
@@ -80,15 +74,19 @@ export default {
 
   animation-name: closeOverlay;
   -webkit-animation-name: closeOverlay;
-  animation-duration: 0.5s;
+  animation-duration: 1s;
 
   @keyframes closeOverlay {
     0% {
       background-color: rgba(0, 0, 0, 0.7);
     }
 
-    100% {
+    50% {
       background-color: rgba(0, 0, 0, 0);
+    }
+
+    100% {
+  
       display: none;
     }
   }
@@ -97,9 +95,11 @@ export default {
     0% {
       background-color: rgba(0, 0, 0, 0.7);
     }
+    50% {
+      background-color: rgba(0, 0, 0, 0);
+    }
 
     100% {
-      background-color: rgba(0, 0, 0, 0);
       display: none;
     }
   }
