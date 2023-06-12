@@ -3,40 +3,21 @@
     <div class="header-wrap">
       <div class="header-content">
         <a id="header-logo" href="#" @click="backToHome">
-          <img
-            class="logo"
-            :src="require('@/assets/logo/yola.svg')"
-            alt="幼樂園Yo-La! Logo"
-          />
+          <img class="logo" :src="require('@/assets/logo/yola.svg')" alt="幼樂園Yo-La! Logo" />
         </a>
         <div class="header-drop-down-list">
-          <HeaderDropDownList
-            :main="learningCorner.main"
-            :sub-list="learningCorner.subList"
-          />
-          <HeaderDropDownList
-            :main="thematicTeaching.main"
-            :sub-list="thematicTeaching.subList"
-          />
-          <HeaderDropDownList
-            :main="storybooks.main"
-            :sub-list="storybooks.subList"
-          />
-          <HeaderDropDownList
-            :main="nurseryRhymesAndFingerRhymes.main"
-            :sub-list="nurseryRhymesAndFingerRhymes.subList"
-          />
-          <HeaderDropDownList
-            :main="physicalFitnessAndRhythmMovement.main"
-            :sub-list="physicalFitnessAndRhythmMovement.subList"
-          />
+          <HeaderDropDownList :main="learningCorner.main" :sub-list="learningCorner.subList" />
+          <HeaderDropDownList :main="thematicTeaching.main" :sub-list="thematicTeaching.subList" />
+          <HeaderDropDownList :main="storybooks.main" :sub-list="storybooks.subList" />
+          <HeaderDropDownList :main="nurseryRhymesAndFingerRhymes.main"
+            :sub-list="nurseryRhymesAndFingerRhymes.subList" />
+          <HeaderDropDownList :main="physicalFitnessAndRhythmMovement.main"
+            :sub-list="physicalFitnessAndRhythmMovement.subList" />
           <HeaderDropDownList :main="myLand.main" :sub-list="myLand.subList" />
         </div>
         <div class="side-menu">
-          <SideMenu
-            @before-turn-on-side-menu="$store.commit('TURN_ON_OVERLAY')"
-            @before-turn-off-side-menu="$store.commit('TURN_OFF_OVERLAY')"
-          />
+          <SideMenu @before-turn-on-side-menu="$store.commit('TURN_ON_OVERLAY')"
+            @before-turn-off-side-menu="$store.commit('TURN_OFF_OVERLAY')" />
         </div>
         <!-- <div class="social-media">
           <a class="fb" href="#">
@@ -52,6 +33,22 @@
           <!-- <i class="fa-solid fa-circle-user"></i> -->
           <img :src="require('@/assets/icons/func-items/avatar.png')" alt="" />
         </div>
+
+        <div class="light-box">
+          <img :src="require('@/assets/logo/yola.svg')" alt="">
+          <div id="Login">
+            <label for="user-id">帳號</label>
+            <input type="text" name="userId" id="user-id" placeholder="onlyhomefinished" value="onlyhomefinished">
+            <label for="userPsw">密碼</label>
+            <input type="password" name="userPsw" id="userPsw" placeholder="yeahidomybestsorry"
+              value="yeahidomybestsorry">
+            <button id="btnLogin">登入</button>
+            <button id="btnLogin">取消</button>
+          </div>
+        </div>
+
+
+
       </div>
     </div>
   </div>
@@ -145,7 +142,7 @@ export default {
     //   );
     // },
   },
-  mounted() {},
+  mounted() { },
   watch: {},
   methods: {
     backToHome() {
@@ -363,6 +360,8 @@ div.header-container {
           display: block;
         }
       }
+
+      
     }
   }
 }
