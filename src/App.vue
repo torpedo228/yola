@@ -2,8 +2,9 @@
   <div>
     <div class="func-items">
       <GoToTop />
-      <Overlay />
-
+      <div class="overlay">
+        <Overlay />
+      </div>
     </div>
     <Header />
     <router-view v-slot="{ Component, route }">
@@ -23,7 +24,7 @@ import Overlay from "@/components/func-items/Overlay.vue";
 // import SideMenu from "@/components/func-items/SideMenu.vue";
 
 export default {
-  components: { Header, GoToTop, Footer,Overlay },
+  components: { Header, GoToTop, Footer, Overlay },
   data() {
     return {};
   },
@@ -132,4 +133,16 @@ html {
   }
 }
 
-</style>
+div.overlay {
+  @include custom-responsive("xs") {
+    display: block;
+  }
+
+  @include custom-responsive("sm md lg") {
+    display: block;
+  }
+
+  @include custom-responsive("xl xxl") {
+    display: none;
+  }
+}</style>

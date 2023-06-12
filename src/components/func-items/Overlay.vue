@@ -13,14 +13,6 @@ export default {
   mounted() { },
   watch: {},
   methods: {
-    // fadeIn() {
-    //   document.getElementById("overlay-on").style.display = "block";
-    // },
-
-    // fadeOut() {
-    //   document.getElementById("overlay-off").style.display = "none";
-    // }
-
   },
 };
 </script>
