@@ -35,6 +35,7 @@ export default {};
 @import "@/assets/scss/all.scss";
 
 div.footer-container {
+
   width: 100%;
   position: relative;
   bottom: 0;
@@ -50,7 +51,7 @@ div.footer-container {
 
     div.decoration-stripe {
       width: 100%;
-      overflow-x: hidden;
+      overflow: hidden;
       height: 3vh;
 
       position: absolute;

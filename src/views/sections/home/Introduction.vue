@@ -492,10 +492,11 @@ div.portal-container-mobile {
 
 div.decoration {
 
+
   @include vm();
 
   img.rainbow-stripe {
-    width: 100vw;
+    height: 5vh;
   }
 
   img.all-characters {

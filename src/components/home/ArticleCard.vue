@@ -2,20 +2,22 @@
   <div class="article-card-container">
     <img class="cover" :src="img" alt="" />
     <span class="date" :class="'date-' + color">{{ date.getFullDate() }}</span>
-    <div class="text">
-      <h4 v-html="title"></h4>
-      <div class="sub-info">
-        <span class="author">筆者:{{ author }}&ensp;</span>
-        <span class="category">分類:
-          <a v-if="mainCategory" @click="toPage(mainCategory)">{{
-            getCategoryTitle(mainCategory)
-          }}</a>&ensp;
-          <a v-if="subCategory" @click="toPage(subCategory)">{{ getCategoryTitle(subCategory) }}</a>
-        </span>
+    <div class="article-wrap">
+      <div class="text">
+        <h4 v-html="title"></h4>
+        <div class="sub-info">
+          <span class="author">筆者:{{ author }}&ensp;</span>
+          <span class="category">分類:
+            <a v-if="mainCategory" @click="toPage(mainCategory)">{{
+              getCategoryTitle(mainCategory)
+            }}</a>&ensp;
+            <a v-if="subCategory" @click="toPage(subCategory)">{{ getCategoryTitle(subCategory) }}</a>
+          </span>
+        </div>
+        <p class="content" v-html="content"></p>
       </div>
-      <p class="content" v-html="content"></p>
+      <div class="watch-more" :class="'watch-more-' + color">看完整文章</div>
     </div>
-    <div class="watch-more" :class="'watch-more-' + color">看完整文章</div>
   </div>
 </template>
 
@@ -64,7 +66,7 @@ div.article-card-container {
 
   @include custom-responsive("xs") {
     width: 80vw;
-    height: 50vh;
+    height: 65vh;
     margin: 3vh auto;
   }
 
@@ -271,5 +273,10 @@ div.article-card-container {
       background-color: $primary-green;
     }
   }
+}
+
+div.article-wrap{
+  position: absolute;
+  bottom:5%;
 }
 </style>

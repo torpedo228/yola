@@ -1,70 +1,35 @@
 <template>
   <div id="side-menu-container">
-    <img
-      v-if="isShow"
-      class="side-menu-btn-close"
-      :src="require('@/assets/icons/func-items/menu-close.svg')"
-      alt="選單按鈕"
-      @click="turnOff()"
-    />
-    <img
-      v-else
-      class="side-menu-btn-open"
-      :src="require('@/assets/icons/func-items/menu-open.svg')"
-      alt="選單按鈕"
-      @click="turnOn()"
-    />
+    <img v-if="isShow" class="side-menu-btn-close" :src="require('@/assets/icons/func-items/menu-close.svg')" alt="選單按鈕"
+      @click="turnOff()" />
+    <img v-else class="side-menu-btn-open" :src="require('@/assets/icons/func-items/menu-open.svg')" alt="選單按鈕"
+      @click="turnOn()" />
 
-    <div
-      class="side-menu-wrap"
-      v-bind:style="{ right: isShow ? '-300%' : '-1200%' }"
-    >
-      <img
-        class="side-menu-img"
-        :src="require('@/assets/icons/func-items/side-menu.svg')"
-        alt=""
-      />
+    <div class="side-menu-wrap" v-bind:style="{ right: isShow ? '-300%' : '-1200%' }">
+      <img class="side-menu-img" :src="require('@/assets/icons/func-items/side-menu.svg')" alt="" />
 
       <div class="shortcut-wrap">
         <div class="section" id="my-land" @click="jumpTo('my-land')">
-          <img
-            src="https://avatars.githubusercontent.com/u/110772689?v=4"
-            alt=""
-          />
+          <img src="https://avatars.githubusercontent.com/u/110772689?v=4" alt="" />
           我的樂園
         </div>
 
         <div class="section-wrap">
           <span class="section" id="home" @click="jumpTo('home')"> 首頁 </span>
-          <span
-            class="section"
-            id="learning-corner"
-            @click="jumpTo('learning-corner')"
-          >
+          <span class="section" id="learning-corner" @click="jumpTo('learning-corner')">
             學習區
           </span>
-          <span
-            class="section"
-            id="thematic-teaching"
-            @click="jumpTo('thematic-teaching')"
-          >
+          <span class="section" id="thematic-teaching" @click="jumpTo('thematic-teaching')">
             主題教學
           </span>
           <span class="section" id="storybooks" @click="jumpTo('storybooks')">
             繪本故事
           </span>
-          <span
-            class="section"
-            id="nursery-rhymes-and-finger-rhymes"
-            @click="jumpTo('nursery-rhymes-and-finger-rhymes')"
-          >
+          <span class="section" id="nursery-rhymes-and-finger-rhymes" @click="jumpTo('nursery-rhymes-and-finger-rhymes')">
             兒歌&手指謠
           </span>
-          <span
-            class="section"
-            id="physical-fitness-and-rhythm-movement"
-            @click="jumpTo('physical-fitness-and-rhythm-movement')"
-          >
+          <span class="section" id="physical-fitness-and-rhythm-movement"
+            @click="jumpTo('physical-fitness-and-rhythm-movement')">
             體能&律動
           </span>
         </div>
@@ -83,7 +48,7 @@ export default {
     };
   },
   computed: {},
-  mounted() {},
+  mounted() { },
   watch: {},
   methods: {
     turnOn() {
@@ -151,6 +116,7 @@ div#side-menu-container {
       flex-direction: column;
       justify-content: space-evenly;
 
+
       @include custom-responsive("xs") {
         top: 10%;
       }
@@ -201,14 +167,17 @@ div#side-menu-container {
       }
 
       div.section-wrap {
+
         height: 40vh;
-        width: 20vmax;
+        width: 25vmax;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
         position: absolute;
-        transform: translateX(-25%);
+
+        transform: translateX(-50%);
+        left: 50%;
 
         @include custom-responsive("xs") {
           top: 130%;
@@ -227,6 +196,9 @@ div#side-menu-container {
         }
 
         span.section {
+          padding: 1vw;
+          width: 80%;
+          height: 10%;
           display: block;
           color: $primary-black;
           text-align: center;
@@ -244,6 +216,12 @@ div#side-menu-container {
           }
         }
 
+        span#thematic-teaching {
+          &:hover {
+            background-color: $primary-blue;
+          }
+        }
+
         span#learning-corner {
           &:hover {
             background-color: $primary-red;
@@ -256,33 +234,39 @@ div#side-menu-container {
           }
         }
 
-        span#physical-fitness-and-rhythm-movement {
+        span#nursery-rhymes-and-finger-rhymes {
           &:hover {
-            background-color: $primary-green;
+            background-color: $primary-blue;
+          }
+
+          span#physical-fitness-and-rhythm-movement {
+            &:hover {
+              background-color: $primary-green;
+            }
           }
         }
       }
     }
   }
-}
 
-.section {
-  display: block;
+  .section {
+    display: block;
 
-  @include custom-responsive("xs") {
-    font-size: 3vmax;
-  }
+    @include custom-responsive("xs") {
+      font-size: 3vmax;
+    }
 
-  @include custom-responsive("sm") {
-    font-size: 3vmax;
-  }
+    @include custom-responsive("sm") {
+      font-size: 3vmax;
+    }
 
-  @include custom-responsive(" md") {
-    font-size: 3vmax;
-  }
+    @include custom-responsive(" md") {
+      font-size: 3vmax;
+    }
 
-  @include custom-responsive("lg") {
-    font-size: 3vmax;
+    @include custom-responsive("lg") {
+      font-size: 3vmax;
+    }
   }
 }
 </style>
