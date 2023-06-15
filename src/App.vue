@@ -59,6 +59,14 @@ export default {
 
 <style lang="scss">
 @import "@/assets/scss/all.scss";
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
 
 html {
   overflow-x: hidden;
