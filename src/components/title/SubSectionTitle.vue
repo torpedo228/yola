@@ -34,14 +34,27 @@ div.title {
   gap: 1vw;
 
   img {
-    width: 2.5vmax;
+
+
+    @include custom-responsive("xs") {
+      width: $h1;
+    }
+
+    @include custom-responsive("sm md lg") {
+      width: 2.5vmax;
+    }
+
+    @include custom-responsive("xl xxl") {
+      width: 2.5vmax;
+    }
+
   }
 
   h3 {
     margin: 0.5vmin 0;
 
     @include custom-responsive("xs") {
-      font-size: $h2;
+      font-size: $h1;
     }
 
     @include custom-responsive("sm md lg") {

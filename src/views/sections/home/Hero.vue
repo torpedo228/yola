@@ -1,10 +1,13 @@
 <template>
   <div class="hero-container" id="hero">
-    <div class="main-content">
 
+    <div class="pic-wrap">
       <img class="hero-image" :src="require('@/assets/images/home/hero/hero.svg')" alt="" />
       <img class="hero-image-mobile" :src="require('@/assets/images/home/hero/hero-mobile.svg')" alt="" />
-      <div class="hero-text">
+    </div>
+
+    <div class="content">
+      <div class="text-wrap">
         <h2>聚焦幼兒教育</h2>
         <h2>資源共享互惠</h2>
         <p>
@@ -12,12 +15,12 @@
           <br />
           提供關心幼兒教育的你一個分享與開源的集合平台！
         </p>
-
-        <div class="go-to-introduction-btn" v-scroll-to="'#introduction'">
-          開始探索
-        </div>
+      </div>
+      <div class="go-to-introduction-btn" v-scroll-to="'#introduction'">
+        開始探索
       </div>
     </div>
+
   </div>
 </template>
 
@@ -37,33 +40,40 @@ export default {
 
 div.hero-container {
   width: 100%;
+  height: 100vh;
   position: relative;
 
-  div.main-content {
-    overflow: hidden;
+  div.pic-wrap {
     width: 100%;
     height: 100%;
+    position: relative;
+    overflow: hidden;
+
 
     img.hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      object-position: -50% -50%;
+
       @include custom-responsive("xs") {
         display: none;
       }
 
       @include custom-responsive("sm md lg") {
         display: block;
-        width: 105%
       }
 
       @include custom-responsive("xl xxl") {
         display: block;
-        width: 105%
       }
     }
 
     img.hero-image-mobile {
       @include custom-responsive("xs") {
         display: block;
-        width: 105%
+        height: 87vh;
+
       }
 
       @include custom-responsive("sm md lg") {
@@ -74,24 +84,34 @@ div.hero-container {
         display: none;
       }
     }
+  }
 
-    div.hero-text {
-      position: absolute;
+  div.content {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    top: 15vmax;
+    left: 0;
 
-      @include custom-responsive("xs") {
-        top: 120vmin;
-        left: 50vmin;
-        transform: translateX(-50%);
-        text-align: center;
-        width: 100%;
-      }
+    div.text-wrap {
+
+      // @include custom-responsive("xs") {
+      //   top: 120vmin;
+      //   left: 50vmin;
+      //   transform: translateX(-50%);
+      //   text-align: center;
+      //   width: 100%;
+      // }
 
       @include custom-responsive("sm md lg") {
         top: 11vmin;
         left: 8vmin;
         transform: translateX(0%);
         text-align: left;
-        width: 80%;
+
       }
 
       @include custom-responsive("xl xxl") {
@@ -99,7 +119,6 @@ div.hero-container {
         left: 8vmin;
         transform: translateX(0%);
         text-align: left;
-        width: 80%;
       }
 
       h2 {
@@ -140,55 +159,66 @@ div.hero-container {
           display: block;
         }
       }
+    }
 
-      div {
-        // border:0.25vw solid $primary-white;
-        color: $primary-white;
-        display: block;
-        background-color: $primary-blue;
-        text-align: center;
-        cursor: pointer;
+    div.go-to-introduction-btn {
+      color: $primary-white;
+      display: block;
+      background-color: $primary-blue;
+      text-align: center;
+      cursor: pointer;
 
-        @include custom-responsive("xs") {
-          width: 60vmin;
-          height: 20vmin;
-          line-height: 20vmin;
-          font-size: 8vw;
-          margin: 3vh auto;
-          border-radius: 20vmin;
-          border: 1vw solid $primary-white;
-        }
+      // @include custom-responsive("xs sm") {
+      //   width: 60vmin;
+      //   height: 20vmin;
+      //   line-height: 20vmin;
+      //   font-size: 8vw;
+      //   margin: auto;
+      //   border-radius: 20vmin;
+      //   border: 1vw solid $primary-white;
+      //   top: 160vmin;
+      //   left: 50vmin;
+      //   transform: translateX(-50%);
+      // }
 
-        @include custom-responsive("sm md lg") {
-          width: 20vw;
-          height: 6vw;
-          line-height:6vw;
-          font-size: 2.5vw;
-          margin: 4vmin 0 0;
-          border-radius: 8vmax;
-          border:0;
-        }
+      @include custom-responsive("md") {
+        width: 20vw;
+        height: 6vw;
+        line-height: 6vw;
+        font-size: 2.5vw;
+        margin: 4vmin 0 0;
+        border-radius: 8vmax;
+        border: 0;
+      }
 
-        @include custom-responsive("xl xxl") {
-          width: 18vmax;
-          height: 6vmax;
-          line-height: 6vmax;
-          font-size: 2.5vw;
-          margin: 6vmin 0 0;
-          border-radius: 8vmax;
-          box-shadow: 5px 5px 0px $secondary-blue;
-          border:0;
-        }
+      @include custom-responsive("lg") {
+        width: 20vw;
+        height: 6vw;
+        line-height: 6vw;
+        font-size: 2.5vw;
+        margin: 4vmin 0 0;
+        border-radius: 8vmax;
+        border: 0;
+      }
+
+      @include custom-responsive("xl xxl") {
+        width: 18vmax;
+        height: 6vmax;
+        line-height: 6vmax;
+        font-size: 2.5vw;
+        margin: 6vmin 0 0;
+        border-radius: 8vmax;
+        box-shadow: 5px 5px 0px $secondary-blue;
+        border: 0;
 
         &:hover {
           transform: translate(5px, 5px);
           box-shadow: 0px 0px 0px $secondary-blue;
-
         }
+      }
 
-        &:active {
-          opacity: 0.8;
-        }
+      &:active {
+        opacity: 0.8;
       }
     }
   }

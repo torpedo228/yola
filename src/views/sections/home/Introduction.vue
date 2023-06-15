@@ -247,17 +247,18 @@ div.introduction-container {
 
   @include custom-responsive("xs") {
     padding-top: 18vmax;
+    gap: 5vh;
   }
 
   @include custom-responsive("sm md lg") {
     padding-top: 18vmin;
+    gap: 4vh;
   }
 
   @include custom-responsive("xl xxl") {
     padding-top: 18vh;
+    gap: 4vh;
   }
-
-
 
   div.sub-section-title {
     @include custom-responsive("xs") {
@@ -467,18 +468,19 @@ div.introduction-container {
 }
 
 div.portal-container-mobile {
-  width: 100%;
-  padding-left: 12vw;
+
+  @include hm();
+  flex-wrap: wrap;
 
   img {
     cursor: pointer;
-    width: 40vw;
+    width: 40%;
     display: inline-block;
     margin: 2vw;
   }
 
   @include custom-responsive("xs") {
-    display: block;
+    display: flex;
   }
 
   @include custom-responsive("sm md lg") {
@@ -491,8 +493,6 @@ div.portal-container-mobile {
 }
 
 div.decoration {
-
-
   @include vm();
 
   img.rainbow-stripe {

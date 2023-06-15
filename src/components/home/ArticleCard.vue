@@ -1,23 +1,31 @@
 <template>
   <div class="article-card-container">
-    <img class="cover" :src="img" alt="" />
-    <span class="date" :class="'date-' + color">{{ date.getFullDate() }}</span>
-    <div class="article-wrap">
-      <div class="text">
-        <h4 v-html="title"></h4>
-        <div class="sub-info">
-          <span class="author">筆者:{{ author }}&ensp;</span>
-          <span class="category">分類:
-            <a v-if="mainCategory" @click="toPage(mainCategory)">{{
-              getCategoryTitle(mainCategory)
-            }}</a>&ensp;
-            <a v-if="subCategory" @click="toPage(subCategory)">{{ getCategoryTitle(subCategory) }}</a>
-          </span>
-        </div>
-        <p class="content" v-html="content"></p>
-      </div>
-      <div class="watch-more" :class="'watch-more-' + color">看完整文章</div>
+
+    <div class="pic-wrap">
+      <img class="cover" :src="img" alt="" />
+      <span class="date" :class="'date-' + color">{{ date.getFullDate() }}</span>
     </div>
+
+    <div class="text-wrap">
+
+      <h4 v-html="title"></h4>
+
+      <div class="sub-info">
+        <span class="author">筆者:{{ author }}&ensp;</span>
+        <span class="category">分類:
+          <a v-if="mainCategory" @click="toPage(mainCategory)">{{
+            getCategoryTitle(mainCategory)
+          }}</a>&ensp;
+          <a v-if="subCategory" @click="toPage(subCategory)">{{ getCategoryTitle(subCategory) }}</a>
+        </span>
+      </div>
+
+      <p class="content" v-html="content"></p>
+
+    </div>
+
+    <div class="watch-more" :class="'watch-more-' + color">看完整文章</div>
+
   </div>
 </template>
 
@@ -61,8 +69,11 @@ export default {
 
 div.article-card-container {
   background-color: $primary-white;
-
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 
   @include custom-responsive("xs") {
     width: 80vw;
@@ -79,91 +90,95 @@ div.article-card-container {
   @include custom-responsive("lg xl xxl") {
     width: 25vw;
     height: 40vw;
-    margin:3vw 0;
+    margin: 3vw 0;
   }
 
-
-  img.cover {
+  div.pic-wrap {
     width: 100%;
-    height: 40%;
-  }
-
-  span.date {
-    text-align: center;
-    display: block;
-    position: absolute;
-    color: $primary-white;
+    height: 35%;
 
 
-    @include custom-responsive("xs") {
-      width: 30vw;
-      height: 5vw;
-      line-height: 5vw;
-      font-size: 2vw;
-      top: 3vw;
-      right: 3vw;
+    img.cover {
+      width: 100%;
+      height: 100%;
     }
 
-    @include custom-responsive("sm md") {
-      width: 20vw;
-      height: 3vw;
-      line-height: 3vw;
-      font-size: 2vw;
-      top: 2vw;
-      right: 2vw;
-    }
-
-    @include custom-responsive("lg xl xxl") {
-      width: 9vw;
-      height: 2vw;
-      line-height: 2vw;
-      font-size: 1vw;
-      top: 1vw;
-      right: 1vw;
-    }
-
-
-  }
-
-  span.date-yellow {
-    background-color: $primary-yellow;
-  }
-
-  span.date-green {
-    background-color: $primary-green;
-  }
-
-  div.text {
-
-    @include custom-responsive("xs") {
-      padding: 2vw 5vw 0;
-    }
-
-    @include custom-responsive("sm md") {
-      padding: 1vw 2vw 0;
-    }
-
-    @include custom-responsive("lg xl xxl") {
-      padding: 1vw 2vw 0;
-    }
-
-    h4 {
-
-      font-weight: bold;
+    span.date {
+      text-align: center;
+      display: block;
+      position: absolute;
+      color: $primary-white;
 
 
       @include custom-responsive("xs") {
-        font-size: $h2;
-        margin: 0 0 3vw;
+        width: 30vw;
+        height: 7vw;
+        line-height: 7vw;
+        font-size: 4vw;
+        top: 3vw;
+        right: 3vw;
       }
 
       @include custom-responsive("sm md") {
-        font-size: $h3;
+        width: 20vw;
+        height: 3vw;
+        line-height: 3vw;
+        font-size: 2vw;
+        top: 2vw;
+        right: 2vw;
+      }
+
+      @include custom-responsive("lg xl xxl") {
+        width: 9vw;
+        height: 2vw;
+        line-height: 2vw;
+        font-size: 1vw;
+        top: 1vw;
+        right: 1vw;
+      }
+
+
+    }
+
+    span.date-yellow {
+      background-color: $primary-yellow;
+    }
+
+    span.date-green {
+      background-color: $primary-green;
+    }
+
+  }
+
+  div.text-wrap {
+
+    @include custom-responsive("xs") {
+      padding: 0 5vw;
+    }
+
+    @include custom-responsive("sm md") {
+      padding: 1vw 2vw;
+    }
+
+    @include custom-responsive("lg xl xxl") {
+      padding: 1vw 2vw;
+    }
+
+    h4 {
+      font-weight: bold;
+
+      @include custom-responsive("xs") {
+        font-size: 3vh;
+        margin: 3vw 0;
+      }
+
+      @include custom-responsive("sm md") {
+        font-size: 4vh;
         margin: 0 0 3vw;
       }
 
       @include custom-responsive("lg xl xxl") {
-        font-size: $h4;
+        font-size: 4vh;
         margin: 0 0 1vw;
       }
 
@@ -173,20 +188,38 @@ div.article-card-container {
     div.sub-info {
       display: flex;
       justify-content: space-between;
+      margin: 4vw 0;
 
 
-      span {
-        font-size: 1.2vw;
+      span,
+      a {
+
+
+        @include custom-responsive("xs") {
+          font-size: 4vw;
+        }
+
+        @include custom-responsive("sm md") {
+          font-size: 2.5vw;
+        }
+
+        @include custom-responsive("lg xl xxl") {
+          font-size: 1.5vw;
+        }
+
+
+
+
+
+
+
 
         a {
-          font-size: 1.2vw;
           cursor: pointer;
-
-
-          
+          text-decoration: underline;
 
           &:hover {
-            text-decoration: underline;
+            opacity: 0.8;
           }
         }
       }
@@ -197,10 +230,11 @@ div.article-card-container {
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 5;
       overflow: hidden;
+      line-height: 1.8;
 
       @include custom-responsive("xs") {
-        font-size: 4vw;
-        margin: 1.25vh 0;
+        font-size: 2vh;
+        margin: 0 0 3vw;
       }
 
       @include custom-responsive("sm md") {
@@ -217,12 +251,13 @@ div.article-card-container {
   }
 
   div.watch-more {
-    margin: auto;
+
     cursor: pointer;
     text-align: center;
     color: $primary-white;
 
     @include custom-responsive("xs") {
+      margin-bottom: 3vh;
       width: 30vw;
       height: 10vw;
       line-height: 10vw;
@@ -241,7 +276,7 @@ div.article-card-container {
     @include custom-responsive("lg xl xxl") {
       width: 12vw;
       height: 4vw;
-      line-height:  4vw;
+      line-height: 4vw;
       font-size: 1.5vw;
       border-radius: 4vw;
     }
@@ -278,8 +313,8 @@ div.article-card-container {
   }
 }
 
-div.article-wrap{
+div.article-wrap {
   position: absolute;
-  bottom:5%;
+  bottom: 5%;
 }
 </style>
