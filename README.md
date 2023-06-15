@@ -26,6 +26,7 @@ Happy happy webiste
   "ngtcp2": "0.8.1",
   "nghttp3": "0.7.0"
 }
+```
 
 ## Project setup
 ```
