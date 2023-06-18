@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
-import EquipmentAndActivityCard from "@/components/physical-fitness-and-rhythm-movement/EquipmentAndActivityCard.vue";
+import SubSectionTitle from "@/components/title/SubTitle.vue";
+import EquipmentAndActivityCard from "@/components/physical-fitness-and-rhythm-movement/physical-fitness/EquipmentAndActivityCard.vue";
 
 export default {
   props: {

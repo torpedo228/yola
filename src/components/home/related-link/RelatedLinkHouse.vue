@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import RelatedLinkDropDownList from "@/components/home/RelatedLinkDropDownList.vue";
+import RelatedLinkDropDownList from "@/components/home/related-link/RelatedLinkDropDownList.vue";
 
 export default {
   props: {

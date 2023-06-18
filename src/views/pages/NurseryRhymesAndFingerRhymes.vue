@@ -65,11 +65,11 @@
 </template>
 
 <script>
-import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
+import BreadCrumb from "@/components/func-items/layout/BreadCrumb.vue";
 import SectionTitle from "@/components/title/SectionTitle.vue";
-import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
-import NurseryRhymesComponents from "@/components/nursery-rhymes-and-finger-rhymes/NurseryRhymesComponents.vue";
-import FingerRhymesComponents from "@/components/nursery-rhymes-and-finger-rhymes/FingerRhymesComponents.vue";
+import SubSectionTitle from "@/components/title/SubTitle.vue";
+import NurseryRhymesComponents from "@/components/nursery-rhymes-and-finger-rhymes/nursery-rhymes/NurseryRhymesComponents.vue";
+import FingerRhymesComponents from "@/components/nursery-rhymes-and-finger-rhymes/finger-rhymes/FingerRhymesComponents.vue";
 
 export default {
   components: {

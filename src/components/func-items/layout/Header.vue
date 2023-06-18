@@ -3,21 +3,40 @@
     <div class="header-wrap">
       <div class="header-content">
         <a id="header-logo" href="#" @click="backToHome">
-          <img class="logo" :src="require('@/assets/logo/yola.svg')" alt="幼樂園Yo-La! Logo" />
+          <img
+            class="logo"
+            :src="require('@/assets/logo/yola.svg')"
+            alt="幼樂園Yo-La! Logo"
+          />
         </a>
         <div class="header-drop-down-list">
-          <HeaderDropDownList :main="learningCorner.main" :sub-list="learningCorner.subList" />
-          <HeaderDropDownList :main="thematicTeaching.main" :sub-list="thematicTeaching.subList" />
-          <HeaderDropDownList :main="storybooks.main" :sub-list="storybooks.subList" />
-          <HeaderDropDownList :main="nurseryRhymesAndFingerRhymes.main"
-            :sub-list="nurseryRhymesAndFingerRhymes.subList" />
-          <HeaderDropDownList :main="physicalFitnessAndRhythmMovement.main"
-            :sub-list="physicalFitnessAndRhythmMovement.subList" />
+          <HeaderDropDownList
+            :main="learningCorner.main"
+            :sub-list="learningCorner.subList"
+          />
+          <HeaderDropDownList
+            :main="thematicTeaching.main"
+            :sub-list="thematicTeaching.subList"
+          />
+          <HeaderDropDownList
+            :main="storybooks.main"
+            :sub-list="storybooks.subList"
+          />
+          <HeaderDropDownList
+            :main="nurseryRhymesAndFingerRhymes.main"
+            :sub-list="nurseryRhymesAndFingerRhymes.subList"
+          />
+          <HeaderDropDownList
+            :main="physicalFitnessAndRhythmMovement.main"
+            :sub-list="physicalFitnessAndRhythmMovement.subList"
+          />
           <HeaderDropDownList :main="myLand.main" :sub-list="myLand.subList" />
         </div>
         <div class="side-menu">
-          <SideMenu @before-turn-on-side-menu="$store.commit('TURN_ON_OVERLAY')"
-            @before-turn-off-side-menu="$store.commit('TURN_OFF_OVERLAY')" />
+          <SideMenu
+            @before-turn-on-side-menu="$store.commit('TURN_ON_OVERLAY')"
+            @before-turn-off-side-menu="$store.commit('TURN_OFF_OVERLAY')"
+          />
         </div>
         <!-- <div class="social-media">
           <a class="fb" href="#">
@@ -31,23 +50,40 @@
         </div> -->
 
         <div class="login">
-          <div class="profile-img" >
+          <div class="profile-img">
             <!-- <i class="fa-solid fa-circle-user"></i> -->
 
-            <img v-if="$store.getters.isLoggedIn" :src="$store.state.userInfo.profile.avatarSrc" alt="" />
-            <img v-else @click="() => {
-              $store.commit('SHOW_LOGIN_PROMPT');
-            } 
-              "   v-scroll-to="'#page-top'" :src="require('@/assets/icons/func-items/login.svg')" alt="" />
+            <img
+              v-if="$store.getters.isLoggedIn"
+              :src="$store.state.userInfo.profile.avatarSrc"
+              alt=""
+            />
+            <img
+              v-else
+              @click="
+                () => {
+                  $store.commit('SHOW_LOGIN_PROMPT');
+                }
+              "
+              v-scroll-to="'#page-top'"
+              :src="require('@/assets/icons/func-items/login.svg')"
+              alt=""
+            />
           </div>
-
 
           <span class="user-name">{{ $store.state.userInfo.userName }}</span>
 
-          <div class="logout" @click="() => {
-            $store.commit('CLEAR_USER_INFO');
-          }
-            " v-if="$store.getters.isLoggedIn">登出</div>
+          <div
+            class="logout"
+            @click="
+              () => {
+                $store.commit('CLEAR_USER_INFO');
+              }
+            "
+            v-if="$store.getters.isLoggedIn"
+          >
+            登出
+          </div>
         </div>
       </div>
     </div>
@@ -55,9 +91,9 @@
 </template>
 
 <script>
-import SideMenu from "@/components/func-items/SideMenu.vue";
+import SideMenu from "@/components/func-items/layout/SideMenu.vue";
 
-import HeaderDropDownList from "@/components/func-items/HeaderDropDownList.vue";
+import HeaderDropDownList from "@/components/func-items/independent/HeaderDropDownList.vue";
 
 export default {
   components: { SideMenu, HeaderDropDownList },
@@ -144,7 +180,7 @@ export default {
     //   );
     // },
   },
-  mounted() { },
+  mounted() {},
   watch: {},
   methods: {
     backToHome() {
@@ -326,7 +362,7 @@ div.header-container {
       //   }
       // }
       div.login {
-        box-sizing:border-box ;
+        box-sizing: border-box;
         margin-left: 3vw;
         position: absolute;
         top: 50%;
@@ -352,14 +388,11 @@ div.header-container {
           &:hover {
             background-color: $primary-black;
             color: $primary-white;
-
           }
 
           &:active {
             transform: translate(2px, 2px);
           }
-
-
         }
 
         div.profile-img {
@@ -370,7 +403,6 @@ div.header-container {
           cursor: pointer;
 
           box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
-
 
           &:hover {
             box-shadow: 4px 4px 2px $primary-grey;
@@ -384,7 +416,6 @@ div.header-container {
             width: 100%;
           }
 
-
           // i {
           //   color: $primary-grey;
 
@@ -392,7 +423,6 @@ div.header-container {
           //     font-size: 4.5vw;
           //   }
           // }
-
         }
 
         @include custom-responsive("xs") {

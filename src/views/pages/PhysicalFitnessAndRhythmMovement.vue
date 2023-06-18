@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
+import BreadCrumb from "@/components/func-items/layout/BreadCrumb.vue";
 import SectionTitle from "@/components/title/SectionTitle.vue";
 import MotorDevelopmentPortal from "@/views/sections/physical-fitness-and-rhythm-movement/MotorDevelopmentPortal.vue";
 import EquipmentAndActivity from "@/views/sections/physical-fitness-and-rhythm-movement/EquipmentAndActivity.vue";

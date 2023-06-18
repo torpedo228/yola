@@ -1,3 +1,8 @@
+<script>
+export default {
+};
+</script>
+
 <template>
   <div class="hero-container" id="hero">
 
@@ -5,7 +10,7 @@
       <img class="hero-image" :src="require('@/assets/images/home/hero/hero.svg')" alt="" />
       <img class="hero-image-mobile" :src="require('@/assets/images/home/hero/hero-mobile.svg')" alt="" />
     </div>
-
+  
     <div class="content">
       <div class="text-wrap">
         <h2>聚焦幼兒教育</h2>
@@ -24,19 +29,9 @@
   </div>
 </template>
 
-<script>
-export default {
-  components: {},
-  data() {
-    return {};
-  },
-  mounted() { },
-};
-</script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/scss/all.scss";
+@import "../../../../node_modules/rfs/scss.scss";
 
 div.hero-container {
   width: 100%;
@@ -123,22 +118,22 @@ div.hero-container {
 
       h2 {
         color: $primary-white;
+        
 
         @include custom-responsive("xs") {
           display: block;
-          font-size: 10vw;
+          // font-size: 10vw;
           margin: 1vh 0;
         }
 
         @include custom-responsive("sm md lg") {
           display: inline-block;
           margin: 0 1vw 1vh 0;
-          font-size: 4vw;
+          // font-size: 4vw;
         }
 
         @include custom-responsive("xl xxl") {
           display: inline-block;
-          font-size: 4vw;
           margin: 0 1vw 1vh 0;
         }
       }

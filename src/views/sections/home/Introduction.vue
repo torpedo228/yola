@@ -95,7 +95,7 @@
 </template>
 
 <script>
-import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
+import SubSectionTitle from "@/components/title/SubTitle.vue";
 
 export default {
   components: { SubSectionTitle },

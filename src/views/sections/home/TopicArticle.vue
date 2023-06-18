@@ -28,8 +28,8 @@
 </template>
 
 <script>
-import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
-import ArticleCard from "@/components/home/ArticleCard.vue";
+import SubSectionTitle from "@/components/title/SubTitle.vue";
+import ArticleCard from "@/components/home/topic-article/ArticleCard.vue";
 
 export default {
   components: { SubSectionTitle, ArticleCard },

@@ -40,7 +40,7 @@ const routes = [
       },
       {
         path: "art",
-        component: () => import("@/views/sections/learning-corner/Art.vue"),
+        component: () => import("@/views/sections/learning-corner/art/Art.vue"),
         meta: {
           title: "美勞區",
         },
@@ -49,7 +49,7 @@ const routes = [
             path: "",
             name: "art",
             component: () =>
-              import("@/views/sections/learning-corner/ArtPortal.vue"),
+              import("@/views/sections/learning-corner/art/ArtPortal.vue"),
             meta: {
               title: "",
             },
@@ -57,7 +57,7 @@ const routes = [
           {
             path: "drawings",
             component: () =>
-              import("@/views/sections/learning-corner/Drawings.vue"),
+              import("@/views/sections/learning-corner/art/drawings/Drawings.vue"),
             meta: {
               title: "繪畫",
             },
@@ -66,7 +66,7 @@ const routes = [
                 path: "",
                 name: "drawings",
                 component: () =>
-                  import("@/views/sections/learning-corner/DrawingsPortal.vue"),
+                  import("@/views/sections/learning-corner/art/drawings/DrawingsPortal.vue"),
                 meta: {
                   title: "",
                 },
@@ -75,7 +75,7 @@ const routes = [
                 path: "fingerprint",
                 name: "fingerprint",
                 component: () =>
-                  import("@/views/sections/learning-corner/Fingerprint.vue"),
+                  import("@/views/sections/learning-corner/art/drawings/fingerprint/Fingerprint.vue"),
                 meta: {
                   title: "指印",
                 },

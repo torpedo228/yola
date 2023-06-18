@@ -37,9 +37,9 @@
 </template>
 
 <script>
-import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
-import LeaderboardSongCard from "@/components/physical-fitness-and-rhythm-movement/LeaderboardSongCard.vue";
-import HotSongsCard from "@/components/physical-fitness-and-rhythm-movement/HotSongsCard.vue";
+import SubSectionTitle from "@/components/title/SubTitle.vue";
+import LeaderboardSongCard from "@/components/physical-fitness-and-rhythm-movement/rhythm-movement/LeaderboardSongCard.vue";
+import HotSongsCard from "@/components/physical-fitness-and-rhythm-movement/rhythm-movement/HotSongsCard.vue";
 
 export default {
   components: { SubSectionTitle, LeaderboardSongCard, HotSongsCard },

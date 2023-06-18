@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
-import Slide from "@/components/func-items/Slide.vue";
+import SubSectionTitle from "@/components/title/SubTitle.vue";
+import Slide from "@/components/home/latest-news/Slide.vue";
 
 export default {
   components: { SubSectionTitle, Slide },

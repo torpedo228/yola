@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
+import SubSectionTitle from "@/components/title/SubTitle.vue";
 import StoryBookCard from "@/components/storybooks/StoryBookCard.vue";
 
 export default {

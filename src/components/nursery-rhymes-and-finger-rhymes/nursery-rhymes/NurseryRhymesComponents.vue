@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import Disc from "@/components/nursery-rhymes-and-finger-rhymes/Disc.vue";
+import Disc from "@/components/nursery-rhymes-and-finger-rhymes/nursery-rhymes/Disc.vue";
 
 export default {
   components: { Disc },

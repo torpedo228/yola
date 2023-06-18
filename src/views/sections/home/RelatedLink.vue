@@ -35,8 +35,8 @@
 </template>
 
 <script>
-import SubSectionTitle from "@/components/title/SubSectionTitle.vue";
-import RelatedLinkHouse from "@/components/home/RelatedLinkHouse.vue";
+import SubSectionTitle from "@/components/title/SubTitle.vue";
+import RelatedLinkHouse from "@/components/home/related-link/RelatedLinkHouse.vue";
 
 export default {
   components: { SubSectionTitle, RelatedLinkHouse },

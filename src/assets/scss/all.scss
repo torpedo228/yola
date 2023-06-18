@@ -11,6 +11,25 @@ $secondary-green: #A6D7A8;
 $secondary-blue: #8FC4F2;
 $secondary-grey: #D6DADE;
 
+$font-size-base:1rem; // Assumes the browser default, typically `16px`
+
+$font-size-sm:$font-size-base * .875;
+$font-size-lg:$font-size-base * 1.25;
+
+$h1-font-size:$font-size-base * 2.5;
+$h2-font-size:$font-size-base * 2;
+$h3-font-size:$font-size-base * 1.75;
+$h4-font-size:$font-size-base * 1.5;
+$h5-font-size:$font-size-base * 1.25;
+$h6-font-size:$font-size-base;
+
+$line-height-base:1.5;
+$line-height-sm: 1.25;
+$line-height-lg: 2;
+
+
+
+
 $h1: calc(3vmax);
 $h2: calc(2.5vmax);
 $h3: calc(2vmax);
@@ -20,8 +39,8 @@ $sub-info:calc(1.25vmax);
 $content: calc(1vmax);
 
 
-$regular: 'FakePearl-Regular';
-$light: 'FakePearl-Light';
+$font-family-regular: 'FakePearl-Regular';
+$font-family-light: 'FakePearl-Light';
 
 $font-weight-light:100;
 
@@ -45,7 +64,9 @@ $border-radius-circle: 50%;
   position: relative;
   width: $width;
   height: $height;
+  
 }
+
 
 
 

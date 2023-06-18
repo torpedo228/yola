@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import Header from "@/components/func-items/Header.vue";
-import GoToTop from "@/components/func-items/GoToTop.vue";
-import Footer from "@/components/func-items/Footer.vue";
-import LoginPrompt from "@/components/func-items/LoginPrompt.vue";
-import Overlay from "@/components/func-items/Overlay.vue";
+import Header from "@/components/func-items/layout/Header.vue";
+import GoToTop from "@/components/func-items/layout/GoToTop.vue";
+import Footer from "@/components/func-items/layout/Footer.vue";
+import LoginPrompt from "@/components/func-items/independent/LoginPrompt.vue";
+import Overlay from "@/components/func-items/independent/Overlay.vue";
 // import SideMenu from "@/components/func-items/SideMenu.vue";
 
 export default {
@@ -59,54 +59,40 @@ export default {
 
 <style lang="scss">
 @import "@/assets/scss/all.scss";
-img {
-  user-drag: none;
-  -webkit-user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-}
+@import "../node_modules/rfs/scss.scss";
+
 
 html {
-  overflow-x: hidden;
   width: 100%;
-  font-size: 12px;
-  // @include custom-responsive("xs") {
-  //   font-size: 12px;
-  // }
-
-  // @include custom-responsive("sm md lg") {
-  //   font-size: 16px;
-  // }
-
-  // @include custom-responsive("xl") {
-  //   font-size: 18px;
-  // }
-
-  // @include custom-responsive("xxl") {
-  //   font-size: 24px;
-  // }
+  font-size: 16px;
+  overflow-x: hidden;
 
   body {
     width: 100%;
-    font-family: $light;
+    font-family: $font-family-light;
     font-weight: $font-weight-light;
     margin: 0;
-    padding: 0px;
-    position: relative;
+    padding: 0;
     background: url("./assets/decorations/main/background.svg");
-    // background-repeat: no-repeat;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
 
 
+    img {
+      user-drag: none;
+      -webkit-user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+
     h2 {
+      @include font-size(4rem);
       font-weight: $font-weight-light;
       color: $primary-black;
-      font-size: $h2;
     }
 
     h3 {

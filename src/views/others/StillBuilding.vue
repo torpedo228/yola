@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import BreadCrumb from "@/components/func-items/BreadCrumb.vue";
+import BreadCrumb from "@/components/func-items/layout/BreadCrumb.vue";
 
 export default {
   components: { BreadCrumb },
